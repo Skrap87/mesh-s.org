@@ -152,7 +152,7 @@
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       align-items: center;
-      gap: 50px;
+      gap: 80px;
     }
 
     .hero h1 {
@@ -185,14 +185,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: visible; /* allows render to extend past the container edge */
+      overflow: visible;
     }
 
     .hero-visual img {
-      width: min(980px, 60vw);
+      width: min(600px, 70vw);
       max-width: none;
       filter: drop-shadow(0 90px 180px rgba(0, 0, 0, 0.85));
-      transform: translateX(120px);
     }
 
     .card-grid {
@@ -347,6 +346,7 @@
       .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 40px;
       }
 
       .hero-actions {
@@ -359,7 +359,6 @@
 
       .hero-visual img {
         width: min(520px, 92vw);
-        ransform: none;
       }
     }
   </style>
@@ -455,7 +454,7 @@
       <div class="container split">
         <div>
           <div class="eyebrow">Reliability</div>
-          <h2 class="section-title">Why it doesn’t die in winter</h2>
+          <h2 class="section-title">Why it doesn't die in winter</h2>
           <div class="list">
             <div class="list-item"><span>•</span>Oversized battery capacity</div>
             <div class="list-item"><span>•</span>Conservative power profile</div>
