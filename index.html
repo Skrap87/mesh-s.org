@@ -347,16 +347,9 @@
 
     .autonomy-graphs img {
       width: 100%;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: #111;
-    }
-
-    .autonomy-graphs img {
-      width: 100%;
       height: auto;
       min-height: 260px;           /* ВАЖНО: визуально увеличиваем */
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 16px;
       border: 1px solid rgba(255,255,255,0.12);
       background: #0c0c0f;
@@ -484,7 +477,7 @@
           </figure>
           <figure>
             <img src="assets/autonomy/ha-voltage.png" alt="Battery level over time">
-            <figcaption>Charge current (mAh)</figcaption>
+            <figcaption>Battery level (%)</figcaption>
           </figure>
         </div>
       </div>
