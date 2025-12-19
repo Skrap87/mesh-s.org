@@ -355,6 +355,45 @@
       background: #0c0c0f;
       box-shadow: 0 30px 80px rgba(0,0,0,0.6);
     }
+	
+	.graph-card{
+	  margin:0;
+	  padding:18px 18px 16px;
+	  border-radius: 20px;
+	  border: 1px solid rgba(255,255,255,0.10);
+	  background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+	  box-shadow: 0 30px 90px rgba(0,0,0,0.55);
+	}
+
+	.graph-meta{
+	  display:flex;
+	  align-items:baseline;
+	  justify-content:space-between;
+	  gap:12px;
+	  margin-bottom: 10px;
+	}
+
+	.graph-title{
+	  font-weight:600;
+	  letter-spacing:0.02em;
+	  color: rgba(255,255,255,0.92);
+	}
+
+	.graph-note{
+	  font-size:0.85rem;
+	  color: rgba(255,255,255,0.55);
+	}
+
+	.graph-card img{
+	  width:100%;
+	  height:auto;
+	  border-radius: 14px;
+	  border: 1px solid rgba(255,255,255,0.08);
+	  background:#0c0c0f;
+	  object-fit: contain;
+	  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.25);
+	}
+
 
 
 @media (min-width: 900px) {
@@ -470,16 +509,23 @@
             <div class="list-item"><span>•</span>Days without sun</div>
           </div>
         </div>
-        <div class="autonomy-graphs">
-          <figure>
-            <img src="assets/autonomy/ha-charge.png" alt="Charge current over time">
-            <figcaption>Charge current (mAh)</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/autonomy/ha-voltage.png" alt="Battery level over time">
-            <figcaption>Battery level (%)</figcaption>
-          </figure>
-        </div>
+		<div class="autonomy-graphs">
+		  <figure class="graph-card">
+			<div class="graph-meta">
+			  <div class="graph-title">Charge current</div>
+			  <div class="graph-note">HA history export</div>
+			</div>
+			<img src="assets/autonomy/ha-charge.png" alt="Charge current over time">
+		  </figure>
+
+		  <figure class="graph-card">
+			<div class="graph-meta">
+			  <div class="graph-title">Battery level</div>
+			  <div class="graph-note">HA history export</div>
+			</div>
+			<img src="assets/autonomy/ha-voltage.png" alt="Battery level over time">
+		  </figure>
+		</div>
       </div>
     </section>
 
