@@ -2,34 +2,112 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>mesh-s.org</title>
+  <title>MESH-S — Autonomous Solar Mesh Node</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
+    :root {
+      --bg: #0e0e11;
+      --fg: #ffffff;
+      --muted: rgba(255,255,255,0.65);
+      --accent: #9dd06a;
+      --max: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #0e0e11;
-      color: #ffffff;
+      background: var(--bg);
+      color: var(--fg);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .hero-inner {
+      max-width: var(--max);
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
       text-align: center;
     }
-    h1 {
-      font-size: 2.5rem;
-      letter-spacing: 0.15em;
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 3.4rem);
+      letter-spacing: 0.2em;
+      margin: 0;
     }
-    p {
-      opacity: 0.7;
-      margin-top: 1rem;
+
+    .hero p {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+
+    .hero-tagline {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    /* Placeholder for 3D render */
+    .hero-visual {
+      margin-top: 40px;
+      height: 280px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (min-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1.1fr 0.9fr;
+        text-align: left;
+        align-items: center;
+      }
+
+      .hero-visual {
+        margin-top: 0;
+      }
     }
   </style>
 </head>
 <body>
-  <div>
-    <h1>MESH-S</h1>
-    <p>Autonomous • Solar • Mesh Node</p>
-  </div>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>MESH-S</h1>
+        <p>Autonomous • Solar • Mesh Node</p>
+        <div class="hero-tagline">
+          Designed for year-round outdoor operation
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        3D render will be placed here
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
