@@ -91,6 +91,10 @@
     .btn {
       display: inline-flex;
       align-items: center;
+      gap: 18px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      flex-wrap: wrap;
       justify-content: center;
       padding: 12px 22px;
       border-radius: 999px;
@@ -181,6 +185,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: visible; /* allows render to extend past the container edge */
     }
 
     .hero-visual img {
