@@ -338,6 +338,33 @@
       gap: 18px;
     }
 
+    .autonomy-graphs {
+      display: grid;
+  	  grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .autonomy-graphs img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #111;
+    }
+
+    .autonomy-graphs figcaption {
+      margin-top: 6px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+@media (min-width: 900px) {
+  .autonomy-graphs {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
     @media (max-width: 900px) {
       .nav {
         flex-direction: column;
@@ -444,8 +471,15 @@
             <div class="list-item"><span>•</span>Days without sun</div>
           </div>
         </div>
-        <div class="placeholder">
-          HA charge/discharge graph will be placed here
+        <div class="autonomy-graphs">
+          <figure>
+            <img src="assets/autonomy/ha-charge.png" alt="Charge current over time">
+            <figcaption>Charge current (mAh)</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/autonomy/ha-voltage.png" alt="Battery level over time">
+            <figcaption>Charge current (mAh)</figcaption>
+          </figure>
         </div>
       </div>
     </section>
