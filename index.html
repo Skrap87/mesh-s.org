@@ -341,7 +341,8 @@
     .autonomy-graphs {
       display: grid;
   	  grid-template-columns: 1fr;
-      gap: 18px;
+      gap: 32px;
+      margin-top: 24px;
     }
 
     .autonomy-graphs img {
@@ -351,16 +352,21 @@
       background: #111;
     }
 
-    .autonomy-graphs figcaption {
-      margin-top: 6px;
-      font-size: 0.85rem;
-      color: var(--muted);
-      text-align: center;
+    .autonomy-graphs img {
+      width: 100%;
+      height: auto;
+      min-height: 260px;           /* ВАЖНО: визуально увеличиваем */
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: #0c0c0f;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
     }
+
 
 @media (min-width: 900px) {
   .autonomy-graphs {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
