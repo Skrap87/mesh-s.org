@@ -13,9 +13,7 @@
       --accent: #9dd06a;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -24,7 +22,6 @@
       color: var(--fg);
     }
 
-    /* HERO */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -38,9 +35,9 @@
       max-width: 1400px;
       width: 100%;
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
-      text-align: center;
+      grid-template-columns: 1.15fr 0.85fr; /* ЛЕВУЮ КОЛОНКУ ДЕЛАЕМ ШИРЕ */
+      align-items: center;
+      gap: 40px;
     }
 
     .hero h1 {
@@ -48,26 +45,29 @@
       letter-spacing: 0.22em;
       margin: 0;
       text-shadow: 0 8px 40px rgba(0,0,0,0.7);
+      white-space: nowrap; /* НЕ ДАЁМ ПЕРЕНОСИТЬ */
     }
 
     .hero p {
-      margin: 0;
+      margin: 10px 0 0 0;
       font-size: 1.15rem;
       color: var(--muted);
+      white-space: nowrap; /* ОДНА СТРОКА */
     }
 
     .hero-tagline {
-      margin-top: 10px;
+      margin-top: 12px;
       font-size: 0.95rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--accent);
+      white-space: nowrap; /* ОДНА СТРОКА */
     }
 
     .hero-visual {
       display: flex;
+      justify-content: flex-end;
       align-items: center;
-      justify-content: center;
     }
 
     .hero-visual img {
@@ -76,21 +76,27 @@
       max-width: none;
       object-fit: contain;
       filter: drop-shadow(0 70px 140px rgba(0,0,0,0.85));
-      transform: translateX(80px);
     }
 
-    @media (min-width: 900px) {
+    @media (max-width: 950px) {
       .hero-inner {
-        grid-template-columns: 1fr 1.2fr;
-        text-align: left;
-        align-items: center;
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 28px;
       }
-    }
 
-    @media (max-width: 899px) {
+      .hero-visual {
+        justify-content: center;
+      }
+
       .hero-visual img {
-        height: 420px;
-        transform: none;
+        height: 440px;
+      }
+
+      .hero h1,
+      .hero p,
+      .hero-tagline {
+        white-space: normal; /* на мобиле можно перенос */
       }
     }
   </style>
@@ -102,9 +108,7 @@
       <div>
         <h1>MESH-S</h1>
         <p>Autonomous • Solar • Mesh Node</p>
-        <div class="hero-tagline">
-          Designed for year-round outdoor operation
-        </div>
+        <div class="hero-tagline">Designed for year-round outdoor operation</div>
       </div>
 
       <div class="hero-visual">
