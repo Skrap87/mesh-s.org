@@ -11,7 +11,6 @@
       --fg: #ffffff;
       --muted: rgba(255,255,255,0.65);
       --accent: #9dd06a;
-      --max: 1100px;
     }
 
     * {
@@ -32,10 +31,11 @@
       align-items: center;
       justify-content: center;
       padding: 40px 20px;
+      overflow: hidden;
     }
 
     .hero-inner {
-      max-width: var(--max);
+      max-width: 1400px;
       width: 100%;
       display: grid;
       grid-template-columns: 1fr;
@@ -44,55 +44,53 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.4rem, 6vw, 3.4rem);
-      letter-spacing: 0.2em;
+      font-size: clamp(2.6rem, 6vw, 3.6rem);
+      letter-spacing: 0.22em;
       margin: 0;
-      margin: 0;
-      text-shadow: 0 6px 30px rgba(0,0,0,0.6);
+      text-shadow: 0 8px 40px rgba(0,0,0,0.7);
     }
 
     .hero p {
       margin: 0;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: var(--muted);
     }
 
     .hero-tagline {
-      margin-top: 8px;
+      margin-top: 10px;
       font-size: 0.95rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--accent);
     }
 
-    /* Placeholder for 3D render */
     .hero-visual {
-      margin-top: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     .hero-visual img {
-      max-height: 560px;
+      height: 620px;
       width: auto;
-      max-width: 100%;
+      max-width: none;
       object-fit: contain;
-      filter: drop-shadow(0 50px 100px rgba(0,0,0,0.7));
-      transform: translateX(30px);
-
+      filter: drop-shadow(0 70px 140px rgba(0,0,0,0.85));
+      transform: translateX(80px);
     }
-
 
     @media (min-width: 900px) {
       .hero-inner {
-        grid-template-columns: 1.1fr 0.9fr;
+        grid-template-columns: 1fr 1.2fr;
         text-align: left;
         align-items: center;
       }
+    }
 
-      .hero-visual {
-        margin-top: 0;
+    @media (max-width: 899px) {
+      .hero-visual img {
+        height: 420px;
+        transform: none;
       }
     }
   </style>
@@ -110,7 +108,7 @@
       </div>
 
       <div class="hero-visual">
-        <img src="assets/mesh-s-hero.PNG" alt="MESH-S autonomous solar mesh node">
+        <img src="assets/mesh-s-hero.png" alt="MESH-S autonomous solar mesh node">
       </div>
     </div>
   </section>
