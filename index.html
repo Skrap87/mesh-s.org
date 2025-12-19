@@ -66,17 +66,19 @@
     /* Placeholder for 3D render */
     .hero-visual {
       margin-top: 40px;
-      height: 280px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background:
-        linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--muted);
-      font-size: 0.9rem;
     }
+
+    .hero-visual img {
+      max-height: 420px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 40px 80px rgba(0,0,0,0.6));
+    }
+
 
     @media (min-width: 900px) {
       .hero-inner {
