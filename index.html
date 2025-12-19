@@ -91,6 +91,10 @@
     .btn {
       display: inline-flex;
       align-items: center;
+      gap: 18px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      flex-wrap: wrap;
       justify-content: center;
       padding: 12px 22px;
       border-radius: 999px;
@@ -142,28 +146,24 @@
 
     .hero {
       padding-top: 120px;
-      overflow-x: clip; /* prevents horizontal scroll while allowing inner overflow */
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(560px, 1fr) minmax(0, 1.15fr);
+      grid-template-columns: 1.1fr 0.9fr;
       align-items: center;
       gap: 50px;
-      overflow: visible; /* keeps product render visually connected to text */
     }
 
     .hero h1 {
       font-size: clamp(3rem, 6vw, 4.2rem);
       letter-spacing: 0.22em;
-      white-space: nowrap; /* ensures “MESH-S” never wraps on desktop */
     }
 
     .hero .hero-subtitle {
       margin-top: 10px;
       font-size: 1.15rem;
       color: var(--muted);
-      white-space: nowrap; /* preserves single-line subtitle on desktop */
     }
 
     .hero .hero-tagline {
@@ -183,17 +183,16 @@
 
     .hero-visual {
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       align-items: center;
       overflow: visible; /* allows render to extend past the container edge */
     }
 
     .hero-visual img {
-      height: 62vh;
-      max-height: 720px;
-      width: auto;
+      width: min(980px, 60vw);
       max-width: none;
-      filter: drop-shadow(0 45px 110px rgba(0, 0, 0, 0.7));
+      filter: drop-shadow(0 90px 180px rgba(0, 0, 0, 0.85));
+      transform: translateX(120px);
     }
 
     .card-grid {
@@ -356,21 +355,11 @@
 
       .hero h1 {
         letter-spacing: 0.14em;
-        white-space: normal; /* allow wrap on smaller screens */
-      }
-
-      .hero .hero-subtitle {
-        white-space: normal; /* allow wrap on smaller screens */
-      }
-
-      .hero-visual {
-        justify-content: center;
       }
 
       .hero-visual img {
-        width: min(92vw, 520px);
-        height: auto;
-        max-height: none;
+        width: min(520px, 92vw);
+        ransform: none;
       }
     }
   </style>
