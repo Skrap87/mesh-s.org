@@ -454,6 +454,46 @@
 	.container-wide {
   	  width: min(1200px, 96vw);
 	}
+	
+	.exploded-legend {
+	  margin-top: 48px;
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	  gap: 28px;
+	}
+
+	.legend-item {
+	  background: linear-gradient(
+		180deg,
+		rgba(255,255,255,0.03),
+		rgba(255,255,255,0.01)
+	  );
+	  border: 1px solid rgba(255,255,255,0.08);
+	  border-radius: 16px;
+	  padding: 16px 16px 18px;
+	  text-align: center;
+	}
+
+	.legend-item img {
+	  width: 100%;
+	  height: auto;
+	  border-radius: 10px;
+	  display: block;
+	}
+
+	.legend-title {
+	  margin-top: 14px;
+	  font-size: 15px;
+	  font-weight: 600;
+	  color: #ffffff;
+	}
+
+	.legend-desc {
+	  margin-top: 4px;
+	  font-size: 13px;
+	  color: rgba(255,255,255,0.65);
+	}
+
 
 @media (min-width: 900px) {
   .autonomy-graphs {
@@ -633,14 +673,31 @@
 			loading="lazy"
 		  />
 		</div>
-        <div class="bullet-grid">
-          <div class="bullet">Enclosure</div>
-          <div class="bullet">Batteries</div>
-          <div class="bullet">MPPT</div>
-          <div class="bullet">Antenna path</div>
-          <div class="bullet">Sealing points</div>
-          <div class="bullet">Silica gel compartment</div>
-        </div>
+		<div class="exploded-legend">
+		  <div class="legend-item">
+			<img src="assets/exploded/enclosure.gif" alt="ASA enclosure">
+			<div class="legend-title">ASA enclosure</div>
+			<div class="legend-desc">UV-stable printed housing</div>
+		  </div>
+
+		  <div class="legend-item">
+			<img src="assets/exploded/lid.gif" alt="Mounting lid">
+			<div class="legend-title">Mounting lid</div>
+			<div class="legend-desc">Universal round & rectangular mount</div>
+		  </div>
+
+		  <div class="legend-item">
+			<img src="assets/exploded/spacer-plate.gif" alt="Spacer plate">
+			<div class="legend-title">Spacer plate</div>
+			<div class="legend-desc">Modular electronics mounting interface</div>
+		  </div>
+
+		  <div class="legend-item">
+			<img src="assets/exploded/silica-compartment.gif" alt="Silica compartment">
+			<div class="legend-title">Silica compartment</div>
+			<div class="legend-desc">Humidity control module</div>
+		  </div>
+		</div>
       </div>
     </section>
 
