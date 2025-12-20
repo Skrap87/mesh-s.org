@@ -493,6 +493,28 @@
 	  font-size: 13px;
 	  color: rgba(255,255,255,0.65);
 	}
+	
+	.legend-head {
+	  margin-top: 34px;
+	  margin-bottom: 14px;
+	  display: grid;
+	  gap: 6px;
+	}
+
+	.legend-eyebrow {
+	  font-size: 12px;
+	  letter-spacing: 0.18em;
+	  text-transform: uppercase;
+	  color: rgba(186, 255, 92, 0.85); /* как твой зелёный акцент */
+	}
+
+	.legend-note {
+	  font-size: 14px;
+	  line-height: 1.5;
+	  color: rgba(255,255,255,0.68);
+	  max-width: 70ch;
+	}
+
 
 
 @media (min-width: 900px) {
@@ -672,6 +694,10 @@
 			alt="MESH-S exploded view – internal hardware layout"
 			loading="lazy"
 		  />
+		</div>
+		<div class="legend-head">
+		  <div class="legend-eyebrow">Custom parts</div>
+		  <div class="legend-note">Only the parts designed and printed for MESH-S. Off-the-shelf components are intentionally omitted.</div>
 		</div>
 		<div class="exploded-legend">
 		  <div class="legend-item">
