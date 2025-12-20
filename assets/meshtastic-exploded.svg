@@ -95,7 +95,4 @@
   <text class="small" text-anchor="end" x="250" y="1540">Screws and inserts grouped</text>
   <line class="line" x1="260" y1="1510" x2="440" y2="1510" />
 
-  <!-- Z-axis separation guides -->
-  <line class="accent thin" x1="930" y1="120" x2="930" y2="1580" stroke-dasharray="8 10" />
-  <text class="small" x="940" y="145">Z-axis separation</text>
 </svg>
