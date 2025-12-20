@@ -81,7 +81,7 @@
   <rect class="shape" x="520" y="1325" width="160" height="50" rx="6" />
   <text class="small" x="535" y="1356">Silica gel container</text>
   <text class="label" text-anchor="end" x="290" y="1345">Humidity</text>
-  <text class="label" text-anchor="end" x="290" y="1445">control compartment</text>
+  <text class="label" text-anchor="end" x="290" y="1375">control compartment</text>
   
 
   <!-- Fasteners -->
