@@ -74,7 +74,7 @@
   <!-- Pressure vent -->
   <rect class="shape" x="420" y="1160" width="360" height="90" rx="10" />
   <circle class="shape-light" cx="600" cy="1205" r="28" />
-  <text class="label" text-anchor="end" x="250" y="1195">Pressure vent (plastic + membrane)</text>
+  <text class="label" text-anchor="end" x="250" y="1195">Pressure vent (membrane)</text>
   <line class="line" x1="320" y1="1190" x2="420" y2="1190" />
 
   <!-- Humidity control compartment -->
