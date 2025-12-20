@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1800" viewBox="0 0 1200 1800">
+  <defs>
+    <style>
+      .bg { fill: #0f1115; }
+      .line { stroke: #c7cbd1; stroke-width: 2; fill: none; }
+      .shape { fill: #1b2027; stroke: #c7cbd1; stroke-width: 2; }
+      .shape-light { fill: #232a33; stroke: #c7cbd1; stroke-width: 2; }
+      .accent { stroke: #8da2b8; stroke-width: 2; fill: none; }
+      .label { fill: #e5e9ef; font-family: "Inter", "Segoe UI", Arial, sans-serif; font-size: 22px; }
+      .small { font-size: 18px; fill: #c7cbd1; }
+      .thin { stroke-width: 1.5; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1200" height="1800" />
+
+  <!-- Top: ASA enclosure halves -->
+  <rect class="shape" x="300" y="90" width="600" height="140" rx="16" />
+  <rect class="shape" x="300" y="260" width="600" height="140" rx="16" />
+  <line class="accent" x1="320" y1="230" x2="880" y2="230" />
+  <text class="label" x="70" y="140">ASA enclosure (UV-stable)</text>
+  <line class="line" x1="260" y1="130" x2="300" y2="130" />
+
+  <!-- Perimeter sealing: gasket line + structural sealant indication -->
+  <rect class="shape-light" x="320" y="455" width="560" height="24" rx="10" />
+  <line class="accent" x1="340" y1="468" x2="860" y2="468" />
+  <path class="line thin" d="M340 488 L860 488" />
+  <text class="label" x="70" y="475">Perimeter sealing</text>
+  <text class="small" x="70" y="500">Silicone gasket line</text>
+  <text class="small" x="70" y="525">Structural sealant indication</text>
+  <line class="line" x1="260" y1="470" x2="320" y2="470" />
+
+  <!-- 4× 18650 battery pack (separated) -->
+  <g transform="translate(320,580)">
+    <rect class="shape" x="0" y="0" width="120" height="60" rx="30" />
+    <rect class="shape" x="140" y="0" width="120" height="60" rx="30" />
+    <rect class="shape" x="280" y="0" width="120" height="60" rx="30" />
+    <rect class="shape" x="420" y="0" width="120" height="60" rx="30" />
+    <line class="accent" x1="20" y1="30" x2="100" y2="30" />
+    <line class="accent" x1="160" y1="30" x2="240" y2="30" />
+    <line class="accent" x1="300" y1="30" x2="380" y2="30" />
+    <line class="accent" x1="440" y1="30" x2="520" y2="30" />
+  </g>
+  <text class="label" x="70" y="610">4× 18650 battery pack</text>
+  <line class="line" x1="260" y1="600" x2="320" y2="600" />
+
+  <!-- Battery holder -->
+  <rect class="shape-light" x="320" y="690" width="560" height="90" rx="12" />
+  <rect class="line" x="340" y="710" width="520" height="50" rx="8" />
+  <text class="label" x="70" y="735">Battery holder (4×18650)</text>
+  <line class="line" x1="260" y1="725" x2="320" y2="725" />
+
+  <!-- Power core: MPPT + node -->
+  <rect class="shape" x="320" y="830" width="560" height="140" rx="12" />
+  <rect class="shape-light" x="350" y="860" width="230" height="80" rx="6" />
+  <rect class="shape-light" x="620" y="860" width="230" height="80" rx="6" />
+  <text class="small" x="380" y="910">MPPT controller</text>
+  <text class="small" x="640" y="910">Main node board</text>
+  <text class="label" x="70" y="880">Power core (MPPT + node)</text>
+  <line class="line" x1="260" y1="870" x2="320" y2="870" />
+
+  <!-- RF path -->
+  <g transform="translate(320,1020)">
+    <rect class="shape-light" x="0" y="0" width="560" height="70" rx="10" />
+    <circle class="shape" cx="80" cy="35" r="12" />
+    <line class="accent" x1="92" y1="35" x2="420" y2="35" />
+    <rect class="shape" x="420" y="20" width="70" height="30" rx="6" />
+    <polygon class="accent" points="500,35 520,25 520,45" />
+  </g>
+  <text class="label" x="70" y="1045">RF path (U.FL → N-Type)</text>
+  <text class="small" x="70" y="1070">Coaxial cable</text>
+  <text class="small" x="70" y="1095">N-Type bulkhead connector</text>
+  <line class="line" x1="260" y1="1040" x2="320" y2="1040" />
+
+  <!-- Pressure vent -->
+  <rect class="shape" x="420" y="1160" width="360" height="90" rx="10" />
+  <circle class="shape-light" cx="600" cy="1205" r="28" />
+  <text class="label" x="70" y="1195">Pressure vent (plastic + membrane)</text>
+  <line class="line" x1="320" y1="1190" x2="420" y2="1190" />
+
+  <!-- Humidity control compartment -->
+  <rect class="shape-light" x="360" y="1300" width="480" height="100" rx="10" />
+  <rect class="shape" x="520" y="1325" width="160" height="50" rx="6" />
+  <text class="small" x="535" y="1356">Silica gel container</text>
+  <text class="label" x="70" y="1345">Humidity control compartment</text>
+  <line class="line" x1="260" y1="1340" x2="360" y2="1340" />
+
+  <!-- Fasteners -->
+  <g transform="translate(440,1470)">
+    <rect class="shape" x="0" y="0" width="60" height="120" rx="8" />
+    <rect class="shape" x="90" y="0" width="60" height="120" rx="8" />
+    <rect class="shape" x="180" y="0" width="60" height="120" rx="8" />
+    <rect class="shape" x="270" y="0" width="60" height="120" rx="8" />
+  </g>
+  <text class="label" x="70" y="1515">Fasteners</text>
+  <text class="small" x="70" y="1540">Screws and inserts grouped</text>
+  <line class="line" x1="260" y1="1510" x2="440" y2="1510" />
+
+  <!-- Z-axis separation guides -->
+  <line class="accent thin" x1="930" y1="120" x2="930" y2="1580" stroke-dasharray="8 10" />
+  <text class="small" x="940" y="145">Z-axis separation</text>
+</svg>
