@@ -435,6 +435,21 @@
 	  border: 1px solid rgba(255,255,255,0.12);
 	  background: #0c0c0f;
 	}
+	
+	.exploded-view {
+	  background: #0c0c10;
+	  border: 1px solid rgba(255,255,255,0.08);
+	  border-radius: 20px;
+	  padding: 28px;
+	  box-shadow: 0 30px 90px rgba(0,0,0,0.55);
+	}
+
+	.exploded-view img {
+	  width: 100%;
+	  height: auto;
+	  display: block;
+	}
+
 
 
 
@@ -610,7 +625,13 @@
       <div class="container">
         <div class="eyebrow">Hardware layout</div>
         <h2 class="section-title">Exploded view</h2>
-        <div class="placeholder">Exploded view render will be placed here</div>
+        <div class="exploded-view">
+		  <img
+			src="assets/meshtastic-exploded.svg"
+			alt="MESH-S exploded view – internal hardware layout"
+			loading="lazy"
+		  />
+		</div>
         <div class="bullet-grid">
           <div class="bullet">Enclosure</div>
           <div class="bullet">Batteries</div>
