@@ -532,6 +532,19 @@
 	  font-weight: 600;
 	  color: rgba(186, 255, 92, 0.85);
 	}
+	
+	.packages-title {
+	  margin-top: 16px;
+	  font-weight: 600;
+	  color: #ffffff;
+	}
+
+	.packages-note {
+	  margin-top: 18px;
+	  font-size: 13px;
+	  opacity: 0.6;
+	}
+
 
 @media (min-width: 900px) {
   .autonomy-graphs {
@@ -840,8 +853,30 @@
       <div class="container">
         <div class="eyebrow">Packages</div>
         <h2 class="section-title">Packages &amp; BOM</h2>
-        <p class="section-subtitle">Placeholder for configuration tiers and bill of materials.</p>
-        <div class="placeholder">Packages and BOM details will be placed here</div>
+        <p class="section-subtitle">Configuration options and bill of materials overview.</p>
+        <div class="packages-placeholder">
+		  <p class="packages-title">Planned configuration tiers</p>
+		  <p>
+			The MESH-S node is designed as a modular platform.
+			Final package configurations and component lists
+			will be published once field testing and long-term
+			validation are completed.
+		  </p>
+
+		  <p class="packages-title">Bill of materials (BOM)</p>
+		  <p>
+			A detailed bill of materials will include
+			enclosure parts, mounting components,
+			and required off-the-shelf electronics.
+			Custom printed parts are documented separately.
+		  </p>
+
+		  <p class="packages-note">
+			This section is intentionally kept minimal until
+			hardware revisions are finalized.
+		  </p>
+		</div>
+
       </div>
     </section>
   </main>
