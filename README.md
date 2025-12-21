@@ -14,6 +14,10 @@ inspiration source, and technical documentation of one possible implementation.
 
 🌐 Live site: https://mesh-s.org
 
+## Deployment
+
+Cloudflare Pages should publish the `/site` directory.
+
 ## Project Scope
 
 - DIY reference design (no commercial intent)
@@ -64,4 +68,3 @@ Creative Commons Attribution-NonCommercial 4.0 International
 
 This project and its documentation are provided for non-commercial use only.
 See the LICENSE file for full license text.
-
