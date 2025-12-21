@@ -737,10 +737,10 @@ footer {
 }
 
 
-/* --- Mobile: shrink header/menu height --- */
-@media (max-width: 520px) {
+/* --- Tablet + Mobile: compact header & disable sticky --- */
+@media (max-width: 1024px) {
 
-  /* NEW: disable sticky header on mobile */
+  /* disable sticky header */
   header {
     position: relative !important;
     top: auto !important;
@@ -759,6 +759,17 @@ footer {
     font-size: 13px !important;
     line-height: 1.1 !important;
     padding: 6px 8px !important;
+  }
+
+  /* FIX: prevent "More" button from jumping */
+  .nav-more summary {
+    min-width: 64px;           /* держит ширину */
+    justify-content: center;   /* текст по центру */
+  }
+
+  /* keep dropdown stable */
+  .nav-more {
+    flex: 0 0 auto;
   }
 
   .nav-more-menu {
