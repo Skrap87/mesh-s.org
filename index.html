@@ -439,5 +439,14 @@
       });
     })();
   </script>
+  <script>
+	  document.querySelectorAll('.nav-more-menu a').forEach(link => {
+		link.addEventListener('click', () => {
+		  const details = link.closest('.nav-more');
+		  if (details) details.removeAttribute('open');
+		});
+	  });
+	</script>
+
 </body>
 </html>
