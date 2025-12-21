@@ -657,3 +657,32 @@ footer {
     width: min(520px, 92vw);
   }
 }
+
+
+/* --- Mobile: shrink header/menu height --- */
+@media (max-width: 520px) {
+  header, .header, .topbar, .nav {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .nav, nav {
+    gap: 10px !important;
+  }
+
+  .nav a, nav a {
+    font-size: 13px !important;
+    line-height: 1.1 !important;
+    padding: 6px 8px !important;
+  }
+
+  .lang-switch, .lang-toggle {
+    transform: scale(0.92);
+    transform-origin: right center;
+  }
+
+  .btn, .button, .chip, .pill {
+    padding: 7px 10px !important;
+    font-size: 13px !important;
+  }
+}
