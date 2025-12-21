@@ -569,6 +569,19 @@ footer {
   text-decoration: underline;
 }
 
+.cookie-banner .btn {
+  color: #0f1115;          /* читаемый тёмный текст */
+  background: #ffffff;     /* светлая кнопка */
+  border-color: #ffffff;
+  font-weight: 600;
+}
+
+.cookie-banner .btn:hover {
+  background: #e6e8eb;
+  border-color: #e6e8eb;
+}
+
+
 @media (max-width: 520px) {
   .cookie-banner {
     flex-direction: column;
