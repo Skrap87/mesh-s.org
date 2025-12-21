@@ -245,7 +245,7 @@ const translations = {
     },
     cookie: {
       aria: "Cookie notice",
-      text: "This website uses only technically necessary cookies to ensure the site operates.",
+      text: "This website does not use tracking, analytics, or marketing cookies. Technical settings are stored locally in your browser.",
       link: "Privacy policy",
       button: "OK"
     },
@@ -253,8 +253,49 @@ const translations = {
       metaTitle: "Privacy policy – MESH-S",
       eyebrow: "Privacy",
       title: "Privacy policy",
-      subtitle1: "This website does not use tracking, analytics, or marketing cookies. Only technically necessary cookies are used to ensure the site operates.",
-      subtitle2: "Your consent to the cookie notice is stored locally in your browser (localStorage) so the notice is not shown on every visit.",
+      subtitle: "The following information describes how personal data is processed on this website.",
+      sections: {
+        intro: {
+          title: "Introduction",
+          body1: "This website is a private non-commercial DIY project.",
+          body2: "No tracking, analytics, or marketing tools are used."
+        },
+        controller: {
+          title: "Controller",
+          body1: "Eduard Herzog, Germany.",
+          body2: "Contact: email [email placeholder]."
+        },
+        logs: {
+          title: "Access data / server logs",
+          body1: "When you access the website, the hosting provider automatically processes access data in server logs.",
+          item1: "IP address (truncated/anonymized)",
+          item2: "Date and time of access",
+          item3: "Browser type and operating system",
+          item4: "Accessed pages",
+          body2: "Processing is carried out to ensure security and operational stability.",
+          body3: "No merging with other data sources takes place."
+        },
+        storage: {
+          title: "Cookies / Local Storage",
+          body1: "No cookies are set for tracking, analytics, or marketing purposes.",
+          body2: "Only local storage in the browser is used for technical settings (e.g. the cookie notice)."
+        },
+        sharing: {
+          title: "Data sharing",
+          body1: "Personal data is not shared with third parties."
+        },
+        rights: {
+          title: "User rights",
+          body1: "Within the scope of statutory provisions, users have the right to:",
+          item1: "Access",
+          item2: "Rectification",
+          item3: "Deletion"
+        },
+        changes: {
+          title: "Changes",
+          body1: "This privacy policy may be updated if necessary."
+        }
+      },
       back: "Back to home"
     },
     impressum: {
@@ -523,7 +564,7 @@ const translations = {
     },
     cookie: {
       aria: "Cookie-Hinweis",
-      text: "Diese Website verwendet ausschließlich technisch notwendige Cookies, um den Betrieb der Seite sicherzustellen.",
+      text: "Diese Website verwendet keine Tracking-, Analytics- oder Marketing-Cookies. Technische Einstellungen werden lokal im Browser gespeichert.",
       link: "Datenschutzerklärung",
       button: "OK"
     },
@@ -531,8 +572,49 @@ const translations = {
       metaTitle: "Datenschutzerklärung – MESH-S",
       eyebrow: "Datenschutz",
       title: "Datenschutzerklärung",
-      subtitle1: "Diese Website verwendet keine Tracking-, Analytics- oder Marketing-Cookies. Es kommen ausschließlich technisch notwendige Cookies zum Einsatz, um den Betrieb der Seite sicherzustellen.",
-      subtitle2: "Ihr Einverständnis zum Cookie-Hinweis wird lokal in Ihrem Browser gespeichert (localStorage), damit der Hinweis nicht bei jedem Besuch erneut angezeigt wird.",
+      subtitle: "Die folgenden Informationen beschreiben, wie personenbezogene Daten auf dieser Website verarbeitet werden.",
+      sections: {
+        intro: {
+          title: "Einleitung",
+          body1: "Diese Website ist ein privates, nichtkommerzielles DIY-Projekt.",
+          body2: "Es werden keine Tracking-, Analytics- oder Marketing-Tools eingesetzt."
+        },
+        controller: {
+          title: "Verantwortlicher",
+          body1: "Eduard Herzog, Deutschland.",
+          body2: "Kontakt: E-Mail [E-Mail-Platzhalter]."
+        },
+        logs: {
+          title: "Zugriffsdaten / Server-Logfiles",
+          body1: "Beim Aufruf der Website verarbeitet der Hosting-Provider automatisch Zugriffsdaten in Server-Logfiles.",
+          item1: "IP-Adresse (gekürzt/anonymisiert)",
+          item2: "Datum und Uhrzeit des Zugriffs",
+          item3: "Browsertyp und Betriebssystem",
+          item4: "Aufgerufene Seiten",
+          body2: "Die Verarbeitung erfolgt zur Sicherstellung von Sicherheit und Stabilität des Betriebs.",
+          body3: "Eine Zusammenführung mit anderen Datenquellen findet nicht statt."
+        },
+        storage: {
+          title: "Cookies / Local Storage",
+          body1: "Es werden keine Cookies für Tracking-, Analytics- oder Marketingzwecke gesetzt.",
+          body2: "Für technische Einstellungen (z. B. den Cookie-Hinweis) wird ausschließlich localStorage im Browser genutzt."
+        },
+        sharing: {
+          title: "Weitergabe von Daten",
+          body1: "Personenbezogene Daten werden nicht an Dritte weitergegeben."
+        },
+        rights: {
+          title: "Rechte der Nutzer",
+          body1: "Nutzer haben im Rahmen der gesetzlichen Vorgaben das Recht auf:",
+          item1: "Auskunft",
+          item2: "Berichtigung",
+          item3: "Löschung"
+        },
+        changes: {
+          title: "Änderungen",
+          body1: "Diese Datenschutzerklärung kann bei Bedarf angepasst werden."
+        }
+      },
       back: "Zurück zur Startseite"
     },
     impressum: {
