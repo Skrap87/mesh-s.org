@@ -236,7 +236,7 @@ const translations = {
       bomTitle: "Bill of materials (BOM)",
 
       bom1: "Enclosure: ASA body, gasket, silica gel compartment, screws",
-      bom2: "Power: solar panel, MPPT charger, 18650 / 26650 cells",
+      bom2: "Power: solar panel, MPPT charger, 18650 cells",
       bom3: "Radio: Meshtastic node, LoRa module, antenna, RF adapter",
       bom4: "Mounting: universal bracket, clamps or zip ties, hardware",
 
@@ -518,7 +518,7 @@ const translations = {
       tier4: "Pro / Custom — kundenspezifische Batterie, Solarpanel, Sensoren oder Montage",
       bomTitle: "Stückliste (BOM)",
       bom1: "Gehäuse: ASA-Korpus, Dichtung, Silikagel-Fach, Schrauben",
-      bom2: "Energie: Solarpanel, MPPT-Laderegler, 18650 / 26650 Zellen",
+      bom2: "Energie: Solarpanel, MPPT-Laderegler, 18650 Zellen",
       bom3: "Funk: Meshtastic-Knoten, LoRa-Modul, Antenne, HF-Adapter",
       bom4: "Montage: Universalhalter, Schellen oder Kabelbinder, Befestigungsmaterial",
       note: "Dieser Abschnitt ist bewusst minimal gehalten, bis die Hardware-Revisionen finalisiert sind."
