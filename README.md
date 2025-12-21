@@ -59,7 +59,9 @@ The site and documentation evolve together with real-world testing.
 
 ## License
 
-MIT License
+Creative Commons Attribution-NonCommercial 4.0 International  
+(CC BY-NC 4.0)
 
-You are free to use, modify, and share the content,
-but **you are fully responsible for your own implementations and results**.
+This project and its documentation are provided for non-commercial use only.
+See the LICENSE file for full license text.
+
