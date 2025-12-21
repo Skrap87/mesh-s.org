@@ -160,6 +160,22 @@ header {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Dropdown animation */
+.nav-more-menu {
+  transform-origin: top right;
+  transform: translateY(-6px) scale(0.98);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.nav-more[open] .nav-more-menu {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+
 .nav-actions {
   display: flex;
   gap: 10px;
