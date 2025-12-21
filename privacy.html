@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Datenschutzerklärung – MESH-S</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <section>
+      <div class="container">
+        <div class="eyebrow">Datenschutz</div>
+        <h1 class="section-title">Datenschutzerklärung</h1>
+        <p class="section-subtitle">
+          Diese Website verwendet keine Tracking-, Analytics- oder Marketing-Cookies.
+          Es kommen ausschließlich technisch notwendige Cookies zum Einsatz, um den Betrieb
+          der Seite sicherzustellen.
+        </p>
+        <p class="section-subtitle" style="margin-top: 12px;">
+          Ihr Einverständnis zum Cookie-Hinweis wird lokal in Ihrem Browser gespeichert
+          (localStorage), damit der Hinweis nicht bei jedem Besuch erneut angezeigt wird.
+        </p>
+        <div style="margin-top: 24px;">
+          <a class="btn btn-outline" href="/">Zurück zur Startseite</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie Hinweis">
+    <p>
+      Diese Website verwendet ausschließlich technisch notwendige Cookies, um den Betrieb der Seite sicherzustellen.
+      <a href="/privacy.html">Datenschutzerklärung</a>
+    </p>
+    <button id="cookie-accept" class="btn btn-outline" type="button">OK</button>
+  </div>
+
+  <script>
+    (function () {
+      const KEY = 'cookiesAccepted';
+      const banner = document.getElementById('cookie-banner');
+      const btn = document.getElementById('cookie-accept');
+      if (!banner || !btn) return;
+
+      if (localStorage.getItem(KEY) === 'true') {
+        banner.remove();
+        return;
+      }
+
+      btn.addEventListener('click', function () {
+        localStorage.setItem(KEY, 'true');
+        banner.remove();
+      });
+    })();
+  </script>
+</body>
+</html>

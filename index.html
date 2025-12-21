@@ -388,8 +388,34 @@
     </div>
   </footer>
 
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie Hinweis">
+    <p>
+      Diese Website verwendet ausschließlich technisch notwendige Cookies, um den Betrieb der Seite sicherzustellen.
+      <a href="/privacy.html">Datenschutzerklärung</a>
+    </p>
+    <button id="cookie-accept" class="btn btn-outline" type="button">OK</button>
+  </div>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script>
+    (function () {
+      const KEY = 'cookiesAccepted';
+      const banner = document.getElementById('cookie-banner');
+      const btn = document.getElementById('cookie-accept');
+      if (!banner || !btn) return;
+
+      if (localStorage.getItem(KEY) === 'true') {
+        banner.remove();
+        return;
+      }
+
+      btn.addEventListener('click', function () {
+        localStorage.setItem(KEY, 'true');
+        banner.remove();
+      });
+    })();
   </script>
 </body>
 </html>
