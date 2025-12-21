@@ -1,7 +1,7 @@
 const translations = {
   en: {
     meta: {
-      title: "MESH-S — Meshtastic Solar Node"
+      title: "MESH-S — DIY Meshtastic Solar Node"
     },
     nav: {
       hero: "Home",
@@ -10,7 +10,7 @@ const translations = {
       winter: "Winter",
       exploded: "Exploded",
       customParts: "Custom parts",
-      assembly: "Assembly",
+      assembly: "Reference build",
       moisture: "Moisture",
       mounting: "Mounting",
       bom: "BOM",
@@ -22,12 +22,12 @@ const translations = {
       aria: "Language switcher"
     },
     hero: {
-      eyebrow: "Meshtastic Solar Node",
-      subtitle: "Autonomous • Solar • Mesh Node",
-      tagline: "Designed for year-round outdoor operation",
+      eyebrow: "DIY Meshtastic Solar Node",
+      subtitle: "DIY • Solar • Mesh Node",
+      tagline: "Modular DIY solar node reference design for makers and hobbyists.",
       ctaAutonomy: "See autonomy proof",
       ctaBom: "Packages & BOM",
-      imageAlt: "MESH-S autonomous solar mesh node"
+      imageAlt: "MESH-S DIY solar mesh node reference design"
     },
     benefits: {
       eyebrow: "Key benefits",
@@ -46,15 +46,15 @@ const translations = {
           text: "Durable housing engineered for outdoor exposure."
         },
         modular: {
-          title: "Modular & serviceable",
-          text: "Field-friendly layout with replaceable core modules."
+          title: "Modular DIY platform",
+          text: "Field-friendly layout with replaceable core modules; self-assembly required."
         }
       }
     },
     autonomy: {
       eyebrow: "Telemetry",
       title: "Proof of autonomy",
-      subtitle: "Real Home Assistant telemetry from deployed nodes.",
+      subtitle: "Real Home Assistant telemetry from DIY deployments.",
       list: {
         charge: "Charge current",
         voltage: "Battery voltage",
@@ -97,12 +97,12 @@ const translations = {
       }
     },
     exploded: {
-      eyebrow: "Hardware layout",
-      title: "Exploded view",
-      imageAlt: "MESH-S exploded view – internal hardware layout",
+      eyebrow: "Reference layout",
+      title: "Illustrative internal layout",
+      imageAlt: "MESH-S illustrative internal layout (reference design)",
       custom: {
         eyebrow: "Custom parts",
-        note: "Only the parts designed and printed for MESH-S. Off-the-shelf components are intentionally omitted."
+        note: "Reference configuration showing only the parts designed and printed for MESH-S. Off-the-shelf components are intentionally omitted."
       },
       legend: {
         enclosure: {
@@ -128,38 +128,38 @@ const translations = {
       }
     },
     assembly: {
-      eyebrow: "Build process",
-      title: "Assembly in 6 steps",
+      eyebrow: "Reference build",
+      title: "Reference configuration in 6 views",
       steps: {
         step1: {
-          title: "Mount power core",
-          text: "Mount MPPT controller and main node board on the spacer plate. The modular design allows layout changes without redesigning the enclosure.",
-          alt: "Step 01 – mount spacer plate"
+          title: "Power core layout",
+          text: "Reference placement of the MPPT controller and main node board on the spacer plate; layout can be adapted.",
+          alt: "View 01 – power core layout"
         },
         step2: {
-          title: "Fit battery pack",
-          text: "Install and secure the 4×18650 battery pack. Battery modules are mounted after the power core for proper alignment and cable routing.",
-          alt: "Step 02 – fit battery pack"
+          title: "Battery pack positioning",
+          text: "Example location for the 4×18650 battery pack with cable routing shown for reference.",
+          alt: "View 02 – battery pack positioning"
         },
         step3: {
-          title: "Attach antenna path",
-          text: "Connect and lock the RF path (U.FL → N-Type). The coaxial cable is routed and secured before closing the enclosure.",
-          alt: "Step 03 – Attach antenna path"
+          title: "RF path routing (example)",
+          text: "Illustrative routing of the RF path (U.FL → N-Type) prior to closing the enclosure.",
+          alt: "View 03 – RF path routing example"
         },
         step4: {
-          title: "Seal enclosure",
-          text: "Apply gasket and close the housing. A perimeter gasket ensures long-term weather resistance.",
-          alt: "Step 04 – Seal enclosure"
+          title: "Sealing concept",
+          text: "Reference gasket placement and enclosure closure for weather resistance.",
+          alt: "View 04 – sealing concept"
         },
         step5: {
-          title: "Test power & mesh",
-          text: "Power on and verify system operation. Check power stability, node startup, and LoRa mesh connectivity.",
-          alt: "Step 05 – Test power & mesh"
+          title: "System check (reference)",
+          text: "Example checklist items for power stability, node startup, and LoRa mesh connectivity.",
+          alt: "View 05 – system check reference"
         },
         step6: {
-          title: "Deploy outdoors",
-          text: "The device is ready for permanent outdoor installation and autonomous operation.",
-          alt: "Step 06 – Deploy outdoors"
+          title: "Outdoor mounting context",
+          text: "Reference deployment context for DIY builds; final assembly, wiring, and commissioning are done by the builder.",
+          alt: "View 06 – outdoor mounting context"
         }
       }
     },
@@ -191,13 +191,13 @@ const translations = {
     },
     mounting: {
       eyebrow: "Installation",
-      title: "Mounting & installation",
+      title: "Mounting options for DIY builds",
       imageAlt: "Quick-release mounting mechanism",
       cards: {
         universal: {
           title: "Universal mounting system",
           sub: "Modular attachment interface",
-          text: "The mounting lid is designed as a universal attachment interface, allowing the node to be installed on a wide range of structures without adapters or enclosure modifications."
+          text: "The mounting lid is designed as a universal attachment interface, allowing the DIY build to be installed on a wide range of structures without adapters or enclosure modifications."
         },
         round: {
           title: "Round structures",
@@ -224,13 +224,13 @@ const translations = {
     bom: {
       eyebrow: "Packages",
       title: "Packages & BOM",
-      subtitle: "Configuration options and bill of materials overview.",
+      subtitle: "DIY kits and component bundles for self-assembly, plus a bill of materials overview.",
 
-      plannedTitle: "Planned configuration tiers",
+      plannedTitle: "Planned DIY configuration tiers",
 
       tier1: "DIY Kit — printed enclosure parts, seals and mounting hardware",
       tier2: "Electronics Bundle — controller, LoRa module and power electronics",
-      tier3: "Assembled Node — fully assembled and tested solar node",
+      tier3: "Reference build (not for sale) — example configuration for self-assembly",
       tier4: "Pro / Custom — custom battery, panel, sensors or mounting",
 
       bomTitle: "Bill of materials (BOM)",
@@ -240,7 +240,7 @@ const translations = {
       bom3: "Radio: Meshtastic node, LoRa module, antenna, RF adapter",
       bom4: "Mounting: universal bracket, clamps or zip ties, hardware",
 
-      note: "This section is intentionally kept minimal until hardware revisions are finalized."
+      note: "All packages are intended for self-assembly; final wiring and commissioning are done by the builder."
     },
     footer: {
       rights: "All rights reserved.",
@@ -249,7 +249,8 @@ const translations = {
       privacy: "Privacy",
       impressum: "Legal notice",
       github: "GitHub",
-      telegram: "@skrap87"
+      telegram: "@skrap87",
+      disclaimer: "This project provides DIY kits and components only. Assembly, wiring and commissioning are the sole responsibility of the customer."
     },
     cookie: {
       aria: "Cookie notice",
@@ -287,7 +288,7 @@ const translations = {
   },
   de: {
     meta: {
-      title: "MESH-S — Meshtastic Solar Node"
+      title: "MESH-S — DIY-Meshtastic-Solarknoten"
     },
     nav: {
       hero: "Start",
@@ -296,7 +297,7 @@ const translations = {
       winter: "Winter",
       exploded: "Explosionsansicht",
       customParts: "Sonderteile",
-      assembly: "Montage",
+      assembly: "Referenzaufbau",
       moisture: "Feuchtigkeit",
       mounting: "Befestigung",
       bom: "Stückliste",
@@ -308,12 +309,12 @@ const translations = {
       aria: "Sprachumschalter"
     },
     hero: {
-      eyebrow: "Meshtastic-Solarknoten",
-      subtitle: "Autonom • Solar • Mesh-Knoten",
-      tagline: "Für ganzjährigen Außeneinsatz entwickelt",
+      eyebrow: "DIY-Meshtastic-Solarknoten",
+      subtitle: "DIY • Solar • Mesh-Knoten",
+      tagline: "Modulares DIY-Solarknoten-Referenzdesign für Maker und Hobbyisten.",
       ctaAutonomy: "Autonomie-Nachweis ansehen",
       ctaBom: "Pakete & Stückliste",
-      imageAlt: "MESH-S autonomer solarer Mesh-Knoten"
+      imageAlt: "MESH-S DIY-Solar-Mesh-Knoten als Referenzdesign"
     },
     benefits: {
       eyebrow: "Hauptvorteile",
@@ -332,15 +333,15 @@ const translations = {
           text: "Robustes Gehäuse für den Außeneinsatz."
         },
         modular: {
-          title: "Modular & wartbar",
-          text: "Feldtaugliches Layout mit austauschbaren Kernmodulen."
+          title: "Modulare DIY-Plattform",
+          text: "Feldtaugliches Layout mit austauschbaren Kernmodulen; Selbstmontage erforderlich."
         }
       }
     },
     autonomy: {
       eyebrow: "Telemetrie",
       title: "Nachweis der Autonomie",
-      subtitle: "Echte Home-Assistant-Telemetrie von eingesetzten Knoten.",
+      subtitle: "Echte Home-Assistant-Telemetrie von DIY-Aufbauten.",
       list: {
         charge: "Ladestrom",
         voltage: "Batteriespannung",
@@ -383,12 +384,12 @@ const translations = {
       }
     },
     exploded: {
-      eyebrow: "Hardware-Layout",
-      title: "Explosionsansicht",
-      imageAlt: "MESH-S-Explosionsansicht – internes Hardware-Layout",
+      eyebrow: "Referenzlayout",
+      title: "Illustratives internes Layout",
+      imageAlt: "MESH-S illustriertes internes Layout (Referenzdesign)",
       custom: {
         eyebrow: "Sonderteile",
-        note: "Nur die für MESH-S konstruierten und gedruckten Teile. Standardkomponenten sind bewusst ausgelassen."
+        note: "Referenzkonfiguration mit ausschließlich für MESH-S konstruierten und gedruckten Teilen. Standardkomponenten sind bewusst ausgelassen."
       },
       legend: {
         enclosure: {
@@ -414,38 +415,38 @@ const translations = {
       }
     },
     assembly: {
-      eyebrow: "Montageprozess",
-      title: "Montage in 6 Schritten",
+      eyebrow: "Referenzaufbau",
+      title: "Referenzkonfiguration in 6 Ansichten",
       steps: {
         step1: {
-          title: "Power-Core montieren",
-          text: "MPPT-Regler und Hauptplatine auf der Abstandsplatte montieren. Das modulare Design erlaubt Layout-Änderungen ohne Neugestaltung des Gehäuses.",
-          alt: "Schritt 01 – Abstandsplatte montieren"
+          title: "Power-Core-Layout",
+          text: "Referenzplatzierung von MPPT-Regler und Hauptplatine auf der Abstandsplatte; das Layout ist anpassbar.",
+          alt: "Ansicht 01 – Power-Core-Layout"
         },
         step2: {
-          title: "Akkupack einsetzen",
-          text: "Den 4×18650-Akkupack einsetzen und sichern. Die Batteriemodule werden nach dem Power-Core montiert, um Ausrichtung und Kabelführung zu sichern.",
-          alt: "Schritt 02 – Akkupack einsetzen"
+          title: "Position des Akkupacks",
+          text: "Beispiellage des 4×18650-Akkupacks mit Kabelführung als Referenz.",
+          alt: "Ansicht 02 – Position des Akkupacks"
         },
         step3: {
-          title: "Antennenpfad anschließen",
-          text: "Den HF-Pfad (U.FL → N-Type) verbinden und verriegeln. Das Koaxkabel wird vor dem Schließen des Gehäuses verlegt und fixiert.",
-          alt: "Schritt 03 – Antennenpfad anschließen"
+          title: "HF-Pfad (Beispiel)",
+          text: "Illustrative Verlegung des HF-Pfads (U.FL → N-Type) vor dem Schließen des Gehäuses.",
+          alt: "Ansicht 03 – HF-Pfad Beispiel"
         },
         step4: {
-          title: "Gehäuse abdichten",
-          text: "Dichtung auflegen und das Gehäuse schließen. Eine umlaufende Dichtung sorgt für langfristige Wetterbeständigkeit.",
-          alt: "Schritt 04 – Gehäuse abdichten"
+          title: "Dichtkonzept",
+          text: "Referenzplatzierung der Dichtung und Gehäuseschluss für Wetterbeständigkeit.",
+          alt: "Ansicht 04 – Dichtkonzept"
         },
         step5: {
-          title: "Strom & Mesh testen",
-          text: "Einschalten und Systembetrieb prüfen. Stromstabilität, Knoten-Start und LoRa-Mesh-Konnektivität testen.",
-          alt: "Schritt 05 – Strom & Mesh testen"
+          title: "Systemcheck (Referenz)",
+          text: "Beispiel-Checkliste für Stromstabilität, Knotenstart und LoRa-Mesh-Konnektivität.",
+          alt: "Ansicht 05 – Systemcheck Referenz"
         },
         step6: {
-          title: "Draußen installieren",
-          text: "Das Gerät ist bereit für die dauerhafte Außeninstallation und den autonomen Betrieb.",
-          alt: "Schritt 06 – Draußen installieren"
+          title: "Outdoor-Montagekontext",
+          text: "Referenz-Deploymentszenario für DIY-Aufbauten; finale Montage, Verdrahtung und Inbetriebnahme erfolgen durch den Erbauer.",
+          alt: "Ansicht 06 – Outdoor-Montagekontext"
         }
       }
     },
@@ -477,13 +478,13 @@ const translations = {
     },
     mounting: {
       eyebrow: "Installation",
-      title: "Montage & Installation",
+      title: "Montageoptionen für DIY-Aufbauten",
       imageAlt: "Schnellverschluss-Montagemechanismus",
       cards: {
         universal: {
           title: "Universelles Montagesystem",
           sub: "Modulare Befestigungsschnittstelle",
-          text: "Der Montagedeckel ist als universelle Befestigungsschnittstelle ausgelegt, sodass der Knoten an unterschiedlichsten Strukturen ohne Adapter oder Gehäuseänderungen installiert werden kann."
+          text: "Der Montagedeckel ist als universelle Befestigungsschnittstelle ausgelegt, sodass der DIY-Aufbau an unterschiedlichsten Strukturen ohne Adapter oder Gehäuseänderungen installiert werden kann."
         },
         round: {
           title: "Runde Strukturen",
@@ -510,18 +511,18 @@ const translations = {
     bom: {
       eyebrow: "Pakete",
       title: "Pakete & Stückliste",
-      subtitle: "Konfigurationsoptionen und Überblick der Stückliste.",
-      plannedTitle: "Geplante Konfigurationsstufen",
+      subtitle: "DIY-Kits und Komponenten-Bundles zur Selbstmontage plus Überblick der Stückliste.",
+      plannedTitle: "Geplante DIY-Konfigurationsstufen",
       tier1: "DIY-Kit — gedruckte Gehäuseteile, Dichtungen und Montagematerial",
       tier2: "Elektronik-Bundle — Controller, LoRa-Modul und Leistungselektronik",
-      tier3: "Montierter Knoten — vollständig aufgebauter und getesteter Solarknoten",
+      tier3: "Referenzaufbau (nicht im Verkauf) — Beispielkonfiguration zur Selbstmontage",
       tier4: "Pro / Custom — kundenspezifische Batterie, Solarpanel, Sensoren oder Montage",
       bomTitle: "Stückliste (BOM)",
       bom1: "Gehäuse: ASA-Korpus, Dichtung, Silikagel-Fach, Schrauben",
       bom2: "Energie: Solarpanel, MPPT-Laderegler, 18650 Zellen",
       bom3: "Funk: Meshtastic-Knoten, LoRa-Modul, Antenne, HF-Adapter",
       bom4: "Montage: Universalhalter, Schellen oder Kabelbinder, Befestigungsmaterial",
-      note: "Dieser Abschnitt ist bewusst minimal gehalten, bis die Hardware-Revisionen finalisiert sind."
+      note: "Alle Pakete sind für Selbstmontage gedacht; finale Verdrahtung und Inbetriebnahme übernimmt der Erbauer."
     },
     footer: {
       rights: "Alle Rechte vorbehalten.",
@@ -530,7 +531,8 @@ const translations = {
       privacy: "Datenschutz",
       impressum: "Impressum",
       github: "GitHub",
-      telegram: "@skrap87"
+      telegram: "@skrap87",
+      disclaimer: "Dieses Projekt bietet ausschließlich DIY-Kits und Komponenten an. Montage, Verdrahtung und Inbetriebnahme liegen vollständig in der Verantwortung des Kunden."
     },
     cookie: {
       aria: "Cookie-Hinweis",
