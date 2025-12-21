@@ -34,8 +34,7 @@
   <rect class="bg" x="0" y="0" width="1200" height="1700" />
 
   <!-- Title -->
-  <text class="label" x="140" y="95">Exploded view</text>
-  <text class="small" x="140" y="125">MESH-S internal layout (simplified)</text>
+  <text class="label" x="140" y="125">MESH-S internal layout (simplified)</text>
 
   <!-- Center column (everything centered, fewer callouts) -->
   <!-- Solar panel -->
