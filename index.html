@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title data-i18n="meta.title">MESH-S — Meshtastic Solar Node</title>
+  <title data-i18n="meta.title">MESH-S — DIY Meshtastic Solar Node</title>
   <!-- Favicon -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -26,7 +26,7 @@
           <div class="nav-more-menu">
             <a href="#winter" data-i18n="nav.winter">Winter</a>
             <a href="#custom-parts" data-i18n="nav.customParts">Custom parts</a>
-            <a href="#assembly" data-i18n="nav.assembly">Assembly</a>
+            <a href="#assembly" data-i18n="nav.assembly">Reference build</a>
             <a href="#moisture" data-i18n="nav.moisture">Moisture</a>
             <a href="#mounting" data-i18n="nav.mounting">Mounting</a>
             <a href="#bom" data-i18n="nav.bom">BOM</a>
@@ -49,17 +49,17 @@
     <section id="hero" class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow" data-i18n="hero.eyebrow">Meshtastic Solar Node</div>
+          <div class="eyebrow" data-i18n="hero.eyebrow">DIY Meshtastic Solar Node</div>
           <h1>MESH-S</h1>
-          <div class="hero-subtitle" data-i18n="hero.subtitle">Autonomous • Solar • Mesh Node</div>
-          <div class="hero-tagline" data-i18n="hero.tagline">Designed for year-round outdoor operation</div>
+          <div class="hero-subtitle" data-i18n="hero.subtitle">DIY • Solar • Mesh Node</div>
+          <div class="hero-tagline" data-i18n="hero.tagline">Modular DIY solar node reference design for makers and hobbyists.</div>
           <div class="hero-actions">
             <a class="btn btn-accent" href="#autonomy" data-i18n="hero.ctaAutonomy">See autonomy proof</a>
             <a class="btn btn-outline" href="#bom" data-i18n="hero.ctaBom">Packages &amp; BOM</a>
           </div>
         </div>
         <div class="hero-visual">
-          <img src="assets/mesh-s-hero.png" data-i18n-alt="hero.imageAlt" alt="MESH-S autonomous solar mesh node">
+          <img src="assets/mesh-s-hero.png" data-i18n-alt="hero.imageAlt" alt="MESH-S DIY solar mesh node reference design">
         </div>
       </div>
     </section>
@@ -86,8 +86,8 @@
           </div>
           <div class="card">
             <div class="icon">04</div>
-            <h3 data-i18n="benefits.cards.modular.title">Modular &amp; serviceable</h3>
-            <p data-i18n="benefits.cards.modular.text">Field-friendly layout with replaceable core modules.</p>
+            <h3 data-i18n="benefits.cards.modular.title">Modular DIY platform</h3>
+            <p data-i18n="benefits.cards.modular.text">Field-friendly layout with replaceable core modules; self-assembly required.</p>
           </div>
         </div>
       </div>
@@ -98,7 +98,7 @@
         <div>
           <div class="eyebrow" data-i18n="autonomy.eyebrow">Telemetry</div>
           <h2 class="section-title" data-i18n="autonomy.title">Proof of autonomy</h2>
-          <p class="section-subtitle" data-i18n="autonomy.subtitle">Real Home Assistant telemetry from deployed nodes.</p>
+          <p class="section-subtitle" data-i18n="autonomy.subtitle">Real Home Assistant telemetry from DIY deployments.</p>
           <div class="list">
             <div class="list-item"><span>•</span><span data-i18n="autonomy.list.charge">Charge current</span></div>
             <div class="list-item"><span>•</span><span data-i18n="autonomy.list.voltage">Battery voltage</span></div>
@@ -161,21 +161,21 @@
 
     <section id="exploded">
       <div class="container container-wide">
-        <div class="eyebrow" data-i18n="exploded.eyebrow">Hardware layout</div>
-        <h2 class="section-title" data-i18n="exploded.title">Exploded view</h2>
+        <div class="eyebrow" data-i18n="exploded.eyebrow">Reference layout</div>
+        <h2 class="section-title" data-i18n="exploded.title">Illustrative internal layout</h2>
         <div class="exploded-view">
           <img
             data-i18n-svg
             src="assets/meshtastic-exploded.en.svg"
             data-i18n-alt="exploded.imageAlt"
-            alt="MESH-S exploded view – internal hardware layout"
+            alt="MESH-S illustrative internal layout (reference design)"
             loading="lazy"
           />
         </div>
         <div class="section-divider"></div>
         <div class="legend-head" id="custom-parts">
           <div class="eyebrow" data-i18n="exploded.custom.eyebrow">Custom parts</div>
-          <div class="legend-note" data-i18n="exploded.custom.note">Only the parts designed and printed for MESH-S. Off-the-shelf components are intentionally omitted.</div>
+          <div class="legend-note" data-i18n="exploded.custom.note">Reference configuration showing only the parts designed and printed for MESH-S. Off-the-shelf components are intentionally omitted.</div>
         </div>
         <div class="exploded-legend">
           <div class="legend-item">
@@ -207,44 +207,38 @@
 
     <section id="assembly">
       <div class="container">
-        <div class="eyebrow" data-i18n="assembly.eyebrow">Build process</div>
-        <h2 class="section-title" data-i18n="assembly.title">Assembly in 6 steps</h2>
+        <div class="eyebrow" data-i18n="assembly.eyebrow">Reference build</div>
+        <h2 class="section-title" data-i18n="assembly.title">Reference configuration in 6 views</h2>
         <div class="steps-grid">
           <div class="step">
-            <img src="assets/assembly/step-01.png" data-i18n-alt="assembly.steps.step1.alt" alt="Step 01 – mount spacer plate">
-            <h4 data-i18n="assembly.steps.step1.title">Mount power core</h4>
-            <p data-i18n="assembly.steps.step1.text">Mount MPPT controller and main node board on the spacer plate.
-              The modular design allows layout changes without redesigning the enclosure.</p>
+            <img src="assets/assembly/step-01.png" data-i18n-alt="assembly.steps.step1.alt" alt="View 01 – power core layout">
+            <h4 data-i18n="assembly.steps.step1.title">Power core layout</h4>
+            <p data-i18n="assembly.steps.step1.text">Reference placement of the MPPT controller and main node board on the spacer plate; layout can be adapted.</p>
           </div>
           <div class="step">
-            <img src="assets/assembly/step-02.png" data-i18n-alt="assembly.steps.step2.alt" alt="Step 02 – fit battery pack">
-            <h4 data-i18n="assembly.steps.step2.title">Fit battery pack</h4>
-            <p data-i18n="assembly.steps.step2.text">Install and secure the 4×18650 battery pack.
-              Battery modules are mounted after the power core for proper alignment and cable routing.</p>
+            <img src="assets/assembly/step-02.png" data-i18n-alt="assembly.steps.step2.alt" alt="View 02 – battery pack positioning">
+            <h4 data-i18n="assembly.steps.step2.title">Battery pack positioning</h4>
+            <p data-i18n="assembly.steps.step2.text">Example location for the 4×18650 battery pack with cable routing shown for reference.</p>
           </div>
           <div class="step">
-            <img src="assets/assembly/step-03.png" data-i18n-alt="assembly.steps.step3.alt" alt="Step 03 – Attach antenna path">
-            <h4 data-i18n="assembly.steps.step3.title">Attach antenna path</h4>
-            <p data-i18n="assembly.steps.step3.text">Connect and lock the RF path (U.FL → N-Type).
-              The coaxial cable is routed and secured before closing the enclosure.</p>
+            <img src="assets/assembly/step-03.png" data-i18n-alt="assembly.steps.step3.alt" alt="View 03 – RF path routing example">
+            <h4 data-i18n="assembly.steps.step3.title">RF path routing (example)</h4>
+            <p data-i18n="assembly.steps.step3.text">Illustrative routing of the RF path (U.FL → N-Type) prior to closing the enclosure.</p>
           </div>
           <div class="step">
-            <img src="assets/assembly/step-04.png" data-i18n-alt="assembly.steps.step4.alt" alt="Step 04 – Seal enclosure">
-            <h4 data-i18n="assembly.steps.step4.title">Seal enclosure</h4>
-            <p data-i18n="assembly.steps.step4.text">Apply gasket and close the housing.
-              A perimeter gasket ensures long-term weather resistance.</p>
+            <img src="assets/assembly/step-04.png" data-i18n-alt="assembly.steps.step4.alt" alt="View 04 – sealing concept">
+            <h4 data-i18n="assembly.steps.step4.title">Sealing concept</h4>
+            <p data-i18n="assembly.steps.step4.text">Reference gasket placement and enclosure closure for weather resistance.</p>
           </div>
           <div class="step">
-            <img src="assets/assembly/step-05.png" data-i18n-alt="assembly.steps.step5.alt" alt="Step 05 – Test power &amp; mesh">
-            <h4 data-i18n="assembly.steps.step5.title">Test power &amp; mesh</h4>
-            <p data-i18n="assembly.steps.step5.text">Power on and verify system operation.
-              Check power stability, node startup, and LoRa mesh connectivity.</p>
+            <img src="assets/assembly/step-05.png" data-i18n-alt="assembly.steps.step5.alt" alt="View 05 – system check reference">
+            <h4 data-i18n="assembly.steps.step5.title">System check (reference)</h4>
+            <p data-i18n="assembly.steps.step5.text">Example checklist items for power stability, node startup, and LoRa mesh connectivity.</p>
           </div>
           <div class="step">
-            <img src="assets/assembly/step-06.png" data-i18n-alt="assembly.steps.step6.alt" alt="Step 06 – Deploy outdoors">
-            <h4 data-i18n="assembly.steps.step6.title">Deploy outdoors</h4>
-            <p data-i18n="assembly.steps.step6.text">The device is ready for permanent outdoor installation
-              and autonomous operation.</p>
+            <img src="assets/assembly/step-06.png" data-i18n-alt="assembly.steps.step6.alt" alt="View 06 – outdoor mounting context">
+            <h4 data-i18n="assembly.steps.step6.title">Outdoor mounting context</h4>
+            <p data-i18n="assembly.steps.step6.text">Reference deployment context for DIY builds; final assembly, wiring, and commissioning are done by the builder.</p>
           </div>
         </div>
       </div>
@@ -298,7 +292,7 @@
     <section id="mounting">
       <div class="container">
         <div class="eyebrow" data-i18n="mounting.eyebrow">Installation</div>
-        <h2 class="section-title" data-i18n="mounting.title">Mounting &amp; installation</h2>
+        <h2 class="section-title" data-i18n="mounting.title">Mounting options for DIY builds</h2>
 
         <div class="mounting-visual">
           <img src="assets/exploded/mounting-latch.gif" data-i18n-alt="mounting.imageAlt" alt="Quick-release mounting mechanism">
@@ -310,7 +304,7 @@
             <p class="card-sub" data-i18n="mounting.cards.universal.sub">Modular attachment interface</p>
             <p data-i18n="mounting.cards.universal.text">
               The mounting lid is designed as a universal attachment interface,
-              allowing the node to be installed on a wide range of structures
+              allowing the DIY build to be installed on a wide range of structures
               without adapters or enclosure modifications.
             </p>
           </div>
@@ -363,10 +357,10 @@
       <div class="container">
         <div class="eyebrow" data-i18n="bom.eyebrow">Packages</div>
         <h2 class="section-title" data-i18n="bom.title">Packages &amp; BOM</h2>
-        <p class="section-subtitle" data-i18n="bom.subtitle">Configuration options and bill of materials overview.</p>
+        <p class="section-subtitle" data-i18n="bom.subtitle">DIY kits and component bundles for self-assembly, plus a bill of materials overview.</p>
         <div class="packages-placeholder">
 			<p class="packages-title" data-i18n="bom.plannedTitle">
-			  Planned configuration tiers
+			  Planned DIY configuration tiers
 			</p>
 
 			<div class="bullet-grid">
@@ -377,7 +371,7 @@
 				Electronics Bundle — controller, LoRa module and power electronics
 			  </div>
 			  <div class="bullet" data-i18n="bom.tier3">
-				Assembled Node — fully assembled and tested solar node
+				Reference build (not for sale) — example configuration for self-assembly
 			  </div>
 			  <div class="bullet" data-i18n="bom.tier4">
 				Pro / Custom — custom battery, panel, sensors or mounting
@@ -406,8 +400,7 @@
 			</div>
 
 			<p class="packages-note" data-i18n="bom.note">
-			  This section is intentionally kept minimal until
-			  hardware revisions are finalized.
+			  All packages are intended for self-assembly; final wiring and commissioning are done by the builder.
 			</p>
         </div>
 
@@ -418,6 +411,7 @@
   <footer>
     <div class="container footer-inner">
       <div>© <span id="year"></span> MESH-S. <span data-i18n="footer.rights">All rights reserved.</span></div>
+      <div data-i18n="footer.disclaimer">This project provides DIY kits and components only. Assembly, wiring and commissioning are the sole responsibility of the customer.</div>
       <div class="footer-links">
         <a href="#hero" data-i18n="footer.top">Top</a>
         <a href="https://t.me/skrap87" target="_blank" rel="noopener noreferrer" data-i18n="footer.telegram">Telegram @skrap87</a>
