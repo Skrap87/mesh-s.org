@@ -539,6 +539,47 @@ footer {
   background: #111;
 }
 
+.cookie-banner {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  background: rgba(20, 22, 26, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9999;
+  backdrop-filter: blur(6px);
+}
+
+.cookie-banner p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #c7cbd1;
+}
+
+.cookie-banner a {
+  color: #8da2b8;
+  text-decoration: underline;
+}
+
+@media (max-width: 520px) {
+  .cookie-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cookie-banner button {
+    align-self: flex-end;
+  }
+}
+
 @media (min-width: 900px) {
   .autonomy-graphs {
     grid-template-columns: 1fr;
