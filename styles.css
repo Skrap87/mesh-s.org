@@ -739,6 +739,13 @@ footer {
 
 /* --- Mobile: shrink header/menu height --- */
 @media (max-width: 520px) {
+
+  /* NEW: disable sticky header on mobile */
+  header {
+    position: relative !important;
+    top: auto !important;
+  }
+
   header, .header, .topbar, .nav {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
