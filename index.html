@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MESH-S — Meshtastic Solar Node</title>
+  <title data-i18n="meta.title">MESH-S — Meshtastic Solar Node</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,20 +11,25 @@
     <div class="container nav">
       <div class="nav-logo">MESH-S</div>
       <nav class="nav-links">
-        <a href="#hero">Hero</a>
-        <a href="#benefits">Benefits</a>
-        <a href="#autonomy">Autonomy</a>
-        <a href="#winter">Winter</a>
-        <a href="#exploded">Exploded</a>
-		<a href="#custom-parts">Custom parts</a>
-        <a href="#assembly">Assembly</a>
-        <a href="#moisture">Moisture</a>
-		<a href="#mounting">Mounting</a>
-        <a href="#bom">BOM</a>
+        <a href="#hero" data-i18n="nav.hero">Hero</a>
+        <a href="#benefits" data-i18n="nav.benefits">Benefits</a>
+        <a href="#autonomy" data-i18n="nav.autonomy">Autonomy</a>
+        <a href="#winter" data-i18n="nav.winter">Winter</a>
+        <a href="#exploded" data-i18n="nav.exploded">Exploded</a>
+        <a href="#custom-parts" data-i18n="nav.customParts">Custom parts</a>
+        <a href="#assembly" data-i18n="nav.assembly">Assembly</a>
+        <a href="#moisture" data-i18n="nav.moisture">Moisture</a>
+        <a href="#mounting" data-i18n="nav.mounting">Mounting</a>
+        <a href="#bom" data-i18n="nav.bom">BOM</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn btn-outline" href="https://t.me/skrap87" target="_blank" rel="noopener noreferrer">Telegram @skrap87</a>
-        <a class="btn btn-outline" href="https://github.com/Skrap87/mesh-s.org" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="btn btn-outline" href="https://t.me/skrap87" target="_blank" rel="noopener noreferrer" data-i18n="nav.telegram">Telegram @skrap87</a>
+        <a class="btn btn-outline" href="https://github.com/Skrap87/mesh-s.org" target="_blank" rel="noopener noreferrer" data-i18n="nav.github">GitHub</a>
+      </div>
+      <div class="lang-switch" role="group" data-i18n-aria="lang.aria">
+        <button class="lang-option" type="button" data-lang="de">DE</button>
+        <span class="lang-separator">|</span>
+        <button class="lang-option" type="button" data-lang="en">EN</button>
       </div>
     </div>
   </header>
@@ -33,45 +38,45 @@
     <section id="hero" class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Meshtastic Solar Node</div>
+          <div class="eyebrow" data-i18n="hero.eyebrow">Meshtastic Solar Node</div>
           <h1>MESH-S</h1>
-          <div class="hero-subtitle">Autonomous • Solar • Mesh Node</div>
-          <div class="hero-tagline">Designed for year-round outdoor operation</div>
+          <div class="hero-subtitle" data-i18n="hero.subtitle">Autonomous • Solar • Mesh Node</div>
+          <div class="hero-tagline" data-i18n="hero.tagline">Designed for year-round outdoor operation</div>
           <div class="hero-actions">
-            <a class="btn btn-accent" href="#autonomy">See autonomy proof</a>
-            <a class="btn btn-outline" href="#bom">Packages &amp; BOM</a>
+            <a class="btn btn-accent" href="#autonomy" data-i18n="hero.ctaAutonomy">See autonomy proof</a>
+            <a class="btn btn-outline" href="#bom" data-i18n="hero.ctaBom">Packages &amp; BOM</a>
           </div>
         </div>
         <div class="hero-visual">
-          <img src="assets/mesh-s-hero.png" alt="MESH-S autonomous solar mesh node">
+          <img src="assets/mesh-s-hero.png" data-i18n-alt="hero.imageAlt" alt="MESH-S autonomous solar mesh node">
         </div>
       </div>
     </section>
 
     <section id="benefits">
       <div class="container">
-        <div class="eyebrow">Key benefits</div>
-        <h2 class="section-title">Built for real outdoor mesh networks</h2>
+        <div class="eyebrow" data-i18n="benefits.eyebrow">Key benefits</div>
+        <h2 class="section-title" data-i18n="benefits.title">Built for real outdoor mesh networks</h2>
         <div class="card-grid">
           <div class="card">
             <div class="icon">01</div>
-            <h3>Solar powered</h3>
-            <p>Designed for continuous autonomous energy harvesting.</p>
+            <h3 data-i18n="benefits.cards.solar.title">Solar powered</h3>
+            <p data-i18n="benefits.cards.solar.text">Designed for continuous autonomous energy harvesting.</p>
           </div>
           <div class="card">
             <div class="icon">02</div>
-            <h3>Proven winter autonomy</h3>
-            <p>Validated performance with real telemetry in low light.</p>
+            <h3 data-i18n="benefits.cards.winter.title">Proven winter autonomy</h3>
+            <p data-i18n="benefits.cards.winter.text">Validated performance with real telemetry in low light.</p>
           </div>
           <div class="card">
             <div class="icon">03</div>
-            <h3>Weather sealed ASA enclosure</h3>
-            <p>Durable housing engineered for outdoor exposure.</p>
+            <h3 data-i18n="benefits.cards.enclosure.title">Weather sealed ASA enclosure</h3>
+            <p data-i18n="benefits.cards.enclosure.text">Durable housing engineered for outdoor exposure.</p>
           </div>
           <div class="card">
             <div class="icon">04</div>
-            <h3>Modular &amp; serviceable</h3>
-            <p>Field-friendly layout with replaceable core modules.</p>
+            <h3 data-i18n="benefits.cards.modular.title">Modular &amp; serviceable</h3>
+            <p data-i18n="benefits.cards.modular.text">Field-friendly layout with replaceable core modules.</p>
           </div>
         </div>
       </div>
@@ -80,153 +85,155 @@
     <section id="autonomy">
       <div class="container split">
         <div>
-          <div class="eyebrow">Telemetry</div>
-          <h2 class="section-title">Proof of autonomy</h2>
-          <p class="section-subtitle">Real Home Assistant telemetry from deployed nodes.</p>
+          <div class="eyebrow" data-i18n="autonomy.eyebrow">Telemetry</div>
+          <h2 class="section-title" data-i18n="autonomy.title">Proof of autonomy</h2>
+          <p class="section-subtitle" data-i18n="autonomy.subtitle">Real Home Assistant telemetry from deployed nodes.</p>
           <div class="list">
-            <div class="list-item"><span>•</span>Charge current</div>
-            <div class="list-item"><span>•</span>Battery voltage</div>
-            <div class="list-item"><span>•</span>Days without sun</div>
+            <div class="list-item"><span>•</span><span data-i18n="autonomy.list.charge">Charge current</span></div>
+            <div class="list-item"><span>•</span><span data-i18n="autonomy.list.voltage">Battery voltage</span></div>
+            <div class="list-item"><span>•</span><span data-i18n="autonomy.list.days">Days without sun</span></div>
           </div>
         </div>
-		<div class="autonomy-graphs">
-		  <figure class="graph-card">
-			<div class="graph-meta">
-			  <div class="graph-title">Charge current</div>
-			  <div class="graph-note">HA history export</div>
-			</div>
-			<img src="assets/autonomy/ha-charge.png" alt="Charge current over time">
-		  </figure>
+        <div class="autonomy-graphs">
+          <figure class="graph-card">
+            <div class="graph-meta">
+              <div class="graph-title" data-i18n="autonomy.graphs.charge.title">Charge current</div>
+              <div class="graph-note" data-i18n="autonomy.graphs.charge.note">HA history export</div>
+            </div>
+            <img src="assets/autonomy/ha-charge.png" data-i18n-alt="autonomy.graphs.charge.alt" alt="Charge current over time">
+          </figure>
 
-		  <figure class="graph-card">
-			<div class="graph-meta">
-			  <div class="graph-title">Battery level</div>
-			  <div class="graph-note">HA history export</div>
-			</div>
-			<img src="assets/autonomy/ha-voltage.png" alt="Battery level over time">
-		  </figure>
-		</div>
+          <figure class="graph-card">
+            <div class="graph-meta">
+              <div class="graph-title" data-i18n="autonomy.graphs.battery.title">Battery level</div>
+              <div class="graph-note" data-i18n="autonomy.graphs.battery.note">HA history export</div>
+            </div>
+            <img src="assets/autonomy/ha-voltage.png" data-i18n-alt="autonomy.graphs.battery.alt" alt="Battery level over time">
+          </figure>
+        </div>
       </div>
     </section>
 
     <section id="winter">
       <div class="container split">
         <div>
-          <div class="eyebrow">Reliability</div>
-          <h2 class="section-title">Why it doesn't die in winter</h2>
+          <div class="eyebrow" data-i18n="winter.eyebrow">Reliability</div>
+          <h2 class="section-title" data-i18n="winter.title">Why it doesn't die in winter</h2>
           <div class="list">
-            <div class="list-item"><span>•</span>Oversized battery capacity</div>
-            <div class="list-item"><span>•</span>Conservative power profile</div>
-            <div class="list-item"><span>•</span>Works in diffuse light</div>
-            <div class="list-item"><span>•</span>No moving parts</div>
-            <div class="list-item"><span>•</span>Cold &amp; moisture aware design</div>
+            <div class="list-item"><span>•</span><span data-i18n="winter.list.capacity">Oversized battery capacity</span></div>
+            <div class="list-item"><span>•</span><span data-i18n="winter.list.profile">Conservative power profile</span></div>
+            <div class="list-item"><span>•</span><span data-i18n="winter.list.diffuse">Works in diffuse light</span></div>
+            <div class="list-item"><span>•</span><span data-i18n="winter.list.moving">No moving parts</span></div>
+            <div class="list-item"><span>•</span><span data-i18n="winter.list.design">Cold &amp; moisture aware design</span></div>
           </div>
         </div>
         <div class="winter-stack">
-		  <figure class="winter-card">
-			<div class="winter-meta">
-			  <div class="winter-title">Field photo</div>
-			  <div class="winter-note">Sub-zero morning</div>
-			</div>
-			<img src="assets/winter/node_winter.jpg" alt="MESH-S node outdoors in sub-zero morning with condensation">
-		  </figure>
+          <figure class="winter-card">
+            <div class="winter-meta">
+              <div class="winter-title" data-i18n="winter.cards.field.title">Field photo</div>
+              <div class="winter-note" data-i18n="winter.cards.field.note">Sub-zero morning</div>
+            </div>
+            <img src="assets/winter/node_winter.jpg" data-i18n-alt="winter.cards.field.alt" alt="MESH-S node outdoors in sub-zero morning with condensation">
+          </figure>
 
-		  <figure class="winter-card">
-			<div class="winter-meta">
-			  <div class="winter-title">Temperature</div>
-			  <div class="winter-note">Winter week sample</div>
-			</div>
-			<img src="assets/winter/frost-morning.png" alt="Temperature during winter week">
-		  </figure>
-		</div>
+          <figure class="winter-card">
+            <div class="winter-meta">
+              <div class="winter-title" data-i18n="winter.cards.temp.title">Temperature</div>
+              <div class="winter-note" data-i18n="winter.cards.temp.note">Winter week sample</div>
+            </div>
+            <img src="assets/winter/frost-morning.png" data-i18n-alt="winter.cards.temp.alt" alt="Temperature during winter week">
+          </figure>
+        </div>
 
       </div>
     </section>
 
     <section id="exploded">
       <div class="container container-wide">
-        <div class="eyebrow">Hardware layout</div>
-        <h2 class="section-title">Exploded view</h2>
+        <div class="eyebrow" data-i18n="exploded.eyebrow">Hardware layout</div>
+        <h2 class="section-title" data-i18n="exploded.title">Exploded view</h2>
         <div class="exploded-view">
-		  <img
-			src="assets/meshtastic-exploded.svg"
-			alt="MESH-S exploded view – internal hardware layout"
-			loading="lazy"
-		  />
-		</div>
-		<div class="section-divider"></div>
-		<div class="legend-head" id="custom-parts">
-		  <div class="eyebrow">Custom parts</div>
-		  <div class="legend-note">Only the parts designed and printed for MESH-S. Off-the-shelf components are intentionally omitted.</div>
-		</div>
-		<div class="exploded-legend">
-		  <div class="legend-item">
-			<img src="assets/exploded/enclosure.gif" alt="ASA enclosure">
-			<div class="legend-title">ASA enclosure</div>
-			<div class="legend-desc">UV-stable printed housing</div>
-		  </div>
+          <img
+            data-i18n-svg
+            src="assets/meshtastic-exploded.en.svg"
+            data-i18n-alt="exploded.imageAlt"
+            alt="MESH-S exploded view – internal hardware layout"
+            loading="lazy"
+          />
+        </div>
+        <div class="section-divider"></div>
+        <div class="legend-head" id="custom-parts">
+          <div class="eyebrow" data-i18n="exploded.custom.eyebrow">Custom parts</div>
+          <div class="legend-note" data-i18n="exploded.custom.note">Only the parts designed and printed for MESH-S. Off-the-shelf components are intentionally omitted.</div>
+        </div>
+        <div class="exploded-legend">
+          <div class="legend-item">
+            <img src="assets/exploded/enclosure.gif" data-i18n-alt="exploded.legend.enclosure.alt" alt="ASA enclosure">
+            <div class="legend-title" data-i18n="exploded.legend.enclosure.title">ASA enclosure</div>
+            <div class="legend-desc" data-i18n="exploded.legend.enclosure.desc">UV-stable printed housing</div>
+          </div>
 
-		  <div class="legend-item">
-			<img src="assets/exploded/lid.gif" alt="Mounting lid">
-			<div class="legend-title">Mounting lid</div>
-			<div class="legend-desc">Universal round & rectangular mount</div>
-		  </div>
+          <div class="legend-item">
+            <img src="assets/exploded/lid.gif" data-i18n-alt="exploded.legend.lid.alt" alt="Mounting lid">
+            <div class="legend-title" data-i18n="exploded.legend.lid.title">Mounting lid</div>
+            <div class="legend-desc" data-i18n="exploded.legend.lid.desc">Universal round &amp; rectangular mount</div>
+          </div>
 
-		  <div class="legend-item">
-			<img src="assets/exploded/spacer-plate.gif" alt="Spacer plate">
-			<div class="legend-title">Spacer plate</div>
-			<div class="legend-desc">Modular electronics mounting interface</div>
-		  </div>
+          <div class="legend-item">
+            <img src="assets/exploded/spacer-plate.gif" data-i18n-alt="exploded.legend.spacer.alt" alt="Spacer plate">
+            <div class="legend-title" data-i18n="exploded.legend.spacer.title">Spacer plate</div>
+            <div class="legend-desc" data-i18n="exploded.legend.spacer.desc">Modular electronics mounting interface</div>
+          </div>
 
-		  <div class="legend-item">
-			<img src="assets/exploded/silica-compartment.gif" alt="Silica compartment">
-			<div class="legend-title">Silica compartment</div>
-			<div class="legend-desc">Humidity control module</div>
-		  </div>
-		</div>
+          <div class="legend-item">
+            <img src="assets/exploded/silica-compartment.gif" data-i18n-alt="exploded.legend.silica.alt" alt="Silica compartment">
+            <div class="legend-title" data-i18n="exploded.legend.silica.title">Silica compartment</div>
+            <div class="legend-desc" data-i18n="exploded.legend.silica.desc">Humidity control module</div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="assembly">
       <div class="container">
-        <div class="eyebrow">Build process</div>
-        <h2 class="section-title">Assembly in 6 steps</h2>
+        <div class="eyebrow" data-i18n="assembly.eyebrow">Build process</div>
+        <h2 class="section-title" data-i18n="assembly.title">Assembly in 6 steps</h2>
         <div class="steps-grid">
           <div class="step">
-            <img src="assets/assembly/step-01.png" alt="Step 01 – mount spacer plate">
-            <h4>Mount power core</h4>
-            <p>Mount MPPT controller and main node board on the spacer plate.
-				The modular design allows layout changes without redesigning the enclosure.</p>
+            <img src="assets/assembly/step-01.png" data-i18n-alt="assembly.steps.step1.alt" alt="Step 01 – mount spacer plate">
+            <h4 data-i18n="assembly.steps.step1.title">Mount power core</h4>
+            <p data-i18n="assembly.steps.step1.text">Mount MPPT controller and main node board on the spacer plate.
+              The modular design allows layout changes without redesigning the enclosure.</p>
           </div>
           <div class="step">
-            <img src="assets/assembly/step-02.png" alt="Step 02 – fit battery pack">
-            <h4>Fit battery pack</h4>
-            <p>Install and secure the 4×18650 battery pack.
-				Battery modules are mounted after the power core for proper alignment and cable routing.</p>
+            <img src="assets/assembly/step-02.png" data-i18n-alt="assembly.steps.step2.alt" alt="Step 02 – fit battery pack">
+            <h4 data-i18n="assembly.steps.step2.title">Fit battery pack</h4>
+            <p data-i18n="assembly.steps.step2.text">Install and secure the 4×18650 battery pack.
+              Battery modules are mounted after the power core for proper alignment and cable routing.</p>
           </div>
           <div class="step">
-            <img src="assets/assembly/step-03.png" alt="Step 03 – Attach antenna path">
-            <h4>Attach antenna path</h4>
-            <p>Connect and lock the RF path (U.FL → N-Type).
-				The coaxial cable is routed and secured before closing the enclosure.</p>
+            <img src="assets/assembly/step-03.png" data-i18n-alt="assembly.steps.step3.alt" alt="Step 03 – Attach antenna path">
+            <h4 data-i18n="assembly.steps.step3.title">Attach antenna path</h4>
+            <p data-i18n="assembly.steps.step3.text">Connect and lock the RF path (U.FL → N-Type).
+              The coaxial cable is routed and secured before closing the enclosure.</p>
           </div>
           <div class="step">
-            <img src="assets/assembly/step-04.png" alt="Step 04 – Seal enclosure">
-            <h4>Seal enclosure</h4>
-            <p>Apply gasket and close the housing.
-				A perimeter gasket ensures long-term weather resistance.</p>
+            <img src="assets/assembly/step-04.png" data-i18n-alt="assembly.steps.step4.alt" alt="Step 04 – Seal enclosure">
+            <h4 data-i18n="assembly.steps.step4.title">Seal enclosure</h4>
+            <p data-i18n="assembly.steps.step4.text">Apply gasket and close the housing.
+              A perimeter gasket ensures long-term weather resistance.</p>
           </div>
           <div class="step">
-            <img src="assets/assembly/step-05.png" alt="Step 05 – Test power &amp; mesh">
-            <h4>Test power &amp; mesh</h4>
-            <p>Power on and verify system operation.
-				Check power stability, node startup, and LoRa mesh connectivity.</p>
+            <img src="assets/assembly/step-05.png" data-i18n-alt="assembly.steps.step5.alt" alt="Step 05 – Test power &amp; mesh">
+            <h4 data-i18n="assembly.steps.step5.title">Test power &amp; mesh</h4>
+            <p data-i18n="assembly.steps.step5.text">Power on and verify system operation.
+              Check power stability, node startup, and LoRa mesh connectivity.</p>
           </div>
           <div class="step">
-            <img src="assets/assembly/step-06.png" alt="Step 06 – Deploy outdoors">
-            <h4>Deploy outdoors</h4>
-            <p>The device is ready for permanent outdoor installation
-				and autonomous operation.</p>
+            <img src="assets/assembly/step-06.png" data-i18n-alt="assembly.steps.step6.alt" alt="Step 06 – Deploy outdoors">
+            <h4 data-i18n="assembly.steps.step6.title">Deploy outdoors</h4>
+            <p data-i18n="assembly.steps.step6.text">The device is ready for permanent outdoor installation
+              and autonomous operation.</p>
           </div>
         </div>
       </div>
@@ -234,144 +241,140 @@
 
     <section id="moisture">
       <div class="container">
-        <div class="eyebrow">Protection</div>
-        <h2 class="section-title">Moisture protection</h2>
-		
-			<div class="card-grid">
-				<div class="card">
-				  <h3>Fully sealed architecture</h3>
-				  <p class="card-sub">No external interfaces</p>
-				  <p>
-					The enclosure has no external service ports or connectors.
-					Access to electronics is only possible by opening the housing,
-					eliminating potential ingress points for moisture.
-				  </p>
-				</div>
+        <div class="eyebrow" data-i18n="moisture.eyebrow">Protection</div>
+        <h2 class="section-title" data-i18n="moisture.title">Moisture protection</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3 data-i18n="moisture.cards.sealed.title">Fully sealed architecture</h3>
+            <p class="card-sub" data-i18n="moisture.cards.sealed.sub">No external interfaces</p>
+            <p data-i18n="moisture.cards.sealed.text">
+              The enclosure has no external service ports or connectors.
+              Access to electronics is only possible by opening the housing,
+              eliminating potential ingress points for moisture.
+            </p>
+          </div>
 
-			<div class="card">
-			  <h3>Silicone gasket</h3>
-			  <p class="card-sub">Full perimeter sealing</p>
-			  <p>
-				A continuous silicone gasket seals the enclosure halves,
-				providing a reliable barrier against rain, splashes, and humidity.
-			  </p>
-			</div>
-		
-			<div class="card">
-			  <h3>Pressure equalization vent</h3>
-			  <p class="card-sub">Membrane-based breathing</p>
-			  <p>
-				A pressure equalization membrane balances internal pressure changes
-				caused by temperature fluctuations without allowing moisture ingress.
-			  </p>
-			</div>
-		
-			<div class="card">
-			  <h3>Silica gel compartment</h3>
-			  <p class="card-sub">Passive humidity control</p>
-			  <p>
-				An internal silica gel compartment captures residual moisture,
-				protecting electronics from condensation over long-term outdoor use.
-			  </p>
-			</div>
+          <div class="card">
+            <h3 data-i18n="moisture.cards.gasket.title">Silicone gasket</h3>
+            <p class="card-sub" data-i18n="moisture.cards.gasket.sub">Full perimeter sealing</p>
+            <p data-i18n="moisture.cards.gasket.text">
+              A continuous silicone gasket seals the enclosure halves,
+              providing a reliable barrier against rain, splashes, and humidity.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 data-i18n="moisture.cards.vent.title">Pressure equalization vent</h3>
+            <p class="card-sub" data-i18n="moisture.cards.vent.sub">Membrane-based breathing</p>
+            <p data-i18n="moisture.cards.vent.text">
+              A pressure equalization membrane balances internal pressure changes
+              caused by temperature fluctuations without allowing moisture ingress.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 data-i18n="moisture.cards.silica.title">Silica gel compartment</h3>
+            <p class="card-sub" data-i18n="moisture.cards.silica.sub">Passive humidity control</p>
+            <p data-i18n="moisture.cards.silica.text">
+              An internal silica gel compartment captures residual moisture,
+              protecting electronics from condensation over long-term outdoor use.
+            </p>
+          </div>
         </div>
       </div>
     </section>
-	
-	<section id="mounting">
-	  <div class="container">
-		<div class="eyebrow">Installation</div>
-		<h2 class="section-title">Mounting & installation</h2>
 
-		  <div class="mounting-visual">
-  			<img src="assets/exploded/mounting-latch.gif" alt="Quick-release mounting mechanism">
-		  </div>
+    <section id="mounting">
+      <div class="container">
+        <div class="eyebrow" data-i18n="mounting.eyebrow">Installation</div>
+        <h2 class="section-title" data-i18n="mounting.title">Mounting &amp; installation</h2>
 
+        <div class="mounting-visual">
+          <img src="assets/exploded/mounting-latch.gif" data-i18n-alt="mounting.imageAlt" alt="Quick-release mounting mechanism">
+        </div>
 
-		<div class="card-grid">
+        <div class="card-grid">
+          <div class="card">
+            <h3 data-i18n="mounting.cards.universal.title">Universal mounting system</h3>
+            <p class="card-sub" data-i18n="mounting.cards.universal.sub">Modular attachment interface</p>
+            <p data-i18n="mounting.cards.universal.text">
+              The mounting lid is designed as a universal attachment interface,
+              allowing the node to be installed on a wide range of structures
+              without adapters or enclosure modifications.
+            </p>
+          </div>
 
-		  <div class="card">
-			<h3>Universal mounting system</h3>
-			<p class="card-sub">Modular attachment interface</p>
-			<p>
-			  The mounting lid is designed as a universal attachment interface,
-			  allowing the node to be installed on a wide range of structures
-			  without adapters or enclosure modifications.
-			</p>
-		  </div>
+          <div class="card">
+            <h3 data-i18n="mounting.cards.round.title">Round structures</h3>
+            <p class="card-sub" data-i18n="mounting.cards.round.sub">10 mm – 60 mm diameter</p>
+            <p data-i18n="mounting.cards.round.text">
+              Supports vertical and horizontal poles with diameters from 10 mm to 60 mm.
+              Two mounting hole offsets provide flexibility in positioning,
+              allowing the use of cable ties or metal clamps.
+            </p>
+          </div>
 
-		  <div class="card">
-			<h3>Round structures</h3>
-			<p class="card-sub">10 mm – 60 mm diameter</p>
-			<p>
-			  Supports vertical and horizontal poles with diameters from 10 mm to 60 mm.
-			  Two mounting hole offsets provide flexibility in positioning,
-			  allowing the use of cable ties or metal clamps.
-			</p>
-		  </div>
+          <div class="card">
+            <h3 data-i18n="mounting.cards.rectangular.title">Rectangular profiles</h3>
+            <p class="card-sub" data-i18n="mounting.cards.rectangular.sub">10×10 mm – 60×60 mm</p>
+            <p data-i18n="mounting.cards.rectangular.text">
+              An integrated profile geometry enables secure mounting on rectangular
+              structures such as aluminum profiles and frames
+              from 10×10 mm up to 60×60 mm.
+            </p>
+          </div>
 
-		  <div class="card">
-			<h3>Rectangular profiles</h3>
-			<p class="card-sub">10×10 mm – 60×60 mm</p>
-			<p>
-			  An integrated profile geometry enables secure mounting on rectangular
-			  structures such as aluminum profiles and frames
-			  from 10×10 mm up to 60×60 mm.
-			</p>
-		  </div>
+          <div class="card">
+            <h3 data-i18n="mounting.cards.quickRelease.title">Quick-release bracket</h3>
+            <p class="card-sub" data-i18n="mounting.cards.quickRelease.sub">Optional accessory</p>
+            <p data-i18n="mounting.cards.quickRelease.text">
+              A dedicated quick-release bracket allows the node to snap into place
+              using a mechanical latch system. Two release levers disengage four
+              locking pins, enabling fast removal without tools or enclosure disassembly.
+            </p>
+          </div>
 
-		  <div class="card">
-			<h3>Quick-release bracket</h3>
-			<p class="card-sub">Optional accessory</p>
-			<p>
-			  A dedicated quick-release bracket allows the node to snap into place
-			  using a mechanical latch system. Two release levers disengage four
-			  locking pins, enabling fast removal without tools or enclosure disassembly.
-			</p>
-		  </div>
+          <div class="card">
+            <h3 data-i18n="mounting.cards.magnetic.title">Magnetic mounting option</h3>
+            <p class="card-sub" data-i18n="mounting.cards.magnetic.sub">Optional configuration</p>
+            <p data-i18n="mounting.cards.magnetic.text">
+              The bracket supports optional high-strength magnets
+              (up to Ø56 mm), allowing temporary installation on metal structures
+              while keeping the node fully removable.
+            </p>
+          </div>
 
-		  <div class="card">
-			<h3>Magnetic mounting option</h3>
-			<p class="card-sub">Optional configuration</p>
-			<p>
-			  The bracket supports optional high-strength magnets
-			  (up to Ø56 mm), allowing temporary installation on metal structures
-			  while keeping the node fully removable.
-			</p>
-		  </div>
-
-		</div>
-	  </div>
-	</section>
-
+        </div>
+      </div>
+    </section>
 
     <section id="bom">
       <div class="container">
-        <div class="eyebrow">Packages</div>
-        <h2 class="section-title">Packages &amp; BOM</h2>
-        <p class="section-subtitle">Configuration options and bill of materials overview.</p>
+        <div class="eyebrow" data-i18n="bom.eyebrow">Packages</div>
+        <h2 class="section-title" data-i18n="bom.title">Packages &amp; BOM</h2>
+        <p class="section-subtitle" data-i18n="bom.subtitle">Configuration options and bill of materials overview.</p>
         <div class="packages-placeholder">
-		  <p class="packages-title">Planned configuration tiers</p>
-		  <p>
-			The MESH-S node is designed as a modular platform.
-			Final package configurations and component lists
-			will be published once field testing and long-term
-			validation are completed.
-		  </p>
+          <p class="packages-title" data-i18n="bom.plannedTitle">Planned configuration tiers</p>
+          <p data-i18n="bom.plannedText">
+            The MESH-S node is designed as a modular platform.
+            Final package configurations and component lists
+            will be published once field testing and long-term
+            validation are completed.
+          </p>
 
-		  <p class="packages-title">Bill of materials (BOM)</p>
-		  <p>
-			A detailed bill of materials will include
-			enclosure parts, mounting components,
-			and required off-the-shelf electronics.
-			Custom printed parts are documented separately.
-		  </p>
+          <p class="packages-title" data-i18n="bom.bomTitle">Bill of materials (BOM)</p>
+          <p data-i18n="bom.bomText">
+            A detailed bill of materials will include
+            enclosure parts, mounting components,
+            and required off-the-shelf electronics.
+            Custom printed parts are documented separately.
+          </p>
 
-		  <p class="packages-note">
-			This section is intentionally kept minimal until
-			hardware revisions are finalized.
-		  </p>
-		</div>
+          <p class="packages-note" data-i18n="bom.note">
+            This section is intentionally kept minimal until
+            hardware revisions are finalized.
+          </p>
+        </div>
 
       </div>
     </section>
@@ -379,28 +382,34 @@
 
   <footer>
     <div class="container footer-inner">
-      <div>© <span id="year"></span> MESH-S. All rights reserved.</div>
+      <div>© <span id="year"></span> MESH-S. <span data-i18n="footer.rights">All rights reserved.</span></div>
       <div class="footer-links">
-        <a href="#hero">Top</a>
-        <a href="https://t.me/skrap87" target="_blank" rel="noopener noreferrer">@skrap87</a>
-        <a href="https://github.com/Skrap87/mesh-s.org">GitHub</a>
-        <a href="/impressum.html">Impressum</a>
-		<a href="/privacy.html">Datenschutz</a>
+        <a href="#hero" data-i18n="footer.top">Top</a>
+        <a href="https://t.me/skrap87" target="_blank" rel="noopener noreferrer" data-i18n="footer.telegram">@skrap87</a>
+        <a href="https://github.com/Skrap87/mesh-s.org" data-i18n="footer.github">GitHub</a>
+        <a href="/impressum.html" data-i18n="footer.impressum">Impressum</a>
+        <a href="/privacy.html" data-i18n="footer.privacy">Datenschutz</a>
+      </div>
+      <div class="lang-switch" role="group" data-i18n-aria="lang.aria">
+        <button class="lang-option" type="button" data-lang="de">DE</button>
+        <span class="lang-separator">|</span>
+        <button class="lang-option" type="button" data-lang="en">EN</button>
       </div>
     </div>
   </footer>
 
-  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie Hinweis">
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" data-i18n-aria="cookie.aria">
     <p>
-      Diese Website verwendet ausschließlich technisch notwendige Cookies, um den Betrieb der Seite sicherzustellen.
-      <a href="/privacy.html">Datenschutzerklärung</a>
+      <span data-i18n="cookie.text">Diese Website verwendet ausschließlich technisch notwendige Cookies, um den Betrieb der Seite sicherzustellen.</span>
+      <a href="/privacy.html" data-i18n="cookie.link">Datenschutzerklärung</a>
     </p>
-    <button id="cookie-accept" class="btn btn-outline" type="button">OK</button>
+    <button id="cookie-accept" class="btn btn-outline" type="button" data-i18n="cookie.button">OK</button>
   </div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+  <script src="i18n.js"></script>
   <script>
     (function () {
       const KEY = 'cookiesAccepted';
