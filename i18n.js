@@ -225,10 +225,21 @@ const translations = {
       eyebrow: "Packages",
       title: "Packages & BOM",
       subtitle: "Configuration options and bill of materials overview.",
+
       plannedTitle: "Planned configuration tiers",
-      plannedText: "The MESH-S node is designed as a modular platform. Final package configurations and component lists will be published once field testing and long-term validation are completed.",
+
+      tier1: "DIY Kit — printed enclosure parts, seals and mounting hardware",
+      tier2: "Electronics Bundle — controller, LoRa module and power electronics",
+      tier3: "Assembled Node — fully assembled and tested solar node",
+      tier4: "Pro / Custom — custom battery, panel, sensors or mounting",
+
       bomTitle: "Bill of materials (BOM)",
-      bomText: "A detailed bill of materials will include enclosure parts, mounting components, and required off-the-shelf electronics. Custom printed parts are documented separately.",
+
+      bom1: "Enclosure: ASA body, gasket, silica gel compartment, screws",
+      bom2: "Power: solar panel, MPPT charger, 18650 / 26650 cells",
+      bom3: "Radio: Meshtastic node, LoRa module, antenna, RF adapter",
+      bom4: "Mounting: universal bracket, clamps or zip ties, hardware",
+
       note: "This section is intentionally kept minimal until hardware revisions are finalized."
     },
     footer: {
@@ -499,12 +510,18 @@ const translations = {
     bom: {
       eyebrow: "Pakete",
       title: "Pakete & Stückliste",
-      subtitle: "Konfigurationsoptionen und Übersicht der Stückliste.",
+      subtitle: "Konfigurationsoptionen und Überblick der Stückliste.",
       plannedTitle: "Geplante Konfigurationsstufen",
-      plannedText: "Der MESH-S-Knoten ist als modulare Plattform konzipiert. Finale Paketkonfigurationen und Komponentenlisten werden veröffentlicht, sobald Feldtests und Langzeitvalidierung abgeschlossen sind.",
+      tier1: "DIY-Kit — gedruckte Gehäuseteile, Dichtungen und Montagematerial",
+      tier2: "Elektronik-Bundle — Controller, LoRa-Modul und Leistungselektronik",
+      tier3: "Montierter Knoten — vollständig aufgebauter und getesteter Solarknoten",
+      tier4: "Pro / Custom — kundenspezifische Batterie, Solarpanel, Sensoren oder Montage",
       bomTitle: "Stückliste (BOM)",
-      bomText: "Eine detaillierte Stückliste umfasst Gehäuseteile, Montagekomponenten und benötigte Standardelektronik. Individuell gedruckte Teile sind separat dokumentiert.",
-      note: "Dieser Abschnitt bleibt bewusst minimal, bis Hardware-Revisionen finalisiert sind."
+      bom1: "Gehäuse: ASA-Korpus, Dichtung, Silikagel-Fach, Schrauben",
+      bom2: "Energie: Solarpanel, MPPT-Laderegler, 18650 / 26650 Zellen",
+      bom3: "Funk: Meshtastic-Knoten, LoRa-Modul, Antenne, HF-Adapter",
+      bom4: "Montage: Universalhalter, Schellen oder Kabelbinder, Befestigungsmaterial",
+      note: "Dieser Abschnitt ist bewusst minimal gehalten, bis die Hardware-Revisionen finalisiert sind."
     },
     footer: {
       rights: "Alle Rechte vorbehalten.",
