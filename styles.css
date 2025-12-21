@@ -799,3 +799,13 @@ footer {
     font-size: 13px !important;
   }
 }
+
+/* Phone: keep dropdown inside screen */
+@media (max-width: 520px) {
+  .nav-more-menu {
+    left: auto !important;
+    right: 0 !important;
+    max-width: calc(100vw - 24px);
+  }
+}
+
