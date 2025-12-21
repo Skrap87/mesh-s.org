@@ -1,102 +1,177 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1800" viewBox="0 0 1200 1800">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1700" viewBox="0 0 1200 1700">
   <defs>
     <style>
       .bg { fill: #0f1115; }
-      .line { stroke: #c7cbd1; stroke-width: 2; fill: none; }
-      .shape { fill: #1b2027; stroke: #c7cbd1; stroke-width: 2; }
-      .shape-light { fill: #232a33; stroke: #c7cbd1; stroke-width: 2; }
-      .accent { stroke: #8da2b8; stroke-width: 2; fill: none; }
-      .label { fill: #e5e9ef; font-family: "Inter", "Segoe UI", Arial, sans-serif; font-size: 22px; }
-      .small { font-size: 18px; fill: #c7cbd1; }
-      .thin { stroke-width: 1.5; }
+
+      /* Softer, less "schematic" look */
+      .stroke { stroke: rgba(229,233,239,0.55); stroke-width: 1.6; }
+      .accent { stroke: rgba(157,208,106,0.65); stroke-width: 1.6; fill: none; }
+      .shape { fill: #1b2027; stroke: rgba(229,233,239,0.45); stroke-width: 1.6; }
+      .shape2 { fill: #232a33; stroke: rgba(229,233,239,0.40); stroke-width: 1.6; }
+
+      .label { fill: rgba(229,233,239,0.92); font-family: "Inter", "Segoe UI", Arial, sans-serif; font-size: 22px; }
+      .small { fill: rgba(199,203,209,0.85); font-family: "Inter", "Segoe UI", Arial, sans-serif; font-size: 16px; }
+
+      /* Subtle shadow */
+      .shadow { filter: url(#shadow); }
     </style>
+
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+
+    <linearGradient id="panelGlass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b2230" stop-opacity="1"/>
+      <stop offset="1" stop-color="#0e141f" stop-opacity="1"/>
+    </linearGradient>
+
+    <linearGradient id="panelFrame" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b323c"/>
+      <stop offset="1" stop-color="#151a21"/>
+    </linearGradient>
   </defs>
-  <rect class="bg" x="0" y="0" width="1200" height="1800" />
 
-  <!-- Top: ASA enclosure halves -->
-  <rect class="shape" x="300" y="90" width="600" height="140" rx="16" />
-  <rect class="shape" x="300" y="260" width="600" height="140" rx="16" />
-  <line class="accent" x1="320" y1="230" x2="880" y2="230" />
-  <text class="label" text-anchor="end" x="280" y="140">ASA enclosure (UV-stable)</text>
-  
+  <rect class="bg" x="0" y="0" width="1200" height="1700" />
 
-  <!-- Perimeter sealing: gasket line + structural sealant indication -->
-  <rect class="shape-light" x="320" y="455" width="560" height="24" rx="10" />
-  <line class="accent" x1="340" y1="468" x2="860" y2="468" />
-  <path class="line thin" d="M340 488 L860 488" />
-  <text class="label" text-anchor="end" x="280" y="475">Perimeter sealing</text>
-  <text class="small" text-anchor="end" x="270" y="500">Silicone gasket line</text>
-  <text class="small" text-anchor="end" x="270" y="525">Structural sealant indication</text>
-  
+  <!-- Title -->
+  <text class="label" x="140" y="95">Exploded view</text>
+  <text class="small" x="140" y="125">MESH-S internal layout (simplified)</text>
 
-  <!-- 4× 18650 battery pack (separated) -->
-  <g transform="translate(320,580)">
-    <rect class="shape" x="0" y="0" width="120" height="60" rx="30" />
-    <rect class="shape" x="140" y="0" width="120" height="60" rx="30" />
-    <rect class="shape" x="280" y="0" width="120" height="60" rx="30" />
-    <rect class="shape" x="420" y="0" width="120" height="60" rx="30" />
-    <line class="accent" x1="20" y1="30" x2="100" y2="30" />
-    <line class="accent" x1="160" y1="30" x2="240" y2="30" />
-    <line class="accent" x1="300" y1="30" x2="380" y2="30" />
-    <line class="accent" x1="440" y1="30" x2="520" y2="30" />
+  <!-- Center column (everything centered, fewer callouts) -->
+  <!-- Solar panel -->
+  <g class="shadow" transform="translate(300,160)">
+    <rect x="0" y="0" width="600" height="150" rx="18" fill="url(#panelFrame)" stroke="rgba(229,233,239,0.40)" stroke-width="1.6"/>
+    <rect x="18" y="16" width="564" height="118" rx="14" fill="url(#panelGlass)" stroke="rgba(229,233,239,0.18)" stroke-width="1"/>
+    <!-- cell hints -->
+    <g opacity="0.35" stroke="#8da2b8" stroke-width="1">
+      <line x1="70" y1="30" x2="70" y2="126"/>
+      <line x1="140" y1="30" x2="140" y2="126"/>
+      <line x1="210" y1="30" x2="210" y2="126"/>
+      <line x1="280" y1="30" x2="280" y2="126"/>
+      <line x1="350" y1="30" x2="350" y2="126"/>
+      <line x1="420" y1="30" x2="420" y2="126"/>
+      <line x1="490" y1="30" x2="490" y2="126"/>
+    </g>
   </g>
-  <text class="label" text-anchor="end" x="280" y="610">4× 18650 battery pack</text>
-  
-  <!-- Battery holder -->
-  <rect class="shape-light" x="320" y="690" width="560" height="90" rx="12" />
-  <rect class="line" x="340" y="710" width="520" height="50" rx="8" />
-  <text class="label" text-anchor="end" x="280" y="735">Battery holder (4×18650)</text>
-  
+  <text class="label" x="140" y="225">Solar panel</text>
+  <text class="small" x="140" y="252">5V / ~2.7W</text>
+
+  <!-- Top enclosure half -->
+  <g class="shadow" transform="translate(300,350)">
+    <rect class="shape" x="0" y="0" width="600" height="135" rx="18"/>
+    <!-- inner ribs hint -->
+    <g opacity="0.22" stroke="rgba(229,233,239,0.55)" stroke-width="1">
+      <line x1="60" y1="35" x2="540" y2="35"/>
+      <line x1="80" y1="68" x2="520" y2="68"/>
+      <line x1="60" y1="100" x2="540" y2="100"/>
+    </g>
+  </g>
+  <text class="label" x="140" y="420">ASA enclosure</text>
+  <text class="small" x="140" y="447">Top shell</text>
+
+  <!-- Silicone gasket -->
+  <g class="shadow" transform="translate(320,515)">
+    <rect x="0" y="0" width="560" height="22" rx="11" fill="#2a323c" stroke="rgba(229,233,239,0.25)" stroke-width="1.2"/>
+    <rect x="14" y="7" width="532" height="8" rx="4" fill="rgba(157,208,106,0.25)"/>
+  </g>
+  <text class="label" x="140" y="535">Perimeter seal</text>
+  <text class="small" x="140" y="562">Silicone gasket + sealant</text>
+
+  <!-- Spacer plate -->
+  <g class="shadow" transform="translate(320,585)">
+    <rect class="shape2" x="0" y="0" width="560" height="95" rx="16"/>
+    <rect x="26" y="22" width="508" height="51" rx="12" fill="rgba(0,0,0,0.18)" stroke="rgba(229,233,239,0.18)" stroke-width="1"/>
+    <!-- standoffs -->
+    <g fill="rgba(157,208,106,0.20)" stroke="rgba(229,233,239,0.18)" stroke-width="1">
+      <circle cx="55" cy="22" r="8"/>
+      <circle cx="505" cy="22" r="8"/>
+      <circle cx="55" cy="73" r="8"/>
+      <circle cx="505" cy="73" r="8"/>
+    </g>
+  </g>
+  <text class="label" x="140" y="640">Spacer plate</text>
 
   <!-- Power core: MPPT + node -->
-  <rect class="shape" x="320" y="830" width="560" height="140" rx="12" />
-  <rect class="shape-light" x="350" y="860" width="230" height="80" rx="6" />
-  <rect class="shape-light" x="620" y="860" width="230" height="80" rx="6" />
-  <text class="small" x="380" y="910">MPPT controller</text>
-  <text class="small" x="640" y="910">Main node board</text>
-  <text class="label" text-anchor="end" x="280" y="880">Power core (MPPT + node)</text>
-  
+  <g class="shadow" transform="translate(320,710)">
+    <rect class="shape" x="0" y="0" width="560" height="150" rx="16"/>
+    <rect class="shape2" x="26" y="34" width="240" height="82" rx="10"/>
+    <rect class="shape2" x="294" y="34" width="240" height="82" rx="10"/>
+    <text class="small" x="56" y="84" fill="rgba(229,233,239,0.75)">MPPT</text>
+    <text class="small" x="324" y="84" fill="rgba(229,233,239,0.75)">Node</text>
+
+    <!-- minimal wiring hint -->
+    <path class="accent" d="M70 22 C120 4, 190 4, 240 22" opacity="0.65"/>
+    <path class="accent" d="M320 22 C370 4, 440 4, 490 22" opacity="0.65"/>
+  </g>
+  <text class="label" x="140" y="780">Power core</text>
+  <text class="small" x="140" y="807">MPPT + main board</text>
+
+  <!-- Battery pack -->
+  <g class="shadow" transform="translate(320,900)">
+    <rect class="shape2" x="0" y="0" width="560" height="115" rx="16"/>
+    <g transform="translate(40,30)">
+      <rect class="shape" x="0" y="0" width="110" height="52" rx="26"/>
+      <rect class="shape" x="130" y="0" width="110" height="52" rx="26"/>
+      <rect class="shape" x="260" y="0" width="110" height="52" rx="26"/>
+      <rect class="shape" x="390" y="0" width="110" height="52" rx="26"/>
+      <g class="accent" opacity="0.6">
+        <line x1="18" y1="26" x2="92" y2="26"/>
+        <line x1="148" y1="26" x2="222" y2="26"/>
+        <line x1="278" y1="26" x2="352" y2="26"/>
+        <line x1="408" y1="26" x2="482" y2="26"/>
+      </g>
+    </g>
+  </g>
+  <text class="label" x="140" y="965">Battery module</text>
+  <text class="small" x="140" y="992">4× 18650 holder</text>
 
   <!-- RF path -->
-  <g transform="translate(320,1020)">
-    <rect class="shape-light" x="0" y="0" width="560" height="70" rx="10" />
-    <circle class="shape" cx="80" cy="35" r="12" />
-    <line class="accent" x1="92" y1="35" x2="420" y2="35" />
-    <rect class="shape" x="420" y="20" width="70" height="30" rx="6" />
-    <polygon class="accent" points="500,35 520,25 520,45" />
+  <g class="shadow" transform="translate(320,1055)">
+    <rect class="shape2" x="0" y="0" width="560" height="78" rx="16"/>
+    <circle class="shape" cx="70" cy="39" r="12"/>
+    <line class="accent" x1="86" y1="39" x2="420" y2="39"/>
+    <rect class="shape" x="420" y="24" width="85" height="30" rx="8"/>
+    <polygon fill="rgba(157,208,106,0.40)" points="520,39 540,27 540,51"/>
   </g>
-  <text class="label" text-anchor="end" x="280" y="1045">RF path (U.FL → N-Type)</text>
-  <text class="small" text-anchor="end" x="270" y="1070">Coaxial cable</text>
-  <text class="small" text-anchor="end" x="270" y="1095">N-Type bulkhead connector</text>
-  
+  <text class="label" x="140" y="1096">RF path</text>
+  <text class="small" x="140" y="1123">U.FL → N-Type bulkhead</text>
 
   <!-- Pressure vent -->
-  <rect class="shape" x="420" y="1160" width="360" height="90" rx="10" />
-  <circle class="shape-light" cx="600" cy="1205" r="28" />
-  <text class="label" text-anchor="end" x="280" y="1195">Pressure vent (membrane)</text>
- 
-
-  <!-- Humidity control compartment -->
-  <rect class="shape-light" x="360" y="1300" width="480" height="100" rx="10" />
-  <rect class="shape" x="520" y="1325" width="160" height="50" rx="6" />
-  <text class="small" x="535" y="1356">Silica gel container</text>
-  <text class="label" text-anchor="end" x="290" y="1345">Humidity</text>
-  <text class="small" text-anchor="end" x="290" y="1375">control compartment</text>
-  
-
-  <!-- Fasteners -->
-  <g transform="translate(440,1470)">
-    <rect class="shape" x="0" y="0" width="60" height="120" rx="8" />
-    <rect class="shape" x="90" y="0" width="60" height="120" rx="8" />
-    <rect class="shape" x="180" y="0" width="60" height="120" rx="8" />
-    <rect class="shape" x="270" y="0" width="60" height="120" rx="8" />
+  <g class="shadow" transform="translate(420,1175)">
+    <rect class="shape" x="0" y="0" width="360" height="92" rx="16"/>
+    <circle cx="180" cy="46" r="30" fill="#2a323c" stroke="rgba(229,233,239,0.25)" stroke-width="1.2"/>
+    <circle cx="180" cy="46" r="18" fill="rgba(157,208,106,0.12)"/>
   </g>
-  <text class="label" text-anchor="end" x="280" y="1515">Fasteners</text>
-  <text class="small" text-anchor="end" x="270" y="1540">Screws and inserts grouped</text>
-  
+  <text class="label" x="140" y="1222">Pressure vent</text>
+  <text class="small" x="140" y="1249">Membrane</text>
 
-  <!-- Z-axis separation -->
-  <text class="small" x="940" y="145">Z-axis separation</text>
-  <line class="accent thin" x1="930" y1="120" x2="930" y2="1580" stroke-dasharray="8 10" />
+  <!-- Silica gel compartment -->
+  <g class="shadow" transform="translate(360,1305)">
+    <rect class="shape2" x="0" y="0" width="480" height="105" rx="16"/>
+    <rect class="shape" x="160" y="28" width="160" height="50" rx="10"/>
+    <text class="small" x="180" y="60" fill="rgba(229,233,239,0.75)">Silica gel</text>
+  </g>
+  <text class="label" x="140" y="1366">Humidity control</text>
 
+  <!-- Bottom enclosure half -->
+  <g class="shadow" transform="translate(300,1445)">
+    <rect class="shape" x="0" y="0" width="600" height="135" rx="18"/>
+    <!-- screw bosses hint -->
+    <g fill="rgba(0,0,0,0.20)" stroke="rgba(229,233,239,0.18)" stroke-width="1">
+      <circle cx="70" cy="40" r="10"/>
+      <circle cx="530" cy="40" r="10"/>
+      <circle cx="70" cy="95" r="10"/>
+      <circle cx="530" cy="95" r="10"/>
+    </g>
+  </g>
+  <text class="label" x="140" y="1518">ASA enclosure</text>
+  <text class="small" x="140" y="1545">Bottom shell</text>
+
+  <!-- Minimal fasteners hint (small, not dominant) -->
+  <g opacity="0.65" transform="translate(930,1445)">
+    <rect class="shape" x="0" y="0" width="36" height="110" rx="10"/>
+    <rect class="shape" x="48" y="0" width="36" height="110" rx="10"/>
+    <rect class="shape" x="96" y="0" width="36" height="110" rx="10"/>
+  </g>
+  <text class="small" x="930" y="1575">Fasteners (grouped)</text>
 </svg>
