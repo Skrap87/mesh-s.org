@@ -123,11 +123,13 @@ header {
   gap: 4px;
   padding: 10px;
   min-width: 210px;
-  background: var(--card);
-  border: 1px solid var(--card-border);
+  /* FIX: непрозрачный читаемый фон */
+  background: rgba(14, 14, 17, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
   border-radius: 14px;
   box-shadow: var(--soft-shadow);
-  z-index: 20;
+  z-index: 999;
 }
 
 .nav-more[open] .nav-more-menu {
