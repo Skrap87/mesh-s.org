@@ -268,6 +268,26 @@ section {
   max-width: 640px;
 }
 
+.privacy-section {
+  margin-top: 28px;
+  max-width: 760px;
+  color: var(--muted);
+}
+
+.privacy-section h2 {
+  font-size: 1.4rem;
+  margin: 0 0 12px;
+  color: var(--fg);
+}
+
+.privacy-section p {
+  margin: 0 0 12px;
+}
+
+.privacy-section ul {
+  margin: 0 0 12px 18px;
+}
+
 .hero {
   padding-top: 120px;
 }
@@ -824,4 +844,3 @@ footer {
     max-width: calc(100vw - 24px);
   }
 }
-
