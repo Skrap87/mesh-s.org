@@ -82,6 +82,72 @@ header {
   color: var(--fg);
 }
 
+.nav-links a,
+.nav-more summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--muted);
+  transition: all 0.2s ease;
+}
+
+.nav-more {
+  position: relative;
+}
+
+.nav-more summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.nav-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-links a:hover,
+.nav-more summary:hover,
+.nav-more[open] summary {
+  color: var(--fg);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-more-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px;
+  min-width: 210px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  box-shadow: var(--soft-shadow);
+  z-index: 20;
+}
+
+.nav-more[open] .nav-more-menu {
+  display: flex;
+}
+
+.nav-more-menu a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: var(--fg);
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.nav-more-menu a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
 .nav-actions {
   display: flex;
   gap: 10px;
@@ -670,10 +736,16 @@ footer {
     gap: 10px !important;
   }
 
-  .nav a, nav a {
+  .nav a, nav a, .nav-more summary {
     font-size: 13px !important;
     line-height: 1.1 !important;
     padding: 6px 8px !important;
+  }
+
+  .nav-more-menu {
+    position: static;
+    min-width: 100%;
+    box-shadow: none;
   }
 
   .lang-switch, .lang-toggle {
