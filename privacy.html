@@ -28,6 +28,17 @@
     </section>
   </main>
 
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> MESH-S. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/">Startseite</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="https://github.com/Skrap87/mesh-s.org">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
   <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie Hinweis">
     <p>
       Diese Website verwendet ausschließlich technisch notwendige Cookies, um den Betrieb der Seite sicherzustellen.
@@ -36,6 +47,9 @@
     <button id="cookie-accept" class="btn btn-outline" type="button">OK</button>
   </div>
 
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
   <script>
     (function () {
       const KEY = 'cookiesAccepted';
