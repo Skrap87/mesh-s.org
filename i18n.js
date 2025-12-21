@@ -4,7 +4,7 @@ const translations = {
       title: "MESH-S — Meshtastic Solar Node"
     },
     nav: {
-      hero: "Hero",
+      hero: "Home",
       benefits: "Benefits",
       autonomy: "Autonomy",
       winter: "Winter",
@@ -14,6 +14,7 @@ const translations = {
       moisture: "Moisture",
       mounting: "Mounting",
       bom: "BOM",
+      more: "More",
       telegram: "Telegram @skrap87",
       github: "GitHub"
     },
@@ -288,6 +289,7 @@ const translations = {
       moisture: "Feuchtigkeit",
       mounting: "Befestigung",
       bom: "Stückliste",
+      more: "Mehr",
       telegram: "Telegram @skrap87",
       github: "GitHub"
     },
@@ -684,6 +686,15 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       const selected = btn.dataset.lang;
       setLanguage(selected, { updateUrl: true });
+    });
+  });
+
+  document.querySelectorAll(".nav-more-menu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      const details = link.closest("details");
+      if (details) {
+        details.removeAttribute("open");
+      }
     });
   });
 });
