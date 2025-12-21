@@ -13,7 +13,7 @@ const translations = {
       assembly: "Reference build",
       moisture: "Moisture",
       mounting: "Mounting",
-      bom: "BOM",
+      bom: "Components",
       more: "More",
       telegram: "Telegram @skrap87",
       github: "GitHub"
@@ -26,7 +26,7 @@ const translations = {
       subtitle: "DIY • Solar • Mesh Node",
       tagline: "Modular DIY solar node reference design for makers and hobbyists.",
       ctaAutonomy: "See autonomy proof",
-      ctaBom: "Packages & BOM",
+      ctaBom: "Components",
       imageAlt: "MESH-S DIY solar mesh node reference design"
     },
     benefits: {
@@ -222,25 +222,16 @@ const translations = {
       }
     },
     bom: {
-      eyebrow: "Packages",
-      title: "Packages & BOM",
-      subtitle: "DIY kits and component bundles for self-assembly, plus a bill of materials overview.",
-
-      plannedTitle: "Planned DIY configuration tiers",
-
-      tier1: "DIY Kit — printed enclosure parts, seals and mounting hardware",
-      tier2: "Electronics Bundle — controller, LoRa module and power electronics",
-      tier3: "Reference build (not for sale) — example configuration for self-assembly",
-      tier4: "Pro / Custom — custom battery, panel, sensors or mounting",
-
-      bomTitle: "Bill of materials (BOM)",
-
-      bom1: "Enclosure: ASA body, gasket, silica gel compartment, screws",
-      bom2: "Power: solar panel, MPPT charger, 18650 cells",
-      bom3: "Radio: Meshtastic node, LoRa module, antenna, RF adapter",
-      bom4: "Mounting: universal bracket, clamps or zip ties, hardware",
-
-      note: "All packages are intended for self-assembly; final wiring and commissioning are done by the builder."
+      eyebrow: "DIY",
+      title: "Components required for one node",
+      subtitle: "Overview of components required to assemble one MESH-S solar node. This is a reference list for DIY builders.",
+      case: "Enclosure: ASA body, lid, silicone gasket, screws",
+      power: "Power: solar panel, MPPT charger, 18650 / 26650 cells",
+      electronics: "Electronics: Meshtastic-compatible controller, LoRa module",
+      radio: "RF: antenna, U.FL to N-type adapter or cable",
+      mounting: "Mounting: universal bracket, clamps or zip ties",
+      misc: "Miscellaneous: wiring, connectors, sealant, silica gel",
+      note: "All components are intended for self-assembly. Assembly, wiring and commissioning are the responsibility of the builder."
     },
     footer: {
       rights: "All rights reserved.",
@@ -300,7 +291,7 @@ const translations = {
       assembly: "Referenzaufbau",
       moisture: "Feuchtigkeit",
       mounting: "Befestigung",
-      bom: "Stückliste",
+      bom: "Komponenten",
       more: "Mehr",
       telegram: "Telegram @skrap87",
       github: "GitHub"
@@ -313,7 +304,7 @@ const translations = {
       subtitle: "DIY • Solar • Mesh-Knoten",
       tagline: "Modulares DIY-Solarknoten-Referenzdesign für Maker und Hobbyisten.",
       ctaAutonomy: "Autonomie-Nachweis ansehen",
-      ctaBom: "Pakete & Stückliste",
+      ctaBom: "Komponenten",
       imageAlt: "MESH-S DIY-Solar-Mesh-Knoten als Referenzdesign"
     },
     benefits: {
@@ -509,20 +500,16 @@ const translations = {
       }
     },
     bom: {
-      eyebrow: "Pakete",
-      title: "Pakete & Stückliste",
-      subtitle: "DIY-Kits und Komponenten-Bundles zur Selbstmontage plus Überblick der Stückliste.",
-      plannedTitle: "Geplante DIY-Konfigurationsstufen",
-      tier1: "DIY-Kit — gedruckte Gehäuseteile, Dichtungen und Montagematerial",
-      tier2: "Elektronik-Bundle — Controller, LoRa-Modul und Leistungselektronik",
-      tier3: "Referenzaufbau (nicht im Verkauf) — Beispielkonfiguration zur Selbstmontage",
-      tier4: "Pro / Custom — kundenspezifische Batterie, Solarpanel, Sensoren oder Montage",
-      bomTitle: "Stückliste (BOM)",
-      bom1: "Gehäuse: ASA-Korpus, Dichtung, Silikagel-Fach, Schrauben",
-      bom2: "Energie: Solarpanel, MPPT-Laderegler, 18650 Zellen",
-      bom3: "Funk: Meshtastic-Knoten, LoRa-Modul, Antenne, HF-Adapter",
-      bom4: "Montage: Universalhalter, Schellen oder Kabelbinder, Befestigungsmaterial",
-      note: "Alle Pakete sind für Selbstmontage gedacht; finale Verdrahtung und Inbetriebnahme übernimmt der Erbauer."
+      eyebrow: "DIY",
+      title: "Benötigte Komponenten für einen Knoten",
+      subtitle: "Übersicht der Komponenten, die für den Aufbau eines MESH-S-Solarknotens erforderlich sind. Diese Liste dient als Referenz für DIY-Bauer.",
+      case: "Gehäuse: ASA-Körper, Deckel, Silikondichtung, Schrauben",
+      power: "Energie: Solarmodul, MPPT-Laderegler, 18650 / 26650 Zellen",
+      electronics: "Elektronik: Meshtastic-kompatibler Controller, LoRa-Modul",
+      radio: "HF: Antenne, U.FL-zu-N-Typ-Adapter oder Kabel",
+      mounting: "Befestigung: Universalhalterung, Klemmen oder Kabelbinder",
+      misc: "Sonstiges: Verdrahtung, Steckverbinder, Dichtmittel, Silicagel",
+      note: "Alle Komponenten sind für den Selbstaufbau vorgesehen. Montage, Verdrahtung und Inbetriebnahme liegen in der Verantwortung des Erbauers."
     },
     footer: {
       rights: "Alle Rechte vorbehalten.",
