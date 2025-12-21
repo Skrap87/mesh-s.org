@@ -6,7 +6,7 @@ const translations = {
     nav: {
       hero: "Home",
       benefits: "Benefits",
-      autonomy: "Autonomy",
+      autonomy: "Telemetry",
       winter: "Winter",
       exploded: "Exploded",
       customParts: "Custom parts",
@@ -24,37 +24,37 @@ const translations = {
     hero: {
       eyebrow: "DIY Meshtastic Solar Node",
       subtitle: "DIY • Solar • Mesh Node",
-      tagline: "Modular DIY solar node reference design for makers and hobbyists.",
-      ctaAutonomy: "See autonomy proof",
+      tagline: "DIY reference design and documentation for makers and hobbyists.",
+      ctaAutonomy: "View telemetry example",
       ctaBom: "Components",
       imageAlt: "MESH-S DIY solar mesh node reference design"
     },
     benefits: {
-      eyebrow: "Key benefits",
-      title: "Built for real outdoor mesh networks",
+      eyebrow: "DIY overview",
+      title: "DIY reference for outdoor mesh experiments",
       cards: {
         solar: {
-          title: "Solar powered",
-          text: "Designed for continuous autonomous energy harvesting."
+          title: "Solar power example",
+          text: "Example setup for solar energy harvesting in DIY contexts."
         },
         winter: {
-          title: "Proven winter autonomy",
-          text: "Validated performance with real telemetry in low light."
+          title: "Winter experiment notes",
+          text: "Telemetry samples from low-light conditions (example)."
         },
         enclosure: {
-          title: "Weather sealed ASA enclosure",
-          text: "Durable housing engineered for outdoor exposure."
+          title: "ASA enclosure concept",
+          text: "Printed housing example for outdoor use; results may vary."
         },
         modular: {
           title: "Modular DIY platform",
-          text: "Field-friendly layout with replaceable core modules; self-assembly required."
+          text: "Example layout with replaceable core modules; self-assembly required."
         }
       }
     },
     autonomy: {
       eyebrow: "Telemetry",
-      title: "Proof of autonomy",
-      subtitle: "Real Home Assistant telemetry from DIY deployments.",
+      title: "Telemetry snapshot",
+      subtitle: "Example Home Assistant telemetry from DIY experiments.",
       list: {
         charge: "Charge current",
         voltage: "Battery voltage",
@@ -74,14 +74,14 @@ const translations = {
       }
     },
     winter: {
-      eyebrow: "Reliability",
-      title: "Why it doesn't die in winter",
+      eyebrow: "Field notes",
+      title: "Winter behavior observations",
       list: {
-        capacity: "Oversized battery capacity",
-        profile: "Conservative power profile",
-        diffuse: "Works in diffuse light",
-        moving: "No moving parts",
-        design: "Cold & moisture aware design"
+        capacity: "Example higher battery capacity",
+        profile: "Conservative power profile (example)",
+        diffuse: "Observed in diffuse light (example)",
+        moving: "No moving parts (example)",
+        design: "Cold & moisture considerations"
       },
       cards: {
         field: {
@@ -102,27 +102,27 @@ const translations = {
       imageAlt: "MESH-S illustrative internal layout (reference design)",
       custom: {
         eyebrow: "Custom parts",
-        note: "Reference configuration showing only the parts designed and printed for MESH-S. Off-the-shelf components are intentionally omitted."
+        note: "Reference configuration showing only the parts modeled and printed for MESH-S. Off-the-shelf components are intentionally omitted."
       },
       legend: {
         enclosure: {
           title: "ASA enclosure",
-          desc: "UV-stable printed housing",
+          desc: "UV-stable printed housing (example)",
           alt: "ASA enclosure"
         },
         lid: {
           title: "Mounting lid",
-          desc: "Universal round & rectangular mount",
+          desc: "Round & rectangular mounting example",
           alt: "Mounting lid"
         },
         spacer: {
           title: "Spacer plate",
-          desc: "Modular electronics mounting interface",
+          desc: "Electronics mounting interface (example)",
           alt: "Spacer plate"
         },
         silica: {
           title: "Silica compartment",
-          desc: "Humidity control module",
+          desc: "Humidity control insert (example)",
           alt: "Silica compartment"
         }
       }
@@ -148,44 +148,44 @@ const translations = {
         },
         step4: {
           title: "Sealing concept",
-          text: "Reference gasket placement and enclosure closure for weather resistance.",
+          text: "Reference gasket placement and enclosure closure for weather exposure considerations.",
           alt: "View 04 – sealing concept"
         },
         step5: {
           title: "System check (reference)",
-          text: "Example checklist items for power stability, node startup, and LoRa mesh connectivity.",
+          text: "Example checklist items for power checks, node startup, and LoRa mesh connectivity.",
           alt: "View 05 – system check reference"
         },
         step6: {
           title: "Outdoor mounting context",
-          text: "Reference deployment context for DIY builds; final assembly, wiring, and commissioning are done by the builder.",
+          text: "Reference deployment context for DIY builds; assembly, wiring, and commissioning are completed by the builder.",
           alt: "View 06 – outdoor mounting context"
         }
       }
     },
     moisture: {
       eyebrow: "Protection",
-      title: "Moisture protection",
+      title: "Moisture considerations",
       cards: {
         sealed: {
-          title: "Fully sealed architecture",
-          sub: "No external interfaces",
-          text: "The enclosure has no external service ports or connectors. Access to electronics is only possible by opening the housing, eliminating potential ingress points for moisture."
+          title: "Sealed layout concept",
+          sub: "No external interfaces (example)",
+          text: "The enclosure example uses no external service ports or connectors. Access to electronics is only possible by opening the housing, reducing potential ingress points for moisture."
         },
         gasket: {
           title: "Silicone gasket",
           sub: "Full perimeter sealing",
-          text: "A continuous silicone gasket seals the enclosure halves, providing a reliable barrier against rain, splashes, and humidity."
+          text: "A continuous silicone gasket can help seal the enclosure halves, aiming to reduce exposure to rain, splashes, and humidity."
         },
         vent: {
           title: "Pressure equalization vent",
           sub: "Membrane-based breathing",
-          text: "A pressure equalization membrane balances internal pressure changes caused by temperature fluctuations without allowing moisture ingress."
+          text: "A pressure equalization membrane is intended to balance internal pressure changes caused by temperature fluctuations while aiming to limit moisture ingress."
         },
         silica: {
           title: "Silica gel compartment",
           sub: "Passive humidity control",
-          text: "An internal silica gel compartment captures residual moisture, protecting electronics from condensation over long-term outdoor use."
+          text: "An internal silica gel compartment can capture residual moisture, helping limit condensation in DIY outdoor experiments."
         }
       }
     },
@@ -197,41 +197,45 @@ const translations = {
         universal: {
           title: "Universal mounting system",
           sub: "Modular attachment interface",
-          text: "The mounting lid is designed as a universal attachment interface, allowing the DIY build to be installed on a wide range of structures without adapters or enclosure modifications."
+          text: "The mounting lid is presented as a universal attachment concept, showing how a DIY build could be installed on a range of structures without adapters or enclosure modifications."
         },
         round: {
           title: "Round structures",
           sub: "10 mm – 60 mm diameter",
-          text: "Supports vertical and horizontal poles with diameters from 10 mm to 60 mm. Two mounting hole offsets provide flexibility in positioning, allowing the use of cable ties or metal clamps."
+          text: "Example compatibility with vertical and horizontal poles with diameters from 10 mm to 60 mm. Two mounting hole offsets show possible positioning, enabling the use of cable ties or metal clamps."
         },
         rectangular: {
           title: "Rectangular profiles",
           sub: "10×10 mm – 60×60 mm",
-          text: "An integrated profile geometry enables secure mounting on rectangular structures such as aluminum profiles and frames from 10×10 mm up to 60×60 mm."
+          text: "An integrated profile geometry illustrates mounting on rectangular structures such as aluminum profiles and frames from 10×10 mm up to 60×60 mm."
         },
         quickRelease: {
           title: "Quick-release bracket",
           sub: "Optional accessory",
-          text: "A dedicated quick-release bracket allows the node to snap into place using a mechanical latch system. Two release levers disengage four locking pins, enabling fast removal without tools or enclosure disassembly."
+          text: "A dedicated quick-release bracket example shows a mechanical latch system. Two release levers disengage four locking pins, enabling fast removal without tools or enclosure disassembly."
         },
         magnetic: {
           title: "Magnetic mounting option",
           sub: "Optional configuration",
-          text: "The bracket supports optional high-strength magnets (up to Ø56 mm), allowing temporary installation on metal structures while keeping the node fully removable."
+          text: "The bracket can be paired with optional high-strength magnets (up to Ø56 mm) for temporary installation on metal structures while keeping the node removable."
         }
       }
     },
     bom: {
       eyebrow: "DIY",
-      title: "Components required for one node",
-      subtitle: "Overview of components required to assemble one MESH-S solar node. This is a reference list for DIY builders.",
+      title: "Example components for one DIY node",
+      subtitle: "Overview of components used in one MESH-S DIY build. This is a reference list for DIY builders.",
       case: "Enclosure: ASA body, lid, silicone gasket, screws",
       power: "Power: solar panel, MPPT charger, 18650 cells",
       electronics: "Electronics: Meshtastic-compatible controller, LoRa module",
       radio: "RF: antenna, U.FL to N-type adapter or cable",
       mounting: "Mounting: universal bracket, clamps or zip ties",
       misc: "Miscellaneous: wiring, connectors, sealant, silica gel",
-      note: "All components are intended for self-assembly. Assembly, wiring and commissioning are the responsibility of the builder."
+      note: "All components are intended for self-assembly. Assembly, wiring and commissioning are the responsibility of the builder.",
+      disclaimer: {
+        line1: "The listed components represent one possible example configuration.",
+        line2: "No claim is made regarding completeness, correctness or suitability for a specific purpose."
+      }
     },
     footer: {
       rights: "All rights reserved.",
@@ -241,7 +245,18 @@ const translations = {
       impressum: "Legal notice",
       github: "GitHub",
       telegram: "@skrap87",
-      disclaimer: "This project provides DIY kits and components only. Assembly, wiring and commissioning are the sole responsibility of the customer."
+      disclaimer: "Private non-commercial DIY project. No products for sale."
+    },
+    disclaimer: {
+      global: {
+        line1: "This website documents a private, non-commercial DIY project.",
+        line2: "All information is provided for technical reference purposes only.",
+        line3: "No finished devices, kits or functional systems are offered.",
+        line4: "Any implementation, modification or use is carried out entirely at the user's own responsibility."
+      }
+    },
+    captions: {
+      prototype: "Example DIY build / prototype"
     },
     cookie: {
       aria: "Cookie notice",
@@ -309,8 +324,8 @@ const translations = {
       contactTitle: "Contact:",
       contactLabel: "Telegram:",
       contactHandle: "@skrap87",
-      projectLine1: "This website presents a technical project.",
-      projectLine2: "Products may be sold via external platforms (e.g. Etsy).",
+      projectLine1: "This website documents a private, non-commercial DIY project.",
+      projectLine2: "No products or sales are offered on this website.",
       liabilityTitle: "Liability for content:",
       liabilityText: "As a service provider, I am responsible for my own content on these pages in accordance with § 7 para.1 TMG and general laws.",
       linksTitle: "Liability for links:",
@@ -325,7 +340,7 @@ const translations = {
     nav: {
       hero: "Start",
       benefits: "Vorteile",
-      autonomy: "Autonomie",
+      autonomy: "Telemetrie",
       winter: "Winter",
       exploded: "Explosionsansicht",
       customParts: "Sonderteile",
@@ -343,37 +358,37 @@ const translations = {
     hero: {
       eyebrow: "DIY-Meshtastic-Solarknoten",
       subtitle: "DIY • Solar • Mesh-Knoten",
-      tagline: "Modulares DIY-Solarknoten-Referenzdesign für Maker und Hobbyisten.",
-      ctaAutonomy: "Autonomie-Nachweis ansehen",
+      tagline: "DIY-Referenzdesign und Dokumentation für Maker und Hobbyisten.",
+      ctaAutonomy: "Telemetrie-Beispiel ansehen",
       ctaBom: "Komponenten",
       imageAlt: "MESH-S DIY-Solar-Mesh-Knoten als Referenzdesign"
     },
     benefits: {
-      eyebrow: "Hauptvorteile",
-      title: "Für echte Outdoor-Mesh-Netze gebaut",
+      eyebrow: "DIY-Überblick",
+      title: "DIY-Referenz für Outdoor-Mesh-Experimente",
       cards: {
         solar: {
-          title: "Solarbetrieben",
-          text: "Ausgelegt für kontinuierliche autonome Energiegewinnung."
+          title: "Solarenergie-Beispiel",
+          text: "Beispielhafter Aufbau für Solarenergiegewinnung im DIY-Kontext."
         },
         winter: {
-          title: "Bewährte Winterautonomie",
-          text: "Validierte Leistung mit realer Telemetrie bei wenig Licht."
+          title: "Winter-Experimentnotizen",
+          text: "Telemetrie-Samples aus Situationen mit wenig Licht (Beispiel)."
         },
         enclosure: {
-          title: "Wetterdichtes ASA-Gehäuse",
-          text: "Robustes Gehäuse für den Außeneinsatz."
+          title: "ASA-Gehäusekonzept",
+          text: "Gedrucktes Gehäusebeispiel für den Außeneinsatz; Ergebnisse können variieren."
         },
         modular: {
           title: "Modulare DIY-Plattform",
-          text: "Feldtaugliches Layout mit austauschbaren Kernmodulen; Selbstmontage erforderlich."
+          text: "Beispielhaftes Layout mit austauschbaren Kernmodulen; Selbstmontage erforderlich."
         }
       }
     },
     autonomy: {
       eyebrow: "Telemetrie",
-      title: "Nachweis der Autonomie",
-      subtitle: "Echte Home-Assistant-Telemetrie von DIY-Aufbauten.",
+      title: "Telemetrie-Snapshot",
+      subtitle: "Beispielhafte Home-Assistant-Telemetrie aus DIY-Experimenten.",
       list: {
         charge: "Ladestrom",
         voltage: "Batteriespannung",
@@ -393,14 +408,14 @@ const translations = {
       }
     },
     winter: {
-      eyebrow: "Zuverlässigkeit",
-      title: "Warum es im Winter nicht ausfällt",
+      eyebrow: "Feldnotizen",
+      title: "Beobachtungen im Winterbetrieb",
       list: {
-        capacity: "Übergroße Batteriekapazität",
-        profile: "Konservatives Energieprofil",
-        diffuse: "Funktioniert bei diffusem Licht",
-        moving: "Keine beweglichen Teile",
-        design: "Kälte- und feuchtebewusstes Design"
+        capacity: "Beispielhaft höhere Batteriekapazität",
+        profile: "Konservatives Energieprofil (Beispiel)",
+        diffuse: "Beobachtet bei diffusem Licht (Beispiel)",
+        moving: "Keine beweglichen Teile (Beispiel)",
+        design: "Kälte- und Feuchtigkeitsaspekte"
       },
       cards: {
         field: {
@@ -421,27 +436,27 @@ const translations = {
       imageAlt: "MESH-S illustriertes internes Layout (Referenzdesign)",
       custom: {
         eyebrow: "Sonderteile",
-        note: "Referenzkonfiguration mit ausschließlich für MESH-S konstruierten und gedruckten Teilen. Standardkomponenten sind bewusst ausgelassen."
+        note: "Referenzkonfiguration mit ausschließlich für MESH-S modellierten und gedruckten Teilen. Standardkomponenten sind bewusst ausgelassen."
       },
       legend: {
         enclosure: {
           title: "ASA-Gehäuse",
-          desc: "UV-stabiles gedrucktes Gehäuse",
+          desc: "UV-stabiles gedrucktes Gehäuse (Beispiel)",
           alt: "ASA-Gehäuse"
         },
         lid: {
           title: "Montagedeckel",
-          desc: "Universelle Rund- und Rechteckmontage",
+          desc: "Rund- und Rechteckmontage (Beispiel)",
           alt: "Montagedeckel"
         },
         spacer: {
           title: "Abstandsplatte",
-          desc: "Modulare Elektronik-Montageschnittstelle",
+          desc: "Elektronik-Montageschnittstelle (Beispiel)",
           alt: "Abstandsplatte"
         },
         silica: {
           title: "Silicagel-Fach",
-          desc: "Modul zur Feuchtigkeitskontrolle",
+          desc: "Einlage zur Feuchtigkeitskontrolle (Beispiel)",
           alt: "Silicagel-Fach"
         }
       }
@@ -467,44 +482,44 @@ const translations = {
         },
         step4: {
           title: "Dichtkonzept",
-          text: "Referenzplatzierung der Dichtung und Gehäuseschluss für Wetterbeständigkeit.",
+          text: "Referenzplatzierung der Dichtung und Gehäuseschluss für Witterungsaspekte.",
           alt: "Ansicht 04 – Dichtkonzept"
         },
         step5: {
           title: "Systemcheck (Referenz)",
-          text: "Beispiel-Checkliste für Stromstabilität, Knotenstart und LoRa-Mesh-Konnektivität.",
+          text: "Beispiel-Checkliste für Stromprüfungen, Knotenstart und LoRa-Mesh-Konnektivität.",
           alt: "Ansicht 05 – Systemcheck Referenz"
         },
         step6: {
           title: "Outdoor-Montagekontext",
-          text: "Referenz-Deploymentszenario für DIY-Aufbauten; finale Montage, Verdrahtung und Inbetriebnahme erfolgen durch den Erbauer.",
+          text: "Referenz-Deploymentszenario für DIY-Aufbauten; Montage, Verdrahtung und Inbetriebnahme erfolgen durch den Erbauer.",
           alt: "Ansicht 06 – Outdoor-Montagekontext"
         }
       }
     },
     moisture: {
       eyebrow: "Schutz",
-      title: "Feuchtigkeitsschutz",
+      title: "Feuchtigkeitsaspekte",
       cards: {
         sealed: {
-          title: "Vollständig abgedichtete Architektur",
-          sub: "Keine externen Schnittstellen",
-          text: "Das Gehäuse hat keine externen Service-Ports oder Anschlüsse. Zugriff auf die Elektronik ist nur durch Öffnen des Gehäuses möglich, wodurch mögliche Eintrittsstellen für Feuchtigkeit entfallen."
+          title: "Abgedichtetes Layout-Konzept",
+          sub: "Keine externen Schnittstellen (Beispiel)",
+          text: "Das Gehäusebeispiel hat keine externen Service-Ports oder Anschlüsse. Zugriff auf die Elektronik ist nur durch Öffnen des Gehäuses möglich, wodurch potenzielle Eintrittsstellen für Feuchtigkeit reduziert werden."
         },
         gasket: {
           title: "Silikondichtung",
           sub: "Umlaufende Abdichtung",
-          text: "Eine durchgehende Silikondichtung versiegelt die Gehäusehälften und bietet eine zuverlässige Barriere gegen Regen, Spritzwasser und Feuchtigkeit."
+          text: "Eine durchgehende Silikondichtung kann die Gehäusehälften abdichten und die Exposition gegenüber Regen, Spritzwasser und Feuchtigkeit reduzieren."
         },
         vent: {
           title: "Druckausgleichsventil",
           sub: "Membranbasierter Druckausgleich",
-          text: "Eine Druckausgleichsmembran gleicht innere Druckänderungen durch Temperaturschwankungen aus, ohne Feuchtigkeit eindringen zu lassen."
+          text: "Eine Druckausgleichsmembran ist dafür vorgesehen, innere Druckänderungen durch Temperaturschwankungen auszugleichen und dabei Feuchtigkeitseintritt zu begrenzen."
         },
         silica: {
           title: "Silicagel-Fach",
           sub: "Passive Feuchtigkeitskontrolle",
-          text: "Ein internes Silicagel-Fach bindet Restfeuchtigkeit und schützt die Elektronik vor Kondensation bei langfristigem Außeneinsatz."
+          text: "Ein internes Silicagel-Fach kann Restfeuchtigkeit binden und Kondensation in DIY-Outdoor-Experimenten begrenzen."
         }
       }
     },
@@ -516,41 +531,45 @@ const translations = {
         universal: {
           title: "Universelles Montagesystem",
           sub: "Modulare Befestigungsschnittstelle",
-          text: "Der Montagedeckel ist als universelle Befestigungsschnittstelle ausgelegt, sodass der DIY-Aufbau an unterschiedlichsten Strukturen ohne Adapter oder Gehäuseänderungen installiert werden kann."
+          text: "Der Montagedeckel ist als universelles Befestigungskonzept dargestellt und zeigt, wie ein DIY-Aufbau an unterschiedlichen Strukturen ohne Adapter oder Gehäuseänderungen installiert werden könnte."
         },
         round: {
           title: "Runde Strukturen",
           sub: "10 mm – 60 mm Durchmesser",
-          text: "Unterstützt vertikale und horizontale Masten mit Durchmessern von 10 mm bis 60 mm. Zwei versetzte Befestigungsbohrungen bieten Flexibilität bei der Positionierung und ermöglichen Kabelbinder oder Metallschellen."
+          text: "Beispielhafte Kompatibilität mit vertikalen und horizontalen Masten mit Durchmessern von 10 mm bis 60 mm. Zwei versetzte Befestigungsbohrungen zeigen mögliche Positionierungen und ermöglichen Kabelbinder oder Metallschellen."
         },
         rectangular: {
           title: "Rechteckprofile",
           sub: "10×10 mm – 60×60 mm",
-          text: "Eine integrierte Profilgeometrie ermöglicht die sichere Montage an rechteckigen Strukturen wie Aluminiumprofilen und Rahmen von 10×10 mm bis 60×60 mm."
+          text: "Eine integrierte Profilgeometrie illustriert die Montage an rechteckigen Strukturen wie Aluminiumprofilen und Rahmen von 10×10 mm bis 60×60 mm."
         },
         quickRelease: {
           title: "Schnellverschluss-Halterung",
           sub: "Optionales Zubehör",
-          text: "Eine spezielle Schnellverschluss-Halterung lässt den Knoten per mechanischem Riegel einrasten. Zwei Entriegelungshebel lösen vier Verriegelungsstifte und ermöglichen die schnelle Demontage ohne Werkzeug oder Gehäusedemontage."
+          text: "Eine Schnellverschluss-Halterung als Beispiel zeigt ein mechanisches Riegelsystem. Zwei Entriegelungshebel lösen vier Verriegelungsstifte und ermöglichen eine schnelle Demontage ohne Werkzeug oder Gehäusedemontage."
         },
         magnetic: {
           title: "Magnetische Montageoption",
           sub: "Optionale Konfiguration",
-          text: "Die Halterung unterstützt optionale Hochleistungsmagnete (bis Ø56 mm), für temporäre Installationen auf Metallstrukturen bei voller Entnehmbarkeit."
+          text: "Die Halterung kann mit optionalen Hochleistungsmagneten (bis Ø56 mm) für temporäre Installationen auf Metallstrukturen kombiniert werden, wobei der Knoten entnehmbar bleibt."
         }
       }
     },
     bom: {
       eyebrow: "DIY",
-      title: "Benötigte Komponenten für einen Knoten",
-      subtitle: "Übersicht der Komponenten, die für den Aufbau eines MESH-S-Solarknotens erforderlich sind. Diese Liste dient als Referenz für DIY-Bauer.",
+      title: "Beispielkomponenten für einen DIY-Knoten",
+      subtitle: "Übersicht der Komponenten, die in einem MESH-S-DIY-Aufbau genutzt werden. Diese Liste dient als Referenz für DIY-Bauer.",
       case: "Gehäuse: ASA-Körper, Deckel, Silikondichtung, Schrauben",
       power: "Energie: Solarmodul, MPPT-Laderegler, 18650 Zellen",
       electronics: "Elektronik: Meshtastic-kompatibler Controller, LoRa-Modul",
       radio: "HF: Antenne, U.FL-zu-N-Typ-Adapter oder Kabel",
       mounting: "Befestigung: Universalhalterung, Klemmen oder Kabelbinder",
       misc: "Sonstiges: Verdrahtung, Steckverbinder, Dichtmittel, Silicagel",
-      note: "Alle Komponenten sind für den Selbstaufbau vorgesehen. Montage, Verdrahtung und Inbetriebnahme liegen in der Verantwortung des Erbauers."
+      note: "Alle Komponenten sind für den Selbstaufbau vorgesehen. Montage, Verdrahtung und Inbetriebnahme liegen in der Verantwortung des Erbauers.",
+      disclaimer: {
+        line1: "Die aufgeführten Komponenten stellen lediglich eine mögliche Beispielkonfiguration dar.",
+        line2: "Es wird kein Anspruch auf Vollständigkeit, Richtigkeit oder Eignung für einen bestimmten Zweck erhoben."
+      }
     },
     footer: {
       rights: "Alle Rechte vorbehalten.",
@@ -560,7 +579,18 @@ const translations = {
       impressum: "Impressum",
       github: "GitHub",
       telegram: "@skrap87",
-      disclaimer: "Dieses Projekt bietet ausschließlich DIY-Kits und Komponenten an. Montage, Verdrahtung und Inbetriebnahme liegen vollständig in der Verantwortung des Kunden."
+      disclaimer: "Privates, nicht-kommerzielles DIY-Projekt. Kein Verkauf."
+    },
+    disclaimer: {
+      global: {
+        line1: "Diese Website dokumentiert ein privates, nicht-kommerzielles DIY-Projekt.",
+        line2: "Alle Inhalte dienen ausschließlich als technische Referenz.",
+        line3: "Es werden keine fertigen Geräte, Bausätze oder funktionsfähigen Systeme angeboten.",
+        line4: "Jegliche Umsetzung, Modifikation oder Nutzung erfolgt vollständig auf eigene Verantwortung."
+      }
+    },
+    captions: {
+      prototype: "Beispielhafter DIY-Aufbau / Prototyp"
     },
     cookie: {
       aria: "Cookie-Hinweis",
@@ -628,8 +658,8 @@ const translations = {
       contactTitle: "Kontakt:",
       contactLabel: "Telegram:",
       contactHandle: "@skrap87",
-      projectLine1: "Diese Website dient der Darstellung eines technischen Projekts.",
-      projectLine2: "Der Verkauf von Produkten erfolgt gegebenenfalls über externe Plattformen (z. B. Etsy).",
+      projectLine1: "Diese Website dokumentiert ein privates, nicht-kommerzielles DIY-Projekt.",
+      projectLine2: "Es werden keine Produkte angeboten oder verkauft.",
       liabilityTitle: "Haftung für Inhalte:",
       liabilityText: "Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.",
       linksTitle: "Haftung für Links:",
