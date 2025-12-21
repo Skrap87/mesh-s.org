@@ -59,9 +59,19 @@ header {
 }
 
 .nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
   font-weight: 600;
   letter-spacing: 0.2em;
   font-size: 0.95rem;
+}
+
+.nav-logo-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 .nav-links,
