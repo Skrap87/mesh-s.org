@@ -1,39 +1,106 @@
-<main class="section">
-  <div class="container">
-    <h1>Impressum</h1>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Impressum – MESH-S</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <section>
+      <div class="container">
+        <div class="eyebrow">Legal</div>
+        <h1 class="section-title">Impressum</h1>
 
-    <p>Angaben gemäß § 5 TMG</p>
+        <p class="section-subtitle" style="margin-top: 12px;">
+          Angaben gemäß § 5 TMG
+        </p>
 
-    <p>Verantwortlich für den Inhalt dieser Website:</p>
+        <div style="margin-top: 18px;">
+          <p class="section-subtitle"><strong>Verantwortlich für den Inhalt dieser Website:</strong></p>
+          <p class="section-subtitle" style="margin-top: 8px;">
+            Eduard Herzog<br>
+            Deutschland
+          </p>
+        </div>
 
-    <p>
-      Eduard Herzog<br>
-      Deutschland
-    </p>
+        <div style="margin-top: 18px;">
+          <p class="section-subtitle"><strong>Kontakt:</strong></p>
+          <p class="section-subtitle" style="margin-top: 8px;">
+            Telegram:
+            <a href="https://t.me/skrap87" target="_blank" rel="noopener noreferrer">@skrap87</a>
+          </p>
+        </div>
 
-    <p>
-      Kontakt:<br>
-      Telegram:
-      <a href="https://t.me/skrap87" target="_blank" rel="noopener noreferrer">@skrap87</a>
-    </p>
+        <div style="margin-top: 18px;">
+          <p class="section-subtitle">
+            Diese Website dient der Darstellung eines technischen Projekts.<br>
+            Der Verkauf von Produkten erfolgt gegebenenfalls über externe Plattformen (z. B. Etsy).
+          </p>
+        </div>
 
-    <p>
-      Diese Website dient der Darstellung eines technischen Projekts.<br>
-      Der Verkauf von Produkten erfolgt gegebenenfalls über externe Plattformen (z. B. Etsy).
-    </p>
+        <div style="margin-top: 18px;">
+          <p class="section-subtitle"><strong>Haftung für Inhalte:</strong></p>
+          <p class="section-subtitle" style="margin-top: 8px;">
+            Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
+          </p>
+        </div>
 
-    <p>
-      Haftung für Inhalte:<br>
-      Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
-    </p>
+        <div style="margin-top: 18px;">
+          <p class="section-subtitle"><strong>Haftung für Links:</strong></p>
+          <p class="section-subtitle" style="margin-top: 8px;">
+            Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte kein Einfluss besteht.
+          </p>
+        </div>
 
-    <p>
-      Haftung für Links:<br>
-      Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte kein Einfluss besteht.
-    </p>
+        <div style="margin-top: 24px;">
+          <a class="btn btn-outline" href="/">Zurück zur Startseite</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <div class="page-actions">
-      <a href="/" class="btn btn-outline">Zurück zur Startseite</a>
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> MESH-S. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/">Startseite</a>
+        <a href="/privacy.html">Datenschutz</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="https://github.com/Skrap87/mesh-s.org">GitHub</a>
+      </div>
     </div>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie Hinweis">
+    <p>
+      Diese Website verwendet ausschließlich technisch notwendige Cookies, um den Betrieb der Seite sicherzustellen.
+      <a href="/privacy.html">Datenschutzerklärung</a>
+    </p>
+    <button id="cookie-accept" class="btn btn-outline" type="button">OK</button>
   </div>
-</main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script>
+    (function () {
+      const KEY = 'cookiesAccepted';
+      const banner = document.getElementById('cookie-banner');
+      const btn = document.getElementById('cookie-accept');
+      if (!banner || !btn) return;
+
+      if (localStorage.getItem(KEY) === 'true') {
+        banner.remove();
+        return;
+      }
+
+      btn.addEventListener('click', function () {
+        localStorage.setItem(KEY, 'true');
+        banner.remove();
+      });
+    })();
+  </script>
+</body>
+</html>
