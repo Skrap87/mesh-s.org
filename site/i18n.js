@@ -223,46 +223,115 @@ const translations = {
     },
     bom: {
       eyebrow: "DIY",
-      title: "Components for one DIY node",
-      subtitle: "Parts list for one MESH-S build (what I used).",
-      cards: {
-        enclosure: {
-          photo: "Photo: Enclosure",
-          title: "ASA enclosure",
-          text: "ASA body + lid, silicone gasket Ø 2 mm, M3 screws & inserts — 1 set"
+      title: "Bill of materials for one DIY node",
+      subtitle: "Technical reference list of components for one MESH-S DIY build.",
+      table: {
+        headers: {
+          number: "№",
+          component: "Component",
+          quantity: "Quantity",
+          notes: "Notes / Specs",
+          photo: "Photo"
         },
-        electronics: {
-          photo: "Photo: Electronics",
-          title: "Meshtastic electronics",
-          text: "XIAO nRF52840 + Wio-SX1262, MPPT charger (CN3065) — 1×"
-        },
-        battery: {
-          photo: "Photo: Battery",
-          title: "Battery pack",
-          text: "18650 Li-Ion cells (2.55 Ah) — 4×<br>4-slot 18650 holder — 1×"
-        },
-        solar: {
-          photo: "Photo: Solar",
-          title: "Solar supply",
-          text: "Solar panel 5 V / 2.7 W — 1×"
-        },
-        rf: {
-          photo: "Photo: RF",
-          title: "RF / antenna",
-          text: "ALFA 868 MHz antenna (5 dBi, N-Type) — 1×<br>U.FL → N-Type RG178 — 1×"
-        },
-        moisture: {
-          photo: "Photo: Sealing",
-          title: "Moisture protection",
-          text: "Pressure equalization vent (Amphenol M12) — 1×<br>Silica gel — ~5–10 g"
+        rows: {
+          r1: {
+            component: "XIAO nRF52840 & Wio-SX1262",
+            quantity: "1",
+            notes: "—",
+            photo: "—"
+          },
+          r2: {
+            component: "Solar panel",
+            quantity: "1",
+            notes: "5 V / 2.7 W (118×173 mm)",
+            photo: "—"
+          },
+          r3: {
+            component: "MPPT charge controller",
+            quantity: "1",
+            notes: "CN3065",
+            photo: "—"
+          },
+          r4: {
+            component: "U.FL → N-Type coax",
+            quantity: "1",
+            notes: "RG178 (≥150 mm)",
+            photo: "—"
+          },
+          r5: {
+            component: "18650 battery holder",
+            quantity: "1",
+            notes: "4-slot",
+            photo: "—"
+          },
+          r6: {
+            component: "ALFA 868 MHz antenna",
+            quantity: "1",
+            notes: "5 dBi",
+            photo: "—"
+          },
+          r7: {
+            component: "18650 Li-Ion cells",
+            quantity: "4 pcs",
+            notes: "—",
+            photo: "—"
+          },
+          r8: {
+            component: "M3×12 screws",
+            quantity: "18 pcs",
+            notes: "cylinder head",
+            photo: "—"
+          },
+          r9: {
+            component: "M3 brass threaded inserts",
+            quantity: "18 pcs",
+            notes: "brass",
+            photo: "—"
+          },
+          r10: {
+            component: "Self-tapping screws 2×10",
+            quantity: "17 pcs",
+            notes: "hex head",
+            photo: "—"
+          },
+          r11: {
+            component: "Amphenol pressure equalization vent",
+            quantity: "1",
+            notes: "Ø12 mm",
+            photo: "—"
+          },
+          r12: {
+            component: "Silicone gasket",
+            quantity: "1174 mm",
+            notes: "Ø 2 mm",
+            photo: "—"
+          },
+          r13: {
+            component: "Sikaflex 554",
+            quantity: "~1–2 mm layer",
+            notes: "—",
+            photo: "—"
+          },
+          r14: {
+            component: "Silicone sealant",
+            quantity: "as required",
+            notes: "—",
+            photo: "—"
+          },
+          r15: {
+            component: "Silica gel",
+            quantity: "as required",
+            notes: "—",
+            photo: "—"
+          },
+          r16: {
+            component: "ASA filament (3D print)",
+            quantity: "242 g",
+            notes: "2 colors",
+            photo: "—"
+          }
         }
       },
-      case: "Enclosure: ASA body, lid, silicone gasket, screws",
-      power: "Power: solar panel, MPPT charger, 18650 cells",
-      electronics: "Electronics: Meshtastic-compatible controller, LoRa module",
-      radio: "RF: antenna, U.FL to N-type adapter or cable",
-      mounting: "Mounting: universal bracket, clamps or zip ties",
-      misc: "Miscellaneous: wiring, connectors, sealant, silica gel",
       note: "All components are intended for self-assembly. Assembly, wiring and commissioning are the responsibility of the builder.",
       disclaimer: {
         line1: "The listed components represent one possible parts list.",
@@ -591,46 +660,115 @@ const translations = {
     },
     bom: {
       eyebrow: "DIY",
-      title: "Komponenten für einen DIY-Knoten",
-      subtitle: "Teileliste für einen MESH-S-Aufbau (so war’s bei mir).",
-      cards: {
-        enclosure: {
-          photo: "Foto: Gehäuse",
-          title: "ASA-Gehäuse",
-          text: "ASA-Korpus + Deckel, Silikondichtung Ø 2 mm, M3 Schrauben & Einsätze — 1 Set"
+      title: "Stückliste für einen DIY-Knoten",
+      subtitle: "Technische Referenzliste der Komponenten für einen MESH-S DIY-Aufbau.",
+      table: {
+        headers: {
+          number: "Nr.",
+          component: "Komponente",
+          quantity: "Menge",
+          notes: "Hinweise / Spezifikationen",
+          photo: "Foto"
         },
-        electronics: {
-          photo: "Foto: Elektronik",
-          title: "Meshtastic Elektronik",
-          text: "XIAO nRF52840 + Wio-SX1262, MPPT-Laderegler (CN3065) — 1×"
-        },
-        battery: {
-          photo: "Foto: Akkus",
-          title: "Akkupack",
-          text: "18650 Li-Ion Zellen (2,55 Ah) — 4×<br>18650 Batteriehalter (4-fach) — 1×"
-        },
-        solar: {
-          photo: "Foto: Solar",
-          title: "Solarversorgung",
-          text: "Solarmodul 5 V / 2,7 W — 1×"
-        },
-        rf: {
-          photo: "Foto: HF",
-          title: "HF / Antenne",
-          text: "ALFA 868 MHz Antenne (5 dBi, N-Typ) — 1×<br>U.FL → N-Typ RG178 — 1×"
-        },
-        moisture: {
-          photo: "Foto: Dichtung",
-          title: "Feuchtigkeitsschutz",
-          text: "Druckausgleichsventil (Amphenol M12) — 1×<br>Silicagel — ca. 5–10 g"
+        rows: {
+          r1: {
+            component: "XIAO nRF52840 & Wio-SX1262",
+            quantity: "1",
+            notes: "—",
+            photo: "—"
+          },
+          r2: {
+            component: "Solarmodul",
+            quantity: "1",
+            notes: "5 V / 2,7 W (118×173 mm)",
+            photo: "—"
+          },
+          r3: {
+            component: "MPPT-Laderegler",
+            quantity: "1",
+            notes: "CN3065",
+            photo: "—"
+          },
+          r4: {
+            component: "U.FL → N-Typ Koax",
+            quantity: "1",
+            notes: "RG178 (≥150 mm)",
+            photo: "—"
+          },
+          r5: {
+            component: "18650-Batteriehalter",
+            quantity: "1",
+            notes: "4-fach",
+            photo: "—"
+          },
+          r6: {
+            component: "ALFA 868 MHz Antenne",
+            quantity: "1",
+            notes: "5 dBi",
+            photo: "—"
+          },
+          r7: {
+            component: "18650 Li-Ion Zellen",
+            quantity: "4 Stück",
+            notes: "—",
+            photo: "—"
+          },
+          r8: {
+            component: "M3×12 Schrauben",
+            quantity: "18 Stück",
+            notes: "Zylinderkopf",
+            photo: "—"
+          },
+          r9: {
+            component: "M3 Messing-Gewindeeinsätze",
+            quantity: "18 Stück",
+            notes: "Messing",
+            photo: "—"
+          },
+          r10: {
+            component: "Selbstschneidende Schrauben 2×10",
+            quantity: "17 Stück",
+            notes: "Sechskantkopf",
+            photo: "—"
+          },
+          r11: {
+            component: "Amphenol Druckausgleichsventil",
+            quantity: "1",
+            notes: "Ø12 mm",
+            photo: "—"
+          },
+          r12: {
+            component: "Silikondichtung",
+            quantity: "1174 mm",
+            notes: "Ø 2 mm",
+            photo: "—"
+          },
+          r13: {
+            component: "Sikaflex 554",
+            quantity: "~1–2 mm Schicht",
+            notes: "—",
+            photo: "—"
+          },
+          r14: {
+            component: "Silikon-Dichtmasse",
+            quantity: "bei Bedarf",
+            notes: "—",
+            photo: "—"
+          },
+          r15: {
+            component: "Silicagel",
+            quantity: "bei Bedarf",
+            notes: "—",
+            photo: "—"
+          },
+          r16: {
+            component: "ASA-Filament (3D-Druck)",
+            quantity: "242 g",
+            notes: "2 Farben",
+            photo: "—"
+          }
         }
       },
-      case: "Gehäuse: ASA-Körper, Deckel, Silikondichtung, Schrauben",
-      power: "Energie: Solarmodul, MPPT-Laderegler, 18650 Zellen",
-      electronics: "Elektronik: Meshtastic-kompatibler Controller, LoRa-Modul",
-      radio: "HF: Antenne, U.FL-zu-N-Typ-Adapter oder Kabel",
-      mounting: "Befestigung: Universalhalterung, Klemmen oder Kabelbinder",
-      misc: "Sonstiges: Verdrahtung, Steckverbinder, Dichtmittel, Silicagel",
       note: "Alle Komponenten sind für den Selbstaufbau vorgesehen. Montage, Verdrahtung und Inbetriebnahme liegen in der Verantwortung des Erbauers.",
       disclaimer: {
         line1: "Die aufgeführten Komponenten zeigen eine mögliche Teileliste.",
