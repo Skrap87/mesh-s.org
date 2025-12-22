@@ -39,7 +39,7 @@ const translations = {
         },
         winter: {
           title: "Winter experiment notes",
-          text: "Telemetry samples from low-light conditions (example)."
+          text: "Telemetry samples from low-light conditions."
         },
         enclosure: {
           title: "ASA enclosure concept",
@@ -78,9 +78,9 @@ const translations = {
       title: "Winter behavior observations",
       list: {
         capacity: "Example higher battery capacity",
-        profile: "Conservative power profile (example)",
-        diffuse: "Observed in diffuse light (example)",
-        moving: "No moving parts (example)",
+        profile: "Conservative power profile",
+        diffuse: "Observed in diffuse light",
+        moving: "No moving parts",
         design: "Cold & moisture considerations"
       },
       cards: {
@@ -107,7 +107,7 @@ const translations = {
       legend: {
         enclosure: {
           title: "ASA enclosure",
-          desc: "UV-stable printed housing (example)",
+          desc: "UV-stable printed housing",
           alt: "ASA enclosure"
         },
         lid: {
@@ -117,12 +117,12 @@ const translations = {
         },
         spacer: {
           title: "Spacer plate",
-          desc: "Electronics mounting interface (example)",
+          desc: "Electronics mounting interface",
           alt: "Spacer plate"
         },
         silica: {
           title: "Silica compartment",
-          desc: "Humidity control insert (example)",
+          desc: "Humidity control insert",
           alt: "Silica compartment"
         }
       }
@@ -142,7 +142,7 @@ const translations = {
           alt: "View 02 – battery pack positioning"
         },
         step3: {
-          title: "RF path routing (example)",
+          title: "RF path routing",
           text: "Illustrative routing of the RF path (U.FL → N-Type) prior to closing the enclosure.",
           alt: "View 03 – RF path routing example"
         },
@@ -169,7 +169,7 @@ const translations = {
       cards: {
         sealed: {
           title: "Sealed layout concept",
-          sub: "No external interfaces (example)",
+          sub: "No external interfaces",
           text: "The enclosure example uses no external service ports or connectors. Access to electronics is only possible by opening the housing, reducing potential ingress points for moisture."
         },
         gasket: {
@@ -488,7 +488,7 @@ const translations = {
           alt: "Ansicht 04 – Dichtkonzept"
         },
         step5: {
-          title: "Systemcheck (Referenz)",
+          title: "Systemcheck",
           text: "Beispiel-Checkliste für Stromprüfungen, Knotenstart und LoRa-Mesh-Konnektivität.",
           alt: "Ansicht 05 – Systemcheck Referenz"
         },
