@@ -10,7 +10,7 @@ const translations = {
       winter: "Winter",
       exploded: "Exploded",
       customParts: "Custom parts",
-      assembly: "Reference build",
+      assembly: "Build views",
       moisture: "Moisture",
       mounting: "Mounting",
       bom: "Components",
@@ -24,37 +24,37 @@ const translations = {
     hero: {
       eyebrow: "DIY Meshtastic Solar Node",
       subtitle: "DIY • Solar • Mesh Node",
-      tagline: "DIY reference design and documentation for makers and hobbyists.",
-      ctaAutonomy: "View telemetry example",
+      tagline: "DIY build notes and documentation for makers and hobbyists.",
+      ctaAutonomy: "View telemetry",
       ctaBom: "Components",
-      imageAlt: "MESH-S DIY solar mesh node reference design"
+      imageAlt: "MESH-S DIY solar mesh node"
     },
     benefits: {
       eyebrow: "DIY overview",
-      title: "DIY reference for outdoor mesh experiments",
+      title: "DIY overview for outdoor mesh experiments",
       cards: {
         solar: {
-          title: "Solar power example",
-          text: "Example setup for solar energy harvesting in DIY contexts."
+          title: "Solar powered",
+          text: "A practical solar setup for a DIY node."
         },
         winter: {
           title: "Winter experiment notes",
-          text: "Telemetry samples from low-light conditions."
+          text: "Telemetry snapshots from low-light conditions."
         },
         enclosure: {
           title: "ASA enclosure concept",
-          text: "Printed housing example for outdoor use; results may vary."
+          text: "Printed housing for outdoor use; results may vary."
         },
         modular: {
           title: "Modular DIY platform",
-          text: "Example layout with replaceable core modules; self-assembly required."
+          text: "Modular layout with replaceable core modules; self-assembly required."
         }
       }
     },
     autonomy: {
       eyebrow: "Telemetry",
       title: "Telemetry snapshot",
-      subtitle: "Example Home Assistant telemetry from DIY experiments.",
+      subtitle: "Home Assistant telemetry from real outdoor use.",
       list: {
         charge: "Charge current",
         voltage: "Battery voltage",
@@ -77,7 +77,7 @@ const translations = {
       eyebrow: "Field notes",
       title: "Winter behavior observations",
       list: {
-        capacity: "Example higher battery capacity",
+        capacity: "Higher battery capacity in cold weather",
         profile: "Conservative power profile",
         diffuse: "Observed in diffuse light",
         moving: "No moving parts",
@@ -91,18 +91,18 @@ const translations = {
         },
         temp: {
           title: "Temperature",
-          note: "Winter week sample",
+          note: "Winter week overview",
           alt: "Temperature during winter week"
         }
       }
     },
     exploded: {
-      eyebrow: "Reference layout",
+      eyebrow: "Inside overview",
       title: "Illustrative internal layout",
-      imageAlt: "MESH-S illustrative internal layout (reference design)",
+      imageAlt: "MESH-S illustrative internal layout",
       custom: {
         eyebrow: "Custom parts",
-        note: "Reference configuration showing only the parts modeled and printed for MESH-S. Off-the-shelf components are intentionally omitted."
+        note: "Shown here are only the printed parts made for MESH-S. Store-bought components are left out to keep the view clean."
       },
       legend: {
         enclosure: {
@@ -112,7 +112,7 @@ const translations = {
         },
         lid: {
           title: "Mounting lid",
-          desc: "Round & rectangular mounting example",
+          desc: "Round & rectangular mounting",
           alt: "Mounting lid"
         },
         spacer: {
@@ -128,37 +128,37 @@ const translations = {
       }
     },
     assembly: {
-      eyebrow: "Reference build",
-      title: "Reference configuration in 6 views",
+      eyebrow: "Build views",
+      title: "Build in 6 views",
       steps: {
         step1: {
           title: "Power core layout",
-          text: "Reference placement of the MPPT controller and main node board on the spacer plate; layout can be adapted.",
+          text: "Placement of the MPPT controller and main node board on the spacer plate; layout can be adapted.",
           alt: "View 01 – power core layout"
         },
         step2: {
           title: "Battery pack positioning",
-          text: "Example location for the 4×18650 battery pack with cable routing shown for reference.",
+          text: "Location of the 4×18650 battery pack with typical cable routing.",
           alt: "View 02 – battery pack positioning"
         },
         step3: {
           title: "RF path routing",
           text: "Illustrative routing of the RF path (U.FL → N-Type) prior to closing the enclosure.",
-          alt: "View 03 – RF path routing example"
+          alt: "View 03 – RF path routing"
         },
         step4: {
           title: "Sealing concept",
-          text: "Reference gasket placement and enclosure closure for weather exposure considerations.",
+          text: "Gasket placement and enclosure closure for weather exposure considerations.",
           alt: "View 04 – sealing concept"
         },
         step5: {
-          title: "System check (reference)",
-          text: "Example checklist items for power checks, node startup, and LoRa mesh connectivity.",
-          alt: "View 05 – system check reference"
+          title: "System check",
+          text: "Checklist items for power checks, node startup, and LoRa mesh connectivity.",
+          alt: "View 05 – system check"
         },
         step6: {
           title: "Outdoor mounting context",
-          text: "Reference deployment context for DIY builds; assembly, wiring, and commissioning are completed by the builder.",
+          text: "Outdoor mounting context for DIY builds; assembly, wiring, and commissioning are completed by the builder.",
           alt: "View 06 – outdoor mounting context"
         }
       }
@@ -170,7 +170,7 @@ const translations = {
         sealed: {
           title: "Sealed layout concept",
           sub: "No external interfaces",
-          text: "The enclosure example uses no external service ports or connectors. Access to electronics is only possible by opening the housing, reducing potential ingress points for moisture."
+          text: "The enclosure uses no external service ports or connectors. Access to electronics is only possible by opening the housing, reducing potential ingress points for moisture."
         },
         gasket: {
           title: "Silicone gasket",
@@ -202,7 +202,7 @@ const translations = {
         round: {
           title: "Round structures",
           sub: "10 mm – 60 mm diameter",
-          text: "Example compatibility with vertical and horizontal poles with diameters from 10 mm to 60 mm. Two mounting hole offsets show possible positioning, enabling the use of cable ties or metal clamps."
+          text: "Compatibility with vertical and horizontal poles with diameters from 10 mm to 60 mm. Two mounting hole offsets show possible positioning, enabling the use of cable ties or metal clamps."
         },
         rectangular: {
           title: "Rectangular profiles",
@@ -212,7 +212,7 @@ const translations = {
         quickRelease: {
           title: "Quick-release bracket",
           sub: "Optional accessory",
-          text: "A dedicated quick-release bracket example shows a mechanical latch system. Two release levers disengage four locking pins, enabling fast removal without tools or enclosure disassembly."
+          text: "A dedicated quick-release bracket shows a mechanical latch system. Two release levers disengage four locking pins, enabling fast removal without tools or enclosure disassembly."
         },
         magnetic: {
           title: "Magnetic mounting option",
@@ -223,8 +223,8 @@ const translations = {
     },
     bom: {
       eyebrow: "DIY",
-      title: "Example components for one DIY node",
-      subtitle: "Overview of components used in one MESH-S DIY build. This is a reference list for DIY builders.",
+      title: "Components for one DIY node",
+      subtitle: "Parts list for one MESH-S build (what I used).",
       case: "Enclosure: ASA body, lid, silicone gasket, screws",
       power: "Power: solar panel, MPPT charger, 18650 cells",
       electronics: "Electronics: Meshtastic-compatible controller, LoRa module",
@@ -233,7 +233,7 @@ const translations = {
       misc: "Miscellaneous: wiring, connectors, sealant, silica gel",
       note: "All components are intended for self-assembly. Assembly, wiring and commissioning are the responsibility of the builder.",
       disclaimer: {
-        line1: "The listed components represent one possible example configuration.",
+        line1: "The listed components represent one possible parts list.",
         line2: "No claim is made regarding completeness, correctness or suitability for a specific purpose."
       }
     },
@@ -245,18 +245,18 @@ const translations = {
       impressum: "Legal notice",
       github: "GitHub",
       telegram: "@skrap87",
-      disclaimer: "Private non-commercial DIY project. No products for sale."
+      disclaimer: "Private non-commercial DIY project. Nothing for sale."
     },
     disclaimer: {
       global: {
         line1: "This website documents a private, non-commercial DIY project.",
-        line2: "All information is provided for technical reference purposes only.",
+        line2: "All information is shared for learning and documentation.",
         line3: "No finished devices, kits or functional systems are offered.",
         line4: "Any implementation, modification or use is carried out entirely at the user's own responsibility."
       }
     },
     captions: {
-      prototype: "Example DIY build / prototype"
+      prototype: "DIY build / prototype"
     },
     cookie: {
       aria: "Cookie notice",
@@ -346,7 +346,7 @@ const translations = {
       winter: "Winter",
       exploded: "Explosionsansicht",
       customParts: "Sonderteile",
-      assembly: "Referenzaufbau",
+      assembly: "Aufbau in Bildern",
       moisture: "Feuchtigkeit",
       mounting: "Befestigung",
       bom: "Komponenten",
@@ -360,37 +360,37 @@ const translations = {
     hero: {
       eyebrow: "DIY-Meshtastic-Solarknoten",
       subtitle: "DIY • Solar • Mesh-Knoten",
-      tagline: "DIY-Referenzdesign und Dokumentation für Maker und Hobbyisten.",
-      ctaAutonomy: "Telemetrie-Beispiel ansehen",
+      tagline: "DIY-Aufbau, Notizen und Doku für Maker und Bastler.",
+      ctaAutonomy: "Telemetrie ansehen",
       ctaBom: "Komponenten",
-      imageAlt: "MESH-S DIY-Solar-Mesh-Knoten als Referenzdesign"
+      imageAlt: "MESH-S DIY-Solar-Mesh-Knoten"
     },
     benefits: {
       eyebrow: "DIY-Überblick",
-      title: "DIY-Referenz für Outdoor-Mesh-Experimente",
+      title: "DIY-Überblick für Outdoor-Mesh-Experimente",
       cards: {
         solar: {
-          title: "Solarenergie-Beispiel",
-          text: "Beispielhafter Aufbau für Solarenergiegewinnung im DIY-Kontext."
+          title: "Solarbetrieb",
+          text: "Ein praxisnaher Solaraufbau für einen DIY-Knoten."
         },
         winter: {
           title: "Winter-Experimentnotizen",
-          text: "Telemetrie-Samples aus Situationen mit wenig Licht."
+          text: "Telemetrie-Einblicke aus Situationen mit wenig Licht."
         },
         enclosure: {
           title: "ASA-Gehäusekonzept",
-          text: "Gedrucktes Gehäusebeispiel für den Außeneinsatz; Ergebnisse können variieren."
+          text: "Gedrucktes Gehäuse für den Außeneinsatz; Ergebnisse können variieren."
         },
         modular: {
           title: "Modulare DIY-Plattform",
-          text: "Beispielhaftes Layout mit austauschbaren Kernmodulen; Selbstmontage erforderlich."
+          text: "Modulares Layout mit austauschbaren Kernmodulen; Selbstmontage erforderlich."
         }
       }
     },
     autonomy: {
       eyebrow: "Telemetrie",
       title: "Telemetrie-Snapshot",
-      subtitle: "Beispielhafte Home-Assistant-Telemetrie aus DIY-Experimenten.",
+      subtitle: "Home-Assistant-Telemetrie aus realem Outdoor-Einsatz.",
       list: {
         charge: "Ladestrom",
         voltage: "Batteriespannung",
@@ -413,7 +413,7 @@ const translations = {
       eyebrow: "Feldnotizen",
       title: "Beobachtungen im Winterbetrieb",
       list: {
-        capacity: "Beispielhaft höhere Batteriekapazität",
+        capacity: "Höhere Batteriekapazität im Kalten",
         profile: "Konservatives Energieprofil",
         diffuse: "Beobachtet bei diffusem Licht",
         moving: "Keine beweglichen Teile",
@@ -427,18 +427,18 @@ const translations = {
         },
         temp: {
           title: "Temperatur",
-          note: "Winterwoche",
+          note: "Überblick über eine Winterwoche",
           alt: "Temperatur während einer Winterwoche"
         }
       }
     },
     exploded: {
-      eyebrow: "Referenzlayout",
-      title: "Illustratives internes Layout",
-      imageAlt: "MESH-S illustriertes internes Layout (Referenzdesign)",
+      eyebrow: "Innenansicht",
+      title: "Illustrativer Innenaufbau",
+      imageAlt: "MESH-S illustriertes internes Layout",
       custom: {
         eyebrow: "Sonderteile",
-        note: "Referenzkonfiguration mit ausschließlich für MESH-S modellierten und gedruckten Teilen. Standardkomponenten sind bewusst ausgelassen."
+        note: "Gezeigt sind nur die für MESH-S modellierten und gedruckten Teile. Standardkomponenten bleiben außen vor, damit die Ansicht klar bleibt."
       },
       legend: {
         enclosure: {
@@ -448,7 +448,7 @@ const translations = {
         },
         lid: {
           title: "Montagedeckel",
-          desc: "Rund- und Rechteckmontage",
+          desc: "Montage für runde und rechteckige Profile",
           alt: "Montagedeckel"
         },
         spacer: {
@@ -464,37 +464,37 @@ const translations = {
       }
     },
     assembly: {
-      eyebrow: "Referenzaufbau",
-      title: "Referenzkonfiguration in 6 Ansichten",
+      eyebrow: "Aufbau in Bildern",
+      title: "Aufbau in 6 Ansichten",
       steps: {
         step1: {
           title: "Power-Core-Layout",
-          text: "Referenzplatzierung von MPPT-Regler und Hauptplatine auf der Abstandsplatte; das Layout ist anpassbar.",
+          text: "Platzierung von MPPT-Regler und Hauptplatine auf der Abstandsplatte; das Layout ist anpassbar.",
           alt: "Ansicht 01 – Power-Core-Layout"
         },
         step2: {
           title: "Position des Akkupacks",
-          text: "Beispiellage des 4×18650-Akkupacks mit Kabelführung als Referenz.",
+          text: "Lage des 4×18650-Akkupacks mit typischer Kabelführung.",
           alt: "Ansicht 02 – Position des Akkupacks"
         },
         step3: {
           title: "HF-Pfad",
           text: "Illustrative Verlegung des HF-Pfads (U.FL → N-Type) vor dem Schließen des Gehäuses.",
-          alt: "Ansicht 03 – HF-Pfad Beispiel"
+          alt: "Ansicht 03 – HF-Pfad"
         },
         step4: {
           title: "Dichtkonzept",
-          text: "Referenzplatzierung der Dichtung und Gehäuseschluss für Witterungsaspekte.",
+          text: "Platzierung der Dichtung und Gehäuseschluss für Witterungsaspekte.",
           alt: "Ansicht 04 – Dichtkonzept"
         },
         step5: {
           title: "Systemcheck",
-          text: "Beispiel-Checkliste für Stromprüfungen, Knotenstart und LoRa-Mesh-Konnektivität.",
-          alt: "Ansicht 05 – Systemcheck Referenz"
+          text: "Checkliste für Stromprüfungen, Knotenstart und LoRa-Mesh-Konnektivität.",
+          alt: "Ansicht 05 – Systemcheck"
         },
         step6: {
           title: "Outdoor-Montagekontext",
-          text: "Referenz-Deploymentszenario für DIY-Aufbauten; Montage, Verdrahtung und Inbetriebnahme erfolgen durch den Erbauer.",
+          text: "Outdoor-Montagekontext für DIY-Aufbauten; Montage, Verdrahtung und Inbetriebnahme erfolgen durch den Erbauer.",
           alt: "Ansicht 06 – Outdoor-Montagekontext"
         }
       }
@@ -506,7 +506,7 @@ const translations = {
         sealed: {
           title: "Abgedichtetes Layout-Konzept",
           sub: "Keine externen Schnittstellen",
-          text: "Das Gehäusebeispiel hat keine externen Service-Ports oder Anschlüsse. Zugriff auf die Elektronik ist nur durch Öffnen des Gehäuses möglich, wodurch potenzielle Eintrittsstellen für Feuchtigkeit reduziert werden."
+          text: "Das Gehäuse hat keine externen Service-Ports oder Anschlüsse. Zugriff auf die Elektronik ist nur durch Öffnen des Gehäuses möglich, wodurch potenzielle Eintrittsstellen für Feuchtigkeit reduziert werden."
         },
         gasket: {
           title: "Silikondichtung",
@@ -538,7 +538,7 @@ const translations = {
         round: {
           title: "Runde Strukturen",
           sub: "10 mm – 60 mm Durchmesser",
-          text: "Beispielhafte Kompatibilität mit vertikalen und horizontalen Masten mit Durchmessern von 10 mm bis 60 mm. Zwei versetzte Befestigungsbohrungen zeigen mögliche Positionierungen und ermöglichen Kabelbinder oder Metallschellen."
+          text: "Kompatibilität mit vertikalen und horizontalen Masten mit Durchmessern von 10 mm bis 60 mm. Zwei versetzte Befestigungsbohrungen zeigen mögliche Positionierungen und ermöglichen Kabelbinder oder Metallschellen."
         },
         rectangular: {
           title: "Rechteckprofile",
@@ -548,7 +548,7 @@ const translations = {
         quickRelease: {
           title: "Schnellverschluss-Halterung",
           sub: "Optionales Zubehör",
-          text: "Eine Schnellverschluss-Halterung als Beispiel zeigt ein mechanisches Riegelsystem. Zwei Entriegelungshebel lösen vier Verriegelungsstifte und ermöglichen eine schnelle Demontage ohne Werkzeug oder Gehäusedemontage."
+          text: "Eine Schnellverschluss-Halterung zeigt ein mechanisches Riegelsystem. Zwei Entriegelungshebel lösen vier Verriegelungsstifte und ermöglichen eine schnelle Demontage ohne Werkzeug oder Gehäusedemontage."
         },
         magnetic: {
           title: "Magnetische Montageoption",
@@ -559,8 +559,8 @@ const translations = {
     },
     bom: {
       eyebrow: "DIY",
-      title: "Beispielkomponenten für einen DIY-Knoten",
-      subtitle: "Übersicht der Komponenten, die in einem MESH-S-DIY-Aufbau genutzt werden. Diese Liste dient als Referenz für DIY-Bauer.",
+      title: "Komponenten für einen DIY-Knoten",
+      subtitle: "Teileliste für einen MESH-S-Aufbau (so war’s bei mir).",
       case: "Gehäuse: ASA-Körper, Deckel, Silikondichtung, Schrauben",
       power: "Energie: Solarmodul, MPPT-Laderegler, 18650 Zellen",
       electronics: "Elektronik: Meshtastic-kompatibler Controller, LoRa-Modul",
@@ -569,7 +569,7 @@ const translations = {
       misc: "Sonstiges: Verdrahtung, Steckverbinder, Dichtmittel, Silicagel",
       note: "Alle Komponenten sind für den Selbstaufbau vorgesehen. Montage, Verdrahtung und Inbetriebnahme liegen in der Verantwortung des Erbauers.",
       disclaimer: {
-        line1: "Die aufgeführten Komponenten stellen lediglich eine mögliche Beispielkonfiguration dar.",
+        line1: "Die aufgeführten Komponenten zeigen eine mögliche Teileliste.",
         line2: "Es wird kein Anspruch auf Vollständigkeit, Richtigkeit oder Eignung für einen bestimmten Zweck erhoben."
       }
     },
@@ -581,18 +581,18 @@ const translations = {
       impressum: "Impressum",
       github: "GitHub",
       telegram: "@skrap87",
-      disclaimer: "Privates, nicht-kommerzielles DIY-Projekt. Kein Verkauf."
+      disclaimer: "Privates, nicht-kommerzielles DIY-Projekt. Nichts im Verkauf."
     },
     disclaimer: {
       global: {
         line1: "Diese Website dokumentiert ein privates, nicht-kommerzielles DIY-Projekt.",
-        line2: "Alle Inhalte dienen ausschließlich als technische Referenz.",
+        line2: "Alle Inhalte dienen der Doku und dem Erfahrungsaustausch.",
         line3: "Es werden keine fertigen Geräte, Bausätze oder funktionsfähigen Systeme angeboten.",
         line4: "Jegliche Umsetzung, Modifikation oder Nutzung erfolgt vollständig auf eigene Verantwortung."
       }
     },
     captions: {
-      prototype: "Beispielhafter DIY-Aufbau / Prototyp"
+      prototype: "DIY-Aufbau / Prototyp"
     },
     cookie: {
       aria: "Cookie-Hinweis",
