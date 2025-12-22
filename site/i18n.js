@@ -375,7 +375,7 @@ const translations = {
         },
         winter: {
           title: "Winter-Experimentnotizen",
-          text: "Telemetrie-Samples aus Situationen mit wenig Licht (Beispiel)."
+          text: "Telemetrie-Samples aus Situationen mit wenig Licht."
         },
         enclosure: {
           title: "ASA-Gehäusekonzept",
@@ -414,9 +414,9 @@ const translations = {
       title: "Beobachtungen im Winterbetrieb",
       list: {
         capacity: "Beispielhaft höhere Batteriekapazität",
-        profile: "Konservatives Energieprofil (Beispiel)",
-        diffuse: "Beobachtet bei diffusem Licht (Beispiel)",
-        moving: "Keine beweglichen Teile (Beispiel)",
+        profile: "Konservatives Energieprofil",
+        diffuse: "Beobachtet bei diffusem Licht",
+        moving: "Keine beweglichen Teile",
         design: "Kälte- und Feuchtigkeitsaspekte"
       },
       cards: {
@@ -427,7 +427,7 @@ const translations = {
         },
         temp: {
           title: "Temperatur",
-          note: "Winterwoche (Beispiel)",
+          note: "Winterwoche",
           alt: "Temperatur während einer Winterwoche"
         }
       }
@@ -443,22 +443,22 @@ const translations = {
       legend: {
         enclosure: {
           title: "ASA-Gehäuse",
-          desc: "UV-stabiles gedrucktes Gehäuse (Beispiel)",
+          desc: "UV-stabiles gedrucktes Gehäuse",
           alt: "ASA-Gehäuse"
         },
         lid: {
           title: "Montagedeckel",
-          desc: "Rund- und Rechteckmontage (Beispiel)",
+          desc: "Rund- und Rechteckmontage",
           alt: "Montagedeckel"
         },
         spacer: {
           title: "Abstandsplatte",
-          desc: "Elektronik-Montageschnittstelle (Beispiel)",
+          desc: "Elektronik-Montageschnittstelle",
           alt: "Abstandsplatte"
         },
         silica: {
           title: "Silicagel-Fach",
-          desc: "Einlage zur Feuchtigkeitskontrolle (Beispiel)",
+          desc: "Einlage zur Feuchtigkeitskontrolle",
           alt: "Silicagel-Fach"
         }
       }
@@ -478,7 +478,7 @@ const translations = {
           alt: "Ansicht 02 – Position des Akkupacks"
         },
         step3: {
-          title: "HF-Pfad (Beispiel)",
+          title: "HF-Pfad",
           text: "Illustrative Verlegung des HF-Pfads (U.FL → N-Type) vor dem Schließen des Gehäuses.",
           alt: "Ansicht 03 – HF-Pfad Beispiel"
         },
@@ -505,7 +505,7 @@ const translations = {
       cards: {
         sealed: {
           title: "Abgedichtetes Layout-Konzept",
-          sub: "Keine externen Schnittstellen (Beispiel)",
+          sub: "Keine externen Schnittstellen",
           text: "Das Gehäusebeispiel hat keine externen Service-Ports oder Anschlüsse. Zugriff auf die Elektronik ist nur durch Öffnen des Gehäuses möglich, wodurch potenzielle Eintrittsstellen für Feuchtigkeit reduziert werden."
         },
         gasket: {
