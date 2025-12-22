@@ -15,7 +15,7 @@ const translations = {
       mounting: "Mounting",
       bom: "Components",
       more: "More",
-      telegram: "Telegram @skrap87",
+      telegram: "Email contact@mesh-s.org",
       github: "GitHub"
     },
     lang: {
@@ -244,7 +244,7 @@ const translations = {
       privacy: "Privacy",
       impressum: "Legal notice",
       github: "GitHub",
-      telegram: "@skrap87",
+      telegram: "contact@mesh-s.org",
       disclaimer: "Private non-commercial DIY project. Nothing for sale."
     },
     disclaimer: {
@@ -278,7 +278,7 @@ const translations = {
         controller: {
           title: "Controller",
           body1: "Eduard Herzog, Germany.",
-          body2: "Contact: email [email placeholder]."
+          body2: "Contact: contact@mesh-s.org."
         },
         logs: {
           title: "Access data / server logs",
@@ -325,7 +325,7 @@ const translations = {
       contactLabelTelegram: "Telegram:",
       contactHandle: "@skrap87",
       contactLabelEmail: "E-mail:",
-      contactEmail: "Placeholder",
+      contactEmail: "contact@mesh-s.org",
       projectLine1: "This website documents a private non-commercial DIY project.",
       projectLine2: "It serves only for technical documentation and experiments.",
       liabilityTitle: "Liability for content:",
@@ -351,7 +351,7 @@ const translations = {
       mounting: "Befestigung",
       bom: "Komponenten",
       more: "Mehr",
-      telegram: "Telegram @skrap87",
+      telegram: "E-Mail contact@mesh-s.org",
       github: "GitHub"
     },
     lang: {
@@ -580,7 +580,7 @@ const translations = {
       privacy: "Datenschutz",
       impressum: "Impressum",
       github: "GitHub",
-      telegram: "@skrap87",
+      telegram: "contact@mesh-s.org",
       disclaimer: "Privates, nicht-kommerzielles DIY-Projekt. Nichts im Verkauf."
     },
     disclaimer: {
@@ -614,7 +614,7 @@ const translations = {
         controller: {
           title: "Verantwortlicher",
           body1: "Eduard Herzog, Deutschland.",
-          body2: "Kontakt: E-Mail [E-Mail-Platzhalter]."
+          body2: "Kontakt: contact@mesh-s.org."
         },
         logs: {
           title: "Zugriffsdaten / Server-Logfiles",
@@ -661,7 +661,7 @@ const translations = {
       contactLabelTelegram: "Telegram:",
       contactHandle: "@skrap87",
       contactLabelEmail: "E-Mail:",
-      contactEmail: "Platzhalter",
+      contactEmail: "contact@mesh-s.org",
       projectLine1: "Diese Website dokumentiert ein privates, nicht-kommerzielles DIY-Projekt.",
       projectLine2: "Sie dient ausschließlich der technischen Dokumentation und Experimenten.",
       liabilityTitle: "Haftung für Inhalte:",
