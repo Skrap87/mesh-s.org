@@ -225,6 +225,38 @@ const translations = {
       eyebrow: "DIY",
       title: "Components for one DIY node",
       subtitle: "Parts list for one MESH-S build (what I used).",
+      cards: {
+        enclosure: {
+          photo: "Photo: Enclosure",
+          title: "ASA enclosure",
+          text: "ASA body + lid, silicone gasket Ø 2 mm, M3 screws & inserts — 1 set"
+        },
+        electronics: {
+          photo: "Photo: Electronics",
+          title: "Meshtastic electronics",
+          text: "XIAO nRF52840 + Wio-SX1262, MPPT charger (CN3065) — 1×"
+        },
+        battery: {
+          photo: "Photo: Battery",
+          title: "Battery pack",
+          text: "18650 Li-Ion cells (2.55 Ah) — 4×<br>4-slot 18650 holder — 1×"
+        },
+        solar: {
+          photo: "Photo: Solar",
+          title: "Solar supply",
+          text: "Solar panel 5 V / 2.7 W — 1×"
+        },
+        rf: {
+          photo: "Photo: RF",
+          title: "RF / antenna",
+          text: "ALFA 868 MHz antenna (5 dBi, N-Type) — 1×<br>U.FL → N-Type RG178 — 1×"
+        },
+        moisture: {
+          photo: "Photo: Sealing",
+          title: "Moisture protection",
+          text: "Pressure equalization vent (Amphenol M12) — 1×<br>Silica gel — ~5–10 g"
+        }
+      },
       case: "Enclosure: ASA body, lid, silicone gasket, screws",
       power: "Power: solar panel, MPPT charger, 18650 cells",
       electronics: "Electronics: Meshtastic-compatible controller, LoRa module",
@@ -561,6 +593,38 @@ const translations = {
       eyebrow: "DIY",
       title: "Komponenten für einen DIY-Knoten",
       subtitle: "Teileliste für einen MESH-S-Aufbau (so war’s bei mir).",
+      cards: {
+        enclosure: {
+          photo: "Foto: Gehäuse",
+          title: "ASA-Gehäuse",
+          text: "ASA-Korpus + Deckel, Silikondichtung Ø 2 mm, M3 Schrauben & Einsätze — 1 Set"
+        },
+        electronics: {
+          photo: "Foto: Elektronik",
+          title: "Meshtastic Elektronik",
+          text: "XIAO nRF52840 + Wio-SX1262, MPPT-Laderegler (CN3065) — 1×"
+        },
+        battery: {
+          photo: "Foto: Akkus",
+          title: "Akkupack",
+          text: "18650 Li-Ion Zellen (2,55 Ah) — 4×<br>18650 Batteriehalter (4-fach) — 1×"
+        },
+        solar: {
+          photo: "Foto: Solar",
+          title: "Solarversorgung",
+          text: "Solarmodul 5 V / 2,7 W — 1×"
+        },
+        rf: {
+          photo: "Foto: HF",
+          title: "HF / Antenne",
+          text: "ALFA 868 MHz Antenne (5 dBi, N-Typ) — 1×<br>U.FL → N-Typ RG178 — 1×"
+        },
+        moisture: {
+          photo: "Foto: Dichtung",
+          title: "Feuchtigkeitsschutz",
+          text: "Druckausgleichsventil (Amphenol M12) — 1×<br>Silicagel — ca. 5–10 g"
+        }
+      },
       case: "Gehäuse: ASA-Körper, Deckel, Silikondichtung, Schrauben",
       power: "Energie: Solarmodul, MPPT-Laderegler, 18650 Zellen",
       electronics: "Elektronik: Meshtastic-kompatibler Controller, LoRa-Modul",
@@ -694,7 +758,11 @@ const applyTranslations = (lang) => {
     const key = el.getAttribute("data-i18n");
     const value = getTranslation(lang, key);
     if (value !== null) {
-      el.textContent = value;
+      if (typeof value === "string" && value.includes("<br")) {
+        el.innerHTML = value;
+      } else {
+        el.textContent = value;
+      }
     }
   });
 
