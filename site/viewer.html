@@ -43,11 +43,22 @@
   </main>
 
   <script src="i18n.js"></script>
-  <script src="assets/libs/three.min.js"></script>
-  <script src="assets/libs/OrbitControls.js"></script>
-  <script src="assets/libs/GLTFLoader.js"></script>
 
-  <script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/controls/OrbitControls.js": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js",
+        "three/addons/loaders/GLTFLoader.js": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js"
+      }
+    }
+  </script>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
     const MODEL_URL = "assets/models/mesh-s.glb";
 
     const canvasWrap = document.getElementById("viewerCanvasWrap");
@@ -88,7 +99,7 @@
       renderer.outputColorSpace = THREE.SRGBColorSpace;
       canvasWrap.appendChild(renderer.domElement);
 
-      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
       controls.enablePan = false;
       controls.dampingFactor = 0.08;
@@ -142,7 +153,7 @@
     };
 
     const loadModel = () => {
-      const loader = new THREE.GLTFLoader();
+      const loader = new GLTFLoader();
       loader.load(
         MODEL_URL,
         (gltf) => {
