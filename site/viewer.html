@@ -152,11 +152,14 @@
           resizeRenderer();
           setOverlayVisible(false);
         },
-        (xhr) => {
-          if (!xhr.total) return;
-          const percent = Math.round((xhr.loaded / xhr.total) * 100);
-          progressEl.textContent = `${percent}%`;
-        },
+		(xhr) => {
+		  if (xhr.total) {
+			const percent = Math.round((xhr.loaded / xhr.total) * 100);
+			progressEl.textContent = `${percent}%`;
+		  } else {
+			progressEl.textContent = `${Math.round(xhr.loaded / 1024)} KB…`;
+		  }
+		},
         () => {
           showError();
         }
