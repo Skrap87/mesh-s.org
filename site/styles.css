@@ -243,7 +243,14 @@ header {
 }
 
 .btn-outline {
-  color: var(--fg);
+  color: #0b0d12;                 /* тёмный текст */
+  background: #ffffff;            /* явный белый фон */
+  border: 1px solid rgba(0,0,0,0.15);
+}
+
+.btn-outline:hover {
+  background: #f2f3f5;
+  border-color: rgba(0,0,0,0.25);
 }
 
 section {
