@@ -36,7 +36,7 @@ const translations = {
       reset: "Reset view",
       loading: "Loading 3D model…",
       error: "3D model is not available yet. Please add assets/models/mesh-s.glb.",
-      "error-hint": "Try clearing your browser cache and reloading the page.",
+      errorhint: "Try clearing your browser cache and reloading the page.",
       back: "← Back"
     },
     benefits: {
@@ -483,7 +483,7 @@ const translations = {
       reset: "Ansicht zurücksetzen",
       loading: "3D-Modell wird geladen…",
       error: "3D-Modell ist noch nicht verfügbar. Bitte assets/models/mesh-s.glb hinzufügen.",
-      "error-hint": "Versuche, den Browser-Cache zu leeren und die Seite neu zu laden.",
+      errorhint: "Versuche, den Browser-Cache zu leeren und die Seite neu zu laden.",
       back: "← Zurück"
     },
     benefits: {
