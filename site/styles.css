@@ -938,3 +938,124 @@ footer {
     max-width: calc(100vw - 24px);
   }
 }
+
+.is-hidden {
+  display: none !important;
+}
+
+.viewer-page {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+  padding: 32px 0 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 100vh;
+}
+
+.viewer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+
+.viewer-header-main {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.viewer-header-text h1 {
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+}
+
+.viewer-hint {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.viewer-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.viewer-stage {
+  position: relative;
+  background: radial-gradient(circle at top, rgba(20, 22, 33, 0.9), rgba(8, 9, 13, 0.95));
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px;
+  min-height: 320px;
+}
+
+#viewerCanvasWrap {
+  width: 100%;
+  height: min(70vh, 720px);
+  min-height: 300px;
+  border-radius: calc(var(--radius) - 8px);
+  overflow: hidden;
+  background: rgba(8, 9, 13, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+#viewerCanvasWrap canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.viewer-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 12, 17, 0.72);
+  border-radius: var(--radius);
+  backdrop-filter: blur(8px);
+}
+
+.viewer-overlay-card {
+  background: rgba(14, 14, 17, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 22px 26px;
+  box-shadow: var(--soft-shadow);
+  text-align: center;
+  min-width: min(320px, 86vw);
+  display: grid;
+  gap: 8px;
+}
+
+.viewer-progress {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.viewer-error {
+  color: #f2b3b3;
+}
+
+@media (max-width: 768px) {
+  .viewer-page {
+    padding-top: 20px;
+  }
+
+  .viewer-header {
+    padding: 16px;
+  }
+
+  #viewerCanvasWrap {
+    height: min(70vh, 560px);
+  }
+}
