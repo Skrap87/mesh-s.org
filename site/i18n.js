@@ -27,7 +27,16 @@ const translations = {
       tagline: "DIY build notes and documentation for makers and hobbyists.",
       ctaAutonomy: "View telemetry",
       ctaBom: "Components",
+      ctaViewer: "3D view",
       imageAlt: "MESH-S DIY solar mesh node"
+    },
+    viewer: {
+      title: "3D Viewer",
+      hint: "Drag to rotate, scroll/pinch to zoom.",
+      reset: "Reset view",
+      loading: "Loading 3D model…",
+      error: "3D model is not available yet. Please add assets/models/mesh-s.glb.",
+      back: "← Back"
     },
     benefits: {
       eyebrow: "DIY overview",
@@ -464,7 +473,16 @@ const translations = {
       tagline: "DIY-Aufbau, Notizen und Doku für Maker und Bastler.",
       ctaAutonomy: "Telemetrie ansehen",
       ctaBom: "Komponenten",
+      ctaViewer: "3D-Ansicht",
       imageAlt: "MESH-S DIY-Solar-Mesh-Knoten"
+    },
+    viewer: {
+      title: "3D-Viewer",
+      hint: "Ziehen zum Drehen, Scrollen/Pinch zum Zoomen.",
+      reset: "Ansicht zurücksetzen",
+      loading: "3D-Modell wird geladen…",
+      error: "3D-Modell ist noch nicht verfügbar. Bitte assets/models/mesh-s.glb hinzufügen.",
+      back: "← Zurück"
     },
     benefits: {
       eyebrow: "DIY-Überblick",
