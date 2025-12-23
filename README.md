@@ -1,70 +1,100 @@
-# Mesh-S — Solar Meshtastic Node (DIY)
+# MESH-S  
+### DIY Meshtastic Solar Node for Year-Round Outdoor Operation
 
-Mesh-S is a **non-commercial DIY project** documenting my personal vision of a solar-powered Meshtastic node
-designed for reliable, long-term outdoor operation.
+**MESH-S** is a private, non-commercial DIY project documenting the design and real-world operation of a solar-powered Meshtastic node intended for continuous outdoor use throughout the year.
 
-The project focuses on **autonomy, simplicity, and real-world constraints**:
-power balance, enclosure design, humidity behavior, mounting options, and long-term outdoor exposure.
-It is not a finished product, not a kit, and not an installation guide.
+🌐 Project website: https://mesh-s.org
 
-Mesh-S is intended for the **Meshtastic / LoRa / maker community** as a reference project,
-inspiration source, and technical documentation of one possible implementation.
+This repository contains the source code for the project website and serves as a technical documentation hub — not a product page.
 
-## Preview / Demo
+---
 
-🌐 Live site: https://mesh-s.org
+## 🔧 Project philosophy
 
-## Deployment
+MESH-S is built around a simple idea:
 
-Cloudflare Pages should publish the `/site` directory.
+> **Show real behavior instead of making promises.**
 
-## Project Scope
+The project focuses on practical engineering decisions validated through long-term outdoor operation, rather than theoretical specifications or lab assumptions.
 
-- DIY reference design (no commercial intent)
-- Hardware-focused documentation
-- Real outdoor testing and observations
-- No guarantees, no certifications, no liability
+---
 
-## Key Topics Covered
+## 📌 Key focus areas
 
-- Solar-powered Meshtastic node concept
-- Outdoor ASA enclosure design
-- Battery autonomy and power monitoring
-- Long-term humidity & temperature observations
-- Custom mounting system for poles and profiles
-- Practical field experience and trade-offs
+- ☀️ Solar-powered autonomous operation  
+- ❄️ Winter and low-light behavior  
+- 💧 Moisture, condensation, and enclosure sealing  
+- 🔋 Battery charge and discharge telemetry  
+- 🧱 Modular, serviceable enclosure design  
+- 📊 Real Home Assistant telemetry data  
 
-## What This Project Is *Not*
+All observations, images, and graphs are based on actual DIY builds deployed outdoors.
 
-- ❌ Not a commercial product
-- ❌ Not a ready-to-build kit
-- ❌ Not a step-by-step assembly manual
-- ❌ Not certified or safety-tested hardware
+---
 
-All information is provided **as-is**, for educational and experimental purposes only.
+## ⚠️ What this project is — and is not
 
-## Technologies & Components (high-level)
+### This project **is**:
+- Technical documentation
+- An engineering showcase
+- A learning resource for Meshtastic and outdoor nodes
+- A real-world test platform
 
-- Meshtastic / LoRa (868 MHz region)
-- Solar-powered operation
-- 3D-printed ASA enclosure
-- Passive environmental protection concepts
-- Static website (HTML / CSS)
+### This project **is not**:
+- A commercial product
+- A finished device
+- A kit or assembly service
+- A certified or guaranteed design
 
-## Project Status
+All assembly, wiring, configuration, and deployment decisions are made entirely by the builder, at their own responsibility.
 
-🚧 Active development  
-The site and documentation evolve together with real-world testing.
+---
 
-## Author
+## 🧭 Website content overview
 
-👤 Author: @skrap87  
-📡 Telegram: @skrap87
+The website documents:
 
-## License
+- Telemetry snapshots from Home Assistant  
+- Battery voltage and charge current over time  
+- Multi-day operation without direct sunlight  
+- Winter deployment examples  
+- Enclosure and mounting concepts  
+- Moisture mitigation approaches  
+- Bill of materials for one example build  
+- Exploded and illustrative internal layouts  
+- Step-by-step build views (example configuration)  
 
-Creative Commons Attribution-NonCommercial 4.0 International  
-(CC BY-NC 4.0)
+All content is provided for documentation and educational purposes only.
 
-This project and its documentation are provided for non-commercial use only.
-See the LICENSE file for full license text.
+---
+
+## 🏷️ Versioning & releases
+
+Documentation milestones are tracked using GitHub Releases.
+
+- **v1.0 — Baseline documentation**  
+  First stable version of the project website with finalized structure, wording, and core technical sections.
+
+Future updates may extend or refine the documentation, but **v1.0 remains the fixed baseline reference**.
+
+---
+
+## 📄 License
+
+Website content is licensed under:
+
+**Creative Commons Attribution–NonCommercial 4.0 (CC BY-NC 4.0)**  
+Non-commercial use only.
+
+https://creativecommons.org/licenses/by-nc/4.0/
+
+---
+
+## 👤 Author
+
+**Eduard Herzog**  
+Germany  
+
+🌐 https://mesh-s.org  
+🐙 https://github.com/Skrap87  
+✉️ contact@mesh-s.org
