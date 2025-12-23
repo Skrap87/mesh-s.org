@@ -43,11 +43,21 @@
   </main>
 
   <script src="i18n.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/OrbitControls.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/GLTFLoader.min.js"></script>
+  <script async src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script async src="https://unpkg.com/three@0.160.0/examples/js/controls/OrbitControls.js"></script>
+  <script async src="https://unpkg.com/three@0.160.0/examples/js/loaders/GLTFLoader.js"></script>
 
   <script>
+    // Wait for all scripts to load
+    function waitForThree() {
+      if (typeof THREE === 'undefined' || typeof THREE.OrbitControls === 'undefined' || typeof THREE.GLTFLoader === 'undefined') {
+        setTimeout(waitForThree, 50);
+        return;
+      }
+      initApp();
+    }
+
+    function initApp() {
     const MODEL_URL = "assets/models/mesh-s.glb";
 
     const canvasWrap = document.getElementById("viewerCanvasWrap");
@@ -179,6 +189,10 @@
     });
 
     setOverlayVisible(true);
+    }
+
+    // Start the app when scripts are loaded
+    waitForThree();
   </script>
 </body>
 </html>
