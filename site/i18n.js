@@ -24,7 +24,7 @@ const translations = {
     hero: {
       eyebrow: "DIY Meshtastic Solar Node",
       subtitle: "DIY • Solar • Mesh Node",
-      tagline: "DIY build notes and documentation for makers and hobbyists.",
+      tagline: "DIY build notes and documentation focused on year-round outdoor operation.",
       ctaAutonomy: "View telemetry",
       ctaBom: "Components",
       ctaViewer: "3D view",
@@ -143,7 +143,7 @@ const translations = {
       steps: {
         step1: {
           title: "Power core layout",
-          text: "Placement of the MPPT controller and main node board on the spacer plate; layout can be adapted.",
+          text: "Example placement of the MPPT controller and main node board on the spacer plate; layout can be adapted.",
           alt: "View 01 – power core layout"
         },
         step2: {
@@ -162,13 +162,13 @@ const translations = {
           alt: "View 04 – sealing concept"
         },
         step5: {
-          title: "System check",
+          title: "System check (example)",
           text: "Checklist items for power checks, node startup, and LoRa mesh connectivity.",
           alt: "View 05 – system check"
         },
         step6: {
           title: "Outdoor mounting context",
-          text: "Outdoor mounting context for DIY builds; assembly, wiring, and commissioning are completed by the builder.",
+          text: "Typical deployment context for DIY builds; assembly, wiring, and commissioning are completed by the builder.",
           alt: "View 06 – outdoor mounting context"
         }
       }
@@ -234,7 +234,7 @@ const translations = {
     bom: {
       eyebrow: "DIY",
       title: "Bill of materials for one DIY node",
-      subtitle: "Technical reference list of components for one MESH-S DIY build.",
+      subtitle: "Technical component list for one MESH-S DIY build.",
       table: {
         headers: {
           number: "№",
@@ -471,7 +471,7 @@ const translations = {
     hero: {
       eyebrow: "DIY-Meshtastic-Solarknoten",
       subtitle: "DIY • Solar • Mesh-Knoten",
-      tagline: "DIY-Aufbau, Notizen und Doku für Maker und Bastler.",
+      tagline: "DIY-Aufbau, Notizen und Doku mit Fokus auf ganzjährigen Outdoor-Betrieb.",
       ctaAutonomy: "Telemetrie ansehen",
       ctaBom: "Komponenten",
       ctaViewer: "3D-Ansicht",
@@ -609,13 +609,13 @@ const translations = {
           alt: "Ansicht 04 – Dichtkonzept"
         },
         step5: {
-          title: "Systemcheck",
+          title: "Systemcheck (Beispiel)",
           text: "Checkliste für Stromprüfungen, Knotenstart und LoRa-Mesh-Konnektivität.",
           alt: "Ansicht 05 – Systemcheck"
         },
         step6: {
           title: "Outdoor-Montagekontext",
-          text: "Outdoor-Montagekontext für DIY-Aufbauten; Montage, Verdrahtung und Inbetriebnahme erfolgen durch den Erbauer.",
+          text: "Typischer Einsatzkontext für DIY-Aufbauten; Montage, Verdrahtung und Inbetriebnahme erfolgen durch den Erbauer.",
           alt: "Ansicht 06 – Outdoor-Montagekontext"
         }
       }
@@ -681,7 +681,7 @@ const translations = {
     bom: {
       eyebrow: "DIY",
       title: "Stückliste für einen DIY-Knoten",
-      subtitle: "Technische Referenzliste der Komponenten für einen MESH-S DIY-Aufbau.",
+      subtitle: "Technische Komponentenliste für einen MESH-S DIY-Aufbau.",
       table: {
         headers: {
           number: "Nr.",
