@@ -43,11 +43,11 @@
   </main>
 
   <script src="i18n.js"></script>
-  <script type="module">
-    import * as THREE from "https://unpkg.com/three@0.160.0/build/three.module.js";
-    import { OrbitControls } from "https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js";
-    import { GLTFLoader } from "https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js";
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/OrbitControls.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/GLTFLoader.min.js"></script>
 
+  <script>
     const MODEL_URL = "assets/models/mesh-s.glb";
 
     const canvasWrap = document.getElementById("viewerCanvasWrap");
@@ -88,7 +88,7 @@
       renderer.outputColorSpace = THREE.SRGBColorSpace;
       canvasWrap.appendChild(renderer.domElement);
 
-      controls = new OrbitControls(camera, renderer.domElement);
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
       controls.enablePan = false;
       controls.dampingFactor = 0.08;
@@ -142,7 +142,7 @@
     };
 
     const loadModel = () => {
-      const loader = new GLTFLoader();
+      const loader = new THREE.GLTFLoader();
       loader.load(
         MODEL_URL,
         (gltf) => {
@@ -152,14 +152,14 @@
           resizeRenderer();
           setOverlayVisible(false);
         },
-		(xhr) => {
-		  if (xhr.total) {
-			const percent = Math.round((xhr.loaded / xhr.total) * 100);
-			progressEl.textContent = `${percent}%`;
-		  } else {
-			progressEl.textContent = `${Math.round(xhr.loaded / 1024)} KB…`;
-		  }
-		},
+        (xhr) => {
+          if (xhr.total) {
+            const percent = Math.round((xhr.loaded / xhr.total) * 100);
+            progressEl.textContent = `${percent}%`;
+          } else {
+            progressEl.textContent = `${Math.round(xhr.loaded / 1024)} KB…`;
+          }
+        },
         () => {
           showError();
         }
