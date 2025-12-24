@@ -97,6 +97,25 @@
     }
   };
 
+  const resolveVariantSuffix = (variant) => {
+    if (!variant || !variant.labels) return "";
+    if (variant.labels.badge) {
+      return ` / ${variant.labels.badge}`;
+    }
+    if (variant.labels.full) {
+      const trimmed = variant.labels.full.replace(/^MESH-S/i, "").trim();
+      if (!trimmed) return "";
+      return trimmed.startsWith("/") ? ` ${trimmed}` : ` / ${trimmed}`;
+    }
+    return "";
+  };
+
+  const updateVariantTitle = (suffix) => {
+    const title = document.querySelector("[data-variant-title]");
+    if (!title) return;
+    title.textContent = suffix || "";
+  };
+
   const applyVariant = (variant) => {
     if (!variant) return;
 
@@ -123,6 +142,8 @@
         full.textContent = variant.labels.full;
       }
     }
+
+    updateVariantTitle(resolveVariantSuffix(variant));
 
     if (variant.i18n && variant.i18n.modelLineKey) {
       const modelLine = document.querySelector("[data-variant-model-line]");
@@ -160,7 +181,10 @@
     if (!variant && variantId !== "s") {
       variant = await fetchVariant("s");
     }
-    if (!variant) return;
+    if (!variant) {
+      updateVariantTitle(" / S");
+      return;
+    }
     applyVariant(variant);
   };
 

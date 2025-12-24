@@ -361,9 +361,19 @@ section {
   gap: 80px;
 }
 
-.hero h1 {
+.hero-title {
   font-size: clamp(3rem, 6vw, 4.2rem);
   letter-spacing: 0.22em;
+}
+
+.hero-title__variant {
+  margin-left: 0.35em;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 0.52em;
+  vertical-align: baseline;
+  white-space: nowrap;
 }
 
 .hero .hero-subtitle {
@@ -1212,6 +1222,24 @@ footer {
   flex-wrap: wrap;
 }
 
+.viewer-variant {
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: baseline;
+  gap: 0.35em;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  width: fit-content;
+}
+
+.viewer-variant__suffix {
+  color: var(--accent);
+  font-weight: 700;
+  white-space: nowrap;
+}
 .viewer-stage {
   position: relative;
   background: radial-gradient(circle at top, rgba(20, 22, 33, 0.9), rgba(8, 9, 13, 0.95));
