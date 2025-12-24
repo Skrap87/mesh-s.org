@@ -666,8 +666,7 @@
       const box = document.getElementById('lightbox');
       const img = document.getElementById('lightboxImg');
       const cap = document.getElementById('lightboxCaption');
-      const panel = box?.querySelector('.lightbox-panel');
-      if (!box || !img || !cap || !panel) return;
+      if (!box || !img || !cap) return;
 
       let scrollLocked = false;
 
@@ -683,13 +682,6 @@
         scrollLocked = false;
       };
 
-      const isPanelVisible = () => {
-        if (!box.classList.contains('is-open')) return false;
-        const rect = panel.getBoundingClientRect();
-        if (rect.width === 0 || rect.height === 0) return false;
-        return rect.bottom > 0 && rect.right > 0 && rect.top < window.innerHeight && rect.left < window.innerWidth;
-      };
-
       const close = () => {
         box.classList.remove('is-open');
         box.setAttribute('aria-hidden', 'true');
@@ -700,26 +692,22 @@
       };
 
       const open = (src, caption) => {
+        if (!src) return;
         img.src = src;
         img.alt = caption || '';
         cap.textContent = caption || '';
         box.classList.add('is-open');
         box.setAttribute('aria-hidden', 'false');
-        requestAnimationFrame(() => {
-          if (isPanelVisible()) {
-            lockScroll();
-          } else {
-            close();
-          }
-        });
+        lockScroll();
       };
 
       document.addEventListener('click', (e) => {
         const thumb = e.target.closest('.bom-thumb');
         if (thumb) {
+          e.preventDefault();
           const full = thumb.getAttribute('data-full');
           const alt = thumb.querySelector('img')?.getAttribute('alt') || '';
-          if (full) open(full, alt);
+          open(full, alt);
           return;
         }
 
