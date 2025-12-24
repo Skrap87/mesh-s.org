@@ -5,7 +5,8 @@
     "full": "MESH-S / L"
   },
   "assets": {
-    "heroImage": "assets/variants/l/hero/coming-soon.png"
+    "heroImage": "assets/variants/l/hero/coming-soon.png",
+    "heroImageWebp": "assets/variants/l/hero/coming-soon.webp"
   },
   "sections": {
     "winter": { "images": [] },
