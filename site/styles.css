@@ -577,6 +577,7 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(12, 14, 18, 0.92);
   box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+  z-index: 1;
 }
 
 .lightbox-close {
@@ -592,9 +593,11 @@ section {
   font-size: 22px;
   line-height: 1;
   cursor: pointer;
+  z-index: 2;
 }
 
 .lightbox-img {
+  position: relative;
   width: 100%;
   height: auto;
   max-height: 72vh;
@@ -602,6 +605,7 @@ section {
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 1;
 }
 
 .lightbox-caption {
