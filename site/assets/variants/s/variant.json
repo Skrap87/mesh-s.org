@@ -63,12 +63,12 @@
     "charts": {
       "temperature": {
         "selector": "[data-chart='temperature']",
-        "json": "assets/variants/s/winter/charts/frost-morning.json",
+        "json": "assets/variants/s/winter/charts/ha-temperature.json",
         "unit": "°C"
       },
       "batteryLevel": {
         "selector": "[data-chart='batteryLevel']",
-        "json": "assets/variants/s/autonomy/charts/ha-voltage.json",
+        "json": "assets/variants/s/autonomy/charts/ha-battery.json",
         "unit": "%"
       },
       "chargeCurrent": {
