@@ -434,8 +434,6 @@ window.I18N_PARTS.de.common = {
     name: "Eduard Herzog",
     country: "Deutschland",
     contactTitle: "Kontakt:",
-    contactLabelTelegram: "Telegram:",
-    contactHandle: "@skrap87",
     contactLabelEmail: "E-Mail:",
     contactEmail: "contact@mesh-s.org",
     projectLine1: "Diese Website dokumentiert ein privates, nicht-kommerzielles DIY-Projekt.",
