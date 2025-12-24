@@ -4,20 +4,6 @@
     "badge": "M",
     "full": "MESH-S / M"
   },
-  "assets": {},
-  "sections": {
-    "winter": { "images": [] },
-    "charts": {}
-  }
-}
-
-
-{
-  "id": "m",
-  "labels": {
-    "badge": "M",
-    "full": "MESH-S / M"
-  },
   "assets": {
     "heroImage": "assets/variants/m/hero/hero-m.PNG",
     "heroImageWebp": "assets/variants/m/hero/hero-m.webp",
