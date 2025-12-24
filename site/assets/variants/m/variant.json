@@ -10,3 +10,21 @@
     "charts": {}
   }
 }
+
+
+{
+  "id": "m",
+  "labels": {
+    "badge": "M",
+    "full": "MESH-S / M"
+  },
+  "assets": {
+    "heroImage": "assets/variants/m/hero/hero-m.PNG",
+    "heroImageWebp": "assets/variants/m/hero/hero-m.webp",
+    "viewerModel": "assets/variants/m/models/mesh-m.glb"
+  },
+  "sections": {
+    "winter": { "images": [] },
+    "charts": {}
+  }
+}
