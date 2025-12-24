@@ -101,7 +101,7 @@ const translations = {
         },
         temp: {
           title: "Temperature",
-          note: "Winter week overview",
+          note: "HA history export",
           alt: "Temperature during winter week"
         }
       }
@@ -548,7 +548,7 @@ const translations = {
         },
         temp: {
           title: "Temperatur",
-          note: "Überblick über eine Winterwoche",
+          note: "HA-Verlaufs-Export",
           alt: "Temperatur während einer Winterwoche"
         }
       }
