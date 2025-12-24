@@ -661,7 +661,7 @@
 		});
 	  });
 	</script>
-  <script>
+<script>
     (function () {
       const box = document.getElementById('lightbox');
       const img = document.getElementById('lightboxImg');
@@ -701,21 +701,27 @@
         lockScroll();
       };
 
+      // Обработка кликов на кнопки с фото
       document.addEventListener('click', (e) => {
         const thumb = e.target.closest('.bom-thumb');
         if (thumb) {
           e.preventDefault();
+          e.stopPropagation();
           const full = thumb.getAttribute('data-full');
           const alt = thumb.querySelector('img')?.getAttribute('alt') || '';
           open(full, alt);
           return;
         }
 
-        if (e.target.matches('[data-close]') || e.target.closest('[data-close]')) {
+        // Закрытие при клике на backdrop или кнопку закрытия
+        if (e.target.closest('[data-close]')) {
+          e.preventDefault();
+          e.stopPropagation();
           close();
         }
       });
 
+      // Закрытие по Escape
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && box.classList.contains('is-open')) {
           close();
