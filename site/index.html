@@ -585,6 +585,13 @@
     <button id="cookie-accept" class="btn btn-outline" type="button" data-i18n="cookie.button">OK</button>
   </div>
 
+  <div id="photo-lightbox" class="photo-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="photo-lightbox__content">
+      <button type="button" class="photo-lightbox__close" aria-label="Close photo">✕</button>
+      <img class="photo-lightbox__image" alt="">
+    </div>
+  </div>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
@@ -615,6 +622,52 @@
 		});
 	  });
 	</script>
+  <script>
+    (function () {
+      const lightbox = document.getElementById('photo-lightbox');
+      if (!lightbox) return;
+
+      const image = lightbox.querySelector('.photo-lightbox__image');
+      const closeButton = lightbox.querySelector('.photo-lightbox__close');
+      if (!image || !closeButton) return;
+
+      const openLightbox = (src, alt) => {
+        image.src = src;
+        image.alt = alt || '';
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('lightbox-open');
+        closeButton.focus();
+      };
+
+      const closeLightbox = () => {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('lightbox-open');
+        image.removeAttribute('src');
+        image.removeAttribute('alt');
+      };
+
+      document.querySelectorAll('.bom-photo').forEach((thumb) => {
+        thumb.addEventListener('click', () => {
+          const src = thumb.getAttribute('src');
+          if (!src) return;
+          openLightbox(src, thumb.getAttribute('alt'));
+        });
+      });
+
+      closeButton.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+          closeLightbox();
+        }
+      });
+    })();
+  </script>
 <footer class="site-footer">
   <p>
     Content licensed under
