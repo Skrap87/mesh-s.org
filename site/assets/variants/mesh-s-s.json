@@ -1,0 +1,22 @@
+{
+  "id": "s",
+  "brand": "MESH-S",
+  "size": "S",
+  "labels": {
+    "badge": "S",
+    "full": "MESH-S / S"
+  },
+  "hero": {
+    "modelLineKey": "variant.modelLine"
+  },
+  "assets": {
+    "heroImage": "assets/mesh-s-hero.png",
+    "heroImageWebp": "assets/mesh-s-hero.webp",
+    "viewerModel": "assets/models/mesh-s.glb"
+  },
+  "charts": {
+    "temperature": { "json": "assets/winter/frost-morning.json", "unit": "°C" },
+    "humidity": { "json": "assets/autonomy/ha-voltage.json", "unit": "%" },
+    "chargeCurrent": { "json": "assets/autonomy/ha-charge.json", "unit": "mA" }
+  }
+}

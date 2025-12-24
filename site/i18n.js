@@ -30,6 +30,9 @@ const translations = {
       ctaViewer: "3D view",
       imageAlt: "MESH-S DIY solar mesh node"
     },
+    variant: {
+      modelLine: "Solar Meshtastic Node — Size {size}"
+    },
     viewer: {
       title: "3D Viewer",
       hint: "Drag to rotate, scroll/pinch to zoom.",
@@ -477,6 +480,9 @@ const translations = {
       ctaViewer: "3D-Ansicht",
       imageAlt: "MESH-S DIY-Solar-Mesh-Knoten"
     },
+    variant: {
+      modelLine: "Solarer Meshtastic-Knoten — Größe {size}"
+    },
     viewer: {
       title: "3D-Viewer",
       hint: "Ziehen zum Drehen, Scrollen/Pinch zum Zoomen.",
@@ -892,10 +898,17 @@ const translations = {
       linksText: "Diese Website enthält Links zu externen Websites Dritter. Auf deren Inhalte besteht kein Einfluss. Für die Inhalte der verlinkten Seiten sind die jeweiligen Betreiber verantwortlich.",
       back: "Zurück zur Startseite"
     }
+  },
+  ru: {
+    variant: {
+      modelLine: "Солнечный Meshtastic узел — Размер {size}"
+    }
   }
 };
 
 const supportedLanguages = ["de", "en"];
+
+window.currentVariantSize = window.currentVariantSize || "S";
 
 const getTranslation = (lang, key) => {
   const segments = key.split(".");
@@ -916,10 +929,15 @@ const applyTranslations = (lang) => {
     const key = el.getAttribute("data-i18n");
     const value = getTranslation(lang, key);
     if (value !== null) {
-      if (typeof value === "string" && value.includes("<br")) {
-        el.innerHTML = value;
+      let output = value;
+      if (typeof output === "string" && output.includes("{size}")) {
+        const size = window.currentVariantSize || "S";
+        output = output.replace("{size}", size);
+      }
+      if (typeof output === "string" && output.includes("<br")) {
+        el.innerHTML = output;
       } else {
-        el.textContent = value;
+        el.textContent = output;
       }
     }
   });
@@ -975,9 +993,12 @@ const applyTranslations = (lang) => {
 
 const updateLinks = (lang) => {
   const links = document.querySelectorAll("a[href]");
+  const currentParams = new URLSearchParams(window.location.search);
+  const currentVariant = currentParams.get("v");
   links.forEach((link) => {
     const href = link.getAttribute("href");
     if (!href) return;
+    const isVariantLink = link.hasAttribute("data-variant");
     if (
       href.startsWith("http") ||
       href.startsWith("mailto:") ||
@@ -990,6 +1011,9 @@ const updateLinks = (lang) => {
     if (href.startsWith("#")) {
       const url = new URL(window.location.href);
       url.searchParams.set("lang", lang);
+      if (currentVariant && !isVariantLink && !url.searchParams.has("v")) {
+        url.searchParams.set("v", currentVariant);
+      }
       url.hash = href;
       link.setAttribute("href", url.pathname + url.search + url.hash);
       return;
@@ -998,6 +1022,9 @@ const updateLinks = (lang) => {
     const url = new URL(href, window.location.origin);
     if (url.origin !== window.location.origin) return;
     url.searchParams.set("lang", lang);
+    if (currentVariant && !isVariantLink && !url.searchParams.has("v")) {
+      url.searchParams.set("v", currentVariant);
+    }
     link.setAttribute("href", url.pathname + url.search + url.hash);
   });
 };
@@ -1016,6 +1043,8 @@ const setLanguage = (lang, { updateUrl } = { updateUrl: true }) => {
     url.searchParams.set("lang", lang);
     window.history.replaceState({}, "", url.pathname + url.search + url.hash);
   }
+
+  window.dispatchEvent(new CustomEvent("languagechange", { detail: lang }));
 };
 
 const detectLanguage = () => {
@@ -1033,6 +1062,8 @@ const detectLanguage = () => {
   const browserLang = navigator.language || "";
   return browserLang.toLowerCase().startsWith("de") ? "de" : "en";
 };
+
+window.getTranslation = getTranslation;
 
 document.addEventListener("DOMContentLoaded", () => {
   const initialLang = detectLanguage();

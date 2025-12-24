@@ -44,6 +44,7 @@
   </main>
 
   <script src="i18n.js"></script>
+  <script src="variants.js"></script>
 
   <script type="importmap">
     {
@@ -60,7 +61,9 @@
     import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
     import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-    const MODEL_URL = "assets/models/mesh-s.glb";
+    const DEFAULT_MODEL_URL = "assets/models/mesh-s.glb";
+    const DEFAULT_VARIANT = "s";
+    const VARIANTS = ["s", "m", "l", "xl"];
 
     const canvasWrap = document.getElementById("viewerCanvasWrap");
     const overlay = document.getElementById("viewerOverlay");
@@ -153,10 +156,47 @@
       controls.saveState();
     };
 
-    const loadModel = () => {
+    const getVariantId = () => {
+      const params = new URLSearchParams(window.location.search);
+      const variant = params.get("v");
+      return VARIANTS.includes(variant) ? variant : DEFAULT_VARIANT;
+    };
+
+    const fetchVariant = async (variantId) => {
+      try {
+        const res = await fetch(`/assets/variants/mesh-s-${variantId}.json`, { cache: "no-store" });
+        if (!res.ok) {
+          return null;
+        }
+        return await res.json();
+      } catch (e) {
+        return null;
+      }
+    };
+
+    const loadVariant = async (variantId) => {
+      const normalized = VARIANTS.includes(variantId) ? variantId : DEFAULT_VARIANT;
+      const data = await fetchVariant(normalized);
+      if (data) {
+        return data;
+      }
+      if (normalized !== DEFAULT_VARIANT) {
+        return await fetchVariant(DEFAULT_VARIANT);
+      }
+      return null;
+    };
+
+    const resolveModelUrl = async () => {
+      const helper = window.MeshVariants;
+      const variantId = helper?.getVariantId ? helper.getVariantId() : getVariantId();
+      const variantData = helper?.loadVariant ? await helper.loadVariant(variantId) : await loadVariant(variantId);
+      return variantData?.assets?.viewerModel || DEFAULT_MODEL_URL;
+    };
+
+    const loadModel = (modelUrl) => {
       const loader = new GLTFLoader();
       loader.load(
-        MODEL_URL,
+        modelUrl,
         (gltf) => {
           const model = gltf.scene;
           scene.add(model);
@@ -178,9 +218,14 @@
       );
     };
 
-    initScene();
-    resizeRenderer();
-    loadModel();
+    const startViewer = async () => {
+      initScene();
+      resizeRenderer();
+      const modelUrl = await resolveModelUrl();
+      loadModel(modelUrl);
+    };
+
+    startViewer();
 
     window.addEventListener("resize", resizeRenderer);
 
