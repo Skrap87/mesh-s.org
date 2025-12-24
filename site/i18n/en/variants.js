@@ -5,6 +5,10 @@ window.I18N_PARTS.en.variants = {
     s: {},
     m: {},
     l: {},
-    xl: {}
+    xl: {
+      winter: {
+        image1Alt: "MESH-S / XL node during winter operation in freezing conditions"
+      }
+    }
   }
 };
