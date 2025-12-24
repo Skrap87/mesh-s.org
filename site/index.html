@@ -43,6 +43,12 @@
         <span class="lang-separator">|</span>
         <button class="lang-option" type="button" data-lang="en">EN</button>
       </div>
+      <div class="variant-switch" role="group" aria-label="Variant switch">
+        <button class="variant-option" type="button" data-variant="s">S</button>
+        <button class="variant-option" type="button" data-variant="m">M</button>
+        <button class="variant-option" type="button" data-variant="l">L</button>
+        <button class="variant-option" type="button" data-variant="xl">XL</button>
+      </div>
     </div>
   </header>
 
@@ -57,13 +63,13 @@
           <div class="hero-actions">
             <a class="btn btn-accent" href="#autonomy" data-i18n="hero.ctaAutonomy">View telemetry example</a>
             <a class="btn btn-outline" href="#bom" data-i18n="hero.ctaBom">Components</a>
-            <a class="btn btn-outline" href="viewer.html" data-i18n="hero.ctaViewer">3D view</a>
+            <a class="btn btn-outline" href="viewer.html" data-i18n="hero.ctaViewer" data-variant-viewer-link>3D view</a>
           </div>
         </div>
         <div class="hero-visual">
-			<picture>
-				<source srcset="assets/variants/s/hero/hero.webp" type="image/webp">
-          		<img src="assets/variants/s/hero/hero.png" data-i18n-alt="hero.imageAlt" alt="MESH-S DIY solar mesh node reference design" width="394" height="894" decoding="async" fetchpriority="high">
+			<picture data-variant-hero>
+				<source srcset="assets/variants/s/hero/hero.webp" type="image/webp" data-variant-hero-webp>
+          		<img src="assets/variants/s/hero/hero.png" data-i18n-alt="hero.imageAlt" data-variant-hero-img alt="MESH-S DIY solar mesh node reference design" width="394" height="894" decoding="async" fetchpriority="high">
 			</picture>
         </div>
       </div>
@@ -116,7 +122,7 @@
               <div class="graph-title" data-i18n="autonomy.graphs.charge.title">Charge current</div>
               <div class="graph-note" data-i18n="autonomy.graphs.charge.note">HA history export</div>
             </div>
-            <div class="chart" data-json="assets/variants/s/autonomy/charts/ha-charge.json" data-unit="mA"></div>
+            <div class="chart" data-chart="chargeCurrent" data-json="assets/variants/s/autonomy/charts/ha-charge.json" data-unit="mA"></div>
           </figure>
 
           <figure class="graph-card">
@@ -124,7 +130,7 @@
               <div class="graph-title" data-i18n="autonomy.graphs.battery.title">Battery level</div>
               <div class="graph-note" data-i18n="autonomy.graphs.battery.note">HA history export</div>
             </div>
-            <div class="chart" data-json="assets/variants/s/autonomy/charts/ha-voltage.json" data-unit="%"></div>
+            <div class="chart" data-chart="humidity" data-json="assets/variants/s/autonomy/charts/ha-voltage.json" data-unit="%"></div>
           </figure>
         </div>
       </div>
@@ -149,7 +155,7 @@
               <div class="winter-title" data-i18n="winter.cards.field.title">Field photo</div>
               <div class="winter-note" data-i18n="winter.cards.field.note">Sub-zero morning</div>
             </div>
-            <img src="assets/variants/s/winter/images/node_winter2.jpg" data-i18n-alt="winter.cards.field.alt" alt="MESH-S node outdoors in sub-zero morning with condensation" width="567" height="511" loading="lazy" decoding="async" fetchpriority="low">
+            <img src="assets/variants/s/winter/images/node_winter2.jpg" data-winter-image="1" data-i18n-alt="winter.cards.field.alt" alt="MESH-S node outdoors in sub-zero morning with condensation" width="567" height="511" loading="lazy" decoding="async" fetchpriority="low">
           </figure>
 
           <figure class="winter-card">
@@ -157,7 +163,7 @@
               <div class="winter-title" data-i18n="winter.cards.temp.title">Temperature</div>
               <div class="winter-note" data-i18n="winter.cards.temp.note">Winter week sample</div>
             </div>
-            <div class="chart" data-json="assets/variants/s/winter/charts/frost-morning.json" data-unit="°C"></div>
+            <div class="chart" data-chart="temperature" data-json="assets/variants/s/winter/charts/frost-morning.json" data-unit="°C"></div>
           </figure>
         </div>
 
@@ -753,6 +759,7 @@
     — non-commercial use only.
   </p>
 </footer>
+<script src="variants.js" defer></script>
 <script src="charts.js" defer></script>
 </body>
 </html>
