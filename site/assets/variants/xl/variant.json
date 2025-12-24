@@ -5,7 +5,9 @@
     "full": "MESH-S / XL"
   },
   "assets": {
-    "viewerModel": "assets/variants/xl/models/mesh-xl.glb",
+    "heroImage": "assets/variants/xl/hero/hero-xl.PNG",
+    "heroImageWebp": "assets/variants/xl/hero/hero-xl.webp",
+    "viewerModel": "assets/variants/xl/models/mesh-xl.glb"
   },
   "sections": {
     "winter": { "images": [] },
