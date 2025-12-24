@@ -440,6 +440,7 @@ window.I18N_PARTS.en.common = {
     contactEmail: "contact@mesh-s.org",
     projectLine1: "This website documents a private non-commercial DIY project.",
     projectLine2: "It serves only for technical documentation and experiments.",
+    diyDisclaimer: "This website documents a private, non-commercial DIY project. All content is provided solely for technical documentation purposes. No finished devices, kits, or functional systems are offered. Any implementation, modification, or use is entirely at your own risk. The listed components represent only one possible example configuration. No claim is made regarding completeness, accuracy, or suitability for a particular purpose.",
     liabilityTitle: "Liability for content:",
     liabilityText: "No guarantee is given for the correctness, completeness, or timeliness of the content. The content is provided for informational purposes only.",
     linksTitle: "Liability for links:",
