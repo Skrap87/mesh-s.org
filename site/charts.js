@@ -62,8 +62,8 @@
 </svg>`;
   }
 
-  async function init() {
-    const charts = document.querySelectorAll(".chart[data-json]");
+  async function renderCharts(root = document) {
+    const charts = root.querySelectorAll(".chart[data-json]");
     for (const el of charts) {
       const url = el.getAttribute("data-json");
       const unit = el.getAttribute("data-unit") || "";
@@ -79,6 +79,10 @@
       }
     }
   }
+
+  const init = () => renderCharts(document);
+
+  window.renderAllCharts = () => renderCharts(document);
 
   document.addEventListener("DOMContentLoaded", init);
 })();
