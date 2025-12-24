@@ -10,7 +10,31 @@
     "viewerModel": "assets/variants/m/models/mesh-m.glb"
   },
   "sections": {
-    "winter": { "images": [] },
-    "charts": {}
+    "winter": {
+      "images": [
+        {
+          "selector": "[data-winter-image='1']",
+          "src": "assets/variants/m/winter/images/node_winter.jpg",
+          "altKey": "variants.m.winter.image1Alt"
+        }
+      ]
+    },
+    "charts": {
+      "temperature": {
+        "selector": "[data-chart='temperature']",
+        "json": "assets/variants/s/winter/charts/frost-morning.json",
+        "unit": "°C"
+      },
+      "humidity": {
+        "selector": "[data-chart='humidity']",
+        "json": "assets/variants/m/autonomy/charts/ha-voltage.json",
+        "unit": "%"
+      },
+      "chargeCurrent": {
+        "selector": "[data-chart='chargeCurrent']",
+        "json": "assets/variants/m/autonomy/charts/ha-charge.json",
+        "unit": "mA"
+      }
+    }
   }
 }
