@@ -1,0 +1,12 @@
+{
+  "id": "m",
+  "labels": {
+    "badge": "M",
+    "full": "MESH-S / M"
+  },
+  "assets": {},
+  "sections": {
+    "winter": { "images": [] },
+    "charts": {}
+  }
+}

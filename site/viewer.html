@@ -13,7 +13,7 @@
   <main class="viewer-page">
     <header class="viewer-header">
       <div class="viewer-header-main">
-        <a class="btn btn-outline" href="/" data-i18n="viewer.back">← Back</a>
+        <a class="btn btn-outline" href="/" data-i18n="viewer.back" data-variant-back-link>← Back</a>
         <div class="viewer-header-text">
           <h1 data-i18n="viewer.title">3D Viewer</h1>
           <p class="viewer-hint" data-i18n="viewer.hint">Drag to rotate, scroll/pinch to zoom.</p>
@@ -26,6 +26,12 @@
           <span class="lang-separator">|</span>
           <button class="lang-option" type="button" data-lang="en">EN</button>
         </div>
+        <div class="variant-switch" role="group" aria-label="Variant switch">
+          <button class="variant-option" type="button" data-variant="s">S</button>
+          <button class="variant-option" type="button" data-variant="m">M</button>
+          <button class="variant-option" type="button" data-variant="l">L</button>
+          <button class="variant-option" type="button" data-variant="xl">XL</button>
+        </div>
       </div>
     </header>
 
@@ -37,7 +43,7 @@
           <div class="viewer-progress" id="viewerProgress">0%</div>
           <div class="viewer-error is-hidden" id="viewerError" data-i18n="viewer.error">Model not available yet.</div>
           <p style="margin-top: 12px; font-size: 14px; opacity: 0.8;" data-i18n="viewer.errorhint">Try clearing your browser cache and reloading the page.</p>
-          <a class="btn btn-outline is-hidden" id="viewerErrorBack" href="/" data-i18n="viewer.back">← Back</a>
+          <a class="btn btn-outline is-hidden" id="viewerErrorBack" href="/" data-i18n="viewer.back" data-variant-back-link>← Back</a>
         </div>
       </div>
     </section>
@@ -66,7 +72,8 @@
     import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
     import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-    const MODEL_URL = "assets/variants/s/models/mesh-s.glb";
+    const allowedVariants = new Set(["s", "m", "l", "xl"]);
+    const fallbackVariant = "s";
 
     const canvasWrap = document.getElementById("viewerCanvasWrap");
     const overlay = document.getElementById("viewerOverlay");
@@ -80,6 +87,39 @@
     let camera;
     let controls;
     let scene;
+    let currentModel;
+
+    const parseVariantId = () => {
+      const params = new URLSearchParams(window.location.search);
+      const raw = (params.get("v") || fallbackVariant).toLowerCase();
+      return allowedVariants.has(raw) ? raw : fallbackVariant;
+    };
+
+    const getCurrentLang = () => {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("lang") || document.documentElement.lang || "en";
+    };
+
+    const updateBackLinks = (variantId) => {
+      const lang = getCurrentLang();
+      document.querySelectorAll("[data-variant-back-link]").forEach((link) => {
+        const href = link.getAttribute("href") || "/";
+        const url = new URL(href, window.location.origin);
+        url.searchParams.set("v", variantId);
+        if (lang) {
+          url.searchParams.set("lang", lang);
+        }
+        link.setAttribute("href", url.pathname + url.search + url.hash);
+      });
+    };
+
+    const updateVariantButtons = (variantId) => {
+      document.querySelectorAll(".variant-option").forEach((btn) => {
+        const isActive = btn.dataset.variant === variantId;
+        btn.classList.toggle("is-active", isActive);
+        btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+    };
 
     const setOverlayVisible = (visible) => {
       overlay.classList.toggle("is-hidden", !visible);
@@ -159,12 +199,16 @@
       controls.saveState();
     };
 
-    const loadModel = () => {
+    const loadModel = (modelUrl) => {
       const loader = new GLTFLoader();
       loader.load(
-        MODEL_URL,
+        modelUrl,
         (gltf) => {
           const model = gltf.scene;
+          if (currentModel) {
+            scene.remove(currentModel);
+          }
+          currentModel = model;
           scene.add(model);
           fitCameraToObject(model);
           resizeRenderer();
@@ -184,9 +228,49 @@
       );
     };
 
+    const fetchVariant = async (variantId) => {
+      try {
+        const res = await fetch(`assets/variants/${variantId}/variant.json`, { cache: "no-store" });
+        if (!res.ok) {
+          throw new Error("Variant not found");
+        }
+        const data = await res.json();
+        return { id: variantId, ...data };
+      } catch (error) {
+        return null;
+      }
+    };
+
+    const loadVariantModel = async (variantId) => {
+      let variant = await fetchVariant(variantId);
+      if (
+        (!variant || !variant.assets || !variant.assets.viewerModel) &&
+        variantId !== fallbackVariant
+      ) {
+        variant = await fetchVariant(fallbackVariant);
+      }
+
+      if (!variant || !variant.assets || !variant.assets.viewerModel) {
+        showError();
+        return;
+      }
+
+      updateBackLinks(variant.id || fallbackVariant);
+      updateVariantButtons(variant.id || fallbackVariant);
+      setOverlayVisible(true);
+      loadingEl.classList.remove("is-hidden");
+      progressEl.classList.remove("is-hidden");
+      errorEl.classList.add("is-hidden");
+      errorBack.classList.add("is-hidden");
+      loadModel(variant.assets.viewerModel);
+    };
+
     initScene();
     resizeRenderer();
-    loadModel();
+    const initialVariant = parseVariantId();
+    updateBackLinks(initialVariant);
+    updateVariantButtons(initialVariant);
+    loadVariantModel(initialVariant);
 
     window.addEventListener("resize", resizeRenderer);
 
@@ -197,6 +281,16 @@
     });
 
     setOverlayVisible(true);
+
+    document.querySelectorAll(".variant-option").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const next = btn.dataset.variant;
+        if (!allowedVariants.has(next)) return;
+        const url = new URL(window.location.href);
+        url.searchParams.set("v", next);
+        window.location.href = url.pathname + url.search + url.hash;
+      });
+    });
   </script>
 </body>
 </html>

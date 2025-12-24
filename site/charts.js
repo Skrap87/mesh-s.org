@@ -62,7 +62,7 @@
 </svg>`;
   }
 
-  async function init() {
+  async function renderAllCharts() {
     const charts = document.querySelectorAll(".chart[data-json]");
     for (const el of charts) {
       const url = el.getAttribute("data-json");
@@ -80,7 +80,9 @@
     }
   }
 
-  document.addEventListener("DOMContentLoaded", init);
+  window.renderAllCharts = renderAllCharts;
+
+  document.addEventListener("DOMContentLoaded", renderAllCharts);
 })();
 
 
