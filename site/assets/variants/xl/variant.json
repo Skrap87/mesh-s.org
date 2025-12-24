@@ -10,7 +10,31 @@
     "viewerModel": "assets/variants/xl/models/mesh-xl.glb"
   },
   "sections": {
-    "winter": { "images": [] },
-    "charts": {}
+    "winter": {
+      "images": [
+        {
+          "selector": "[data-winter-image='1']",
+          "src": "assets/variants/xl/winter/images/node_winter.jpg",
+          "altKey": "variants.xl.winter.image1Alt"
+        }
+      ]
+    },
+    "charts": {
+      "temperature": {
+        "selector": "[data-chart='temperature']",
+        "json": "assets/variants/xl/winter/charts/ha-temperature.json",
+        "unit": "°C"
+      },
+      "batteryLevel": {
+        "selector": "[data-chart='batteryLevel']",
+        "json": "assets/variants/xl/autonomy/charts/ha-battery.json",
+        "unit": "%"
+      },
+      "chargeCurrent": {
+        "selector": "[data-chart='chargeCurrent']",
+        "json": "assets/variants/xl/autonomy/charts/ha-charge.json",
+        "unit": "mA"
+      }
+    }
   }
 }
