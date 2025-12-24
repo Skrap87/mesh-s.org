@@ -553,7 +553,9 @@ section {
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 5vh 4vw;
+  padding: clamp(16px, 4vw, 32px);
+  height: 100vh;
+  height: 100dvh;
   z-index: 1000;
 }
 
@@ -573,8 +575,7 @@ section {
   position: relative;
   width: min(92vw, 720px);
   max-width: 92vw;
-  max-height: 88vh;
-  padding: 16px;
+  max-height: min(90vh, 90dvh);
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(12, 14, 18, 0.92);
@@ -582,12 +583,22 @@ section {
   display: flex;
   flex-direction: column;
   z-index: 2;
+  overflow: hidden;
+}
+
+.lightbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 52px;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(12, 14, 18, 0.96);
+  position: relative;
+  z-index: 3;
 }
 
 .lightbox-close {
-  position: absolute;
-  right: 10px;
-  top: 10px;
   width: 36px;
   height: 36px;
   border-radius: 12px;
@@ -597,23 +608,31 @@ section {
   font-size: 22px;
   line-height: 1;
   cursor: pointer;
-  z-index: 3;
+  z-index: 4;
+}
+
+.lightbox-body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
 }
 
 .lightbox-img {
-  position: relative;
   width: 100%;
   height: auto;
-  max-height: 72vh;
+  max-height: 100%;
   object-fit: contain;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  z-index: 1;
 }
 
 .lightbox-caption {
-  margin-top: 10px;
   font-size: 14px;
   opacity: 0.85;
   text-align: center;
