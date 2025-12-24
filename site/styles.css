@@ -546,6 +546,73 @@ section {
   display: block;
 }
 
+@media (max-width: 768px) {
+  .bom-table-wrapper {
+    overflow-x: hidden;
+    border: none;
+    background: transparent;
+  }
+
+  .bom-table {
+    min-width: 0;
+  }
+
+  .bom-table thead {
+    display: none;
+  }
+
+  .bom-table,
+  .bom-table tbody,
+  .bom-table tr,
+  .bom-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .bom-table tbody tr {
+    background: var(--card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    box-shadow: var(--soft-shadow);
+  }
+
+  .bom-table tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .bom-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .bom-table td::before {
+    content: attr(data-label);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    flex: 0 0 auto;
+  }
+
+  .bom-table td:last-child {
+    border-bottom: none;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .bom-table td:last-child::before {
+    margin-bottom: 4px;
+  }
+}
+
 /* Lightbox */
 .lightbox {
   position: fixed;

@@ -924,6 +924,14 @@ const applyTranslations = (lang) => {
     }
   });
 
+  document.querySelectorAll("[data-i18n-label]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-label");
+    const value = getTranslation(lang, key);
+    if (value !== null) {
+      el.setAttribute("data-label", value);
+    }
+  });
+
   document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
     const key = el.getAttribute("data-i18n-alt");
     const value = getTranslation(lang, key);
