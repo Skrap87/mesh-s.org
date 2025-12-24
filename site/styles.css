@@ -364,15 +364,16 @@ section {
 .hero-title {
   font-size: clamp(3rem, 6vw, 4.2rem);
   letter-spacing: 0.22em;
+  white-space: nowrap;
 }
 
 .hero-title__variant {
-  margin-left: 0.35em;
+  margin-left: 0.12em;
   color: var(--accent);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  font-size: 0.52em;
-  vertical-align: baseline;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  font-size: inherit;
+  vertical-align: inherit;
   white-space: nowrap;
 }
 
