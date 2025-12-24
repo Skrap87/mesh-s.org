@@ -4,7 +4,9 @@
     "badge": "XL",
     "full": "MESH-S / XL"
   },
-  "assets": {},
+  "assets": {
+    "viewerModel": "assets/variants/xl/models/mesh-xl.glb",
+  },
   "sections": {
     "winter": { "images": [] },
     "charts": {}
