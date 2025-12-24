@@ -14,7 +14,7 @@
       "images": [
         {
           "selector": "[data-winter-image='1']",
-          "src": "assets/variants/xl/winter/images/node_winter.jpg",
+          "src": "assets/variants/xl/winter/images/coming-soon.png",
           "altKey": "variants.xl.winter.image1Alt"
         }
       ]
