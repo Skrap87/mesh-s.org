@@ -47,12 +47,12 @@
     .map(
       (g) => `
     <line x1="${padL}" y1="${g.yy}" x2="${W - padR}" y2="${g.yy}" stroke="${gridCol}"/>
-    <text x="${padL - 10}" y="${g.yy + 4}" text-anchor="end" font-size="12" fill="${muted}">${g.val}</text>
+    <text x="${padL - 10}" y="${g.yy + 5}" text-anchor="end" font-size="14" fill="${muted}">${g.val}</text>
   `
     )
     .join("")}
 
-  <text x="${padL}" y="${H - 12}" font-size="12" fill="${muted}">${unit || ""}</text>
+  <text x="${padL}" y="${H - 10}" font-size="14" fill="${muted}">${unit || ""}</text>
 
   <path d="${d} L ${padL + innerW} ${padT + innerH} L ${padL} ${padT + innerH} Z" fill="url(#${gid})"/>
   <path d="${d}" fill="none" stroke="${accent}" stroke-width="2.4" stroke-linecap="round"/>
@@ -82,3 +82,4 @@
 
   document.addEventListener("DOMContentLoaded", init);
 })();
+
