@@ -52,7 +52,7 @@
     )
     .join("")}
 
-  <text x="${padL}" y="${H - 10}" font-size="14" fill="${muted}">${unit || ""}</text>
+  <text x="${padL}" y="${H - 10}" font-size="16" fill="${muted}">${unit || ""}</text>
 
   <path d="${d} L ${padL + innerW} ${padT + innerH} L ${padL} ${padT + innerH} Z" fill="url(#${gid})"/>
   <path d="${d}" fill="none" stroke="${accent}" stroke-width="2.4" stroke-linecap="round"/>
@@ -82,4 +82,5 @@
 
   document.addEventListener("DOMContentLoaded", init);
 })();
+
 
