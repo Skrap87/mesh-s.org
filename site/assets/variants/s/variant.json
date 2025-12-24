@@ -66,8 +66,8 @@
         "json": "assets/variants/s/winter/charts/frost-morning.json",
         "unit": "°C"
       },
-      "humidity": {
-        "selector": "[data-chart='humidity']",
+      "batteryLevel": {
+        "selector": "[data-chart='batteryLevel']",
         "json": "assets/variants/s/autonomy/charts/ha-voltage.json",
         "unit": "%"
       },
