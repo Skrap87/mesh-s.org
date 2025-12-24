@@ -35,7 +35,7 @@ const translations = {
       hint: "Drag to rotate, scroll/pinch to zoom.",
       reset: "Reset view",
       loading: "Loading 3D model…",
-      error: "3D model is not available yet. Please add assets/models/mesh-s.glb.",
+      error: "3D model is not available yet. Please add assets/variants/s/models/mesh-s.glb.",
       errorhint: "Try clearing your browser cache and reloading the page.",
       back: "← Back"
     },
@@ -482,7 +482,7 @@ const translations = {
       hint: "Ziehen zum Drehen, Scrollen/Pinch zum Zoomen.",
       reset: "Ansicht zurücksetzen",
       loading: "3D-Modell wird geladen…",
-      error: "3D-Modell ist noch nicht verfügbar. Bitte assets/models/mesh-s.glb hinzufügen.",
+      error: "3D-Modell ist noch nicht verfügbar. Bitte assets/variants/s/models/mesh-s.glb hinzufügen.",
       errorhint: "Versuche, den Browser-Cache zu leeren und die Seite neu zu laden.",
       back: "← Zurück"
     },
