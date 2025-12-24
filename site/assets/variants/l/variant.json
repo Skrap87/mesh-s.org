@@ -4,7 +4,9 @@
     "badge": "L",
     "full": "MESH-S / L"
   },
-  "assets": {},
+  "assets": {
+    "heroImage": "assets/variants/l/hero/coming-soon.png"
+  },
   "sections": {
     "winter": { "images": [] },
     "charts": {}
