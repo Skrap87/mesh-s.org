@@ -25,8 +25,6 @@
           <button class="lang-option" type="button" data-lang="de">DE</button>
           <span class="lang-separator">|</span>
           <button class="lang-option" type="button" data-lang="en">EN</button>
-          <span class="lang-separator">|</span>
-          <button class="lang-option" type="button" data-lang="ru">RU</button>
         </div>
       </div>
     </header>
@@ -80,7 +78,6 @@
 
     const allowedVariants = new Set(["s", "m", "l", "xl"]);
     const fallbackVariant = "s";
-    const storageKey = "mesh_variant";
 
     const canvasWrap = document.getElementById("viewerCanvasWrap");
     const overlay = document.getElementById("viewerOverlay");
@@ -96,32 +93,10 @@
     let scene;
     let currentModel;
 
-    const getVariantFromUrl = () => {
+    const parseVariantId = () => {
       const params = new URLSearchParams(window.location.search);
-      if (!params.has("v")) return null;
-      const raw = (params.get("v") || "").toLowerCase();
-      return allowedVariants.has(raw) ? raw : null;
-    };
-
-    const getStoredVariant = () => {
-      try {
-        const raw = (localStorage.getItem(storageKey) || "").toLowerCase();
-        return allowedVariants.has(raw) ? raw : null;
-      } catch (error) {
-        return null;
-      }
-    };
-
-    const saveVariant = (variantId) => {
-      try {
-        localStorage.setItem(storageKey, variantId);
-      } catch (error) {
-        return;
-      }
-    };
-
-    const getActiveVariantId = () => {
-      return getVariantFromUrl() || getStoredVariant() || fallbackVariant;
+      const raw = (params.get("v") || fallbackVariant).toLowerCase();
+      return allowedVariants.has(raw) ? raw : fallbackVariant;
     };
 
     const getCurrentLang = () => {
@@ -147,44 +122,6 @@
         const isActive = btn.dataset.variant === variantId;
         btn.classList.toggle("is-active", isActive);
         btn.setAttribute("aria-pressed", isActive ? "true" : "false");
-      });
-    };
-
-    const updateUrlVariant = (variantId) => {
-      const url = new URL(window.location.href);
-      url.searchParams.set("v", variantId);
-      window.history.replaceState({}, "", url.pathname + url.search + url.hash);
-    };
-
-    const shouldSkipLink = (href) => {
-      if (!href) return true;
-      if (href.startsWith("#")) return true;
-      if (href.startsWith("mailto:") || href.startsWith("tel:")) return true;
-      return false;
-    };
-
-    const isFileLink = (pathname) => {
-      return /\.(pdf|zip|png|jpe?g|gif|webp|svg|mp4|webm)$/i.test(pathname);
-    };
-
-    const updateInternalLinks = (variantId) => {
-      document.querySelectorAll("a[href]").forEach((link) => {
-        const href = link.getAttribute("href");
-        if (shouldSkipLink(href)) return;
-
-        let url;
-        try {
-          url = new URL(href, window.location.href);
-        } catch (error) {
-          return;
-        }
-
-        if (url.origin !== window.location.origin) return;
-        if (isFileLink(url.pathname)) return;
-        if (url.searchParams.has("v")) return;
-
-        url.searchParams.set("v", variantId);
-        link.setAttribute("href", url.pathname + url.search + url.hash);
       });
     };
 
@@ -355,13 +292,8 @@
 
     initScene();
     resizeRenderer();
-    const initialVariant = getActiveVariantId();
-    if (!getVariantFromUrl()) {
-      updateUrlVariant(initialVariant);
-    }
-    saveVariant(initialVariant);
+    const initialVariant = parseVariantId();
     updateBackLinks(initialVariant);
-    updateInternalLinks(initialVariant);
     updateVariantButtons(initialVariant);
     updateVariantSuffix(` / ${fallbackVariant.toUpperCase()}`);
     loadVariantModel(initialVariant);
@@ -380,10 +312,9 @@
       btn.addEventListener("click", () => {
         const next = btn.dataset.variant;
         if (!allowedVariants.has(next)) return;
-        updateUrlVariant(next);
-        saveVariant(next);
-        updateInternalLinks(next);
-        loadVariantModel(next);
+        const url = new URL(window.location.href);
+        url.searchParams.set("v", next);
+        window.location.href = url.pathname + url.search + url.hash;
       });
     });
   </script>

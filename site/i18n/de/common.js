@@ -133,41 +133,41 @@ window.I18N_PARTS.de.common = {
       }
     }
   },
-	assembly: {
-	  eyebrow: "Montageansichten",
-	  title: "Montage in 6 Ansichten",
-	  steps: {
-		step1: {
-		  title: "Layout der Stromversorgung",
-		  text: "Beispielhafte Platzierung des MPPT-Controllers und der Hauptplatine auf der Adapterplatte. Das Layout dient als Orientierung und kann angepasst werden.",
-		  alt: "Ansicht 01 — Layout der Stromversorgung"
-		},
-		step2: {
-		  title: "Positionierung des Batterieblocks",
-		  text: "Beispielhafte Positionierung des 4×18650-Batterieblocks relativ zur Adapterplatte und zum Gehäuse. Gezeigt wird die Geometrie und Anordnung der Komponenten.",
-		  alt: "Ansicht 02 — Positionierung des Batterieblocks"
-		},
-		step3: {
-		  title: "Vorbereitung der RF-Anbindung",
-		  text: "Wichtiger Schritt vor der Fixierung der Adapterplatte: Montage und Fixierung des Koax-Adapters U.FL → N-Type für den späteren Antennenanschluss.",
-		  alt: "Ansicht 03 — Vorbereitung der RF-Anbindung"
-		},
-		step4: {
-		  title: "Übersicht der internen Anordnung",
-		  text: "Visuelle Übersicht der vollständig bestückten Baugruppe ohne Deckel. Zeigt die finale Position aller Hauptkomponenten im Gehäuse.",
-		  alt: "Ansicht 04 — interne Anordnung ohne Deckel"
-		},
-		step5: {
-		  title: "Systemprüfung (Beispiel)",
-		  text: "Beispielhafte Prüfpunkte für Stromversorgung, Start des Knotens und Überprüfung der LoRa-Mesh-Verbindung.",
-		  alt: "Ansicht 05 — Systemprüfung"
-		},
-		step6: {
-		  title: "Kontext der Außenmontage",
-		  text: "Typischer Installationskontext für DIY-Aufbauten. Montage, Anschluss und Inbetriebnahme erfolgen durch den Ersteller.",
-		  alt: "Ansicht 06 — Kontext der Außenmontage"
-		}
-	  }
+  assembly: {
+    eyebrow: "Aufbau in Bildern",
+    title: "Aufbau in 6 Ansichten",
+    steps: {
+      step1: {
+        title: "Power-Core-Layout",
+        text: "Platzierung von MPPT-Regler und Hauptplatine auf der Abstandsplatte; das Layout ist anpassbar.",
+        alt: "Ansicht 01 – Power-Core-Layout"
+      },
+      step2: {
+        title: "Position des Akkupacks",
+        text: "Lage des 4×18650-Akkupacks mit typischer Kabelführung.",
+        alt: "Ansicht 02 – Position des Akkupacks"
+      },
+      step3: {
+        title: "HF-Pfad",
+        text: "Illustrative Verlegung des HF-Pfads (U.FL → N-Type) vor dem Schließen des Gehäuses.",
+        alt: "Ansicht 03 – HF-Pfad"
+      },
+      step4: {
+        title: "Dichtkonzept",
+        text: "Platzierung der Dichtung und Gehäuseschluss für Witterungsaspekte.",
+        alt: "Ansicht 04 – Dichtkonzept"
+      },
+      step5: {
+        title: "Systemcheck (Beispiel)",
+        text: "Checkliste für Stromprüfungen, Knotenstart und LoRa-Mesh-Konnektivität.",
+        alt: "Ansicht 05 – Systemcheck"
+      },
+      step6: {
+        title: "Outdoor-Montagekontext",
+        text: "Typischer Einsatzkontext für DIY-Aufbauten; Montage, Verdrahtung und Inbetriebnahme erfolgen durch den Erbauer.",
+        alt: "Ansicht 06 – Outdoor-Montagekontext"
+      }
+    }
   },
   moisture: {
     eyebrow: "Schutz",
@@ -237,8 +237,7 @@ window.I18N_PARTS.de.common = {
         component: "Komponente",
         quantity: "Menge",
         notes: "Hinweise / Spezifikationen",
-        photo: "Foto",
-        buy: "Kaufen"
+        photo: "Foto"
       },
       rows: {
         r1: {
@@ -339,17 +338,6 @@ window.I18N_PARTS.de.common = {
         }
       }
     },
-    legend: {
-      required: "Erforderlich",
-      optional: "Optional",
-      chooseOne: "Eine Option wählen (Alternativen)"
-    },
-    badges: {
-      optional: "Optional",
-      alternative: "Alternative",
-      chooseOne: "Eine wählen"
-    },
-    choiceLabel: "Eine wählen:",
     note: "Alle Komponenten sind für den Selbstaufbau vorgesehen. Montage, Verdrahtung und Inbetriebnahme liegen in der Verantwortung des Erbauers.",
     disclaimer: {
       line1: "Die aufgeführten Komponenten zeigen eine mögliche Teileliste.",

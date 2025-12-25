@@ -39,7 +39,7 @@ const translations = {
   ru: buildTranslations("ru")
 };
 
-const supportedLanguages = ["de", "en", "ru"];
+const supportedLanguages = ["de", "en"];
 
 const getTranslation = (lang, key) => {
   const segments = key.split(".");
@@ -57,9 +57,6 @@ const applyTranslations = (lang) => {
   document.documentElement.lang = lang;
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
-    if (el.closest("#bom tbody")) {
-      return;
-    }
     const key = el.getAttribute("data-i18n");
     const value = getTranslation(lang, key);
     if (value !== null) {

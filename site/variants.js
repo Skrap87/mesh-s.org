@@ -1,6 +1,5 @@
 (() => {
   const allowedVariants = new Set(["s", "m", "l", "xl"]);
-  const storageKey = "mesh_variant";
   const debug = true;
   const isDevHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
 
@@ -14,33 +13,10 @@
     console.warn("[variants]", ...args);
   };
 
-  const getVariantFromUrl = () => {
+  const parseVariantId = () => {
     const params = new URLSearchParams(window.location.search);
-    if (!params.has("v")) return null;
-    const raw = (params.get("v") || "").toLowerCase();
-    return allowedVariants.has(raw) ? raw : null;
-  };
-
-  const getStoredVariant = () => {
-    try {
-      const raw = (localStorage.getItem(storageKey) || "").toLowerCase();
-      return allowedVariants.has(raw) ? raw : null;
-    } catch (error) {
-      warn("failed to read storage", error);
-      return null;
-    }
-  };
-
-  const saveVariant = (variantId) => {
-    try {
-      localStorage.setItem(storageKey, variantId);
-    } catch (error) {
-      warn("failed to save storage", error);
-    }
-  };
-
-  const getActiveVariantId = () => {
-    return getVariantFromUrl() || getStoredVariant() || "s";
+    const raw = (params.get("v") || "s").toLowerCase();
+    return allowedVariants.has(raw) ? raw : "s";
   };
 
   const getCurrentLang = () => {
@@ -191,87 +167,6 @@
     title.textContent = suffix || "";
   };
 
-  const applyBom = (activeVariant) => {
-    const table = document.querySelector(".bom-table");
-    if (!table) return;
-
-    const rows = Array.from(table.querySelectorAll("tbody tr[data-variants]"));
-    const groups = new Map();
-
-    table.querySelectorAll(".bom-badges").forEach((badge) => badge.remove());
-
-    rows.forEach((row) => {
-      const variants = (row.dataset.variants || "all").toLowerCase();
-      const isVisible =
-        variants === "all" ||
-        variants
-          .split(",")
-          .map((value) => value.trim())
-          .filter(Boolean)
-          .includes(activeVariant);
-      row.classList.toggle("is-hidden", !isVisible);
-      if (!isVisible) return;
-
-      const componentCell = row.querySelector('td[data-i18n-label="bom.table.headers.component"]');
-      if (!componentCell) return;
-
-      const badges = document.createElement("span");
-      badges.className = "bom-badges";
-      let hasBadge = false;
-
-      const kind = (row.dataset.kind || "").toLowerCase();
-      if (kind === "optional") {
-        const badge = document.createElement("span");
-        badge.className = "bom-badge bom-badge--optional";
-        badge.setAttribute("data-i18n", "bom.badges.optional");
-        badge.textContent = "Optional";
-        badges.appendChild(badge);
-        hasBadge = true;
-      }
-      if (kind === "alternative") {
-        const badge = document.createElement("span");
-        badge.className = "bom-badge bom-badge--alternative";
-        badge.setAttribute("data-i18n", "bom.badges.alternative");
-        badge.textContent = "Alternative";
-        badges.appendChild(badge);
-        hasBadge = true;
-      }
-
-      if (hasBadge) {
-        componentCell.appendChild(badges);
-      }
-
-      const group = row.dataset.group;
-      if (group) {
-        if (!groups.has(group)) {
-          groups.set(group, []);
-        }
-        groups.get(group).push({ row, componentCell });
-      }
-    });
-
-    groups.forEach((groupRows) => {
-      if (groupRows.length < 2) return;
-      groupRows.forEach(({ componentCell }) => {
-        let badges = componentCell.querySelector(".bom-badges");
-        if (!badges) {
-          badges = document.createElement("span");
-          badges.className = "bom-badges";
-          componentCell.appendChild(badges);
-        }
-        const badge = document.createElement("span");
-        badge.className = "bom-badge bom-badge--choice";
-        badge.setAttribute("data-i18n", "bom.badges.chooseOne");
-        badge.textContent = "Choose one";
-        badges.appendChild(badge);
-      });
-    });
-
-    if (typeof applyTranslations === "function") {
-      applyTranslations(getCurrentLang());
-    }
-  };
-
   const applyVariant = (variant) => {
     if (!variant) return;
     const safeApply = (label, condition, action) => {
@@ -357,49 +252,15 @@
     if (!variant) {
       updateVariantTitle(" / S");
       warn("variant fallback failed");
-      applyBom(variantId);
       return;
     }
     applyVariant(variant);
-    applyBom(variantId);
   };
 
   const updateUrlVariant = (variantId) => {
     const url = new URL(window.location.href);
     url.searchParams.set("v", variantId);
     window.history.replaceState({}, "", url.pathname + url.search + url.hash);
-  };
-
-  const shouldSkipLink = (href) => {
-    if (!href) return true;
-    if (href.startsWith("#")) return true;
-    if (href.startsWith("mailto:") || href.startsWith("tel:")) return true;
-    return false;
-  };
-
-  const isFileLink = (pathname) => {
-    return /\.(pdf|zip|png|jpe?g|gif|webp|svg|mp4|webm)$/i.test(pathname);
-  };
-
-  const updateInternalLinks = (variantId) => {
-    document.querySelectorAll("a[href]").forEach((link) => {
-      const href = link.getAttribute("href");
-      if (shouldSkipLink(href)) return;
-
-      let url;
-      try {
-        url = new URL(href, window.location.href);
-      } catch (error) {
-        return;
-      }
-
-      if (url.origin !== window.location.origin) return;
-      if (isFileLink(url.pathname)) return;
-      if (url.searchParams.has("v")) return;
-
-      url.searchParams.set("v", variantId);
-      link.setAttribute("href", url.pathname + url.search + url.hash);
-    });
   };
 
   const initVariantSwitch = (currentVariant) => {
@@ -410,22 +271,15 @@
         const next = btn.dataset.variant;
         if (!allowedVariants.has(next)) return;
         updateUrlVariant(next);
-        saveVariant(next);
-        updateInternalLinks(next);
         loadVariant(next);
       });
     });
   };
 
   document.addEventListener("DOMContentLoaded", () => {
-    const currentVariant = getActiveVariantId();
-    if (!getVariantFromUrl()) {
-      updateUrlVariant(currentVariant);
-    }
-    saveVariant(currentVariant);
+    const currentVariant = parseVariantId();
     initVariantSwitch(currentVariant);
     updateViewerLinks(currentVariant);
-    updateInternalLinks(currentVariant);
     loadVariant(currentVariant);
   });
 })();

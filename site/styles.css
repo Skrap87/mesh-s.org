@@ -522,43 +522,6 @@ section {
   overflow-x: auto;
 }
 
-.bom-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 20px;
-  margin-top: 16px;
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
-.bom-legend-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.bom-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.bom-dot--optional {
-  background: rgba(120, 198, 255, 0.2);
-  border-color: rgba(120, 198, 255, 0.4);
-}
-
-.bom-dot--choice {
-  background: rgba(176, 139, 255, 0.2);
-  border-color: rgba(176, 139, 255, 0.4);
-}
-
-.bom-choice-label {
-  display: none;
-}
-
 .bom-table {
   width: 100%;
   border-collapse: collapse;
@@ -595,86 +558,12 @@ section {
   color: var(--muted);
 }
 
-.bom-table th.bom-col-photo,
-.bom-table td.bom-col-photo {
+.bom-table th:last-child,
+.bom-table td:last-child {
   width: 88px;
   min-width: 88px;
   max-width: 88px;
   text-align: center;
-}
-
-.bom-table th.bom-col-buy,
-.bom-table td.bom-col-buy {
-  width: 120px;
-  min-width: 120px;
-  text-align: center;
-}
-
-.bom-table tr.is-hidden {
-  display: none;
-}
-
-.bom-table tr[data-kind="optional"] td {
-  background: rgba(120, 198, 255, 0.08);
-}
-
-.bom-table tr[data-kind="alternative"] td {
-  background: rgba(176, 139, 255, 0.08);
-}
-
-.bom-table tr.is-choice td {
-  border-left: 3px solid rgba(176, 139, 255, 0.5);
-}
-
-.bom-badges {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-left: 10px;
-}
-
-.bom-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 2px 8px;
-  border-radius: 999px;
-  font-size: 0.65rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  border: 1px solid transparent;
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--muted);
-}
-
-.bom-badge--optional {
-  border-color: rgba(120, 198, 255, 0.5);
-  color: rgba(158, 220, 255, 0.95);
-  background: rgba(120, 198, 255, 0.12);
-}
-
-.bom-badge--alternative {
-  border-color: rgba(176, 139, 255, 0.5);
-  color: rgba(210, 186, 255, 0.95);
-  background: rgba(176, 139, 255, 0.12);
-}
-
-.bom-badge--choice {
-  display: none;
-  border-color: rgba(176, 139, 255, 0.5);
-  color: rgba(210, 186, 255, 0.95);
-  background: rgba(176, 139, 255, 0.2);
-}
-
-.bom-table tr.is-choice .bom-badge--choice {
-  display: inline-flex;
-}
-
-.bom-choice-row td {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-  background: rgba(176, 139, 255, 0.12);
 }
 
 .bom-thumb {
@@ -763,22 +652,6 @@ section {
 
   .bom-table td:last-child::before {
     margin-bottom: 4px;
-  }
-
-  .bom-choice-row td::before {
-    content: "";
-  }
-
-  .bom-table td.bom-col-photo,
-  .bom-table td.bom-col-buy {
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-  }
-
-  .bom-badges {
-    margin-left: 0;
-    margin-top: 6px;
   }
 }
 

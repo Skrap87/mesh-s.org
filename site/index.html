@@ -41,8 +41,6 @@
         <button class="lang-option" type="button" data-lang="de">DE</button>
         <span class="lang-separator">|</span>
         <button class="lang-option" type="button" data-lang="en">EN</button>
-        <span class="lang-separator">|</span>
-        <button class="lang-option" type="button" data-lang="ru">RU</button>
       </div>
     </div>
   </header>
@@ -410,21 +408,6 @@
         <div class="eyebrow" data-i18n="bom.eyebrow">DIY</div>
         <h2 class="section-title" data-i18n="bom.title">Bill of materials for one DIY node</h2>
         <p class="section-subtitle" data-i18n="bom.subtitle">Technical component list for one MESH-S DIY build.</p>
-        <div class="bom-legend" aria-label="BOM legend">
-          <span class="bom-legend-item">
-            <span class="bom-dot bom-dot--required" aria-hidden="true"></span>
-            <span data-i18n="bom.legend.required">Required</span>
-          </span>
-          <span class="bom-legend-item">
-            <span class="bom-dot bom-dot--optional" aria-hidden="true"></span>
-            <span data-i18n="bom.legend.optional">Optional</span>
-          </span>
-          <span class="bom-legend-item">
-            <span class="bom-dot bom-dot--choice" aria-hidden="true"></span>
-            <span data-i18n="bom.legend.chooseOne">Choose one (Alternatives)</span>
-          </span>
-        </div>
-        <span id="bom-choice-label" class="bom-choice-label" data-i18n="bom.choiceLabel">Choose one:</span>
         <div class="bom-table-wrapper">
           <table class="bom-table">
             <thead>
@@ -433,239 +416,185 @@
                 <th scope="col" data-i18n="bom.table.headers.component">Component</th>
                 <th scope="col" data-i18n="bom.table.headers.quantity">Quantity</th>
                 <th scope="col" data-i18n="bom.table.headers.notes">Notes / Specs</th>
-                <th scope="col" class="bom-col-photo" data-i18n="bom.table.headers.photo">Photo</th>
-                <th scope="col" class="bom-col-buy" data-i18n="bom.table.headers.buy">Buy</th>
+                <th scope="col" data-i18n="bom.table.headers.photo">Photo</th>
               </tr>
             </thead>
-            <!-- BOM rows are intentionally not translated via i18n. Do not add data-i18n inside #bom tbody. -->
             <tbody>
-              <tr data-variants="all" data-kind="alternative" data-group="mcu">
+              <tr>
                 <td data-i18n-label="bom.table.headers.number">1</td>
-                <td data-i18n-label="bom.table.headers.component">XIAO nRF52840 &amp; Wio-SX1262</td>
-                <td data-i18n-label="bom.table.headers.quantity">1</td>
-                <td data-i18n-label="bom.table.headers.notes">—</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
+                <td data-i18n-label="bom.table.headers.component" data-i18n="bom.table.rows.r1.component">XIAO nRF52840 &amp; Wio-SX1262</td>
+                <td data-i18n-label="bom.table.headers.quantity" data-i18n="bom.table.rows.r1.quantity">1</td>
+                <td data-i18n-label="bom.table.headers.notes" data-i18n="bom.table.rows.r1.notes">—</td>
+                <td data-i18n-label="bom.table.headers.photo">
                   <button class="bom-thumb" type="button" data-variant-asset="bom01" data-full="assets/variants/s/bom/bom-01-xiao-nrf52840-wio-sx1262.webp" aria-label="Open image">
                     <img class="bom-photo" data-variant-asset="bom01" src="assets/variants/s/bom/bom-01-xiao-nrf52840-wio-sx1262.webp" alt="XIAO nRF52840 &amp; Wio-SX1262" width="64" height="64" loading="lazy" decoding="async">
                   </button>
                 </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">TBD</td>
               </tr>
-			  <tr data-variants="all" data-kind="alternative" data-group="mcu">
-                <td data-i18n-label="bom.table.headers.number">1a</td>
-                <td data-i18n-label="bom.table.headers.component">WisBlock RAK4631</td>
-                <td data-i18n-label="bom.table.headers.quantity">1</td>
-                <td data-i18n-label="bom.table.headers.notes">—</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
-                  <button class="bom-thumb" type="button" data-variant-asset="bom01" data-full="assets/variants/s/bom/bom-01-xiao-nrf52840-wio-sx1262.webp" aria-label="Open image">
-                    <img class="bom-photo" data-variant-asset="bom01" src="assets/variants/s/bom/bom-01-xiao-nrf52840-wio-sx1262.webp" alt="XIAO nRF52840 &amp; Wio-SX1262" width="64" height="64" loading="lazy" decoding="async">
-                  </button>
-                </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy"><a href="https://store.rakwireless.com/products/wisblock-meshtastic-starter-kit?index=6&intsource=rak_store&intmedium=organic&intcampaign=meshtastic_collection_page&intterm=hot_deals&intcontent=product_header&variant=43884035080390">TBD</td>
-              </tr>
-              <tr data-variants="s" data-kind="required">
+              <tr>
                 <td data-i18n-label="bom.table.headers.number">2</td>
-                <td data-i18n-label="bom.table.headers.component">Solar panel</td>
-                <td data-i18n-label="bom.table.headers.quantity">1</td>
-                <td data-i18n-label="bom.table.headers.notes">5 V / 2.7 W (118×173 mm)</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
+                <td data-i18n-label="bom.table.headers.component" data-i18n="bom.table.rows.r2.component">Solar panel</td>
+                <td data-i18n-label="bom.table.headers.quantity" data-i18n="bom.table.rows.r2.quantity">1</td>
+                <td data-i18n-label="bom.table.headers.notes" data-i18n="bom.table.rows.r2.notes">5 V / 2.7 W (118×173 mm)</td>
+                <td data-i18n-label="bom.table.headers.photo">
                   <button class="bom-thumb" type="button" data-variant-asset="bom02" data-full="assets/variants/s/bom/bom-02-solar-panel-5v-2-7w.webp" aria-label="Open image">
                     <img class="bom-photo" data-variant-asset="bom02" src="assets/variants/s/bom/bom-02-solar-panel-5v-2-7w.webp" alt="Solar panel" width="64" height="64" loading="lazy" decoding="async">
                   </button>
                 </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">https://store.reolink.com/de/accessories/#reolink-solar-panel</td>
               </tr>
-			  <tr data-variants="m" data-kind="required">
-                <td data-i18n-label="bom.table.headers.number">2a</td>
-                <td data-i18n-label="bom.table.headers.component">Reolink Solarpanel</td>
-                <td data-i18n-label="bom.table.headers.quantity">1</td>
-                <td data-i18n-label="bom.table.headers.notes">6 V / 3 W (120,4×185,4 mm)</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
-                  <button class="bom-thumb" type="button" data-variant-asset="bom02" data-full="assets/variants/s/bom/bom-02-solar-panel-5v-2-7w.webp" aria-label="Open image">
-                    <img class="bom-photo" data-variant-asset="bom02" src="assets/variants/s/bom/bom-02-solar-panel-5v-2-7w.webp" alt="Solar panel" width="64" height="64" loading="lazy" decoding="async">
-                  </button>
-                </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">https://store.reolink.com/de/accessories/#reolink-solar-panel</td>
-              </tr>
-			  <tr data-variants="xl" data-kind="required">
-                <td data-i18n-label="bom.table.headers.number">2b</td>
-                <td data-i18n-label="bom.table.headers.component">Reolink Solarpanel</td>
-                <td data-i18n-label="bom.table.headers.quantity">1</td>
-                <td data-i18n-label="bom.table.headers.notes">6 V / 6 W (174,6×210,6 mm)</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
-                  <button class="bom-thumb" type="button" data-variant-asset="bom02" data-full="assets/variants/s/bom/bom-02-solar-panel-5v-2-7w.webp" aria-label="Open image">
-                    <img class="bom-photo" data-variant-asset="bom02" src="assets/variants/s/bom/bom-02-solar-panel-5v-2-7w.webp" alt="Solar panel" width="64" height="64" loading="lazy" decoding="async">
-                  </button>
-                </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">https://store.reolink.com/de/accessories/#reolink-solar-panel</td>
-              </tr>
-              <tr data-variants="all" data-kind="required">
+              <tr>
                 <td data-i18n-label="bom.table.headers.number">3</td>
-                <td data-i18n-label="bom.table.headers.component">MPPT charge controller</td>
-                <td data-i18n-label="bom.table.headers.quantity">1</td>
-                <td data-i18n-label="bom.table.headers.notes">CN3065</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
+                <td data-i18n-label="bom.table.headers.component" data-i18n="bom.table.rows.r3.component">MPPT charge controller</td>
+                <td data-i18n-label="bom.table.headers.quantity" data-i18n="bom.table.rows.r3.quantity">1</td>
+                <td data-i18n-label="bom.table.headers.notes" data-i18n="bom.table.rows.r3.notes">CN3065</td>
+                <td data-i18n-label="bom.table.headers.photo">
                   <button class="bom-thumb" type="button" data-variant-asset="bom03" data-full="assets/variants/s/bom/bom-03-mppt-cn3065.webp" aria-label="Open image">
                     <img class="bom-photo" data-variant-asset="bom03" src="assets/variants/s/bom/bom-03-mppt-cn3065.webp" alt="MPPT charge controller" width="64" height="64" loading="lazy" decoding="async">
                   </button>
                 </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">TBD</td>
               </tr>
-              <tr data-variants="all" data-kind="required">
+              <tr>
                 <td data-i18n-label="bom.table.headers.number">4</td>
-                <td data-i18n-label="bom.table.headers.component">U.FL → N-Type coax</td>
-                <td data-i18n-label="bom.table.headers.quantity">1</td>
-                <td data-i18n-label="bom.table.headers.notes">RG178 (≥150 mm)</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
+                <td data-i18n-label="bom.table.headers.component" data-i18n="bom.table.rows.r4.component">U.FL → N-Type coax</td>
+                <td data-i18n-label="bom.table.headers.quantity" data-i18n="bom.table.rows.r4.quantity">1</td>
+                <td data-i18n-label="bom.table.headers.notes" data-i18n="bom.table.rows.r4.notes">RG178 (≥150 mm)</td>
+                <td data-i18n-label="bom.table.headers.photo">
                   <button class="bom-thumb" type="button" data-variant-asset="bom04" data-full="assets/variants/s/bom/bom-04-ufl-to-n-type-rg178.webp" aria-label="Open image">
                     <img class="bom-photo" data-variant-asset="bom04" src="assets/variants/s/bom/bom-04-ufl-to-n-type-rg178.webp" alt="U.FL → N-Type coax" width="64" height="64" loading="lazy" decoding="async">
                   </button>
                 </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">TBD</td>
               </tr>
-              <tr data-variants="all" data-kind="required">
+              <tr>
                 <td data-i18n-label="bom.table.headers.number">5</td>
-                <td data-i18n-label="bom.table.headers.component">18650 battery holder</td>
-                <td data-i18n-label="bom.table.headers.quantity">1</td>
-                <td data-i18n-label="bom.table.headers.notes">4-slot</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
+                <td data-i18n-label="bom.table.headers.component" data-i18n="bom.table.rows.r5.component">18650 battery holder</td>
+                <td data-i18n-label="bom.table.headers.quantity" data-i18n="bom.table.rows.r5.quantity">1</td>
+                <td data-i18n-label="bom.table.headers.notes" data-i18n="bom.table.rows.r5.notes">4-slot</td>
+                <td data-i18n-label="bom.table.headers.photo">
                   <button class="bom-thumb" type="button" data-variant-asset="bom05" data-full="assets/variants/s/bom/bom-05-18650-battery-holder-4slot.webp" aria-label="Open image">
                     <img class="bom-photo" data-variant-asset="bom05" src="assets/variants/s/bom/bom-05-18650-battery-holder-4slot.webp" alt="18650 battery holder" width="64" height="64" loading="lazy" decoding="async">
                   </button>
                 </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">TBD</td>
               </tr>
-              <tr data-variants="all" data-kind="required">
+              <tr>
                 <td data-i18n-label="bom.table.headers.number">6</td>
-                <td data-i18n-label="bom.table.headers.component">ALFA 868 MHz antenna</td>
-                <td data-i18n-label="bom.table.headers.quantity">1</td>
-                <td data-i18n-label="bom.table.headers.notes">5 dBi</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
+                <td data-i18n-label="bom.table.headers.component" data-i18n="bom.table.rows.r6.component">ALFA 868 MHz antenna</td>
+                <td data-i18n-label="bom.table.headers.quantity" data-i18n="bom.table.rows.r6.quantity">1</td>
+                <td data-i18n-label="bom.table.headers.notes" data-i18n="bom.table.rows.r6.notes">5 dBi</td>
+                <td data-i18n-label="bom.table.headers.photo">
                   <button class="bom-thumb" type="button" data-variant-asset="bom06" data-full="assets/variants/s/bom/bom-06-alfa-868mhz-antenna.webp" aria-label="Open image">
                     <img class="bom-photo" data-variant-asset="bom06" src="assets/variants/s/bom/bom-06-alfa-868mhz-antenna.webp" alt="ALFA 868 MHz antenna" width="64" height="64" loading="lazy" decoding="async">
                   </button>
                 </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">TBD</td>
               </tr>
-              <tr data-variants="all" data-kind="required">
+              <tr>
                 <td data-i18n-label="bom.table.headers.number">7</td>
-                <td data-i18n-label="bom.table.headers.component">18650 Li-Ion cells</td>
-                <td data-i18n-label="bom.table.headers.quantity">4 pcs</td>
-                <td data-i18n-label="bom.table.headers.notes">—</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
+                <td data-i18n-label="bom.table.headers.component" data-i18n="bom.table.rows.r7.component">18650 Li-Ion cells</td>
+                <td data-i18n-label="bom.table.headers.quantity" data-i18n="bom.table.rows.r7.quantity">4 pcs</td>
+                <td data-i18n-label="bom.table.headers.notes" data-i18n="bom.table.rows.r7.notes">—</td>
+                <td data-i18n-label="bom.table.headers.photo">
                   <button class="bom-thumb" type="button" data-variant-asset="bom07" data-full="assets/variants/s/bom/bom-07-18650-li-ion-cells.webp" aria-label="Open image">
                     <img class="bom-photo" data-variant-asset="bom07" src="assets/variants/s/bom/bom-07-18650-li-ion-cells.webp" alt="18650 Li-Ion cells" width="64" height="64" loading="lazy" decoding="async">
                   </button>
                 </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">TBD</td>
               </tr>
-              <tr data-variants="all" data-kind="required">
+              <tr>
                 <td data-i18n-label="bom.table.headers.number">8</td>
-                <td data-i18n-label="bom.table.headers.component">M3×12 screws</td>
-                <td data-i18n-label="bom.table.headers.quantity">18 pcs</td>
-                <td data-i18n-label="bom.table.headers.notes">cylinder head</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
+                <td data-i18n-label="bom.table.headers.component" data-i18n="bom.table.rows.r8.component">M3×12 screws</td>
+                <td data-i18n-label="bom.table.headers.quantity" data-i18n="bom.table.rows.r8.quantity">18 pcs</td>
+                <td data-i18n-label="bom.table.headers.notes" data-i18n="bom.table.rows.r8.notes">cylinder head</td>
+                <td data-i18n-label="bom.table.headers.photo">
                   <button class="bom-thumb" type="button" data-variant-asset="bom08" data-full="assets/variants/s/bom/bom-08-m3x12-screws.webp" aria-label="Open image">
                     <img class="bom-photo" data-variant-asset="bom08" src="assets/variants/s/bom/bom-08-m3x12-screws.webp" alt="M3×12 screws" width="64" height="64" loading="lazy" decoding="async">
                   </button>
                 </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">TBD</td>
               </tr>
-              <tr data-variants="all" data-kind="required">
+              <tr>
                 <td data-i18n-label="bom.table.headers.number">9</td>
-                <td data-i18n-label="bom.table.headers.component">M3 brass threaded inserts</td>
-                <td data-i18n-label="bom.table.headers.quantity">18 pcs</td>
-                <td data-i18n-label="bom.table.headers.notes">brass</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
+                <td data-i18n-label="bom.table.headers.component" data-i18n="bom.table.rows.r9.component">M3 brass threaded inserts</td>
+                <td data-i18n-label="bom.table.headers.quantity" data-i18n="bom.table.rows.r9.quantity">18 pcs</td>
+                <td data-i18n-label="bom.table.headers.notes" data-i18n="bom.table.rows.r9.notes">brass</td>
+                <td data-i18n-label="bom.table.headers.photo">
                   <button class="bom-thumb" type="button" data-variant-asset="bom09" data-full="assets/variants/s/bom/bom-09-m3-brass-threaded-inserts.webp" aria-label="Open image">
                     <img class="bom-photo" data-variant-asset="bom09" src="assets/variants/s/bom/bom-09-m3-brass-threaded-inserts.webp" alt="M3 brass threaded inserts" width="64" height="64" loading="lazy" decoding="async">
                   </button>
                 </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">TBD</td>
               </tr>
-              <tr data-variants="all" data-kind="required">
+              <tr>
                 <td data-i18n-label="bom.table.headers.number">10</td>
-                <td data-i18n-label="bom.table.headers.component">Self-tapping screws 2×10</td>
-                <td data-i18n-label="bom.table.headers.quantity">17 pcs</td>
-                <td data-i18n-label="bom.table.headers.notes">hex head</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
+                <td data-i18n-label="bom.table.headers.component" data-i18n="bom.table.rows.r10.component">Self-tapping screws 2×10</td>
+                <td data-i18n-label="bom.table.headers.quantity" data-i18n="bom.table.rows.r10.quantity">17 pcs</td>
+                <td data-i18n-label="bom.table.headers.notes" data-i18n="bom.table.rows.r10.notes">hex head</td>
+                <td data-i18n-label="bom.table.headers.photo">
                   <button class="bom-thumb" type="button" data-variant-asset="bom10" data-full="assets/variants/s/bom/bom-10-self-tapping-screws-2x10.webp" aria-label="Open image">
                     <img class="bom-photo" data-variant-asset="bom10" src="assets/variants/s/bom/bom-10-self-tapping-screws-2x10.webp" alt="Self-tapping screws 2×10" width="64" height="64" loading="lazy" decoding="async">
                   </button>
                 </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">TBD</td>
               </tr>
-              <tr data-variants="all" data-kind="required">
+              <tr>
                 <td data-i18n-label="bom.table.headers.number">11</td>
-                <td data-i18n-label="bom.table.headers.component">Amphenol pressure equalization vent</td>
-                <td data-i18n-label="bom.table.headers.quantity">1</td>
-                <td data-i18n-label="bom.table.headers.notes">Ø12 mm</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
+                <td data-i18n-label="bom.table.headers.component" data-i18n="bom.table.rows.r11.component">Amphenol pressure equalization vent</td>
+                <td data-i18n-label="bom.table.headers.quantity" data-i18n="bom.table.rows.r11.quantity">1</td>
+                <td data-i18n-label="bom.table.headers.notes" data-i18n="bom.table.rows.r11.notes">Ø12 mm</td>
+                <td data-i18n-label="bom.table.headers.photo">
                   <button class="bom-thumb" type="button" data-variant-asset="bom11" data-full="assets/variants/s/bom/bom-11-amphenol-pressure-vent.webp" aria-label="Open image">
                     <img class="bom-photo" data-variant-asset="bom11" src="assets/variants/s/bom/bom-11-amphenol-pressure-vent.webp" alt="Amphenol pressure equalization vent" width="64" height="64" loading="lazy" decoding="async">
                   </button>
                 </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">TBD</td>
               </tr>
-              <tr data-variants="all" data-kind="required">
+              <tr>
                 <td data-i18n-label="bom.table.headers.number">12</td>
-                <td data-i18n-label="bom.table.headers.component">Silicone gasket</td>
-                <td data-i18n-label="bom.table.headers.quantity">1174 mm</td>
-                <td data-i18n-label="bom.table.headers.notes">Ø 2 mm</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
+                <td data-i18n-label="bom.table.headers.component" data-i18n="bom.table.rows.r12.component">Silicone gasket</td>
+                <td data-i18n-label="bom.table.headers.quantity" data-i18n="bom.table.rows.r12.quantity">1174 mm</td>
+                <td data-i18n-label="bom.table.headers.notes" data-i18n="bom.table.rows.r12.notes">Ø 2 mm</td>
+                <td data-i18n-label="bom.table.headers.photo">
                   <button class="bom-thumb" type="button" data-variant-asset="bom12" data-full="assets/variants/s/bom/bom-12-silicone-gasket.webp" aria-label="Open image">
                     <img class="bom-photo" data-variant-asset="bom12" src="assets/variants/s/bom/bom-12-silicone-gasket.webp" alt="Silicone gasket" width="64" height="64" loading="lazy" decoding="async">
                   </button>
                 </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">TBD</td>
               </tr>
-              <tr data-variants="all" data-kind="required">
+              <tr>
                 <td data-i18n-label="bom.table.headers.number">13</td>
-                <td data-i18n-label="bom.table.headers.component">Sikaflex 554</td>
-                <td data-i18n-label="bom.table.headers.quantity">~1–2 mm layer</td>
-                <td data-i18n-label="bom.table.headers.notes">—</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
+                <td data-i18n-label="bom.table.headers.component" data-i18n="bom.table.rows.r13.component">Sikaflex 554</td>
+                <td data-i18n-label="bom.table.headers.quantity" data-i18n="bom.table.rows.r13.quantity">~1–2 mm layer</td>
+                <td data-i18n-label="bom.table.headers.notes" data-i18n="bom.table.rows.r13.notes">—</td>
+                <td data-i18n-label="bom.table.headers.photo">
                   <button class="bom-thumb" type="button" data-variant-asset="bom13" data-full="assets/variants/s/bom/bom-13-sikaflex-554.webp" aria-label="Open image">
                     <img class="bom-photo" data-variant-asset="bom13" src="assets/variants/s/bom/bom-13-sikaflex-554.webp" alt="Sikaflex 554" width="64" height="64" loading="lazy" decoding="async">
                   </button>
                 </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">TBD</td>
               </tr>
-              <tr data-variants="all" data-kind="required">
+              <tr>
                 <td data-i18n-label="bom.table.headers.number">14</td>
-                <td data-i18n-label="bom.table.headers.component">Silicone sealant</td>
-                <td data-i18n-label="bom.table.headers.quantity">as required</td>
-                <td data-i18n-label="bom.table.headers.notes">—</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
+                <td data-i18n-label="bom.table.headers.component" data-i18n="bom.table.rows.r14.component">Silicone sealant</td>
+                <td data-i18n-label="bom.table.headers.quantity" data-i18n="bom.table.rows.r14.quantity">as required</td>
+                <td data-i18n-label="bom.table.headers.notes" data-i18n="bom.table.rows.r14.notes">—</td>
+                <td data-i18n-label="bom.table.headers.photo">
                   <button class="bom-thumb" type="button" data-variant-asset="bom14" data-full="assets/variants/s/bom/bom-14-silicone-sealant.webp" aria-label="Open image">
                     <img class="bom-photo" data-variant-asset="bom14" src="assets/variants/s/bom/bom-14-silicone-sealant.webp" alt="Silicone sealant" width="64" height="64" loading="lazy" decoding="async">
                   </button>
                 </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">TBD</td>
               </tr>
-              <tr data-variants="all" data-kind="optional">
+              <tr>
                 <td data-i18n-label="bom.table.headers.number">15</td>
-                <td data-i18n-label="bom.table.headers.component">Silica gel</td>
-                <td data-i18n-label="bom.table.headers.quantity">as required</td>
-                <td data-i18n-label="bom.table.headers.notes">—</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
+                <td data-i18n-label="bom.table.headers.component" data-i18n="bom.table.rows.r15.component">Silica gel</td>
+                <td data-i18n-label="bom.table.headers.quantity" data-i18n="bom.table.rows.r15.quantity">as required</td>
+                <td data-i18n-label="bom.table.headers.notes" data-i18n="bom.table.rows.r15.notes">—</td>
+                <td data-i18n-label="bom.table.headers.photo">
                   <button class="bom-thumb" type="button" data-variant-asset="bom15" data-full="assets/variants/s/bom/bom-15-silica-gel.webp" aria-label="Open image">
                     <img class="bom-photo" data-variant-asset="bom15" src="assets/variants/s/bom/bom-15-silica-gel.webp" alt="Silica gel" width="64" height="64" loading="lazy" decoding="async">
                   </button>
                 </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">TBD</td>
               </tr>
-              <tr data-variants="all" data-kind="required">
+              <tr>
                 <td data-i18n-label="bom.table.headers.number">16</td>
-                <td data-i18n-label="bom.table.headers.component">ASA filament (3D print)</td>
-                <td data-i18n-label="bom.table.headers.quantity">242 g</td>
-                <td data-i18n-label="bom.table.headers.notes">2 colors</td>
-                <td class="bom-col-photo" data-i18n-label="bom.table.headers.photo">
+                <td data-i18n-label="bom.table.headers.component" data-i18n="bom.table.rows.r16.component">ASA filament (3D print)</td>
+                <td data-i18n-label="bom.table.headers.quantity" data-i18n="bom.table.rows.r16.quantity">242 g</td>
+                <td data-i18n-label="bom.table.headers.notes" data-i18n="bom.table.rows.r16.notes">2 colors</td>
+                <td data-i18n-label="bom.table.headers.photo">
                   <button class="bom-thumb" type="button" data-variant-asset="bom16" data-full="assets/variants/s/bom/bom-16-asa.webp" aria-label="Open image">
                     <img class="bom-photo" data-variant-asset="bom16" src="assets/variants/s/bom/bom-16-asa.webp" alt="ASA filament" width="64" height="64" loading="lazy" decoding="async">
                   </button>
                 </td>
-                <td class="bom-col-buy" data-i18n-label="bom.table.headers.buy">TBD</td>
               </tr>
             </tbody>
           </table>
@@ -696,8 +625,6 @@
         <button class="lang-option" type="button" data-lang="de">DE</button>
         <span class="lang-separator">|</span>
         <button class="lang-option" type="button" data-lang="en">EN</button>
-        <span class="lang-separator">|</span>
-        <button class="lang-option" type="button" data-lang="ru">RU</button>
       </div>
     </div>
   </footer>
