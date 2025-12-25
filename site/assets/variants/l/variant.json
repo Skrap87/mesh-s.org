@@ -25,7 +25,7 @@
     ],
     "assembly": [
       { "id": "step01", "src": "assets/variants/l/hero/coming-soon.webp" },
-      { "id": "step02", "src": "aassets/variants/l/hero/coming-soon.webp" },
+      { "id": "step02", "src": "assets/variants/l/hero/coming-soon.webp" },
       { "id": "step03", "src": "assets/variants/l/hero/coming-soon.webp" },
       { "id": "step04", "src": "assets/variants/l/hero/coming-soon.webp" },
       { "id": "step05", "src": "assets/variants/l/hero/coming-soon.webp" },
