@@ -57,6 +57,9 @@ const applyTranslations = (lang) => {
   document.documentElement.lang = lang;
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
+    if (el.closest("#bom tbody")) {
+      return;
+    }
     const key = el.getAttribute("data-i18n");
     const value = getTranslation(lang, key);
     if (value !== null) {
