@@ -9,6 +9,18 @@
     "heroImageWebp": "assets/variants/m/hero/hero-m.webp",
     "viewerModel": "assets/variants/m/models/mesh-m.glb"
   },
+  "customParts": [
+      { "id": "enclosureWebp", "src": "assets/variants/m/custom-parts/enclosure-m.webp" },
+      { "id": "enclosureGif", "src": "assets/variants/m/custom-parts/enclosure-m.gif" },
+      { "id": "lidWebp", "src": "assets/variants/m/custom-parts/lid-m.webp" },
+      { "id": "lidGif", "src": "assets/variants/m/custom-parts/lid-m.gif" },
+      { "id": "spacerPlateWebp", "src": "assets/variants/m/custom-parts/spacer-plate-m.webp" },
+      { "id": "spacerPlateGif", "src": "assets/variants/m/custom-parts/spacer-plate-m.gif" },
+      { "id": "silicaCompartmentWebp", "src": "assets/variants/m/custom-parts/silica-compartment-m.webp" },
+      { "id": "silicaCompartmentGif", "src": "assets/variants/m/custom-parts/silica-compartment-m.gif" },
+      { "id": "mountingLatchWebp", "src": "assets/variants/m/custom-parts/mounting-latch-m.webp" },
+      { "id": "mountingLatchGif", "src": "assets/variants/m/custom-parts/mounting-latch-m.gif" }
+    ],
   "sections": {
     "winter": {
       "images": [
