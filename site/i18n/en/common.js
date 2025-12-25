@@ -9,7 +9,6 @@ window.I18N_PARTS.en.common = {
     benefits: "Benefits",
     autonomy: "Telemetry",
     winter: "Winter",
-    exploded: "Exploded",
     customParts: "Custom parts",
     assembly: "Build views",
     moisture: "Moisture",
@@ -107,14 +106,10 @@ window.I18N_PARTS.en.common = {
       }
     }
   },
-  exploded: {
-    eyebrow: "Inside overview",
-    title: "Illustrative internal layout",
-    imageAlt: "MESH-S illustrative internal layout",
-    custom: {
-      eyebrow: "Custom parts",
-      note: "Shown here are only the printed parts made for MESH-S. Store-bought components are left out to keep the view clean."
-    },
+  customParts: {
+    eyebrow: "Custom parts",
+    title: "Custom parts",
+    note: "Shown here are only the printed parts made for MESH-S. Store-bought components are left out to keep the view clean.",
     legend: {
       enclosure: {
         title: "ASA enclosure",
