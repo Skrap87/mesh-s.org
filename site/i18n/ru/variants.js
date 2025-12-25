@@ -5,6 +5,10 @@ window.I18N_PARTS.ru.variants = {
     s: {},
     m: {},
     l: {},
-    xl: {}
+    xl: {
+      winter: {
+        image1Alt: "MESH-S / XL узел в зимней эксплуатации при морозе"
+      }
+    }
   }
 };
