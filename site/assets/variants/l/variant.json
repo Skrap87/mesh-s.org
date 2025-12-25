@@ -4,12 +4,78 @@
     "badge": "L",
     "full": "MESH-S / L"
   },
+  "i18n": {
+    "modelLineKey": "variants.l.modelLine"
+  },
   "assets": {
     "heroImage": "assets/variants/l/hero/coming-soon.png",
-    "heroImageWebp": "assets/variants/l/hero/coming-soon.webp"
+    "heroImageWebp": "assets/variants/l/hero/coming-soon.webp",
+    "viewerModel": "assets/variants/s/models/mesh-s.glb",
+    "customParts": [
+      { "id": "enclosureWebp", "src": "assets/variants/s/custom-parts/enclosure.webp" },
+      { "id": "enclosureGif", "src": "assets/variants/s/custom-parts/enclosure.gif" },
+      { "id": "lidWebp", "src": "assets/variants/s/custom-parts/lid.webp" },
+      { "id": "lidGif", "src": "assets/variants/s/custom-parts/lid.gif" },
+      { "id": "spacerPlateWebp", "src": "assets/variants/s/custom-parts/spacer-plate.webp" },
+      { "id": "spacerPlateGif", "src": "assets/variants/s/custom-parts/spacer-plate.gif" },
+      { "id": "silicaCompartmentWebp", "src": "assets/variants/s/custom-parts/silica-compartment.webp" },
+      { "id": "silicaCompartmentGif", "src": "assets/variants/s/custom-parts/silica-compartment.gif" },
+      { "id": "mountingLatchWebp", "src": "assets/variants/s/custom-parts/mounting-latch.webp" },
+      { "id": "mountingLatchGif", "src": "assets/variants/s/custom-parts/mounting-latch.gif" }
+    ],
+    "assembly": [
+      { "id": "step01", "src": "assets/variants/s/assembly/step-01.png" },
+      { "id": "step02", "src": "assets/variants/s/assembly/step-02.png" },
+      { "id": "step03", "src": "assets/variants/s/assembly/step-03.png" },
+      { "id": "step04", "src": "assets/variants/s/assembly/step-04.png" },
+      { "id": "step05", "src": "assets/variants/s/assembly/step-05.png" },
+      { "id": "step06", "src": "assets/variants/s/assembly/step-06.png" }
+    ],
+    "bom": [
+      { "id": "bom01", "src": "assets/variants/s/bom/bom-01-xiao-nrf52840-wio-sx1262.webp" },
+      { "id": "bom02", "src": "assets/variants/s/bom/bom-02-solar-panel-5v-2-7w.webp" },
+      { "id": "bom03", "src": "assets/variants/s/bom/bom-03-mppt-cn3065.webp" },
+      { "id": "bom04", "src": "assets/variants/s/bom/bom-04-ufl-to-n-type-rg178.webp" },
+      { "id": "bom05", "src": "assets/variants/s/bom/bom-05-18650-battery-holder-4slot.webp" },
+      { "id": "bom06", "src": "assets/variants/s/bom/bom-06-alfa-868mhz-antenna.webp" },
+      { "id": "bom07", "src": "assets/variants/s/bom/bom-07-18650-li-ion-cells.webp" },
+      { "id": "bom08", "src": "assets/variants/s/bom/bom-08-m3x12-screws.webp" },
+      { "id": "bom09", "src": "assets/variants/s/bom/bom-09-m3-brass-threaded-inserts.webp" },
+      { "id": "bom10", "src": "assets/variants/s/bom/bom-10-self-tapping-screws-2x10.webp" },
+      { "id": "bom11", "src": "assets/variants/s/bom/bom-11-amphenol-pressure-vent.webp" },
+      { "id": "bom12", "src": "assets/variants/s/bom/bom-12-silicone-gasket.webp" },
+      { "id": "bom13", "src": "assets/variants/s/bom/bom-13-sikaflex-554.webp" },
+      { "id": "bom14", "src": "assets/variants/s/bom/bom-14-silicone-sealant.webp" },
+      { "id": "bom15", "src": "assets/variants/s/bom/bom-15-silica-gel.webp" },
+      { "id": "bom16", "src": "assets/variants/s/bom/bom-16-asa.webp" }
+    ]
   },
   "sections": {
-    "winter": { "images": [] },
-    "charts": {}
+    "winter": {
+      "images": [
+        {
+          "selector": "[data-winter-image='1']",
+          "src": "assets/variants/s/winter/images/node_winter2.jpg",
+          "altKey": "variants.s.winter.image1Alt"
+        }
+      ]
+    },
+    "charts": {
+      "temperature": {
+        "selector": "[data-chart='temperature']",
+        "json": "assets/variants/s/winter/charts/ha-temperature.json",
+        "unit": "°C"
+      },
+      "batteryLevel": {
+        "selector": "[data-chart='batteryLevel']",
+        "json": "assets/variants/s/autonomy/charts/ha-battery.json",
+        "unit": "%"
+      },
+      "chargeCurrent": {
+        "selector": "[data-chart='chargeCurrent']",
+        "json": "assets/variants/s/autonomy/charts/ha-charge.json",
+        "unit": "mA"
+      }
+    }
   }
 }
