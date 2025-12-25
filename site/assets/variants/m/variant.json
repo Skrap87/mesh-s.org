@@ -8,8 +8,7 @@
     "heroImage": "assets/variants/m/hero/hero-m.PNG",
     "heroImageWebp": "assets/variants/m/hero/hero-m.webp",
     "viewerModel": "assets/variants/m/models/mesh-m.glb"
-  },
-  "customParts": [
+    "customParts": [
       { "id": "enclosureWebp", "src": "assets/variants/m/custom-parts/enclosure-m.webp" },
       { "id": "enclosureGif", "src": "assets/variants/m/custom-parts/enclosure-m.gif" },
       { "id": "lidWebp", "src": "assets/variants/m/custom-parts/lid-m.webp" },
