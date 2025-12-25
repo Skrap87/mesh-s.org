@@ -100,16 +100,6 @@ const applyTranslations = (lang) => {
     }
   });
 
-  const exploded = document.querySelector("[data-i18n-svg]");
-  if (exploded) {
-    exploded.setAttribute(
-      "src",
-      lang === "de"
-        ? "assets/meshtastic-exploded.de.svg"
-        : "assets/meshtastic-exploded.en.svg"
-    );
-  }
-
   document.querySelectorAll(".lang-option").forEach((btn) => {
     const isActive = btn.dataset.lang === lang;
     btn.classList.toggle("is-active", isActive);

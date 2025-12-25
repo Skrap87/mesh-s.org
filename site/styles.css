@@ -896,23 +896,7 @@ footer {
   gap: 18px;
 }
 
-.exploded-view {
-  background: #0c0c10;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  padding: 18px;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
-  display: grid;
-  place-items: center;
-}
-
-.exploded-view img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.exploded-legend {
+.custom-parts-grid {
   margin-top: 48px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -970,17 +954,6 @@ footer {
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.68);
   max-width: 70ch;
-}
-
-.section-divider {
-  margin: 48px 0 32px;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0.12),
-    rgba(255, 255, 255, 0)
-  );
 }
 
 .card-sub {

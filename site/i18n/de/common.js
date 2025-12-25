@@ -9,7 +9,6 @@ window.I18N_PARTS.de.common = {
     benefits: "Vorteile",
     autonomy: "Telemetrie",
     winter: "Winter",
-    exploded: "Explosionsansicht",
     customParts: "Sonderteile",
     assembly: "Aufbau in Bildern",
     moisture: "Feuchtigkeit",
@@ -107,14 +106,10 @@ window.I18N_PARTS.de.common = {
       }
     }
   },
-  exploded: {
-    eyebrow: "Innenansicht",
-    title: "Illustrativer Innenaufbau",
-    imageAlt: "MESH-S illustriertes internes Layout",
-    custom: {
-      eyebrow: "Sonderteile",
-      note: "Gezeigt sind nur die für MESH-S modellierten und gedruckten Teile. Standardkomponenten bleiben außen vor, damit die Ansicht klar bleibt."
-    },
+  customParts: {
+    eyebrow: "Sonderteile",
+    title: "Sonderteile",
+    note: "Gezeigt sind nur die für MESH-S modellierten und gedruckten Teile. Standardkomponenten bleiben außen vor, damit die Ansicht klar bleibt.",
     legend: {
       enclosure: {
         title: "ASA-Gehäuse",
