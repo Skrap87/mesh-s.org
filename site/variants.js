@@ -167,11 +167,15 @@
     title.textContent = suffix || "";
   };
 
-  const applyBomFilter = (activeVariant) => {
+  const applyBom = (activeVariant) => {
     const table = document.querySelector(".bom-table");
     if (!table) return;
 
     const rows = Array.from(table.querySelectorAll("tbody tr[data-variants]"));
+    const groups = new Map();
+
+    table.querySelectorAll(".bom-badges").forEach((badge) => badge.remove());
+
     rows.forEach((row) => {
       const variants = (row.dataset.variants || "all").toLowerCase();
       const isVisible =
@@ -182,38 +186,66 @@
           .filter(Boolean)
           .includes(activeVariant);
       row.classList.toggle("is-hidden", !isVisible);
-    });
+      if (!isVisible) return;
 
-    table.querySelectorAll("tbody tr.bom-choice-row").forEach((row) => row.remove());
-    rows.forEach((row) => row.classList.remove("is-choice"));
+      const componentCell = row.querySelector('td[data-i18n-label="bom.table.headers.component"]');
+      if (!componentCell) return;
 
-    const labelSource = document.getElementById("bom-choice-label");
-    const labelText = labelSource?.textContent.trim() || "Choose one:";
-    const groups = new Map();
+      const badges = document.createElement("span");
+      badges.className = "bom-badges";
+      let hasBadge = false;
 
-    rows.forEach((row) => {
-      if (row.classList.contains("is-hidden")) return;
-      const group = row.dataset.group;
-      if (!group) return;
-      if (!groups.has(group)) {
-        groups.set(group, []);
+      const kind = (row.dataset.kind || "").toLowerCase();
+      if (kind === "optional") {
+        const badge = document.createElement("span");
+        badge.className = "bom-badge bom-badge--optional";
+        badge.setAttribute("data-i18n", "bom.badges.optional");
+        badge.textContent = "Optional";
+        badges.appendChild(badge);
+        hasBadge = true;
       }
-      groups.get(group).push(row);
+      if (kind === "alternative") {
+        const badge = document.createElement("span");
+        badge.className = "bom-badge bom-badge--alternative";
+        badge.setAttribute("data-i18n", "bom.badges.alternative");
+        badge.textContent = "Alternative";
+        badges.appendChild(badge);
+        hasBadge = true;
+      }
+
+      if (hasBadge) {
+        componentCell.appendChild(badges);
+      }
+
+      const group = row.dataset.group;
+      if (group) {
+        if (!groups.has(group)) {
+          groups.set(group, []);
+        }
+        groups.get(group).push({ row, componentCell });
+      }
     });
 
-    groups.forEach((groupRows, groupName) => {
+    groups.forEach((groupRows) => {
       if (groupRows.length < 2) return;
-      groupRows.forEach((row) => row.classList.add("is-choice"));
-      const firstRow = groupRows[0];
-      const choiceRow = document.createElement("tr");
-      choiceRow.className = "bom-choice-row";
-      choiceRow.setAttribute("data-choice-group", groupName);
-      const cell = document.createElement("td");
-      cell.colSpan = firstRow.children.length;
-      cell.textContent = labelText;
-      choiceRow.appendChild(cell);
-      firstRow.parentElement.insertBefore(choiceRow, firstRow);
+      groupRows.forEach(({ componentCell }) => {
+        let badges = componentCell.querySelector(".bom-badges");
+        if (!badges) {
+          badges = document.createElement("span");
+          badges.className = "bom-badges";
+          componentCell.appendChild(badges);
+        }
+        const badge = document.createElement("span");
+        badge.className = "bom-badge bom-badge--choice";
+        badge.setAttribute("data-i18n", "bom.badges.chooseOne");
+        badge.textContent = "Choose one";
+        badges.appendChild(badge);
+      });
     });
+
+    if (typeof applyTranslations === "function") {
+      applyTranslations(getCurrentLang());
+    }
   };
 
   const applyVariant = (variant) => {
@@ -301,11 +333,11 @@
     if (!variant) {
       updateVariantTitle(" / S");
       warn("variant fallback failed");
-      applyBomFilter(variantId);
+      applyBom(variantId);
       return;
     }
     applyVariant(variant);
-    applyBomFilter(variantId);
+    applyBom(variantId);
   };
 
   const updateUrlVariant = (variantId) => {
