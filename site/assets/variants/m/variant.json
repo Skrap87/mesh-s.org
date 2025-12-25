@@ -19,7 +19,9 @@
       { "id": "silicaCompartmentGif", "src": "assets/variants/m/custom-parts/silica-compartment-m.gif" },
       { "id": "mountingLatchWebp", "src": "assets/variants/m/custom-parts/mounting-latch-m.webp" },
       { "id": "mountingLatchGif", "src": "assets/variants/m/custom-parts/mounting-latch-m.gif" }
-    ]
+    ],
+    "assembly": [],
+    "bom": []
   },
   "sections": {
     "winter": {
