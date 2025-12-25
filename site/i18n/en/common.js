@@ -133,41 +133,41 @@ window.I18N_PARTS.en.common = {
       }
     }
   },
-  assembly: {
-    eyebrow: "Build views",
-    title: "Build in 6 views",
-    steps: {
-      step1: {
-        title: "Power core layout",
-        text: "Example placement of the MPPT controller and main node board on the spacer plate; layout can be adapted.",
-        alt: "View 01 – power core layout"
-      },
-      step2: {
-        title: "Battery pack positioning",
-        text: "Location of the 4×18650 battery pack with typical cable routing.",
-        alt: "View 02 – battery pack positioning"
-      },
-      step3: {
-        title: "RF path routing",
-        text: "Illustrative routing of the RF path (U.FL → N-Type) prior to closing the enclosure.",
-        alt: "View 03 – RF path routing"
-      },
-      step4: {
-        title: "Sealing concept",
-        text: "Gasket placement and enclosure closure for weather exposure considerations.",
-        alt: "View 04 – sealing concept"
-      },
-      step5: {
-        title: "System check (example)",
-        text: "Checklist items for power checks, node startup, and LoRa mesh connectivity.",
-        alt: "View 05 – system check"
-      },
-      step6: {
-        title: "Outdoor mounting context",
-        text: "Typical deployment context for DIY builds; assembly, wiring, and commissioning are completed by the builder.",
-        alt: "View 06 – outdoor mounting context"
-      }
-    }
+	assembly: {
+	  eyebrow: "Assembly views",
+	  title: "Assembly in 6 views",
+	  steps: {
+		step1: {
+		  title: "Power module layout",
+		  text: "Example placement of the MPPT controller and the main node board on the adapter plate. The layout is shown as a reference and can be modified.",
+		  alt: "View 01 — power module layout"
+		},
+		step2: {
+		  title: "Battery pack positioning",
+		  text: "Example positioning of the 4×18650 battery pack relative to the adapter plate and enclosure. Focuses on geometry and component alignment.",
+		  alt: "View 02 — battery pack positioning"
+		},
+		step3: {
+		  title: "RF connection preparation",
+		  text: "Key step before fixing the adapter plate: installing and securing the U.FL → N-Type coaxial adapter for later antenna connection.",
+		  alt: "View 03 — RF connection preparation"
+		},
+		step4: {
+		  title: "Internal layout overview",
+		  text: "Visual overview of the fully populated assembly without the lid. Shows the final placement of all main components inside the enclosure.",
+		  alt: "View 04 — internal layout without lid"
+		},
+		step5: {
+		  title: "System check (example)",
+		  text: "Example checkpoints for power, node startup, and LoRa mesh connectivity verification.",
+		  alt: "View 05 — system check"
+		},
+		step6: {
+		  title: "Outdoor mounting context",
+		  text: "Typical installation context for DIY builds. Mounting, wiring, and commissioning are performed by the builder.",
+		  alt: "View 06 — outdoor mounting context"
+		}
+	  }
   },
   moisture: {
     eyebrow: "Protection",
