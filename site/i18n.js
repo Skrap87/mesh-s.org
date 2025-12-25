@@ -39,7 +39,7 @@ const translations = {
   ru: buildTranslations("ru")
 };
 
-const supportedLanguages = ["de", "en"];
+const supportedLanguages = ["de", "en", "ru"];
 
 const getTranslation = (lang, key) => {
   const segments = key.split(".");
