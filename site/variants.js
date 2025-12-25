@@ -1,11 +1,16 @@
 (() => {
   const allowedVariants = new Set(["s", "m", "l", "xl"]);
-  const debug = false;
+  const debug = true;
+  const isDevHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
 
   const log = (...args) => {
     if (debug) {
       console.log("[variants]", ...args);
     }
+  };
+
+  const warn = (...args) => {
+    console.warn("[variants]", ...args);
   };
 
   const parseVariantId = () => {
@@ -53,6 +58,52 @@
         img.setAttribute("src", assets.heroImage);
       }
     }
+  };
+
+  const applyAssetTargets = (list = []) => {
+    if (!Array.isArray(list)) return;
+    list.forEach((asset) => {
+      if (!asset || !asset.id) return;
+      if (!asset.src) {
+        log(`skip asset without src: ${asset.id}`);
+        return;
+      }
+      const targets = document.querySelectorAll(`[data-variant-asset="${asset.id}"]`);
+      if (!targets.length) {
+        log(`missing target for asset: ${asset.id}`);
+        return;
+      }
+      targets.forEach((el) => {
+        if (el.tagName === "SOURCE") {
+          el.setAttribute("srcset", asset.src);
+          return;
+        }
+        if (el.hasAttribute("data-full")) {
+          el.setAttribute("data-full", asset.src);
+          if (el.tagName !== "IMG" && el.tagName !== "VIDEO" && el.tagName !== "A") {
+            return;
+          }
+        }
+        if (el.tagName === "IMG" || el.tagName === "VIDEO") {
+          el.setAttribute("src", asset.src);
+          return;
+        }
+        if (el.tagName === "A") {
+          el.setAttribute("href", asset.src);
+          return;
+        }
+        log(`unsupported target for asset ${asset.id}: ${el.tagName}`);
+      });
+    });
+  };
+
+  const applyViewerModel = (src) => {
+    if (!src) return;
+    if (typeof window.updateViewerModel === "function") {
+      window.updateViewerModel(src);
+      return;
+    }
+    log("viewer model update skipped (no handler)");
   };
 
   const applyWinterImages = (images = []) => {
@@ -118,19 +169,30 @@
 
   const applyVariant = (variant) => {
     if (!variant) return;
-
-    if (variant.assets) {
-      applyHero(variant.assets);
-    }
-
-    if (variant.sections) {
-      if (variant.sections.winter && variant.sections.winter.images) {
-        applyWinterImages(variant.sections.winter.images);
+    const safeApply = (label, condition, action) => {
+      if (!condition) {
+        log(`skip ${label}`);
+        return;
       }
-      if (variant.sections.charts) {
-        applyCharts(variant.sections.charts);
+      try {
+        action();
+        log(`applied ${label}`);
+      } catch (error) {
+        warn(`failed ${label}`, error);
       }
-    }
+    };
+
+    safeApply("hero", variant.assets, () => applyHero(variant.assets));
+    safeApply("viewerModel", variant.assets?.viewerModel, () => applyViewerModel(variant.assets.viewerModel));
+    safeApply("customParts", variant.assets?.customParts, () =>
+      applyAssetTargets(variant.assets.customParts)
+    );
+    safeApply("winter", variant.sections?.winter?.images, () =>
+      applyWinterImages(variant.sections.winter.images)
+    );
+    safeApply("charts", variant.sections?.charts, () => applyCharts(variant.sections.charts));
+    safeApply("assembly", variant.assets?.assembly, () => applyAssetTargets(variant.assets.assembly));
+    safeApply("bom", variant.assets?.bom, () => applyAssetTargets(variant.assets.bom));
 
     if (variant.labels) {
       const badge = document.querySelector("[data-variant-badge]");
@@ -160,8 +222,12 @@
   };
 
   const fetchVariant = async (variantId) => {
+    const cacheBuster = isDevHost ? `?t=${Date.now()}` : "";
+    const url = `assets/variants/${variantId}/variant.json${cacheBuster}`;
+    log("loading variant", { variantId, url });
     try {
-      const res = await fetch(`assets/variants/${variantId}/variant.json`, { cache: "no-store" });
+      const res = await fetch(url, { cache: isDevHost ? "no-store" : "default" });
+      log("fetch status", { variantId, ok: res.ok, status: res.status });
       if (!res.ok) {
         throw new Error(`Variant ${variantId} not found`);
       }
@@ -169,20 +235,23 @@
       if (!data || typeof data !== "object") {
         throw new Error("Invalid variant data");
       }
+      log("variant json parsed", { variantId });
       return { id: variantId, ...data };
     } catch (error) {
-      log(error);
+      warn("variant load failed", error);
       return null;
     }
   };
 
   const loadVariant = async (variantId) => {
+    log("activate variant", variantId);
     let variant = await fetchVariant(variantId);
     if (!variant && variantId !== "s") {
       variant = await fetchVariant("s");
     }
     if (!variant) {
       updateVariantTitle(" / S");
+      warn("variant fallback failed");
       return;
     }
     applyVariant(variant);
