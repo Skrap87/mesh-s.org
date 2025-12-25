@@ -1,5 +1,6 @@
 (() => {
   const allowedVariants = new Set(["s", "m", "l", "xl"]);
+  const storageKey = "mesh_variant";
   const debug = true;
   const isDevHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
 
@@ -13,10 +14,33 @@
     console.warn("[variants]", ...args);
   };
 
-  const parseVariantId = () => {
+  const getVariantFromUrl = () => {
     const params = new URLSearchParams(window.location.search);
-    const raw = (params.get("v") || "s").toLowerCase();
-    return allowedVariants.has(raw) ? raw : "s";
+    if (!params.has("v")) return null;
+    const raw = (params.get("v") || "").toLowerCase();
+    return allowedVariants.has(raw) ? raw : null;
+  };
+
+  const getStoredVariant = () => {
+    try {
+      const raw = (localStorage.getItem(storageKey) || "").toLowerCase();
+      return allowedVariants.has(raw) ? raw : null;
+    } catch (error) {
+      warn("failed to read storage", error);
+      return null;
+    }
+  };
+
+  const saveVariant = (variantId) => {
+    try {
+      localStorage.setItem(storageKey, variantId);
+    } catch (error) {
+      warn("failed to save storage", error);
+    }
+  };
+
+  const getActiveVariantId = () => {
+    return getVariantFromUrl() || getStoredVariant() || "s";
   };
 
   const getCurrentLang = () => {
@@ -346,6 +370,38 @@
     window.history.replaceState({}, "", url.pathname + url.search + url.hash);
   };
 
+  const shouldSkipLink = (href) => {
+    if (!href) return true;
+    if (href.startsWith("#")) return true;
+    if (href.startsWith("mailto:") || href.startsWith("tel:")) return true;
+    return false;
+  };
+
+  const isFileLink = (pathname) => {
+    return /\.(pdf|zip|png|jpe?g|gif|webp|svg|mp4|webm)$/i.test(pathname);
+  };
+
+  const updateInternalLinks = (variantId) => {
+    document.querySelectorAll("a[href]").forEach((link) => {
+      const href = link.getAttribute("href");
+      if (shouldSkipLink(href)) return;
+
+      let url;
+      try {
+        url = new URL(href, window.location.href);
+      } catch (error) {
+        return;
+      }
+
+      if (url.origin !== window.location.origin) return;
+      if (isFileLink(url.pathname)) return;
+      if (url.searchParams.has("v")) return;
+
+      url.searchParams.set("v", variantId);
+      link.setAttribute("href", url.pathname + url.search + url.hash);
+    });
+  };
+
   const initVariantSwitch = (currentVariant) => {
     updateVariantButtons(currentVariant);
 
@@ -354,15 +410,22 @@
         const next = btn.dataset.variant;
         if (!allowedVariants.has(next)) return;
         updateUrlVariant(next);
+        saveVariant(next);
+        updateInternalLinks(next);
         loadVariant(next);
       });
     });
   };
 
   document.addEventListener("DOMContentLoaded", () => {
-    const currentVariant = parseVariantId();
+    const currentVariant = getActiveVariantId();
+    if (!getVariantFromUrl()) {
+      updateUrlVariant(currentVariant);
+    }
+    saveVariant(currentVariant);
     initVariantSwitch(currentVariant);
     updateViewerLinks(currentVariant);
+    updateInternalLinks(currentVariant);
     loadVariant(currentVariant);
   });
 })();
