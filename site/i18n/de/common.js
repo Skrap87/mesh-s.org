@@ -237,7 +237,8 @@ window.I18N_PARTS.de.common = {
         component: "Komponente",
         quantity: "Menge",
         notes: "Hinweise / Spezifikationen",
-        photo: "Foto"
+        photo: "Foto",
+        buy: "Kaufen"
       },
       rows: {
         r1: {
@@ -338,6 +339,17 @@ window.I18N_PARTS.de.common = {
         }
       }
     },
+    legend: {
+      required: "Erforderlich",
+      optional: "Optional",
+      chooseOne: "Eine Option wählen (Alternativen)"
+    },
+    badges: {
+      optional: "Optional",
+      alternative: "Alternative",
+      chooseOne: "Eine wählen"
+    },
+    choiceLabel: "Eine wählen:",
     note: "Alle Komponenten sind für den Selbstaufbau vorgesehen. Montage, Verdrahtung und Inbetriebnahme liegen in der Verantwortung des Erbauers.",
     disclaimer: {
       line1: "Die aufgeführten Komponenten zeigen eine mögliche Teileliste.",
