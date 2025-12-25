@@ -172,52 +172,80 @@
       </div>
     </section>
 
-    <section id="custom-parts">
-      <div class="container container-wide">
-        <div class="legend-head">
-          <div class="eyebrow" data-i18n="customParts.eyebrow">Custom parts</div>
-          <h2 class="section-title" data-i18n="customParts.title">Custom parts</h2>
-          <div class="legend-note" data-i18n="customParts.note">Shown here are only the printed parts made for MESH-S. Store-bought components are left out to keep the view clean.</div>
-        </div>
-        <div class="custom-parts-grid">
-          <div class="legend-item">
-			<picture>  
-				<source srcset="assets/variants/s/custom-parts/enclosure.webp" type="image/webp">
-            	<img src="assets/variants/s/custom-parts/enclosure.gif" data-i18n-alt="customParts.legend.enclosure.alt" alt="ASA enclosure" width="220" height="300" loading="lazy" decoding="async" fetchpriority="low">
-			</picture>
-            <div class="legend-title" data-i18n="customParts.legend.enclosure.title">ASA enclosure</div>
-            <div class="legend-desc" data-i18n="customParts.legend.enclosure.desc">UV-stable printed housing</div>
-          </div>
-
-          <div class="legend-item">
-			<picture>
-				<source srcset="assets/variants/s/custom-parts/lid.webp" type="image/webp">
-            	<img src="assets/variants/s/custom-parts/lid.gif" data-i18n-alt="customParts.legend.lid.alt" alt="Mounting lid" width="220" height="300" loading="lazy" decoding="async" fetchpriority="low">
-			</picture>
-            <div class="legend-title" data-i18n="customParts.legend.lid.title">Mounting lid</div>
-            <div class="legend-desc" data-i18n="customParts.legend.lid.desc">Round &amp; rectangular mounting example</div>
-          </div>
-
-          <div class="legend-item">
-			<picture>
-			  	<source srcset="assets/variants/s/custom-parts/spacer-plate.webp" type="image/webp">
-            	<img src="assets/variants/s/custom-parts/spacer-plate.gif" data-i18n-alt="customParts.legend.spacer.alt" alt="Spacer plate" width="220" height="300" loading="lazy" decoding="async" fetchpriority="low">
-			</picture>
-            <div class="legend-title" data-i18n="customParts.legend.spacer.title">Spacer plate</div>
-            <div class="legend-desc" data-i18n="customParts.legend.spacer.desc">Electronics mounting interface</div>
-          </div>
-
-          <div class="legend-item">
-			<picture>
-				<source srcset="assets/variants/s/custom-parts/silica-compartment.webp" type="image/webp">
-            	<img src="assets/variants/s/custom-parts/silica-compartment.gif" data-i18n-alt="customParts.legend.silica.alt" alt="Silica compartment" width="220" height="300" loading="lazy" decoding="async" fetchpriority="low">
-			</picture>
-            <div class="legend-title" data-i18n="customParts.legend.silica.title">Silica compartment</div>
-            <div class="legend-desc" data-i18n="customParts.legend.silica.desc">Humidity control insert</div>
-          </div>
-        </div>
+   <section id="custom-parts">
+  <div class="container container-wide">
+    <div class="legend-head">
+      <div class="eyebrow" data-i18n="customParts.eyebrow">Custom parts</div>
+      <h2 class="section-title" data-i18n="customParts.title">Custom parts</h2>
+      <div class="legend-note" data-i18n="customParts.note">
+        Shown here are only the printed parts made for MESH-S. Store-bought components are left out to keep the view clean.
       </div>
-    </section>
+    </div>
+
+    <div class="custom-parts-grid">
+      <div class="legend-item">
+        <picture>
+          <source data-variant-asset="enclosureWebp"
+                  srcset="assets/variants/s/custom-parts/enclosure.webp"
+                  type="image/webp">
+          <img data-variant-asset="enclosureGif"
+               src="assets/variants/s/custom-parts/enclosure.gif"
+               data-i18n-alt="customParts.legend.enclosure.alt"
+               alt="ASA enclosure" width="220" height="300"
+               loading="lazy" decoding="async" fetchpriority="low">
+        </picture>
+        <div class="legend-title" data-i18n="customParts.legend.enclosure.title">ASA enclosure</div>
+        <div class="legend-desc" data-i18n="customParts.legend.enclosure.desc">UV-stable printed housing</div>
+      </div>
+
+      <div class="legend-item">
+        <picture>
+          <source data-variant-asset="lidWebp"
+                  srcset="assets/variants/s/custom-parts/lid.webp"
+                  type="image/webp">
+          <img data-variant-asset="lidGif"
+               src="assets/variants/s/custom-parts/lid.gif"
+               data-i18n-alt="customParts.legend.lid.alt"
+               alt="Mounting lid" width="220" height="300"
+               loading="lazy" decoding="async" fetchpriority="low">
+        </picture>
+        <div class="legend-title" data-i18n="customParts.legend.lid.title">Mounting lid</div>
+        <div class="legend-desc" data-i18n="customParts.legend.lid.desc">Round &amp; rectangular mounting example</div>
+      </div>
+
+      <div class="legend-item">
+        <picture>
+          <source data-variant-asset="spacerPlateWebp"
+                  srcset="assets/variants/s/custom-parts/spacer-plate.webp"
+                  type="image/webp">
+          <img data-variant-asset="spacerPlateGif"
+               src="assets/variants/s/custom-parts/spacer-plate.gif"
+               data-i18n-alt="customParts.legend.spacer.alt"
+               alt="Spacer plate" width="220" height="300"
+               loading="lazy" decoding="async" fetchpriority="low">
+        </picture>
+        <div class="legend-title" data-i18n="customParts.legend.spacer.title">Spacer plate</div>
+        <div class="legend-desc" data-i18n="customParts.legend.spacer.desc">Electronics mounting interface</div>
+      </div>
+
+      <div class="legend-item">
+        <picture>
+          <source data-variant-asset="silicaCompartmentWebp"
+                  srcset="assets/variants/s/custom-parts/silica-compartment.webp"
+                  type="image/webp">
+          <img data-variant-asset="silicaCompartmentGif"
+               src="assets/variants/s/custom-parts/silica-compartment.gif"
+               data-i18n-alt="customParts.legend.silica.alt"
+               alt="Silica compartment" width="220" height="300"
+               loading="lazy" decoding="async" fetchpriority="low">
+        </picture>
+        <div class="legend-title" data-i18n="customParts.legend.silica.title">Silica compartment</div>
+        <div class="legend-desc" data-i18n="customParts.legend.silica.desc">Humidity control insert</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <section id="assembly">
       <div class="container">
