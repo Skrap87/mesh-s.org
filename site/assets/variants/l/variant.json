@@ -55,7 +55,7 @@
       "images": [
         {
           "selector": "[data-winter-image='1']",
-          "src": "assets/variants/s/winter/images/node_winter2.jpg",
+          "src": "assets/variants/l/hero/coming-soon.webp",
           "altKey": "variants.s.winter.image1Alt"
         }
       ]
