@@ -167,6 +167,55 @@
     title.textContent = suffix || "";
   };
 
+  const applyBomFilter = (activeVariant) => {
+    const table = document.querySelector(".bom-table");
+    if (!table) return;
+
+    const rows = Array.from(table.querySelectorAll("tbody tr[data-variants]"));
+    rows.forEach((row) => {
+      const variants = (row.dataset.variants || "all").toLowerCase();
+      const isVisible =
+        variants === "all" ||
+        variants
+          .split(",")
+          .map((value) => value.trim())
+          .filter(Boolean)
+          .includes(activeVariant);
+      row.classList.toggle("is-hidden", !isVisible);
+    });
+
+    table.querySelectorAll("tbody tr.bom-choice-row").forEach((row) => row.remove());
+    rows.forEach((row) => row.classList.remove("is-choice"));
+
+    const labelSource = document.getElementById("bom-choice-label");
+    const labelText = labelSource?.textContent.trim() || "Choose one:";
+    const groups = new Map();
+
+    rows.forEach((row) => {
+      if (row.classList.contains("is-hidden")) return;
+      const group = row.dataset.group;
+      if (!group) return;
+      if (!groups.has(group)) {
+        groups.set(group, []);
+      }
+      groups.get(group).push(row);
+    });
+
+    groups.forEach((groupRows, groupName) => {
+      if (groupRows.length < 2) return;
+      groupRows.forEach((row) => row.classList.add("is-choice"));
+      const firstRow = groupRows[0];
+      const choiceRow = document.createElement("tr");
+      choiceRow.className = "bom-choice-row";
+      choiceRow.setAttribute("data-choice-group", groupName);
+      const cell = document.createElement("td");
+      cell.colSpan = firstRow.children.length;
+      cell.textContent = labelText;
+      choiceRow.appendChild(cell);
+      firstRow.parentElement.insertBefore(choiceRow, firstRow);
+    });
+  };
+
   const applyVariant = (variant) => {
     if (!variant) return;
     const safeApply = (label, condition, action) => {
@@ -252,9 +301,11 @@
     if (!variant) {
       updateVariantTitle(" / S");
       warn("variant fallback failed");
+      applyBomFilter(variantId);
       return;
     }
     applyVariant(variant);
+    applyBomFilter(variantId);
   };
 
   const updateUrlVariant = (variantId) => {

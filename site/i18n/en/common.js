@@ -237,7 +237,8 @@ window.I18N_PARTS.en.common = {
         component: "Component",
         quantity: "Quantity",
         notes: "Notes / Specs",
-        photo: "Photo"
+        photo: "Photo",
+        buy: "Buy"
       },
       rows: {
         r1: {
@@ -338,6 +339,17 @@ window.I18N_PARTS.en.common = {
         }
       }
     },
+    legend: {
+      required: "Required",
+      optional: "Optional",
+      chooseOne: "Choose one (Alternatives)"
+    },
+    badges: {
+      optional: "Optional",
+      alternative: "Alternative",
+      chooseOne: "Choose one"
+    },
+    choiceLabel: "Choose one:",
     note: "All components are intended for self-assembly. Assembly, wiring and commissioning are the responsibility of the builder.",
     disclaimer: {
       line1: "The listed components represent one possible parts list.",
