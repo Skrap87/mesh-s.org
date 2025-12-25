@@ -237,7 +237,8 @@ window.I18N_PARTS.de.common = {
         component: "Komponente",
         quantity: "Menge",
         notes: "Hinweise / Spezifikationen",
-        photo: "Foto"
+        photo: "Foto",
+        link: "Link"
       },
       rows: {
         r1: {
