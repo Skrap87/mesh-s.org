@@ -7,7 +7,7 @@
   "assets": {
     "heroImage": "assets/variants/m/hero/hero-m.PNG",
     "heroImageWebp": "assets/variants/m/hero/hero-m.webp",
-    "viewerModel": "assets/variants/m/models/mesh-m.glb"
+    "viewerModel": "assets/variants/m/models/mesh-m.glb",
     "customParts": [
       { "id": "enclosureWebp", "src": "assets/variants/m/custom-parts/enclosure-m.webp" },
       { "id": "enclosureGif", "src": "assets/variants/m/custom-parts/enclosure-m.gif" },
