@@ -73,26 +73,24 @@
     const wrapper = document.createElement("div");
     wrapper.className = "bom-component";
 
-    const name = document.createElement("span");
-    name.className = "bom-component-name";
-    name.textContent = item.name;
-    wrapper.appendChild(name);
-
     const kind = (item.kind || "required").toLowerCase();
     const badge = document.createElement("span");
     if (kind === "optional") {
       badge.className = "bom-badge bom-badge--optional";
       badge.textContent = "Optional";
-      wrapper.appendChild(badge);
     } else if (kind === "alternative") {
       badge.className = "bom-badge bom-badge--choice";
       badge.textContent = "Wähle eine Option";
-      wrapper.appendChild(badge);
     } else {
       badge.className = "bom-badge bom-badge--required";
       badge.textContent = "Erforderlich";
-      wrapper.appendChild(badge);
     }
+    wrapper.appendChild(badge);
+
+    const name = document.createElement("span");
+    name.className = "bom-component-name";
+    name.textContent = item.name;
+    wrapper.appendChild(name);
 
     cell.appendChild(wrapper);
     return cell;
