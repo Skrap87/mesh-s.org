@@ -1,0 +1,12 @@
+{
+  "order": 100,
+  "variants": "all",
+  "kind": "required",
+  "name": "ALFA 868 MHz 5 dBi Antenne",
+  "qty": "1",
+  "notes": "—",
+  "photoThumb": "assets/bom/foto/bom-06-alfa-868mhz-antenna.webp",
+  "photoFull": "assets/bom/foto/bom-06-alfa-868mhz-antenna.webp",
+  "shopUrl": "",
+  "shopLabel": "Link folgt"
+}

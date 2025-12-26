@@ -1,0 +1,12 @@
+{
+  "order": 110,
+  "variants": "all",
+  "kind": "required",
+  "name": "18650 Li-Ion Zellen",
+  "qty": "4",
+  "notes": "—",
+  "photoThumb": "assets/bom/foto/bom-07-18650-li-ion-cells.webp",
+  "photoFull": "assets/bom/foto/bom-07-18650-li-ion-cells.webp",
+  "shopUrl": "",
+  "shopLabel": "Link folgt"
+}
