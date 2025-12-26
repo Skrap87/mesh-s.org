@@ -332,6 +332,12 @@ section {
   white-space: nowrap;
 }
 
+#bom .hero-title {
+  font-size: 2.4rem;
+  letter-spacing: 0.18em;
+}
+
+
 .hero-title__variant {
   margin-left: 0.12em;
   color: var(--accent);
