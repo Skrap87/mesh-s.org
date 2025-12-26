@@ -249,7 +249,6 @@
     );
     safeApply("charts", variant.sections?.charts, () => applyCharts(variant.sections.charts));
     safeApply("assembly", variant.assets?.assembly, () => applyAssetTargets(variant.assets.assembly));
-    safeApply("bom", variant.assets?.bom, () => applyAssetTargets(variant.assets.bom));
 
     if (variant.labels) {
       const badge = document.querySelector("[data-variant-badge]");
