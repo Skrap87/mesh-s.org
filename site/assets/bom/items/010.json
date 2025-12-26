@@ -2,7 +2,6 @@
   "order": 100,
   "variants": "all",
   "kind": "required",
-  "group": "antene",
   "name": "ALFA AOA-868-5ACM",
   "qty": "1",
   "notes": "868 MHz Antenna 5dBi N-Male",
