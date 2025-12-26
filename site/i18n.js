@@ -40,13 +40,6 @@ const translations = {
 };
 
 const supportedLanguages = ["de", "en"];
-const allowedVariants = new Set(["s", "m", "l", "xl"]);
-
-const normalizeVariant = (value) => {
-  if (!value) return null;
-  const normalized = value.toLowerCase();
-  return allowedVariants.has(normalized) ? normalized : null;
-};
 
 const getTranslation = (lang, key) => {
   const segments = key.split(".");
@@ -107,6 +100,16 @@ const applyTranslations = (lang) => {
     }
   });
 
+  const exploded = document.querySelector("[data-i18n-svg]");
+  if (exploded) {
+    exploded.setAttribute(
+      "src",
+      lang === "de"
+        ? "assets/meshtastic-exploded.de.svg"
+        : "assets/meshtastic-exploded.en.svg"
+    );
+  }
+
   document.querySelectorAll(".lang-option").forEach((btn) => {
     const isActive = btn.dataset.lang === lang;
     btn.classList.toggle("is-active", isActive);
@@ -116,14 +119,9 @@ const applyTranslations = (lang) => {
 
 const updateLinks = (lang) => {
   const links = document.querySelectorAll("a[href]");
-
-  const currentParams = new URLSearchParams(window.location.search);
-  const currentV = currentParams.get("v") || "s";
-
   links.forEach((link) => {
     const href = link.getAttribute("href");
     if (!href) return;
-
     if (
       href.startsWith("http") ||
       href.startsWith("mailto:") ||
@@ -133,33 +131,18 @@ const updateLinks = (lang) => {
       return;
     }
 
-    // Якорь на текущей странице
     if (href.startsWith("#")) {
       const url = new URL(window.location.href);
       url.searchParams.set("lang", lang);
-      // 🔑 Сохраняем ТЕКУЩИЙ вариант из URL
-      url.searchParams.set("v", currentV);
       url.hash = href;
       link.setAttribute("href", url.pathname + url.search + url.hash);
       return;
     }
 
-    // Обычные внутренние страницы
-    try {
-      const url = new URL(href, window.location.origin);
-      if (url.origin !== window.location.origin) return;
-
-      url.searchParams.set("lang", lang);
-      
-      // 🔑 Для внешних ссылок (например, на viewer.html) сохраняем текущий вариант
-      if (!url.searchParams.has("v")) {
-        url.searchParams.set("v", currentV);
-      }
-
-      link.setAttribute("href", url.pathname + url.search + url.hash);
-    } catch (error) {
-      console.error("Invalid URL in link:", href);
-    }
+    const url = new URL(href, window.location.origin);
+    if (url.origin !== window.location.origin) return;
+    url.searchParams.set("lang", lang);
+    link.setAttribute("href", url.pathname + url.search + url.hash);
   });
 };
 
@@ -174,26 +157,8 @@ const setLanguage = (lang, { updateUrl } = { updateUrl: true }) => {
 
   if (updateUrl) {
     const url = new URL(window.location.href);
-    const currentLang = url.searchParams.get("lang");
-    
-    // Обновляем URL только если язык действительно изменился
-    if (currentLang !== lang) {
-      url.searchParams.set("lang", lang);
-      
-      // 🔑 Сохраняем ТЕКУЩИЙ вариант из URL, не трогая его
-      const currentV = url.searchParams.get("v");
-      if (currentV) {
-        url.searchParams.set("v", currentV);
-      } else {
-        // Если варианта нет - используем getCurrentVariant() как fallback
-        const fallbackV = (typeof window.getCurrentVariant === "function")
-          ? window.getCurrentVariant()
-          : "s";
-        url.searchParams.set("v", fallbackV);
-      }
-      
-      window.history.replaceState({}, "", url.pathname + url.search + url.hash);
-    }
+    url.searchParams.set("lang", lang);
+    window.history.replaceState({}, "", url.pathname + url.search + url.hash);
   }
 };
 
