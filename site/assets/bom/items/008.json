@@ -1,7 +1,7 @@
 {
   "order": 80,
   "variants": "all",
-  "kind": "option",
+  "kind": "optional",
   "name": "INA219",
   "qty": "1",
   "notes": "Zur Messung des Lade- und Entladestroms der Akkus.",
