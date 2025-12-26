@@ -298,11 +298,11 @@
     if (!variant) {
       updateVariantTitle(" / S");
       warn("variant fallback failed");
-      applyBomFilter(variantId);
+      window.applyBomFilter(variantId);
       return;
     }
     applyVariant(variant);
-    applyBomFilter(variant.id || variantId);
+    window.applyBomFilter(variant.id || variantId);
   };
 
   const initVariantSwitch = (currentVariant) => {
@@ -378,6 +378,8 @@
 
   // Инициализируем сразу
   const initialVariant = initializeVariant();
+
+  window.applyBomFilter = applyBomFilter;
 
   document.addEventListener("DOMContentLoaded", () => {
     initVariantSwitch(initialVariant);

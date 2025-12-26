@@ -1,0 +1,13 @@
+{
+  "order": 10,
+  "variants": "all",
+  "kind": "alternative",
+  "group": "mcu",
+  "name": "XIAO nRF52840 & Wio-SX1262",
+  "qty": "1",
+  "notes": "—",
+  "photoThumb": "assets/bom/bom-01-xiao-nrf52840-wio-sx1262.webp",
+  "photoFull": "assets/bom/bom-01-xiao-nrf52840-wio-sx1262.webp",
+  "shopUrl": "",
+  "shopLabel": "Link folgt"
+}
