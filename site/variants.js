@@ -14,6 +14,20 @@
     console.warn("[variants]", ...args);
   };
 
+  // 🔍 Добавляем трассировку всех изменений URL
+  const originalReplaceState = window.history.replaceState;
+  const originalPushState = window.history.pushState;
+  
+  window.history.replaceState = function(...args) {
+    console.trace("🔴 REPLACE STATE CALLED", args[2]);
+    return originalReplaceState.apply(this, args);
+  };
+  
+  window.history.pushState = function(...args) {
+    console.trace("🔴 PUSH STATE CALLED", args[2]);
+    return originalPushState.apply(this, args);
+  };
+
   const normalizeVariantId = (value) => {
     if (!value) return null;
     const normalized = value.toLowerCase();
@@ -23,13 +37,20 @@
   const getUrlVariant = () => {
     const params = new URLSearchParams(window.location.search);
     if (!params.has("v")) return null;
-    return normalizeVariantId(params.get("v"));
+    const variant = normalizeVariantId(params.get("v"));
+    log("getUrlVariant →", variant);
+    return variant;
   };
 
-  const getStoredVariant = () => normalizeVariantId(localStorage.getItem(storageKey));
+  const getStoredVariant = () => {
+    const variant = normalizeVariantId(localStorage.getItem(storageKey));
+    log("getStoredVariant →", variant);
+    return variant;
+  };
 
   const setStoredVariant = (variantId) => {
     try {
+      log("setStoredVariant →", variantId);
       localStorage.setItem(storageKey, variantId);
     } catch (error) {
       warn("failed to persist variant", error);
@@ -42,6 +63,7 @@
   };
 
   const updateVariantButtons = (variantId) => {
+    log("updateVariantButtons →", variantId);
     document.querySelectorAll(".variant-option").forEach((btn) => {
       const isActive = btn.dataset.variant === variantId;
       btn.classList.toggle("is-active", isActive);
@@ -236,6 +258,8 @@
 
   const applyVariant = (variant) => {
     if (!variant) return;
+    log("🎨 applyVariant →", variant.id);
+    
     const safeApply = (label, condition, action) => {
       if (!condition) {
         log(`skip ${label}`);
@@ -311,7 +335,7 @@
   };
 
   const loadVariant = async (variantId) => {
-    log("activate variant", variantId);
+    log("🔄 loadVariant called →", variantId);
     let variant = await fetchVariant(variantId);
     if (!variant && variantId !== "s") {
       variant = await fetchVariant("s");
@@ -326,22 +350,9 @@
     applyBomFilter(variant.id || variantId);
   };
 
-  // 🔧 КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ: обновляем URL только при явном действии пользователя
-  const updateUrlVariant = (variantId, { replaceUrl = false } = {}) => {
-    const url = new URL(window.location.href);
-    const current = url.searchParams.get("v");
-
-    // Если вариант не изменился - ничего не делаем
-    if (current === variantId) return;
-
-    // Обновляем URL только если явно запрошено
-    if (replaceUrl) {
-      url.searchParams.set("v", variantId);
-      window.history.replaceState({}, "", url.pathname + url.search + url.hash);
-      log("URL updated to variant", variantId);
-    }
-  };
-
+  // 🔍 ПОЛНОСТЬЮ УБИРАЕМ автоматическое обновление URL
+  // Теперь URL обновляется ТОЛЬКО при первой загрузке
+  
   const initVariantSwitch = (currentVariant) => {
     updateVariantButtons(currentVariant);
 
@@ -350,33 +361,73 @@
         const next = btn.dataset.variant;
         if (!allowedVariants.has(next)) return;
         
-        log("user clicked variant button", next);
+        log("🖱️ USER CLICKED variant button →", next);
         setStoredVariant(next);
         
-        // 🔧 Обновляем URL только при клике на кнопку переключения
-        updateUrlVariant(next, { replaceUrl: true });
+        // Обновляем URL напрямую
+        const url = new URL(window.location.href);
+        url.searchParams.set("v", next);
+        log("🔄 Updating URL to →", url.pathname + url.search + url.hash);
+        window.history.replaceState({}, "", url.pathname + url.search + url.hash);
         
         loadVariant(next);
       });
     });
   };
 
-  // 🔧 Глобальная функция для получения текущего варианта (для i18n.js)
+  // Глобальная функция для получения текущего варианта
   window.getCurrentVariant = () => {
-    return getUrlVariant() || getStoredVariant() || "s";
+    const variant = getUrlVariant() || getStoredVariant() || "s";
+    log("🌐 getCurrentVariant() →", variant);
+    return variant;
   };
 
+  // 🔍 Следим за изменениями URL извне
+  let lastKnownUrl = window.location.href;
+  
+  const checkUrlChange = () => {
+    if (window.location.href !== lastKnownUrl) {
+      const oldUrl = lastKnownUrl;
+      lastKnownUrl = window.location.href;
+      
+      const oldParams = new URLSearchParams(new URL(oldUrl).search);
+      const newParams = new URLSearchParams(window.location.search);
+      
+      const oldV = oldParams.get("v");
+      const newV = newParams.get("v");
+      
+      if (oldV !== newV) {
+        console.error("⚠️ VARIANT CHANGED EXTERNALLY!", {
+          old: oldV,
+          new: newV,
+          oldUrl,
+          newUrl: window.location.href
+        });
+      }
+    }
+  };
+  
+  setInterval(checkUrlChange, 100);
+
   document.addEventListener("DOMContentLoaded", () => {
+    log("🚀 DOMContentLoaded");
+    
     const urlVariant = getUrlVariant();
     let currentVariant = urlVariant;
+    
+    log("Initial state:", { urlVariant, stored: getStoredVariant() });
     
     if (currentVariant) {
       setStoredVariant(currentVariant);
     } else {
       currentVariant = getStoredVariant() || "s";
       setStoredVariant(currentVariant);
-      // 🔧 Устанавливаем URL только при первой загрузке, если его не было
-      updateUrlVariant(currentVariant, { replaceUrl: true });
+      
+      // Устанавливаем URL только если его не было
+      const url = new URL(window.location.href);
+      url.searchParams.set("v", currentVariant);
+      log("🔄 Initial URL setup →", url.pathname + url.search + url.hash);
+      window.history.replaceState({}, "", url.pathname + url.search + url.hash);
     }
     
     initVariantSwitch(currentVariant);
