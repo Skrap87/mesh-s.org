@@ -108,10 +108,14 @@ const applyTranslations = (lang) => {
 };
 
 const updateLinks = (lang) => {
+  const current = new URL(window.location.href);
+  const currentVariant = current.searchParams.get("v");
+
   const links = document.querySelectorAll("a[href]");
   links.forEach((link) => {
     const href = link.getAttribute("href");
     if (!href) return;
+
     if (
       href.startsWith("http") ||
       href.startsWith("mailto:") ||
@@ -124,6 +128,7 @@ const updateLinks = (lang) => {
     if (href.startsWith("#")) {
       const url = new URL(window.location.href);
       url.searchParams.set("lang", lang);
+      if (currentVariant) url.searchParams.set("v", currentVariant);
       url.hash = href;
       link.setAttribute("href", url.pathname + url.search + url.hash);
       return;
@@ -131,7 +136,10 @@ const updateLinks = (lang) => {
 
     const url = new URL(href, window.location.origin);
     if (url.origin !== window.location.origin) return;
+
     url.searchParams.set("lang", lang);
+    if (currentVariant) url.searchParams.set("v", currentVariant);
+
     link.setAttribute("href", url.pathname + url.search + url.hash);
   });
 };
