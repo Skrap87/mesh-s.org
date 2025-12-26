@@ -1441,3 +1441,47 @@ footer {
     height: min(70vh, 560px);
   }
 }
+
+/* BOM: subtle hover/tap feedback (desktop + mobile cards) */
+@media (max-width: 768px) {
+  .bom-table tbody tr {
+    transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
+    will-change: transform;
+  }
+
+  /* tap / focus */
+  .bom-table tbody tr:active {
+    transform: scale(0.992);
+    border-color: rgba(157, 208, 106, 0.45);
+    box-shadow:
+      0 14px 34px rgba(0,0,0,0.42),
+      inset 0 0 0 1px rgba(157, 208, 106, 0.12);
+  }
+
+  /* keyboard accessibility (when focused inside the card) */
+  .bom-table tbody tr:focus-within {
+    border-color: rgba(157, 208, 106, 0.55);
+    box-shadow:
+      0 18px 44px rgba(0,0,0,0.45),
+      inset 0 0 0 1px rgba(157, 208, 106, 0.16);
+  }
+}
+
+/* desktop: row hover stays very subtle */
+@media (min-width: 769px) {
+  .bom-table tbody tr {
+    transition: background 140ms ease;
+  }
+
+  .bom-table tbody tr:hover td {
+    background: rgba(255, 255, 255, 0.035);
+  }
+
+  .bom-table tbody tr[data-kind="optional"]:hover td {
+    background: rgba(86, 180, 255, 0.11);
+  }
+
+  .bom-table tbody tr[data-kind="alternative"]:hover td {
+    background: rgba(255, 198, 92, 0.11);
+  }
+}
