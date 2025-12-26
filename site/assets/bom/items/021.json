@@ -1,0 +1,13 @@
+{
+  "order": 210,
+  "variants": "all",
+  "kind": "required",
+  "group": "antene",
+  "name": "N-Typ-Koaxialkabel U.FL UFL MHF1 auf N-Buchs",
+  "qty": "1",
+  "notes": "Mindestlänge: 15 mm.",
+  "photoThumb": "assets/bom/foto/bom-04-ufl-to-n-type-rg178.webp",
+  "photoFull": "assets/bom/foto/bom-04-ufl-to-n-type-rg178.webp",
+  "shopUrl": "https://de.aliexpress.com/item/1005008877279360.html?spm=a2g0o.order_list.order_list_main.5.31e35c5fZDZV7d&gatewayAdapt=glo2deu",
+  "shopLabel": "Aliexpress"
+}
