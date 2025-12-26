@@ -328,6 +328,11 @@
 
   const updateUrlVariant = (variantId) => {
     const url = new URL(window.location.href);
+    const current = url.searchParams.get("v");
+
+    // ❗ если вариант не менялся — НЕ трогать URL
+    if (current === variantId) return;
+
     url.searchParams.set("v", variantId);
     window.history.replaceState({}, "", url.pathname + url.search + url.hash);
   };
