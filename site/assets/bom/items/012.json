@@ -1,0 +1,12 @@
+{
+  "order": 120,
+  "variants": "all",
+  "kind": "required",
+  "name": "Schrauben M3×12",
+  "qty": "18",
+  "notes": "—",
+  "photoThumb": "assets/bom/foto/bom-08-m3x12-screws.webp",
+  "photoFull": "assets/bom/foto/bom-08-m3x12-screws.webp",
+  "shopUrl": "",
+  "shopLabel": "Link folgt"
+}
