@@ -1,0 +1,12 @@
+{
+  "order": 50,
+  "variants": "xl",
+  "kind": "required",
+  "name": "Reolink Solarmodul 6W",
+  "qty": "1",
+  "notes": "6 V / 6W (174.6×210.6 mm)",
+  "photoThumb": "assets/bom/reolink-6v-6w-white.webp",
+  "photoFull": "assets/bom/reolink-6v-6w-white.webp",
+  "shopUrl": "https://store.reolink.com/de/accessories/#reolink-solar-panel",
+  "shopLabel": "Reolink"
+}
