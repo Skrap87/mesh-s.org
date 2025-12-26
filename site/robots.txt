@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://mesh-s.org/sitemap.xml
