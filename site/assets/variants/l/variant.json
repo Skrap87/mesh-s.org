@@ -34,7 +34,7 @@
       "images": [
         {
           "selector": "[data-winter-image='1']",
-          "src": "assets/variants/s/winter/images/node_winter2.jpg",
+          "src": "assets/variants/l/hero/coming-soon.webp",
           "alt": "MESH-S-Knoten im Winterbetrieb bei Frost"
         }
       ]
@@ -43,17 +43,17 @@
       "temperature": {
         "selector": "[data-chart='temperature']",
         "json": "assets/variants/s/winter/charts/ha-temperature.json",
-        "unit": "°C"
+        "unit": "°Daten folgen"
       },
       "batteryLevel": {
         "selector": "[data-chart='batteryLevel']",
-        "json": "assets/variants/s/autonomy/charts/ha-battery.json",
-        "unit": "%"
+        "json": "assets/variants/s/autonomy/charts/ha-voltage.json",
+        "unit": "Daten folgen"
       },
       "chargeCurrent": {
         "selector": "[data-chart='chargeCurrent']",
         "json": "assets/variants/s/autonomy/charts/ha-charge.json",
-        "unit": "mA"
+        "unit": "Daten folgen"
       }
     }
   }
