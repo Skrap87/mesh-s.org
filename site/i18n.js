@@ -108,10 +108,13 @@ const applyTranslations = (lang) => {
 };
 
 const updateLinks = (lang) => {
-  const current = new URL(window.location.href);
-  const currentVariant = current.searchParams.get("v");
-
   const links = document.querySelectorAll("a[href]");
+
+  // берём текущий вариант из URL, а если его нет — из localStorage
+  const currentParams = new URLSearchParams(window.location.search);
+  const currentV =
+    (currentParams.get("v") || localStorage.getItem("meshSVariant") || "").toLowerCase();
+
   links.forEach((link) => {
     const href = link.getAttribute("href");
     if (!href) return;
@@ -125,24 +128,29 @@ const updateLinks = (lang) => {
       return;
     }
 
+    // якоря на текущей странице
     if (href.startsWith("#")) {
       const url = new URL(window.location.href);
       url.searchParams.set("lang", lang);
-      if (currentVariant) url.searchParams.set("v", currentVariant);
+      if (currentV) url.searchParams.set("v", currentV);
       url.hash = href;
       link.setAttribute("href", url.pathname + url.search + url.hash);
       return;
     }
 
+    // обычные внутренние страницы
     const url = new URL(href, window.location.origin);
     if (url.origin !== window.location.origin) return;
 
     url.searchParams.set("lang", lang);
-    if (currentVariant) url.searchParams.set("v", currentVariant);
+    if (currentV && !url.searchParams.has("v")) {
+      url.searchParams.set("v", currentV);
+    }
 
     link.setAttribute("href", url.pathname + url.search + url.hash);
   });
 };
+
 
 const setLanguage = (lang, { updateUrl } = { updateUrl: true }) => {
   if (!supportedLanguages.includes(lang)) {
