@@ -326,15 +326,20 @@
     applyBomFilter(variant.id || variantId);
   };
 
-  const updateUrlVariant = (variantId) => {
+  // 🔧 КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ: обновляем URL только при явном действии пользователя
+  const updateUrlVariant = (variantId, { replaceUrl = false } = {}) => {
     const url = new URL(window.location.href);
     const current = url.searchParams.get("v");
 
-    // ❗ если вариант не менялся — НЕ трогать URL
+    // Если вариант не изменился - ничего не делаем
     if (current === variantId) return;
 
-    url.searchParams.set("v", variantId);
-    window.history.replaceState({}, "", url.pathname + url.search + url.hash);
+    // Обновляем URL только если явно запрошено
+    if (replaceUrl) {
+      url.searchParams.set("v", variantId);
+      window.history.replaceState({}, "", url.pathname + url.search + url.hash);
+      log("URL updated to variant", variantId);
+    }
   };
 
   const initVariantSwitch = (currentVariant) => {
@@ -344,22 +349,36 @@
       btn.addEventListener("click", () => {
         const next = btn.dataset.variant;
         if (!allowedVariants.has(next)) return;
+        
+        log("user clicked variant button", next);
         setStoredVariant(next);
-        updateUrlVariant(next);
+        
+        // 🔧 Обновляем URL только при клике на кнопку переключения
+        updateUrlVariant(next, { replaceUrl: true });
+        
         loadVariant(next);
       });
     });
   };
 
+  // 🔧 Глобальная функция для получения текущего варианта (для i18n.js)
+  window.getCurrentVariant = () => {
+    return getUrlVariant() || getStoredVariant() || "s";
+  };
+
   document.addEventListener("DOMContentLoaded", () => {
     const urlVariant = getUrlVariant();
     let currentVariant = urlVariant;
+    
     if (currentVariant) {
       setStoredVariant(currentVariant);
     } else {
       currentVariant = getStoredVariant() || "s";
       setStoredVariant(currentVariant);
+      // 🔧 Устанавливаем URL только при первой загрузке, если его не было
+      updateUrlVariant(currentVariant, { replaceUrl: true });
     }
+    
     initVariantSwitch(currentVariant);
     updateViewerLinks(currentVariant);
     loadVariant(currentVariant);
