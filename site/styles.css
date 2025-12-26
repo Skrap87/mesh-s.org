@@ -663,6 +663,33 @@ section {
   display: block;
 }
 
+/* BOM: buttons in Link column — match dark site style */
+#bom .bom-col-link .btn,
+#bom .bom-col-link .btn-outline {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.88);
+  box-shadow: none;
+  transform: none;
+  padding: 10px 16px;
+}
+
+#bom .bom-col-link .btn:hover,
+#bom .bom-col-link .btn-outline:hover {
+  background: rgba(157, 208, 106, 0.14);
+  border-color: rgba(157, 208, 106, 0.55);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* keyboard focus */
+#bom .bom-col-link .btn:focus-visible,
+#bom .bom-col-link .btn-outline:focus-visible {
+  outline: 2px solid rgba(157, 208, 106, 0.7);
+  outline-offset: 2px;
+}
+
+
 @media (max-width: 768px) {
   .bom-table-wrapper {
     overflow-x: hidden;
