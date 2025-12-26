@@ -1,5 +1,6 @@
 (() => {
   const allowedVariants = new Set(["s", "m", "l", "xl"]);
+  const storageKey = "meshSVariant";
   const debug = true;
   const isDevHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
 
@@ -13,10 +14,26 @@
     console.warn("[variants]", ...args);
   };
 
-  const parseVariantId = () => {
+  const normalizeVariantId = (value) => {
+    if (!value) return null;
+    const normalized = value.toLowerCase();
+    return allowedVariants.has(normalized) ? normalized : null;
+  };
+
+  const getUrlVariant = () => {
     const params = new URLSearchParams(window.location.search);
-    const raw = (params.get("v") || "s").toLowerCase();
-    return allowedVariants.has(raw) ? raw : "s";
+    if (!params.has("v")) return null;
+    return normalizeVariantId(params.get("v"));
+  };
+
+  const getStoredVariant = () => normalizeVariantId(localStorage.getItem(storageKey));
+
+  const setStoredVariant = (variantId) => {
+    try {
+      localStorage.setItem(storageKey, variantId);
+    } catch (error) {
+      warn("failed to persist variant", error);
+    }
   };
 
   const getCurrentLang = () => {
@@ -322,6 +339,7 @@
       btn.addEventListener("click", () => {
         const next = btn.dataset.variant;
         if (!allowedVariants.has(next)) return;
+        setStoredVariant(next);
         updateUrlVariant(next);
         loadVariant(next);
       });
@@ -329,7 +347,14 @@
   };
 
   document.addEventListener("DOMContentLoaded", () => {
-    const currentVariant = parseVariantId();
+    const urlVariant = getUrlVariant();
+    let currentVariant = urlVariant;
+    if (currentVariant) {
+      setStoredVariant(currentVariant);
+    } else {
+      currentVariant = getStoredVariant() || "s";
+      setStoredVariant(currentVariant);
+    }
     initVariantSwitch(currentVariant);
     updateViewerLinks(currentVariant);
     loadVariant(currentVariant);
