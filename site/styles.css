@@ -503,10 +503,11 @@ section {
 
 .bom-legend-item {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   color: var(--muted);
   font-size: 0.85rem;
+  flex-direction: column;
 }
 
 .bom-legend-text {
