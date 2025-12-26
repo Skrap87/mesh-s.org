@@ -351,10 +351,9 @@
     });
   };
 
-  // 🔑 КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ: текущий вариант ВСЕГДА из URL
-  // localStorage используется только как fallback при первой загрузке
   window.getCurrentVariant = () => {
-    const urlVariant = getUrlVariant();
+    const params = new URLSearchParams(window.location.search);
+    const urlVariant = normalizeVariantId(params.get("v"));
     if (urlVariant) {
       return urlVariant;
     }
