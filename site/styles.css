@@ -488,8 +488,8 @@ section {
 .bom-table-wrapper {
   margin-top: 30px;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
   overflow-x: auto;
 }
 
@@ -521,6 +521,18 @@ section {
   line-height: 1.4;
 }
 
+.bom-legend-item:has(.bom-badge--required) .bom-legend-description {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.bom-legend-item:has(.bom-badge--optional) .bom-legend-description {
+  color: #cfe9ff;
+}
+
+.bom-legend-item:has(.bom-badge--choice) .bom-legend-description {
+  color: #ead7ff;
+}
+
 .bom-table {
   width: 100%;
   border-collapse: collapse;
@@ -541,11 +553,11 @@ section {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .bom-table tbody tr:nth-child(even) td {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.035);
 }
 
 .bom-table tbody tr.is-hidden {
@@ -673,9 +685,9 @@ section {
 /* BOM: buttons in Link column — match dark site style */
 #bom .bom-col-link .btn,
 #bom .bom-col-link .btn-outline {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #ffffff;
   box-shadow: none;
   transform: none;
   padding: 10px 16px;
@@ -683,8 +695,8 @@ section {
 
 #bom .bom-col-link .btn:hover,
 #bom .bom-col-link .btn-outline:hover {
-  background: rgba(157, 208, 106, 0.14);
-  border-color: rgba(157, 208, 106, 0.55);
+  background: rgba(157, 208, 106, 0.22);
+  border-color: rgba(157, 208, 106, 0.7);
   color: #ffffff;
   transform: translateY(-1px);
 }
