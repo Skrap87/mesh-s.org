@@ -4,9 +4,6 @@
     "badge": "M",
     "full": "MESH-S / M"
   },
-  "i18n": {
-    "modelLineKey": "variants.m.modelLine"
-  },
   "assets": {
     "heroImage": "assets/variants/m/hero/hero-m.PNG",
     "heroImageWebp": "assets/variants/m/hero/hero-m.webp",
@@ -56,7 +53,7 @@
         {
           "selector": "[data-winter-image='1']",
           "src": "assets/variants/m/winter/images/node_winter.jpg",
-          "altKey": "variants.m.winter.image1Alt"
+          "alt": "MESH-S-Knoten im Winterbetrieb bei Frost"
         }
       ]
     },

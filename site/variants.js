@@ -37,11 +37,6 @@
     }
   };
 
-  const getCurrentLang = () => {
-    const params = new URLSearchParams(window.location.search);
-    return params.get("lang") || document.documentElement.lang || "en";
-  };
-
   const updateVariantButtons = (variantId) => {
     document.querySelectorAll(".variant-option").forEach((btn) => {
       const isActive = btn.dataset.variant === variantId;
@@ -51,14 +46,10 @@
   };
 
   const updateViewerLinks = (variantId) => {
-    const lang = getCurrentLang();
     document.querySelectorAll("[data-variant-viewer-link]").forEach((link) => {
       const href = link.getAttribute("href") || "viewer.html";
       const url = new URL(href, window.location.origin);
       url.searchParams.set("v", variantId);
-      if (lang) {
-        url.searchParams.set("lang", lang);
-      }
       link.setAttribute("href", url.pathname + url.search + url.hash);
     });
   };
@@ -138,14 +129,10 @@
         }
       }
 
-      if (item.altKey && el.tagName === "IMG") {
-        el.setAttribute("data-i18n-alt", item.altKey);
+      if (item.alt && el.tagName === "IMG") {
+        el.setAttribute("alt", item.alt);
       }
     });
-
-    if (typeof applyTranslations === "function") {
-      applyTranslations(getCurrentLang());
-    }
   };
 
   const applyCharts = (charts = {}) => {
@@ -201,6 +188,8 @@
     });
 
     const columnCount = table.querySelectorAll("thead th").length || 1;
+    const choiceLabel =
+      document.getElementById("bom-choice-label")?.textContent?.trim() || "Wähle eine Option:";
     groups.forEach((groupRows) => {
       if (groupRows.length < 2) return;
       groupRows.forEach((row) => row.classList.add("is-choice"));
@@ -209,7 +198,7 @@
       choiceRow.className = "bom-choice-row";
       const cell = document.createElement("td");
       cell.colSpan = columnCount;
-      cell.textContent = "Choose one:";
+      cell.textContent = choiceLabel;
       choiceRow.appendChild(cell);
       const firstRow = groupRows[0];
       firstRow.parentNode.insertBefore(choiceRow, firstRow);
@@ -274,16 +263,6 @@
     }
 
     updateVariantTitle(resolveVariantSuffix(variant));
-
-    if (variant.i18n && variant.i18n.modelLineKey) {
-      const modelLine = document.querySelector("[data-variant-model-line]");
-      if (modelLine) {
-        modelLine.setAttribute("data-i18n", variant.i18n.modelLineKey);
-        if (typeof applyTranslations === "function") {
-          applyTranslations(getCurrentLang());
-        }
-      }
-    }
 
     updateViewerLinks(variant.id || "s");
     updateVariantButtons(variant.id || "s");

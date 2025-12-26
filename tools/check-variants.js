@@ -79,8 +79,8 @@ const validateWinterImages = (images, variantId) => {
     } else {
       fileExists(image.src, `variant ${variantId} winter image ${index + 1}`);
     }
-    if (!image.altKey) {
-      errors.push(`Variant ${variantId}: winter image ${index + 1} missing altKey`);
+    if (!image.alt) {
+      errors.push(`Variant ${variantId}: winter image ${index + 1} missing alt`);
     }
   });
 };
@@ -109,9 +109,6 @@ variantDirs.forEach((variantId) => {
   }
   if (!data.labels || !data.labels.badge || !data.labels.full) {
     errors.push(`Variant ${variantId}: labels.badge/full missing`);
-  }
-  if (!data.i18n || !data.i18n.modelLineKey) {
-    errors.push(`Variant ${variantId}: i18n.modelLineKey missing`);
   }
   if (!data.assets) {
     errors.push(`Variant ${variantId}: assets missing`);
