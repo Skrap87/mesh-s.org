@@ -2,39 +2,9 @@ import csv
 import json
 import re
 from datetime import datetime
-from collections import defaultdict
 
 CSV_FILE = "history.csv"
-
-# Правила распознавания типов данных по entity_id
-DATA_PATTERNS = {
-    "batteryLevel": {
-        "keywords": ["battery_level", "battery"],
-        "file": "ha-battery.json"
-    },
-    "temperature": {
-        "keywords": ["temperature", "_temp"],
-        "file": "ha-temperature.json"
-    },
-    "chargeCurrent": {
-        "keywords": ["current", "charge_current"],
-        "file": "ha-charge.json"
-    },
-    "humidity": {
-        "keywords": ["humidity", "relative_humidity"],
-        "file": "ha-humidity.json"
-    }
-}
-
-def detect_data_type(entity_id: str) -> str | None:
-    """Определяет тип данных по entity_id"""
-    entity_lower = entity_id.lower()
-    
-    for data_type, config in DATA_PATTERNS.items():
-        for keyword in config["keywords"]:
-            if keyword in entity_lower:
-                return data_type
-    return None
+OUT_FILE = "ha-charge.json"
 
 def parse_time(s: str) -> datetime:
     s = (s or "").strip()
@@ -88,14 +58,10 @@ def sniff_dialect(path: str):
         sample = f.read(4096)
     return csv.Sniffer().sniff(sample, delimiters=",;\t")
 
-# Словари для хранения данных по типам
-data_by_type = defaultdict(lambda: {"values": [], "times": []})
+values = []
+times = []
 
 dialect = sniff_dialect(CSV_FILE)
-
-print(f"\n{'='*60}")
-print(f"Обработка {CSV_FILE}...")
-print(f"{'='*60}\n")
 
 with open(CSV_FILE, "r", encoding="utf-8", newline="") as f:
     reader = csv.reader(f, dialect)
@@ -104,86 +70,41 @@ with open(CSV_FILE, "r", encoding="utf-8", newline="") as f:
         if not row or len(row) < 3:
             continue
 
-        entity_id = (row[0] or "").strip()
-        state = (row[1] or "").strip()
-        timestamp = (row[2] or "").strip()
+        c1 = (row[0] or "").strip()
+        c2 = (row[1] or "").strip()
+        c3 = (row[2] or "").strip()
 
-        # пропускаем заголовки
-        low1, low2, low3 = entity_id.lower(), state.lower(), timestamp.lower()
+        # пропускаем “двойные заголовки”:
+        # Column1 Column2 Column3
+        # entity_id state last_changed
+        low1, low2, low3 = c1.lower(), c2.lower(), c3.lower()
         if (low1, low2, low3) == ("column1", "column2", "column3"):
             continue
         if (low1, low2, low3) == ("entity_id", "state", "last_changed"):
             continue
 
-        # определяем тип данных
-        data_type = detect_data_type(entity_id)
-        if not data_type:
-            continue
-
         try:
-            v = clean_ha_number(state)
-            t = parse_time(timestamp)
-            data_by_type[data_type]["values"].append(v)
-            data_by_type[data_type]["times"].append(t)
+            v = clean_ha_number(c2)
+            t = parse_time(c3)
+            values.append(v)
+            times.append(t)
         except Exception:
             continue
 
-if not data_by_type:
-    print("⚠ Не удалось найти данные ни одного из типов:")
-    for name in DATA_PATTERNS.keys():
-        print(f"  - {name}")
-    print("\nПроверьте, что CSV содержит нужные entity_id")
-    exit(1)
+if not values:
+    raise RuntimeError("Не удалось прочитать данные. Проверь, что history.csv — это экспорт HA истории.")
 
-# Обработка и сохранение каждого типа данных
-created_files = []
+# сортировка по времени
+values = [v for _, v in sorted(zip(times, values))]
 
-for data_type, data in data_by_type.items():
-    values = data["values"]
-    times = data["times"]
-    
-    if not values:
-        continue
-    
-    # сортировка по времени
-    sorted_values = [v for _, v in sorted(zip(times, values))]
-    
-    output_data = {
-        "min": round(min(sorted_values) - 10),
-        "max": round(max(sorted_values) + 10),
-        "points": [round(v, 2) for v in sorted_values]
-    }
-    
-    out_file = DATA_PATTERNS[data_type]["file"]
-    
-    with open(out_file, "w", encoding="utf-8") as f:
-        json.dump(output_data, f, indent=2)
-    
-    created_files.append({
-        "type": data_type,
-        "file": out_file,
-        "count": len(sorted_values),
-        "range": (output_data["min"], output_data["max"]),
-        "preview": output_data["points"][:3]
-    })
+data = {
+    "min": round(min(values) - 10),
+    "max": round(max(values) + 10),
+    "points": [round(v, 2) for v in values]
+}
 
-# Красивый вывод результатов
-print(f"✓ Успешно обработано типов данных: {len(created_files)}\n")
+with open(OUT_FILE, "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2)
 
-for info in created_files:
-    print(f"📊 {info['type']}")
-    print(f"   Файл: {info['file']}")
-    print(f"   Точек: {info['count']}")
-    print(f"   Диапазон: {info['range'][0]} ... {info['range'][1]}")
-    print(f"   Первые значения: {info['preview']}")
-    print()
-
-# Информация о пропущенных типах
-found_types = set(data_by_type.keys())
-all_types = set(DATA_PATTERNS.keys())
-missing_types = all_types - found_types
-
-if missing_types:
-    print(f"ℹ️  Не найдено данных для: {', '.join(missing_types)}")
-
-print(f"{'='*60}\n")
+print(f"OK: {OUT_FILE} создан ({len(values)} точек)")
+print("Пример первых 5 точек:", data["points"][:5])

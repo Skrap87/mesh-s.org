@@ -11,17 +11,17 @@
     "heroImage": "assets/variants/s/hero/hero.png",
     "heroImageWebp": "assets/variants/s/hero/hero.webp",
     "viewerModel": "assets/variants/s/models/mesh-s.glb",
-    "customParts": [
-      { "id": "enclosureWebp", "src": "assets/variants/s/custom-parts/enclosure.webp" },
-      { "id": "enclosureGif", "src": "assets/variants/s/custom-parts/enclosure.gif" },
-      { "id": "lidWebp", "src": "assets/variants/s/custom-parts/lid.webp" },
-      { "id": "lidGif", "src": "assets/variants/s/custom-parts/lid.gif" },
-      { "id": "spacerPlateWebp", "src": "assets/variants/s/custom-parts/spacer-plate.webp" },
-      { "id": "spacerPlateGif", "src": "assets/variants/s/custom-parts/spacer-plate.gif" },
-      { "id": "silicaCompartmentWebp", "src": "assets/variants/s/custom-parts/silica-compartment.webp" },
-      { "id": "silicaCompartmentGif", "src": "assets/variants/s/custom-parts/silica-compartment.gif" },
-      { "id": "mountingLatchWebp", "src": "assets/variants/s/custom-parts/mounting-latch.webp" },
-      { "id": "mountingLatchGif", "src": "assets/variants/s/custom-parts/mounting-latch.gif" }
+    "exploded": [
+      { "id": "enclosureWebp", "src": "assets/variants/s/exploded/enclosure.webp" },
+      { "id": "enclosureGif", "src": "assets/variants/s/exploded/enclosure.gif" },
+      { "id": "lidWebp", "src": "assets/variants/s/exploded/lid.webp" },
+      { "id": "lidGif", "src": "assets/variants/s/exploded/lid.gif" },
+      { "id": "spacerPlateWebp", "src": "assets/variants/s/exploded/spacer-plate.webp" },
+      { "id": "spacerPlateGif", "src": "assets/variants/s/exploded/spacer-plate.gif" },
+      { "id": "silicaCompartmentWebp", "src": "assets/variants/s/exploded/silica-compartment.webp" },
+      { "id": "silicaCompartmentGif", "src": "assets/variants/s/exploded/silica-compartment.gif" },
+      { "id": "mountingLatchWebp", "src": "assets/variants/s/exploded/mounting-latch.webp" },
+      { "id": "mountingLatchGif", "src": "assets/variants/s/exploded/mounting-latch.gif" }
     ],
     "assembly": [
       { "id": "step01", "src": "assets/variants/s/assembly/step-01.png" },
@@ -63,12 +63,12 @@
     "charts": {
       "temperature": {
         "selector": "[data-chart='temperature']",
-        "json": "assets/variants/s/winter/charts/ha-temperature.json",
+        "json": "assets/variants/s/winter/charts/frost-morning.json",
         "unit": "°C"
       },
-      "batteryLevel": {
-        "selector": "[data-chart='batteryLevel']",
-        "json": "assets/variants/s/autonomy/charts/ha-battery.json",
+      "humidity": {
+        "selector": "[data-chart='humidity']",
+        "json": "assets/variants/s/autonomy/charts/ha-voltage.json",
         "unit": "%"
       },
       "chargeCurrent": {

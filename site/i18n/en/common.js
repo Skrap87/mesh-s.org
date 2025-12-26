@@ -9,6 +9,7 @@ window.I18N_PARTS.en.common = {
     benefits: "Benefits",
     autonomy: "Telemetry",
     winter: "Winter",
+    exploded: "Exploded",
     customParts: "Custom parts",
     assembly: "Build views",
     moisture: "Moisture",
@@ -106,10 +107,14 @@ window.I18N_PARTS.en.common = {
       }
     }
   },
-  customParts: {
-    eyebrow: "Custom parts",
-    title: "Custom parts",
-    note: "Shown here are only the printed parts made for MESH-S. Store-bought components are left out to keep the view clean.",
+  exploded: {
+    eyebrow: "Inside overview",
+    title: "Illustrative internal layout",
+    imageAlt: "MESH-S illustrative internal layout",
+    custom: {
+      eyebrow: "Custom parts",
+      note: "Shown here are only the printed parts made for MESH-S. Store-bought components are left out to keep the view clean."
+    },
     legend: {
       enclosure: {
         title: "ASA enclosure",
@@ -237,8 +242,7 @@ window.I18N_PARTS.en.common = {
         component: "Component",
         quantity: "Quantity",
         notes: "Notes / Specs",
-        photo: "Photo",
-        link: "Link"
+        photo: "Photo"
       },
       rows: {
         r1: {
@@ -430,6 +434,8 @@ window.I18N_PARTS.en.common = {
     name: "Eduard Herzog",
     country: "Germany",
     contactTitle: "Contact:",
+    contactLabelTelegram: "Telegram:",
+    contactHandle: "@skrap87",
     contactLabelEmail: "E-mail:",
     contactEmail: "contact@mesh-s.org",
     projectLine1: "This website documents a private non-commercial DIY project.",

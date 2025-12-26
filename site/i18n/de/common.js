@@ -9,6 +9,7 @@ window.I18N_PARTS.de.common = {
     benefits: "Vorteile",
     autonomy: "Telemetrie",
     winter: "Winter",
+    exploded: "Explosionsansicht",
     customParts: "Sonderteile",
     assembly: "Aufbau in Bildern",
     moisture: "Feuchtigkeit",
@@ -106,10 +107,14 @@ window.I18N_PARTS.de.common = {
       }
     }
   },
-  customParts: {
-    eyebrow: "Sonderteile",
-    title: "Sonderteile",
-    note: "Gezeigt sind nur die für MESH-S modellierten und gedruckten Teile. Standardkomponenten bleiben außen vor, damit die Ansicht klar bleibt.",
+  exploded: {
+    eyebrow: "Innenansicht",
+    title: "Illustrativer Innenaufbau",
+    imageAlt: "MESH-S illustriertes internes Layout",
+    custom: {
+      eyebrow: "Sonderteile",
+      note: "Gezeigt sind nur die für MESH-S modellierten und gedruckten Teile. Standardkomponenten bleiben außen vor, damit die Ansicht klar bleibt."
+    },
     legend: {
       enclosure: {
         title: "ASA-Gehäuse",
@@ -237,8 +242,7 @@ window.I18N_PARTS.de.common = {
         component: "Komponente",
         quantity: "Menge",
         notes: "Hinweise / Spezifikationen",
-        photo: "Foto",
-        link: "Link"
+        photo: "Foto"
       },
       rows: {
         r1: {
@@ -430,6 +434,8 @@ window.I18N_PARTS.de.common = {
     name: "Eduard Herzog",
     country: "Deutschland",
     contactTitle: "Kontakt:",
+    contactLabelTelegram: "Telegram:",
+    contactHandle: "@skrap87",
     contactLabelEmail: "E-Mail:",
     contactEmail: "contact@mesh-s.org",
     projectLine1: "Diese Website dokumentiert ein privates, nicht-kommerzielles DIY-Projekt.",
