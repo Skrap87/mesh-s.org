@@ -42,17 +42,17 @@
     "charts": {
       "temperature": {
         "selector": "[data-chart='temperature']",
-        "json": "assets/variants/s/winter/charts/ha-temperature.json",
+        "json": "assets/variants/l/winter/charts/ha-temperature.json",
         "unit": "°Daten folgen"
       },
       "batteryLevel": {
         "selector": "[data-chart='batteryLevel']",
-        "json": "assets/variants/s/autonomy/charts/ha-voltage.json",
+        "json": "assets/variants/l/autonomy/charts/ha-voltage.json",
         "unit": "Daten folgen"
       },
       "chargeCurrent": {
         "selector": "[data-chart='chargeCurrent']",
-        "json": "assets/variants/s/autonomy/charts/ha-charge.json",
+        "json": "assets/variants/l/autonomy/charts/ha-charge.json",
         "unit": "Daten folgen"
       }
     }
