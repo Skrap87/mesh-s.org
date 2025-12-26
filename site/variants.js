@@ -219,10 +219,10 @@
   };
 
   const updateVariantTitle = (suffix) => {
-    const title = document.querySelector("[data-variant-title]");
-    if (!title) return;
-    title.textContent = suffix || "";
-  };
+    document.querySelectorAll("[data-variant-title]").forEach((el) => {
+		el.textContent = suffix || "";
+		});
+	};
 
   const applyVariant = (variant) => {
     if (!variant) return;
