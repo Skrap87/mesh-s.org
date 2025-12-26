@@ -1,12 +1,12 @@
 {
   "order": 190,
   "variants": "all",
-  "kind": "required",
+  "kind": "optional",
   "name": "Silikagel",
   "qty": "—",
-  "notes": "—",
+  "notes": "Empfolen",
   "photoThumb": "assets/bom/foto/bom-15-silica-gel.webp",
   "photoFull": "assets/bom/foto/bom-15-silica-gel.webp",
-  "shopUrl": "",
-  "shopLabel": "Link folgt"
+  "shopUrl": "https://www.amazon.de/dp/B07H2FFKZ5?ref=nb_sb_ss_w_as-reorder_k0_1_9&amp=&crid=1AIIQU9KOLZLW&sprefix=silikagel&th=1",
+  "shopLabel": "Amazon"
 }

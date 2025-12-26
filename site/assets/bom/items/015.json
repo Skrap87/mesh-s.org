@@ -4,9 +4,9 @@
   "kind": "optional",
   "name": "Vent Amphenol M12",
   "qty": "1",
-  "notes": "—",
+  "notes": "Amphenol LTW VENT-PS1YBK-N8001",
   "photoThumb": "assets/bom/foto/bom-11-amphenol-pressure-vent.webp",
   "photoFull": "assets/bom/foto/bom-11-amphenol-pressure-vent.webp",
-  "shopUrl": "",
-  "shopLabel": "Link folgt"
+  "shopUrl": "https://www.digikey.de/de/products/detail/amphenol-ltw/VENT-PS1YBK-N8001/7898285?s=N4IgTCBcDaIG4FMB2AXAtABwM4EYCeARgNZpIAcADBTiALoC%2BQA",
+  "shopLabel": "digikey.de"
 }

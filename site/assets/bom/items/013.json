@@ -4,9 +4,9 @@
   "kind": "required",
   "name": "Messing-Einsätze M3",
   "qty": "18",
-  "notes": "—",
+  "notes": "M3*6*4.5",
   "photoThumb": "assets/bom/foto/bom-09-m3-brass-threaded-inserts.webp",
   "photoFull": "assets/bom/foto/bom-09-m3-brass-threaded-inserts.webp",
-  "shopUrl": "",
-  "shopLabel": "Link folgt"
+  "shopUrl": "https://www.amazon.de/dp/B0FGXL4QFR?ref=ppx_yo2ov_dt_b_fed_asin_title",
+  "shopLabel": "Amazon"
 }

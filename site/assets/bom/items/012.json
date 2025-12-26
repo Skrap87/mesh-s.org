@@ -4,9 +4,9 @@
   "kind": "required",
   "name": "Schrauben M3×12",
   "qty": "18",
-  "notes": "—",
+  "notes": "Innensechskant Vollgewinde",
   "photoThumb": "assets/bom/foto/bom-08-m3x12-screws.webp",
   "photoFull": "assets/bom/foto/bom-08-m3x12-screws.webp",
-  "shopUrl": "",
-  "shopLabel": "Link folgt"
+  "shopUrl": "https://www.amazon.de/TXXATX-Zylinderkopfschrauben-Sechskantschrauben-Zylinderschrauben-Innensechskant/dp/B0DT3Z5DHQ/ref=sr_1_1_sspa?crid=1UG523IXY862C&dib=eyJ2IjoiMSJ9.sBIsTasIP_vNHfC9_9A-Cg2P3g5fnzA2FfLIAUqN5AcKyuPDI9qExX5pvvRQK_VkH7295OAPn6egKJK0o75Bf5GaVGzJdhHj-7d_Wciq3u-FA1zS0aMtbNo2hxtJRu1J3fK4oR9BejukfRacna_1hUnSPfENrd37-bDPIm14foSb8e_pCfhVc5fDp1leS4s_aAXWpR1z4qKQgaQsnJ8T3o-Ea38Oq8zop5XoiNLNSb1CEH-BHiNw_2HPpUiXnlc-SJjPysXnSZ3a8fZQH5qUoG0qP_xRSRiKBzAAuRaawJw.d3xc9YMXAyEoXWvbx8-e1Z2eVhMro6nyquYIhbGsluI&dib_tag=se&keywords=m3%2Bzylinderkopfschrauben&qid=1766752253&sprefix=m3%2Bz%2Caps%2C118&sr=8-1-spons&aref=CxxCJDUUrB&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1",
+  "shopLabel": "Amazon"
 }

@@ -4,9 +4,9 @@
   "kind": "required",
   "name": "ASA Filament",
   "qty": "—",
-  "notes": "—",
+  "notes": "Für einen Node werden ungefähr 260 g ASA-Filament benötigt.",
   "photoThumb": "assets/bom/foto/bom-16-asa.webp",
   "photoFull": "assets/bom/foto/bom-16-asa.webp",
-  "shopUrl": "",
-  "shopLabel": "Link folgt"
+  "shopUrl": "https://eu.store.bambulab.com/products/asa-filament",
+  "shopLabel": "BambuLab"
 }

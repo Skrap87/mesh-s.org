@@ -1,12 +1,12 @@
 {
   "order": 180,
   "variants": "all",
-  "kind": "required",
+  "kind": "optional",
   "name": "Silikon-Dichtmasse",
   "qty": "—",
-  "notes": "—",
+  "notes": "UV- & witterungsbeständig",
   "photoThumb": "assets/bom/foto/bom-14-silicone-sealant.webp",
   "photoFull": "assets/bom/foto/bom-14-silicone-sealant.webp",
-  "shopUrl": "",
-  "shopLabel": "Link folgt"
+  "shopUrl": "https://www.amazon.de/FINAL-Neutral-Spezial-Silikon-transparent/dp/B0C4K1H4SV/ref=sr_1_10?crid=30K3Q4J3YJR2W&dib=eyJ2IjoiMSJ9.o5cBN0n9xYW5YgZs8iy9gXuwQBjqkiLDRDKCYt9cHlyEo_dN5qwBYm-ZBoVVNyhv9r6yxvAaWTUwhhy4l6qyEaFvW6VmZuV5JmEm6WtDeIyxwXCQiy8NIzi4irvOKREnLFje3ouMT5tGU3VSjZBRNIgid5gnlBOYkI4jHf0l862xMmbKatPwTl_n5CwjgEYimlkbNp_4j6xl8lpac3Ha_ZzVInvbHrz_Te7J684TRyK_2FXTg8ri0HRa9D7QsLguunVFI25kkYQxlGDFuUTlE6y39dQq4aEIHfl26NXczZw.WrcAkDXSmwbqnIeLwK8LGkggsmNoKsVOF-qTU7hGovY&dib_tag=se&keywords=silikon%2Baussenbereich%2Bgrau&qid=1766752819&sprefix=silikon%2Baussenbereich%2Bgr%2Caps%2C108&sr=8-10&th=1",
+  "shopLabel": "Amazon"
 }

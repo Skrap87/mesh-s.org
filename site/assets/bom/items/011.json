@@ -4,9 +4,9 @@
   "kind": "required",
   "name": "18650 Li-Ion Zellen",
   "qty": "4",
-  "notes": "—",
+  "notes": "Die Kapazität kann je nach Bedarf auch größer gewählt werden.",
   "photoThumb": "assets/bom/foto/bom-07-18650-li-ion-cells.webp",
   "photoFull": "assets/bom/foto/bom-07-18650-li-ion-cells.webp",
-  "shopUrl": "",
-  "shopLabel": "Link folgt"
+  "shopUrl": "https://www.akkuline.de/eve-inr18650-29v-3-6v-2-85ah-8.4a-zelle-ungeschuetzt-17816m",
+  "shopLabel": "akkuline.de"
 }

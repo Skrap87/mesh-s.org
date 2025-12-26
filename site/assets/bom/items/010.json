@@ -2,11 +2,11 @@
   "order": 100,
   "variants": "all",
   "kind": "required",
-  "name": "ALFA 868 MHz 5 dBi Antenne",
+  "name": "ALFA AOA-868-5ACM",
   "qty": "1",
-  "notes": "—",
+  "notes": "868 MHz Antenna 5dBi N-Male",
   "photoThumb": "assets/bom/foto/bom-06-alfa-868mhz-antenna.webp",
   "photoFull": "assets/bom/foto/bom-06-alfa-868mhz-antenna.webp",
-  "shopUrl": "",
-  "shopLabel": "Link folgt"
+  "shopUrl": "https://alfa-network.eu/antennas/lora-antennas/aoa-868-5acm",
+  "shopLabel": "alfa-network"
 }
