@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Interactive 3D viewer for the MESH-S node.">
-  <title data-i18n="viewer.title">3D Viewer</title>
+  <meta name="description" content="Interaktiver 3D-Viewer für den MESH-S-Knoten.">
+  <title>3D-Viewer</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
@@ -13,26 +13,21 @@
   <main class="viewer-page">
     <header class="viewer-header">
       <div class="viewer-header-main">
-        <a class="btn btn-outline" href="/" data-i18n="viewer.back" data-variant-back-link>← Back</a>
+        <a class="btn btn-outline" href="/" data-variant-back-link>← Zurück</a>
         <div class="viewer-header-text">
-          <h1 data-i18n="viewer.title">3D Viewer</h1>
-          <p class="viewer-hint" data-i18n="viewer.hint">Drag to rotate, scroll/pinch to zoom.</p>
+          <h1>3D-Viewer</h1>
+          <p class="viewer-hint">Ziehen zum Drehen, Scrollen/Pinch zum Zoomen.</p>
         </div>
       </div>
       <div class="viewer-header-actions">
-        <button class="btn btn-outline" id="resetView" type="button" data-i18n="viewer.reset">Reset view</button>
-        <div class="lang-switch" role="group" data-i18n-aria="lang.aria">
-          <button class="lang-option" type="button" data-lang="de">DE</button>
-          <span class="lang-separator">|</span>
-          <button class="lang-option" type="button" data-lang="en">EN</button>
-        </div>
+        <button class="btn btn-outline" id="resetView" type="button">Ansicht zurücksetzen</button>
       </div>
     </header>
     <div class="viewer-variant">
       <span class="viewer-variant__brand">MESH-S</span>
       <span class="viewer-variant__suffix" data-variant-suffix></span>
     </div>
-    <div class="variant-switch" role="group" aria-label="Variant switch">
+    <div class="variant-switch" role="group" aria-label="Variantenauswahl">
           <button class="variant-option" type="button" data-variant="s">S</button>
           <button class="variant-option" type="button" data-variant="m">M</button>
           <button class="variant-option" type="button" data-variant="l">L</button>
@@ -43,24 +38,17 @@
       <div id="viewerCanvasWrap" aria-live="polite"></div>
       <div id="viewerOverlay" class="viewer-overlay">
         <div class="viewer-overlay-card">
-          <div class="viewer-loading" id="viewerLoading" data-i18n="viewer.loading">Loading 3D model…</div>
+          <div class="viewer-loading" id="viewerLoading">3D-Modell wird geladen…</div>
           <div class="viewer-progress" id="viewerProgress">0%</div>
-          <div class="viewer-error is-hidden" id="viewerError" data-i18n="viewer.error">Model not available yet.</div>
-          <p style="margin-top: 12px; font-size: 14px; opacity: 0.8;" data-i18n="viewer.errorhint">Try clearing your browser cache and reloading the page.</p>
-          <a class="btn btn-outline is-hidden" id="viewerErrorBack" href="/" data-i18n="viewer.back" data-variant-back-link>← Back</a>
+          <div class="viewer-error is-hidden" id="viewerError">3D-Modell ist noch nicht verfügbar. Bitte assets/variants/s/models/mesh-s.glb hinzufügen.</div>
+          <p style="margin-top: 12px; font-size: 14px; opacity: 0.8;">Versuche, den Browser-Cache zu leeren und die Seite neu zu laden.</p>
+          <a class="btn btn-outline is-hidden" id="viewerErrorBack" href="/" data-variant-back-link>← Zurück</a>
         </div>
       </div>
     </section>
   </main>
 
   <script src="variants.js?v=20251226-1"></script>
-  <script src="i18n/en/common.js?v=20251226-1"></script>
-  <script src="i18n/en/variants.js?v=20251226-1"></script>
-  <script src="i18n/de/common.js?v=20251226-1"></script>
-  <script src="i18n/de/variants.js?v=20251226-1"></script>
-  <script src="i18n/ru/common.js?v=20251226-1"></script>
-  <script src="i18n/ru/variants.js?v=20251226-1"></script>
-  <script src="i18n.js?v=20251226-1"></script>
 
   <script type="importmap">
     {
@@ -100,20 +88,11 @@
       return allowedVariants.has(raw) ? raw : fallbackVariant;
     };
 
-    const getCurrentLang = () => {
-      const params = new URLSearchParams(window.location.search);
-      return params.get("lang") || document.documentElement.lang || "en";
-    };
-
     const updateBackLinks = (variantId) => {
-      const lang = getCurrentLang();
       document.querySelectorAll("[data-variant-back-link]").forEach((link) => {
         const href = link.getAttribute("href") || "/";
         const url = new URL(href, window.location.origin);
         url.searchParams.set("v", variantId);
-        if (lang) {
-          url.searchParams.set("lang", lang);
-        }
         link.setAttribute("href", url.pathname + url.search + url.hash);
       });
     };

@@ -2,7 +2,7 @@
   const cssVar = (name, fallback) =>
     getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
 
-  function renderSVG({ points, min, max, unit }) {
+  function renderSVG({ points, min, max, unit, ariaLabel }) {
     const W = 980, H = 300;
     const padL = 54, padR = 16, padT = 16, padB = 34;
     const innerW = W - padL - padR;
@@ -33,7 +33,7 @@
     const gid = "area_" + Math.random().toString(36).slice(2);
 
     return `
-<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" class="chart-svg" role="img" aria-label="Telemetry chart">
+<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" class="chart-svg" role="img"${ariaLabel ? ` aria-label="${ariaLabel}"` : ""}>
   <defs>
     <linearGradient id="${gid}" x1="0" x2="0" y1="0" y2="1">
       <stop offset="0%" stop-color="${accent}" stop-opacity="0.25"/>
@@ -67,15 +67,17 @@
     for (const el of charts) {
       const url = el.getAttribute("data-json");
       const unit = el.getAttribute("data-unit") || "";
+      const ariaLabel = el.getAttribute("data-aria-label") || "";
+      const errorText = el.getAttribute("data-error-text") || "";
       try {
         const res = await fetch(url, { cache: "no-store" });
         const data = await res.json();
         const points = data.points || [];
         const min = (typeof data.min === "number") ? data.min : Math.min(...points);
         const max = (typeof data.max === "number") ? data.max : Math.max(...points);
-        el.innerHTML = renderSVG({ points, min, max, unit });
+        el.innerHTML = renderSVG({ points, min, max, unit, ariaLabel });
       } catch (e) {
-        el.textContent = "Chart data not available";
+        el.textContent = errorText;
       }
     }
   }
@@ -84,5 +86,3 @@
 
   document.addEventListener("DOMContentLoaded", renderAllCharts);
 })();
-
-

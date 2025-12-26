@@ -4,9 +4,6 @@
     "badge": "XL",
     "full": "MESH-S / XL"
   },
-  "i18n": {
-    "modelLineKey": "variants.xl.modelLine"
-  },
   "assets": {
     "heroImage": "assets/variants/xl/hero/hero-xl.PNG",
     "heroImageWebp": "assets/variants/xl/hero/hero-xl.webp",
@@ -56,7 +53,7 @@
         {
           "selector": "[data-winter-image='1']",
           "src": "assets/variants/xl/winter/images/coming-soon.png",
-          "altKey": "variants.xl.winter.image1Alt"
+          "alt": "MESH-S / XL Knoten im Winterbetrieb bei Frost"
         }
       ]
     },
