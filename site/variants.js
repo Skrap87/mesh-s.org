@@ -353,30 +353,17 @@
 
   // 🔑 КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ: текущий вариант ВСЕГДА из URL
   // localStorage используется только как fallback при первой загрузке
-  let currentPageVariant = null;
-
   window.getCurrentVariant = () => {
-    // Если вариант уже определён для текущей страницы - возвращаем его
-    if (currentPageVariant) {
-      return currentPageVariant;
-    }
-    
-    // Иначе читаем из URL
     const urlVariant = getUrlVariant();
     if (urlVariant) {
-      currentPageVariant = urlVariant;
       return urlVariant;
     }
-    
-    // Fallback на localStorage только если в URL ничего нет
+
     const stored = getStoredVariant();
     if (stored) {
-      currentPageVariant = stored;
       return stored;
     }
-    
-    // Последний fallback
-    currentPageVariant = "s";
+
     return "s";
   };
 
@@ -408,7 +395,6 @@
       window.history.replaceState({}, "", url.pathname + url.search + url.hash);
     }
     
-    currentPageVariant = variant;
     log("Variant initialized:", variant);
     return variant;
   };

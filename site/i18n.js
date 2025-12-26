@@ -40,6 +40,13 @@ const translations = {
 };
 
 const supportedLanguages = ["de", "en"];
+const allowedVariants = new Set(["s", "m", "l", "xl"]);
+
+const normalizeVariant = (value) => {
+  if (!value) return null;
+  const normalized = value.toLowerCase();
+  return allowedVariants.has(normalized) ? normalized : null;
+};
 
 const getTranslation = (lang, key) => {
   const segments = key.split(".");
@@ -113,7 +120,7 @@ const updateLinks = (lang) => {
   // 🔑 КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ: читаем вариант ТОЛЬКО из текущего URL
   // НЕ используем getCurrentVariant(), который может вернуть значение из localStorage
   const currentParams = new URLSearchParams(window.location.search);
-  const currentV = currentParams.get("v") || "s";
+  const currentV = normalizeVariant(currentParams.get("v")) || "s";
 
   links.forEach((link) => {
     const href = link.getAttribute("href");
@@ -172,7 +179,7 @@ const setLanguage = (lang, { updateUrl } = { updateUrl: true }) => {
       url.searchParams.set("lang", lang);
       
       // 🔑 Сохраняем ТЕКУЩИЙ вариант из URL, не трогая его
-      const currentV = url.searchParams.get("v");
+      const currentV = normalizeVariant(url.searchParams.get("v"));
       if (currentV) {
         url.searchParams.set("v", currentV);
       } else {
