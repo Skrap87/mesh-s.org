@@ -110,10 +110,10 @@ const applyTranslations = (lang) => {
 const updateLinks = (lang) => {
   const links = document.querySelectorAll("a[href]");
 
-  // 🔧 КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ: получаем вариант через глобальную функцию
-  const currentV = (typeof window.getCurrentVariant === "function")
-    ? window.getCurrentVariant()
-    : (new URLSearchParams(window.location.search).get("v") || localStorage.getItem("meshSVariant") || "").toLowerCase();
+  // 🔑 КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ: читаем вариант ТОЛЬКО из текущего URL
+  // НЕ используем getCurrentVariant(), который может вернуть значение из localStorage
+  const currentParams = new URLSearchParams(window.location.search);
+  const currentV = currentParams.get("v") || "s";
 
   links.forEach((link) => {
     const href = link.getAttribute("href");
@@ -132,12 +132,8 @@ const updateLinks = (lang) => {
     if (href.startsWith("#")) {
       const url = new URL(window.location.href);
       url.searchParams.set("lang", lang);
-      
-      // 🔧 Сохраняем текущий вариант, не изменяя его
-      if (currentV) {
-        url.searchParams.set("v", currentV);
-      }
-      
+      // 🔑 Сохраняем ТЕКУЩИЙ вариант из URL
+      url.searchParams.set("v", currentV);
       url.hash = href;
       link.setAttribute("href", url.pathname + url.search + url.hash);
       return;
@@ -149,8 +145,8 @@ const updateLinks = (lang) => {
 
     url.searchParams.set("lang", lang);
     
-    // 🔧 Добавляем вариант только если его ещё нет в ссылке
-    if (currentV && !url.searchParams.has("v")) {
+    // 🔑 Для внешних ссылок (например, на viewer.html) сохраняем текущий вариант
+    if (!url.searchParams.has("v")) {
       url.searchParams.set("v", currentV);
     }
 
@@ -169,18 +165,26 @@ const setLanguage = (lang, { updateUrl } = { updateUrl: true }) => {
 
   if (updateUrl) {
     const url = new URL(window.location.href);
-    url.searchParams.set("lang", lang);
+    const currentLang = url.searchParams.get("lang");
     
-    // 🔧 Сохраняем текущий вариант при смене языка
-    const currentV = (typeof window.getCurrentVariant === "function")
-      ? window.getCurrentVariant()
-      : new URLSearchParams(window.location.search).get("v");
-    
-    if (currentV) {
-      url.searchParams.set("v", currentV);
+    // Обновляем URL только если язык действительно изменился
+    if (currentLang !== lang) {
+      url.searchParams.set("lang", lang);
+      
+      // 🔑 Сохраняем ТЕКУЩИЙ вариант из URL, не трогая его
+      const currentV = url.searchParams.get("v");
+      if (currentV) {
+        url.searchParams.set("v", currentV);
+      } else {
+        // Если варианта нет - используем getCurrentVariant() как fallback
+        const fallbackV = (typeof window.getCurrentVariant === "function")
+          ? window.getCurrentVariant()
+          : "s";
+        url.searchParams.set("v", fallbackV);
+      }
+      
+      window.history.replaceState({}, "", url.pathname + url.search + url.hash);
     }
-    
-    window.history.replaceState({}, "", url.pathname + url.search + url.hash);
   }
 };
 
