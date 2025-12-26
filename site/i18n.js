@@ -117,10 +117,8 @@ const applyTranslations = (lang) => {
 const updateLinks = (lang) => {
   const links = document.querySelectorAll("a[href]");
 
-  // 🔑 КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ: читаем вариант ТОЛЬКО из текущего URL
-  // НЕ используем getCurrentVariant(), который может вернуть значение из localStorage
   const currentParams = new URLSearchParams(window.location.search);
-  const currentV = normalizeVariant(currentParams.get("v")) || "s";
+  const currentV = currentParams.get("v") || "s";
 
   links.forEach((link) => {
     const href = link.getAttribute("href");
@@ -147,17 +145,21 @@ const updateLinks = (lang) => {
     }
 
     // Обычные внутренние страницы
-    const url = new URL(href, window.location.origin);
-    if (url.origin !== window.location.origin) return;
+    try {
+      const url = new URL(href, window.location.origin);
+      if (url.origin !== window.location.origin) return;
 
-    url.searchParams.set("lang", lang);
-    
-    // 🔑 Для внешних ссылок (например, на viewer.html) сохраняем текущий вариант
-    if (!url.searchParams.has("v")) {
-      url.searchParams.set("v", currentV);
+      url.searchParams.set("lang", lang);
+      
+      // 🔑 Для внешних ссылок (например, на viewer.html) сохраняем текущий вариант
+      if (!url.searchParams.has("v")) {
+        url.searchParams.set("v", currentV);
+      }
+
+      link.setAttribute("href", url.pathname + url.search + url.hash);
+    } catch (error) {
+      console.error("Invalid URL in link:", href);
     }
-
-    link.setAttribute("href", url.pathname + url.search + url.hash);
   });
 };
 
@@ -179,7 +181,7 @@ const setLanguage = (lang, { updateUrl } = { updateUrl: true }) => {
       url.searchParams.set("lang", lang);
       
       // 🔑 Сохраняем ТЕКУЩИЙ вариант из URL, не трогая его
-      const currentV = normalizeVariant(url.searchParams.get("v"));
+      const currentV = url.searchParams.get("v");
       if (currentV) {
         url.searchParams.set("v", currentV);
       } else {
