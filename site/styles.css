@@ -514,6 +514,13 @@ section {
   font-size: 0.85rem;
 }
 
+.bom-legend-description {
+  flex-basis: 100%;
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
 .bom-table {
   width: 100%;
   border-collapse: collapse;
@@ -580,9 +587,9 @@ section {
 
 .bom-component {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
 }
 
 .bom-component-name {
