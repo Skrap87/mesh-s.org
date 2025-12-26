@@ -2,7 +2,7 @@
   "order": 30,
   "variants": "s",
   "kind": "required",
-  "name": "NO Name Solarmodul",
+  "name": "Solarmodul",
   "qty": "1",
   "notes": "5 V / 2,7W (118×173 mm)",
   "photoThumb": "assets/bom/foto/bom-02-solar-panel-5v-2-7w.webp",
