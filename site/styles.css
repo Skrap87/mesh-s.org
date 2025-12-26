@@ -733,12 +733,18 @@ section {
   }
 
   .bom-table tbody tr {
-    background: var(--card);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.03)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 16px;
     margin-bottom: 16px;
     overflow: hidden;
-    box-shadow: var(--soft-shadow);
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.35),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.04);
   }
 
   .bom-table tbody tr:last-child {
@@ -752,6 +758,21 @@ section {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
+  }
+
+  .bom-table td:first-child {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .bom-component {
+    gap: 6px;
+  }
+
+  .bom-component-name {
+    font-size: 1rem;
+    line-height: 1.35;
   }
 
   .bom-choice-row td {
@@ -781,6 +802,18 @@ section {
 
   .bom-table td.bom-col-photo::before {
     margin-bottom: 4px;
+  }
+
+  .bom-photo {
+    width: 72px;
+    height: 72px;
+    border-radius: 12px;
+  }
+
+  .bom-col-link .btn {
+    width: 100%;
+    justify-content: center;
+    font-weight: 600;
   }
 }
 
