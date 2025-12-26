@@ -5,8 +5,8 @@
   "name": "Reolink Solarmodul 3W",
   "qty": "1",
   "notes": "6 V / 3W (120.3×185.4 mm)",
-  "photoThumb": "assets/bom/reolink-6v-3w-white.webp",
-  "photoFull": "assets/bom/reolink-6v-3w-white.webp",
+  "photoThumb": "assets/bom/foto/reolink-6v-3w-white.webp",
+  "photoFull": "assets/bom/foto/reolink-6v-3w-white.webp",
   "shopUrl": "https://store.reolink.com/de/accessories/#reolink-solar-panel",
   "shopLabel": "Reolink"
 }
