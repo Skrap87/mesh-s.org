@@ -1,7 +1,7 @@
 (() => {
   const allowedVariants = new Set(["s", "m", "l", "xl"]);
   const storageKey = "meshSVariant";
-  const debug = true;
+  const debug = false; // Отключаем debug в продакшене
   const isDevHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
 
   const log = (...args) => {
@@ -14,20 +14,6 @@
     console.warn("[variants]", ...args);
   };
 
-  // 🔍 Добавляем трассировку всех изменений URL
-  const originalReplaceState = window.history.replaceState;
-  const originalPushState = window.history.pushState;
-  
-  window.history.replaceState = function(...args) {
-    console.trace("🔴 REPLACE STATE CALLED", args[2]);
-    return originalReplaceState.apply(this, args);
-  };
-  
-  window.history.pushState = function(...args) {
-    console.trace("🔴 PUSH STATE CALLED", args[2]);
-    return originalPushState.apply(this, args);
-  };
-
   const normalizeVariantId = (value) => {
     if (!value) return null;
     const normalized = value.toLowerCase();
@@ -37,21 +23,15 @@
   const getUrlVariant = () => {
     const params = new URLSearchParams(window.location.search);
     if (!params.has("v")) return null;
-    const variant = normalizeVariantId(params.get("v"));
-    log("getUrlVariant →", variant);
-    return variant;
+    return normalizeVariantId(params.get("v"));
   };
 
-  const getStoredVariant = () => {
-    const variant = normalizeVariantId(localStorage.getItem(storageKey));
-    log("getStoredVariant →", variant);
-    return variant;
-  };
+  const getStoredVariant = () => normalizeVariantId(localStorage.getItem(storageKey));
 
   const setStoredVariant = (variantId) => {
     try {
-      log("setStoredVariant →", variantId);
       localStorage.setItem(storageKey, variantId);
+      log("setStoredVariant →", variantId);
     } catch (error) {
       warn("failed to persist variant", error);
     }
@@ -63,7 +43,6 @@
   };
 
   const updateVariantButtons = (variantId) => {
-    log("updateVariantButtons →", variantId);
     document.querySelectorAll(".variant-option").forEach((btn) => {
       const isActive = btn.dataset.variant === variantId;
       btn.classList.toggle("is-active", isActive);
@@ -258,8 +237,6 @@
 
   const applyVariant = (variant) => {
     if (!variant) return;
-    log("🎨 applyVariant →", variant.id);
-    
     const safeApply = (label, condition, action) => {
       if (!condition) {
         log(`skip ${label}`);
@@ -335,7 +312,7 @@
   };
 
   const loadVariant = async (variantId) => {
-    log("🔄 loadVariant called →", variantId);
+    log("activate variant", variantId);
     let variant = await fetchVariant(variantId);
     if (!variant && variantId !== "s") {
       variant = await fetchVariant("s");
@@ -350,9 +327,6 @@
     applyBomFilter(variant.id || variantId);
   };
 
-  // 🔍 ПОЛНОСТЬЮ УБИРАЕМ автоматическое обновление URL
-  // Теперь URL обновляется ТОЛЬКО при первой загрузке
-  
   const initVariantSwitch = (currentVariant) => {
     updateVariantButtons(currentVariant);
 
@@ -361,77 +335,90 @@
         const next = btn.dataset.variant;
         if (!allowedVariants.has(next)) return;
         
-        log("🖱️ USER CLICKED variant button →", next);
+        log("User clicked variant:", next);
+        
+        // Обновляем localStorage
         setStoredVariant(next);
         
-        // Обновляем URL напрямую
+        // Обновляем URL
         const url = new URL(window.location.href);
         url.searchParams.set("v", next);
-        log("🔄 Updating URL to →", url.pathname + url.search + url.hash);
         window.history.replaceState({}, "", url.pathname + url.search + url.hash);
         
+        // Загружаем новый вариант
         loadVariant(next);
       });
     });
   };
 
-  // Глобальная функция для получения текущего варианта
+  // 🔑 КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ: текущий вариант ВСЕГДА из URL
+  // localStorage используется только как fallback при первой загрузке
+  let currentPageVariant = null;
+
   window.getCurrentVariant = () => {
-    const variant = getUrlVariant() || getStoredVariant() || "s";
-    log("🌐 getCurrentVariant() →", variant);
-    return variant;
-  };
-
-  // 🔍 Следим за изменениями URL извне
-  let lastKnownUrl = window.location.href;
-  
-  const checkUrlChange = () => {
-    if (window.location.href !== lastKnownUrl) {
-      const oldUrl = lastKnownUrl;
-      lastKnownUrl = window.location.href;
-      
-      const oldParams = new URLSearchParams(new URL(oldUrl).search);
-      const newParams = new URLSearchParams(window.location.search);
-      
-      const oldV = oldParams.get("v");
-      const newV = newParams.get("v");
-      
-      if (oldV !== newV) {
-        console.error("⚠️ VARIANT CHANGED EXTERNALLY!", {
-          old: oldV,
-          new: newV,
-          oldUrl,
-          newUrl: window.location.href
-        });
-      }
+    // Если вариант уже определён для текущей страницы - возвращаем его
+    if (currentPageVariant) {
+      return currentPageVariant;
     }
-  };
-  
-  setInterval(checkUrlChange, 100);
-
-  document.addEventListener("DOMContentLoaded", () => {
-    log("🚀 DOMContentLoaded");
     
+    // Иначе читаем из URL
     const urlVariant = getUrlVariant();
-    let currentVariant = urlVariant;
+    if (urlVariant) {
+      currentPageVariant = urlVariant;
+      return urlVariant;
+    }
     
-    log("Initial state:", { urlVariant, stored: getStoredVariant() });
+    // Fallback на localStorage только если в URL ничего нет
+    const stored = getStoredVariant();
+    if (stored) {
+      currentPageVariant = stored;
+      return stored;
+    }
     
-    if (currentVariant) {
-      setStoredVariant(currentVariant);
-    } else {
-      currentVariant = getStoredVariant() || "s";
-      setStoredVariant(currentVariant);
-      
-      // Устанавливаем URL только если его не было
+    // Последний fallback
+    currentPageVariant = "s";
+    return "s";
+  };
+
+  // Инициализация при загрузке страницы
+  const initializeVariant = () => {
+    const urlVariant = getUrlVariant();
+    const storedVariant = getStoredVariant();
+    
+    let variant;
+    
+    // 🔑 ПРИОРИТЕТ: URL имеет высший приоритет
+    if (urlVariant) {
+      variant = urlVariant;
+      // Синхронизируем localStorage с URL
+      if (storedVariant !== urlVariant) {
+        setStoredVariant(urlVariant);
+      }
+    } else if (storedVariant) {
+      variant = storedVariant;
+      // Добавляем в URL, если его там не было
       const url = new URL(window.location.href);
-      url.searchParams.set("v", currentVariant);
-      log("🔄 Initial URL setup →", url.pathname + url.search + url.hash);
+      url.searchParams.set("v", storedVariant);
+      window.history.replaceState({}, "", url.pathname + url.search + url.hash);
+    } else {
+      variant = "s";
+      setStoredVariant("s");
+      const url = new URL(window.location.href);
+      url.searchParams.set("v", "s");
       window.history.replaceState({}, "", url.pathname + url.search + url.hash);
     }
     
-    initVariantSwitch(currentVariant);
-    updateViewerLinks(currentVariant);
-    loadVariant(currentVariant);
+    currentPageVariant = variant;
+    log("Variant initialized:", variant);
+    return variant;
+  };
+
+  // Инициализируем сразу
+  const initialVariant = initializeVariant();
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initVariantSwitch(initialVariant);
+    updateViewerLinks(initialVariant);
+    loadVariant(initialVariant);
   });
 })();
