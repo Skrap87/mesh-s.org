@@ -4,7 +4,7 @@
   "kind": "optional",
   "name": "INA219",
   "qty": "1",
-  "notes": "Zur Messung des Lade- und Entladestroms der Akkus.",
+  "notes": "Zur Messung des Lade- und Entladestroms der Akkus. Empfohlen für die Verwendung mit WisBlock The Basic RAK4631.",
   "photoThumb": "assets/bom/foto/ina219.webp",
   "photoFull": "assets/bom/foto/ina219.webp",
   "shopUrl": "https://de.aliexpress.com/item/1005009314579438.html?spm=a2g0o.productlist.main.3.843215cdJqsGXI&algo_pvid=2c4c31a8-b1b0-441b-9021-a37943e69615&algo_exp_id=2c4c31a8-b1b0-441b-9021-a37943e69615-2&pdp_ext_f=%7B%22order%22%3A%2213%22%2C%22spu_best_type%22%3A%22order%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%213.62%211.79%21%21%2129.17%2114.46%21%40211b619a17667501114062677e8df1%2112000048717091427%21sea%21DE%21856915798%21X%211%210%21n_tag%3A-29919%3Bd%3Ae2db958f%3Bm03_new_user%3A-29895&curPageLogUid=84QRvzJGAq8n&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005009314579438%7C_p_origin_prod%3A",
