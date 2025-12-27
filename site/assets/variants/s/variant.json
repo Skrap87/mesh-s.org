@@ -57,7 +57,7 @@
       },
       "humidityDual": {
         "selector": "[data-chart='humidityDual']",
-        "json": "assets/variants/s/winter/charts/ha-battery.json.json",
+        "json": "assets/variants/s/winter/charts/humidity-in-out.json",        
         "unit": "%"
       }
     }
