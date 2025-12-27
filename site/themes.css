@@ -285,3 +285,80 @@ html[data-theme="light"] {
     --table-divider: var(--border-soft);
   }
 }
+
+@media (max-width: 768px) {
+  :root,
+  html[data-theme="dark"] {
+    --muted: rgba(249, 250, 251, 0.72);
+    --muted-strong: rgba(249, 250, 251, 0.9);
+    --border-soft: rgba(255, 255, 255, 0.16);
+    --border-subtle: rgba(255, 255, 255, 0.12);
+    --btn-outline-bg: #f4f5f7;
+    --btn-outline-border: rgba(0, 0, 0, 0.25);
+    --btn-outline-fg: #0b0d12;
+    --btn-outline-hover-bg: #e6e9ee;
+    --btn-outline-hover-border: rgba(0, 0, 0, 0.35);
+    --badge-required-bg: rgba(255, 255, 255, 0.1);
+    --badge-required-border: rgba(255, 255, 255, 0.24);
+    --badge-required-fg: rgba(255, 255, 255, 0.9);
+    --badge-optional-bg: rgba(86, 180, 255, 0.26);
+    --badge-optional-border: rgba(86, 180, 255, 0.55);
+    --badge-optional-fg: #e2f1ff;
+    --badge-alternative-bg: rgba(255, 198, 92, 0.26);
+    --badge-alternative-border: rgba(255, 198, 92, 0.6);
+    --badge-alternative-fg: #ffe7bf;
+    --badge-choice-bg: rgba(186, 133, 255, 0.28);
+    --badge-choice-border: rgba(186, 133, 255, 0.6);
+    --badge-choice-fg: #f0e1ff;
+  }
+
+  html[data-theme="light"] {
+    --muted: rgba(17, 19, 23, 0.72);
+    --muted-strong: rgba(17, 19, 23, 0.9);
+    --border-soft: rgba(17, 19, 23, 0.18);
+    --border-subtle: rgba(17, 19, 23, 0.14);
+    --btn-outline-bg: #ffffff;
+    --btn-outline-border: rgba(17, 19, 23, 0.32);
+    --btn-outline-fg: #0f1115;
+    --btn-outline-hover-bg: #eceff3;
+    --btn-outline-hover-border: rgba(17, 19, 23, 0.42);
+    --badge-required-bg: rgba(17, 19, 23, 0.12);
+    --badge-required-border: rgba(17, 19, 23, 0.32);
+    --badge-required-fg: rgba(17, 19, 23, 0.88);
+    --badge-optional-bg: rgba(86, 145, 208, 0.26);
+    --badge-optional-border: rgba(86, 145, 208, 0.6);
+    --badge-optional-fg: #153f63;
+    --badge-alternative-bg: rgba(255, 198, 92, 0.3);
+    --badge-alternative-border: rgba(255, 198, 92, 0.65);
+    --badge-alternative-fg: #5c3600;
+    --badge-choice-bg: rgba(171, 133, 220, 0.28);
+    --badge-choice-border: rgba(171, 133, 220, 0.6);
+    --badge-choice-fg: #3f2166;
+  }
+}
+
+@media (prefers-color-scheme: light) and (max-width: 768px) {
+  :root {
+    --muted: rgba(17, 19, 23, 0.74);
+    --muted-strong: rgba(17, 19, 23, 0.92);
+    --border-soft: rgba(17, 19, 23, 0.2);
+    --border-subtle: rgba(17, 19, 23, 0.16);
+    --btn-outline-bg: #ffffff;
+    --btn-outline-border: rgba(17, 19, 23, 0.36);
+    --btn-outline-fg: #0f1115;
+    --btn-outline-hover-bg: #e7ebf0;
+    --btn-outline-hover-border: rgba(17, 19, 23, 0.45);
+    --badge-required-bg: rgba(17, 19, 23, 0.14);
+    --badge-required-border: rgba(17, 19, 23, 0.36);
+    --badge-required-fg: rgba(17, 19, 23, 0.9);
+    --badge-optional-bg: rgba(86, 145, 208, 0.28);
+    --badge-optional-border: rgba(86, 145, 208, 0.65);
+    --badge-optional-fg: #143555;
+    --badge-alternative-bg: rgba(255, 198, 92, 0.34);
+    --badge-alternative-border: rgba(255, 198, 92, 0.7);
+    --badge-alternative-fg: #4b2c00;
+    --badge-choice-bg: rgba(171, 133, 220, 0.32);
+    --badge-choice-border: rgba(171, 133, 220, 0.65);
+    --badge-choice-fg: #371b5c;
+  }
+}

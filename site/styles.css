@@ -547,7 +547,7 @@ header {
 
 .bom-legend-text {
   font-size: 0.85rem;
-  color: var(--muted);
+  color: var(--muted-strong);
 }
 
 .bom-legend-description {
@@ -720,18 +720,18 @@ header {
 #bom .bom-col-link .btn,
 #bom .bom-col-link .btn-outline {
   padding: 10px 16px;
-  background: var(--btn-secondary-bg);
-  border: 1px solid var(--btn-secondary-border);
-  color: var(--btn-secondary-fg);
+  background: var(--btn-outline-bg);
+  border: 1px solid var(--btn-outline-border);
+  color: var(--btn-outline-fg);
   box-shadow: none;
   transform: none;
 }
 
 #bom .bom-col-link .btn:hover,
 #bom .bom-col-link .btn-outline:hover {
-  background: var(--btn-secondary-hover-bg);
-  border-color: var(--btn-secondary-hover-border);
-  color: var(--btn-secondary-fg);
+  background: var(--btn-outline-hover-bg);
+  border-color: var(--btn-outline-hover-border);
+  color: var(--btn-outline-fg);
   transform: translateY(-1px);
 }
 
@@ -1349,7 +1349,7 @@ footer {
   .bom-table tbody tr {
     margin-bottom: 16px;
     border-radius: 16px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-soft);
     overflow: hidden;
     background: var(--table-card-bg);
     box-shadow:
