@@ -2,6 +2,7 @@
   "order": 90,
   "variants": "all",
   "kind": "required",
+  "group": "akku",
   "name": "18650 Case",
   "qty": "1",
   "notes": "4 Slot Parallel",

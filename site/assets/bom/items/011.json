@@ -2,6 +2,7 @@
   "order": 110,
   "variants": "all",
   "kind": "required",
+  "group": "akku",
   "name": "18650 Li-Ion Zellen",
   "qty": "4",
   "notes": "Die Kapazität kann je nach Bedarf auch größer gewählt werden.",
