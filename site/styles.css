@@ -514,6 +514,52 @@ header {
 }
 
 /* 08. Components */
+/* DIY context block */
+#diy-context {
+  padding-top: 40px;
+}
+
+.context-card {
+  padding: 30px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-soft);
+  background: linear-gradient(145deg, var(--surface-2), var(--surface));
+  box-shadow: var(--shadow-card);
+}
+
+.context-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.context-item {
+  position: relative;
+  padding-left: 16px;
+}
+
+.context-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--accent);
+  opacity: 0.35;
+}
+
+.context-item h3 {
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+.context-item p {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
 /* BOM */
 #bom .hero-title {
   font-size: 2.4rem;
