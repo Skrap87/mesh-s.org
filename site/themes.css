@@ -362,3 +362,76 @@ html[data-theme="light"] {
     --badge-choice-fg: #371b5c;
   }
 }
+
+/* Mobile Light: contrast fixes */
+@media (max-width: 768px) {
+  html[data-theme="light"] {
+    --muted: rgba(17, 19, 23, 0.82);
+    --muted-strong: rgba(17, 19, 23, 0.95);
+    --border: rgba(17, 19, 23, 0.24);
+    --border-soft: rgba(17, 19, 23, 0.28);
+    --border-subtle: rgba(17, 19, 23, 0.2);
+    --legend-required: rgba(17, 19, 23, 0.95);
+    --legend-optional: #143b5f;
+    --legend-choice: #351658;
+    --btn-outline-bg: #ffffff;
+    --btn-outline-border: rgba(17, 19, 23, 0.52);
+    --btn-outline-fg: #0b0d12;
+    --btn-outline-hover-bg: #e3e7ed;
+    --btn-outline-hover-border: rgba(17, 19, 23, 0.62);
+    --badge-required-bg: rgba(17, 19, 23, 0.18);
+    --badge-required-border: rgba(17, 19, 23, 0.45);
+    --badge-required-fg: rgba(17, 19, 23, 0.95);
+    --badge-optional-bg: rgba(86, 145, 208, 0.35);
+    --badge-optional-border: rgba(86, 145, 208, 0.75);
+    --badge-optional-fg: #0f2c45;
+    --badge-choice-bg: rgba(171, 133, 220, 0.38);
+    --badge-choice-border: rgba(171, 133, 220, 0.78);
+    --badge-choice-fg: #2f104f;
+  }
+
+  html[data-theme="light"] .nav-more-menu a {
+    color: var(--fg);
+  }
+
+  html[data-theme="light"] .legend-note,
+  html[data-theme="light"] .legend-desc {
+    color: var(--muted-strong);
+  }
+}
+
+@media (prefers-color-scheme: light) and (max-width: 768px) {
+  :root {
+    --muted: rgba(17, 19, 23, 0.82);
+    --muted-strong: rgba(17, 19, 23, 0.95);
+    --border: rgba(17, 19, 23, 0.24);
+    --border-soft: rgba(17, 19, 23, 0.28);
+    --border-subtle: rgba(17, 19, 23, 0.2);
+    --legend-required: rgba(17, 19, 23, 0.95);
+    --legend-optional: #143b5f;
+    --legend-choice: #351658;
+    --btn-outline-bg: #ffffff;
+    --btn-outline-border: rgba(17, 19, 23, 0.52);
+    --btn-outline-fg: #0b0d12;
+    --btn-outline-hover-bg: #e3e7ed;
+    --btn-outline-hover-border: rgba(17, 19, 23, 0.62);
+    --badge-required-bg: rgba(17, 19, 23, 0.18);
+    --badge-required-border: rgba(17, 19, 23, 0.45);
+    --badge-required-fg: rgba(17, 19, 23, 0.95);
+    --badge-optional-bg: rgba(86, 145, 208, 0.35);
+    --badge-optional-border: rgba(86, 145, 208, 0.75);
+    --badge-optional-fg: #0f2c45;
+    --badge-choice-bg: rgba(171, 133, 220, 0.38);
+    --badge-choice-border: rgba(171, 133, 220, 0.78);
+    --badge-choice-fg: #2f104f;
+  }
+
+  :root .nav-more-menu a {
+    color: var(--fg);
+  }
+
+  :root .legend-note,
+  :root .legend-desc {
+    color: var(--muted-strong);
+  }
+}
