@@ -3,7 +3,7 @@
   "max": 100,
   "series": [
     {
-      "name": "Innen",
+      "name": "Inside",
       "unit": "%",
       "points": [
         32.42,
@@ -166,7 +166,7 @@
       ]
     },
     {
-      "name": "Au\u00dfen",
+      "name": "Outside",
       "unit": "%",
       "points": [
         85.48,
