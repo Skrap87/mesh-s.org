@@ -128,7 +128,39 @@
         itemFiles.map((name) => fetchJson(`assets/bom/items/${name}`))
       );
 
-      items.sort((a, b) => (a.order || 0) - (b.order || 0));
+      const kindRank = (kind) => {
+        const normalized = (kind || "").toLowerCase();
+        if (normalized === "required") return 0;
+        if (normalized === "alternative") return 1;
+        if (normalized === "optional") return 9;
+        return 5;
+      };
+
+      const groupMinOrder = items.reduce((acc, item) => {
+        if (!item.group) return acc;
+        const order = item.order ?? 0;
+        const current = acc.get(item.group);
+        if (current === undefined || order < current) {
+          acc.set(item.group, order);
+        }
+        return acc;
+      }, new Map());
+
+      items.sort((a, b) => {
+        const kindDiff = kindRank(a.kind) - kindRank(b.kind);
+        if (kindDiff !== 0) return kindDiff;
+
+        const aClusterOrder = a.group ? groupMinOrder.get(a.group) ?? (a.order ?? 0) : (a.order ?? 0);
+        const bClusterOrder = b.group ? groupMinOrder.get(b.group) ?? (b.order ?? 0) : (b.order ?? 0);
+        if (aClusterOrder !== bClusterOrder) return aClusterOrder - bClusterOrder;
+
+        const orderDiff = (a.order ?? 0) - (b.order ?? 0);
+        if (orderDiff !== 0) return orderDiff;
+
+        const nameA = a.name ?? "";
+        const nameB = b.name ?? "";
+        return nameA.localeCompare(nameB);
+      });
       renderBomRows(items);
 
       const activeVariant =
