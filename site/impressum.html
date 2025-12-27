@@ -150,6 +150,33 @@
 		});
 	  });
 	</script>
+  <script>
+    (function () {
+      if (window.__navMoreDismiss) return;
+      window.__navMoreDismiss = true;
+
+      const closeAll = () => {
+        document.querySelectorAll('details.nav-more[open]').forEach((details) => {
+          details.removeAttribute('open');
+        });
+      };
+
+      document.addEventListener('click', (event) => {
+        const openMenus = document.querySelectorAll('details.nav-more[open]');
+        if (!openMenus.length) return;
+        const target = event.target;
+        if (target && target.closest && target.closest('details.nav-more')) return;
+        openMenus.forEach((details) => {
+          details.removeAttribute('open');
+        });
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape') return;
+        closeAll();
+      });
+    })();
+  </script>
 <footer class="site-footer">
   <p>
     Inhalt lizenziert unter
