@@ -2,20 +2,39 @@
   const cssVar = (name, fallback) =>
     getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
 
-  function renderSVG({ points, min, max, unit, ariaLabel }) {
+  function renderLegend(series, colors) {
+    if (!Array.isArray(series) || series.length < 2) return "";
+    const items = series
+      .map((entry, index) => {
+        const name = entry.name || `Serie ${index + 1}`;
+        const color = colors[index] || colors[colors.length - 1];
+        return `
+    <div class="chart-legend-item">
+      <span class="chart-legend-swatch" style="background: ${color};"></span>
+      <span>${name}</span>
+    </div>`;
+      })
+      .join("");
+
+    return `<div class="chart-legend" role="list">${items}</div>`;
+  }
+
+  function renderSVG({ series, min, max, unit, ariaLabel }) {
     const W = 980, H = 300;
     const padL = 54, padR = 16, padT = 16, padB = 34;
     const innerW = W - padL - padR;
     const innerH = H - padT - padB;
 
     const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
-    const x = (i) => padL + (i * innerW) / Math.max(points.length - 1, 1);
+    const maxLen = Math.max(...series.map((entry) => entry.points.length), 1);
+    const x = (i) => padL + (i * innerW) / Math.max(maxLen - 1, 1);
     const y = (v) => {
       const t = (v - min) / (max - min || 1);
       return padT + (1 - clamp(t, 0, 1)) * innerH;
     };
 
-    const d = points.map((v, i) => `${i ? "L" : "M"} ${x(i).toFixed(2)} ${y(v).toFixed(2)}`).join(" ");
+    const buildPath = (points) =>
+      points.map((v, i) => `${i ? "L" : "M"} ${x(i).toFixed(2)} ${y(v).toFixed(2)}`).join(" ");
 
     const gridLines = 4;
     const grid = Array.from({ length: gridLines + 1 }, (_, i) => {
@@ -25,12 +44,16 @@
     });
 
     const accent = cssVar("--accent", "#9dd06a");
-    const bg = "rgba(12,12,15,1)";
-    const border = "rgba(255,255,255,0.12)";
-    const gridCol = "rgba(255,255,255,0.06)";
-    const muted = "rgba(255,255,255,0.55)";
+    const accentSoft = cssVar("--accent-soft", "rgba(157, 208, 106, 0.35)");
+    const bg = cssVar("--surface-graph", "#0c0c0f");
+    const border = cssVar("--border", "rgba(255,255,255,0.12)");
+    const gridCol = cssVar("--border-subtle", "rgba(255,255,255,0.06)");
+    const muted = cssVar("--muted", "rgba(255,255,255,0.55)");
 
     const gid = "area_" + Math.random().toString(36).slice(2);
+    const colors = [accent, accentSoft];
+    const primarySeries = series[0];
+    const primaryPath = primarySeries?.points?.length ? buildPath(primarySeries.points) : "";
 
     return `
 <svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" class="chart-svg" role="img"${ariaLabel ? ` aria-label="${ariaLabel}"` : ""}>
@@ -54,8 +77,15 @@
 
   <text x="${padL}" y="${H - 10}" font-size="16" fill="${muted}">${unit || ""}</text>
 
-  <path d="${d} L ${padL + innerW} ${padT + innerH} L ${padL} ${padT + innerH} Z" fill="url(#${gid})"/>
-  <path d="${d}" fill="none" stroke="${accent}" stroke-width="2.4" stroke-linecap="round"/>
+  ${primaryPath ? `<path d="${primaryPath} L ${padL + innerW} ${padT + innerH} L ${padL} ${padT + innerH} Z" fill="url(#${gid})"/>` : ""}
+  ${series
+    .map((entry, index) => {
+      if (!entry.points.length) return "";
+      const color = colors[index] || colors[colors.length - 1];
+      const path = buildPath(entry.points);
+      return `<path d="${path}" fill="none" stroke="${color}" stroke-width="${index === 0 ? "2.4" : "2.1"}" stroke-linecap="round"/>`;
+    })
+    .join("")}
 
   <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${padT + innerH}" stroke="${border}"/>
   <line x1="${padL}" y1="${padT + innerH}" x2="${padL + innerW}" y2="${padT + innerH}" stroke="${border}"/>
@@ -72,10 +102,23 @@
       try {
         const res = await fetch(url, { cache: "no-store" });
         const data = await res.json();
-        const points = data.points || [];
-        const min = (typeof data.min === "number") ? data.min : Math.min(...points);
-        const max = (typeof data.max === "number") ? data.max : Math.max(...points);
-        el.innerHTML = renderSVG({ points, min, max, unit, ariaLabel });
+        const series = Array.isArray(data.series) && data.series.length
+          ? data.series.map((entry, index) => ({
+            name: entry?.name || `Serie ${index + 1}`,
+            unit: entry?.unit || unit,
+            points: Array.isArray(entry?.points) ? entry.points : []
+          }))
+          : [{
+            name: data.name || "",
+            unit,
+            points: Array.isArray(data.points) ? data.points : []
+          }];
+        const allPoints = series.flatMap((entry) => entry.points).filter((value) => typeof value === "number");
+        const min = (typeof data.min === "number") ? data.min : (allPoints.length ? Math.min(...allPoints) : 0);
+        const max = (typeof data.max === "number") ? data.max : (allPoints.length ? Math.max(...allPoints) : 0);
+        const svg = renderSVG({ series, min, max, unit, ariaLabel });
+        const legend = renderLegend(series, [cssVar("--accent", "#9dd06a"), cssVar("--accent-soft", "rgba(157, 208, 106, 0.35)")]);
+        el.innerHTML = svg + legend;
       } catch (e) {
         el.textContent = errorText;
       }
