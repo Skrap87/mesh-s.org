@@ -143,14 +143,15 @@ def sniff_dialect(path: str):
 def build_aligned_series(series_data: dict, grid_times: list, max_gap_seconds: int) -> list:
     """
     Строит массив значений для серии, выровненный по общей сетке времени.
+    Вместо null использует линейную интерполяцию для коротких разрывов.
     
     Args:
         series_data: dict с 'times' и 'values'
         grid_times: отсортированный список всех временных точек
-        max_gap_seconds: максимальный допустимый разрыв для протяжки значения
+        max_gap_seconds: максимальный допустимый разрыв для интерполяции
     
     Returns:
-        list значений (с None для пропусков)
+        list значений (интерполированных или None для больших разрывов)
     """
     times = series_data['times']
     values = series_data['values']
@@ -158,31 +159,47 @@ def build_aligned_series(series_data: dict, grid_times: list, max_gap_seconds: i
     if not times:
         return [None] * len(grid_times)
     
-    # Создаём индекс для быстрого поиска последнего известного значения
+    # Создаём индекс для быстрого поиска
     time_value_pairs = sorted(zip(times, values))
     
     result = []
     max_gap = timedelta(seconds=max_gap_seconds)
     
     for grid_time in grid_times:
-        # Находим последнее известное значение <= grid_time
+        # Находим ближайшие известные значения до и после
         last_value = None
         last_time = None
+        next_value = None
+        next_time = None
         
         for t, v in time_value_pairs:
             if t <= grid_time:
                 last_value = v
                 last_time = t
-            else:
+            elif next_time is None:
+                next_value = v
+                next_time = t
                 break
         
-        # Проверяем разрыв
-        if last_time is None:
-            result.append(None)
-        elif grid_time - last_time > max_gap:
-            result.append(None)
+        # Случай 1: Есть точное совпадение или последнее значение очень близко
+        if last_time is not None and grid_time - last_time <= max_gap:
+            # Если есть следующее значение в пределах разрыва - интерполируем
+            if next_time is not None and next_time - last_time <= max_gap:
+                # Линейная интерполяция
+                total_gap = (next_time - last_time).total_seconds()
+                time_from_last = (grid_time - last_time).total_seconds()
+                ratio = time_from_last / total_gap if total_gap > 0 else 0
+                interpolated = last_value + (next_value - last_value) * ratio
+                result.append(interpolated)
+            else:
+                # Просто используем последнее значение
+                result.append(last_value)
+        # Случай 2: Есть только следующее значение (начало ряда)
+        elif next_time is not None and next_time - grid_time <= max_gap:
+            result.append(next_value)
+        # Случай 3: Разрыв слишком большой
         else:
-            result.append(last_value)
+            result.append(None)
     
     return result
 
@@ -350,6 +367,30 @@ for chart_key, chart_config in DUAL_CHARTS.items():
         all_times.update(member_data["data"]["times"])
     
     grid_times = sorted(all_times)
+    
+    # ФИЛЬТРУЕМ сетку: удаляем точки, где обе серии имеют большой разрыв
+    max_gap = timedelta(seconds=chart_config["max_gap_seconds"])
+    
+    def has_data_nearby(times, grid_time, max_gap):
+        """Проверяет, есть ли данные в пределах max_gap от grid_time"""
+        for t in times:
+            if abs(t - grid_time) <= max_gap:
+                return True
+        return False
+    
+    filtered_grid_times = []
+    for grid_time in grid_times:
+        # Проверяем, есть ли хотя бы у одной серии данные рядом
+        has_inside = has_data_nearby(candidates["Inside"]["data"]["times"], grid_time, max_gap)
+        has_outside = has_data_nearby(candidates["Outside"]["data"]["times"], grid_time, max_gap)
+        
+        # Оставляем точку если хотя бы одна серия имеет данные
+        if has_inside or has_outside:
+            filtered_grid_times.append(grid_time)
+    
+    print(f"   Отфильтровано: {len(grid_times)} → {len(filtered_grid_times)} точек (удалено пустых: {len(grid_times) - len(filtered_grid_times)})")
+    
+    grid_times = filtered_grid_times
     
     # Выравниваем серии - фильтруем null значения
     series = []
