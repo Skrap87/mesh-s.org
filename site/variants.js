@@ -191,7 +191,11 @@
     const choiceLabel =
       document.getElementById("bom-choice-label")?.textContent?.trim() || "Wähle eine Option:";
     groups.forEach((groupRows) => {
-      if (groupRows.length < 2) return;
+      const altCount = groupRows.reduce((count, row) => {
+        const kind = (row.getAttribute("data-kind") || "").toLowerCase();
+        return kind === "alternative" ? count + 1 : count;
+      }, 0);
+      if (altCount < 2) return;
       groupRows.forEach((row) => row.classList.add("is-choice"));
 
       const choiceRow = document.createElement("tr");
