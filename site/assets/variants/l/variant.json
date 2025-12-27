@@ -7,7 +7,7 @@
   "assets": {
     "heroImage": "assets/variants/l/hero/coming-soon.png",
     "heroImageWebp": "assets/variants/l/hero/coming-soon.webp",
-    "viewerModel": "assets/variants/s/models/mesh-s.glb",
+    "viewerModel": "assets/variants/l/models/mesh-l.glb",
     "customParts": [
       { "id": "enclosureWebp", "src": "assets/variants/l/hero/coming-soon.webp" },
       { "id": "enclosureGif", "src": "assets/variants/l/hero/coming-soon.png" },
