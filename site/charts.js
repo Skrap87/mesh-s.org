@@ -33,8 +33,42 @@
       return padT + (1 - clamp(t, 0, 1)) * innerH;
     };
 
-    const buildPath = (points) =>
-      points.map((v, i) => `${i ? "L" : "M"} ${x(i).toFixed(2)} ${y(v).toFixed(2)}`).join(" ");
+    // Исправленная функция: пропускаем null значения
+    const buildPath = (points) => {
+      let segments = [];
+      let currentSegment = [];
+      
+      for (let i = 0; i < points.length; i++) {
+        const v = points[i];
+        
+        if (v === null || v === undefined || typeof v !== 'number') {
+          // Если встретили null, завершаем текущий сегмент
+          if (currentSegment.length > 0) {
+            segments.push(currentSegment);
+            currentSegment = [];
+          }
+        } else {
+          // Добавляем валидную точку
+          currentSegment.push({ i, v });
+        }
+      }
+      
+      // Добавляем последний сегмент
+      if (currentSegment.length > 0) {
+        segments.push(currentSegment);
+      }
+      
+      // Строим path для каждого сегмента
+      return segments
+        .map(segment => 
+          segment
+            .map((point, idx) => 
+              `${idx === 0 ? 'M' : 'L'} ${x(point.i).toFixed(2)} ${y(point.v).toFixed(2)}`
+            )
+            .join(' ')
+        )
+        .join(' ');
+    };
 
     const gridLines = 4;
     const grid = Array.from({ length: gridLines + 1 }, (_, i) => {
@@ -54,6 +88,37 @@
     const colors = [accent, accentSoft];
     const primarySeries = series[0];
     const primaryPath = primarySeries?.points?.length ? buildPath(primarySeries.points) : "";
+
+    // Для области под графиком тоже нужна корректная обработка
+    const buildAreaPath = (points) => {
+      if (!points || points.length === 0) return "";
+      
+      // Находим первую валидную точку
+      let firstValid = -1;
+      let lastValid = -1;
+      
+      for (let i = 0; i < points.length; i++) {
+        if (points[i] !== null && points[i] !== undefined && typeof points[i] === 'number') {
+          if (firstValid === -1) firstValid = i;
+          lastValid = i;
+        }
+      }
+      
+      if (firstValid === -1) return "";
+      
+      // Строим path линии
+      const linePath = buildPath(points);
+      if (!linePath) return "";
+      
+      // Добавляем замыкание к оси X
+      const x1 = x(lastValid).toFixed(2);
+      const x2 = x(firstValid).toFixed(2);
+      const yBottom = (padT + innerH).toFixed(2);
+      
+      return `${linePath} L ${x1} ${yBottom} L ${x2} ${yBottom} Z`;
+    };
+
+    const areaPath = buildAreaPath(primarySeries?.points || []);
 
     return `
 <svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" class="chart-svg" role="img"${ariaLabel ? ` aria-label="${ariaLabel}"` : ""}>
@@ -77,13 +142,13 @@
 
   <text x="${padL}" y="${H - 10}" font-size="16" fill="${muted}">${unit || ""}</text>
 
-  ${primaryPath ? `<path d="${primaryPath} L ${padL + innerW} ${padT + innerH} L ${padL} ${padT + innerH} Z" fill="url(#${gid})"/>` : ""}
+  ${areaPath ? `<path d="${areaPath}" fill="url(#${gid})"/>` : ""}
   ${series
     .map((entry, index) => {
       if (!entry.points.length) return "";
       const color = colors[index] || colors[colors.length - 1];
       const path = buildPath(entry.points);
-      return `<path d="${path}" fill="none" stroke="${color}" stroke-width="${index === 0 ? "2.4" : "2.1"}" stroke-linecap="round"/>`;
+      return path ? `<path d="${path}" fill="none" stroke="${color}" stroke-width="${index === 0 ? "2.4" : "2.1"}" stroke-linecap="round" stroke-linejoin="round"/>` : "";
     })
     .join("")}
 
