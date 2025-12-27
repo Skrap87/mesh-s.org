@@ -54,6 +54,11 @@
         "selector": "[data-chart='chargeCurrent']",
         "json": "assets/variants/xl/autonomy/charts/ha-charge.json",
         "unit": "mA"
+      },
+      "humidityDual": {
+        "selector": "[data-chart='humidityDual']",
+        "json": "assets/variants/xl/winter/charts/humidity-in-out.json",
+        "unit": "%"
       }
     }
   }
