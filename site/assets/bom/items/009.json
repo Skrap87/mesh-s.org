@@ -1,6 +1,6 @@
 {
   "order": 90,
-  "variants": "all",
+  "variants": "s,m,xl",
   "kind": "required",
   "group": "akku",
   "name": "18650 Case",

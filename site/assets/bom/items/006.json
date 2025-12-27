@@ -1,6 +1,6 @@
 {
   "order": 60,
-  "variants": "all",
+  "variants": "s,m,xl",
   "kind": "alternative",
   "group":"mptt",
   "name": "MPPT-Laderegler CN3065",

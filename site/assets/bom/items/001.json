@@ -1,6 +1,6 @@
 {
   "order": 10,
-  "variants": "all",
+  "variants": "s,m,xl",
   "kind": "alternative",
   "group": "mcu",
   "name": "XIAO nRF52840 & Wio-SX1262",

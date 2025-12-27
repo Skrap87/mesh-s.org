@@ -1,6 +1,6 @@
 {
   "order": 100,
-  "variants": "all",
+  "variants": "s,m,xl",
   "kind": "required",
   "group": "antenne",
   "name": "ALFA AOA-868-5ACM",
