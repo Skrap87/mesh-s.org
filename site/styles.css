@@ -1473,12 +1473,21 @@ footer {
   }
 }
 
-/* Auto theme: follow system (mobile/desktop) */
+/* =========================
+   AUTO THEME + MOBILE CONTRAST FIX
+   Paste at the very end of styles.css
+========================= */
+
+/* Default: dark (как сейчас) */
 :root {
   color-scheme: dark;
+  --line: rgba(255,255,255,.12);
+  --line-strong: rgba(255,255,255,.18);
+  --btn-bg: rgba(255,255,255,.06);
+  --btn-bg-hover: rgba(255,255,255,.10);
 }
 
-/* Light mode overrides */
+/* Auto light mode */
 @media (prefers-color-scheme: light) {
   :root {
     color-scheme: light;
@@ -1488,46 +1497,50 @@ footer {
     --muted: rgba(11, 13, 18, 0.68);
 
     --card: rgba(11, 13, 18, 0.04);
-    --card-border: rgba(11, 13, 18, 0.12);
+    --card-border: rgba(11, 13, 18, 0.14);
 
-    --soft-shadow: 0 18px 40px rgba(11, 13, 18, 0.12);
+    --line: rgba(11,13,18,.14);
+    --line-strong: rgba(11,13,18,.22);
+
+    --btn-bg: rgba(11,13,18,.06);
+    --btn-bg-hover: rgba(11,13,18,.10);
   }
+}
 
-  header {
-    background: rgba(246, 247, 249, 0.9);
-    border-bottom: 1px solid rgba(11, 13, 18, 0.08);
-  }
-
-  .nav-links a,
-  .nav-more summary {
-    border-color: rgba(11, 13, 18, 0.16);
-    color: rgba(11, 13, 18, 0.72);
-  }
-
-  .nav-links a:hover,
-  .nav-more summary:hover,
-  .nav-more[open] summary {
-    border-color: rgba(11, 13, 18, 0.28);
-    color: var(--fg);
-  }
-
-  .card {
-    background: linear-gradient(145deg, rgba(11, 13, 18, 0.05), rgba(11, 13, 18, 0.02));
-    box-shadow: 8px 8px 18px rgba(11, 13, 18, 0.08), -4px -4px 10px rgba(255, 255, 255, 0.7);
-  }
-
-  .bom-table-wrapper {
-    border-color: rgba(11, 13, 18, 0.16);
-    background: rgba(11, 13, 18, 0.03);
-  }
-
-  .bom-table th,
-  .bom-table td {
-    border-bottom-color: rgba(11, 13, 18, 0.10);
-  }
-
+/* Make borders/buttons readable on phones (both themes) */
+@media (pointer: coarse), (max-width: 900px) {
+  /* Table wrappers / cards */
+  .bom-table-wrapper,
+  .table-wrap,
   .viewer-stage,
   #viewerCanvasWrap {
-    border-color: rgba(11, 13, 18, 0.12);
+    border-color: var(--line-strong) !important;
+  }
+
+  /* BOM mobile rows are "cards" */
+  .bom-table tbody tr {
+    border-color: var(--line-strong) !important;
+    box-shadow:
+      0 10px 30px rgba(0,0,0,.22),
+      inset 0 0 0 1px var(--line) !important;
+  }
+
+  .bom-table td {
+    border-bottom-color: var(--line) !important;
+  }
+
+  /* Buttons and pill links */
+  .btn,
+  .nav-links a,
+  .nav-more summary,
+  .bom-col-link .btn {
+    border-color: var(--line-strong) !important;
+    background: var(--btn-bg) !important;
+  }
+
+  .btn:hover,
+  .nav-links a:hover,
+  .nav-more summary:hover {
+    background: var(--btn-bg-hover) !important;
   }
 }
