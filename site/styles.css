@@ -1554,3 +1554,32 @@ footer {
     align-self: flex-end;
   }
 }
+
+/* Accent font: Orbitron (headings + badges only) */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap");
+
+/* Section titles */
+h1, h2, .section-title {
+  font-family: "Orbitron", "Inter", system-ui, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+/* Hero title MESH-S */
+.hero-title,
+.logo-text {
+  font-family: "Orbitron", "Inter", system-ui, sans-serif;
+  letter-spacing: 0.06em;
+}
+
+/* Variant badge: / S / M / L */
+.variant-badge,
+.variant-suffix {
+  font-family: "Orbitron", "Inter", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* Everything else stays Inter */
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
