@@ -33,40 +33,8 @@
       return padT + (1 - clamp(t, 0, 1)) * innerH;
     };
 
-    // Исправленная функция: возвращает массив сегментов
-    const buildSegments = (points) => {
-      let segments = [];
-      let currentSegment = [];
-      
-      for (let i = 0; i < points.length; i++) {
-        const v = points[i];
-        
-        if (v === null || v === undefined || typeof v !== 'number') {
-          // Если встретили null, завершаем текущий сегмент
-          if (currentSegment.length > 0) {
-            segments.push(currentSegment);
-            currentSegment = [];
-          }
-        } else {
-          // Добавляем валидную точку
-          currentSegment.push({ i, v });
-        }
-      }
-      
-      // Добавляем последний сегмент
-      if (currentSegment.length > 0) {
-        segments.push(currentSegment);
-      }
-      
-      // Строим path для каждого сегмента
-      return segments.map(segment => 
-        segment
-          .map((point, idx) => 
-            `${idx === 0 ? 'M' : 'L'} ${x(point.i).toFixed(2)} ${y(point.v).toFixed(2)}`
-          )
-          .join(' ')
-      );
-    };
+    const buildPath = (points) =>
+      points.map((v, i) => `${i ? "L" : "M"} ${x(i).toFixed(2)} ${y(v).toFixed(2)}`).join(" ");
 
     const gridLines = 4;
     const grid = Array.from({ length: gridLines + 1 }, (_, i) => {
@@ -85,27 +53,7 @@
     const gid = "area_" + Math.random().toString(36).slice(2);
     const colors = [accent, accentSoft];
     const primarySeries = series[0];
-
-    // Для области под графиком - строим отдельные сегменты
-    const buildAreaSegments = (points) => {
-      if (!points || points.length === 0) return [];
-      
-      const segments = buildSegments(points);
-      const yBottom = (padT + innerH).toFixed(2);
-      
-      return segments.map(segmentPath => {
-        // Извлекаем координаты из path
-        const coords = segmentPath.match(/[\d.]+/g);
-        if (!coords || coords.length < 4) return "";
-        
-        const firstX = coords[0];
-        const lastX = coords[coords.length - 2];
-        
-        return `${segmentPath} L ${lastX} ${yBottom} L ${firstX} ${yBottom} Z`;
-      }).filter(Boolean);
-    };
-
-    const areaSegments = buildAreaSegments(primarySeries?.points || []);
+    const primaryPath = primarySeries?.points?.length ? buildPath(primarySeries.points) : "";
 
     return `
 <svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" class="chart-svg" role="img"${ariaLabel ? ` aria-label="${ariaLabel}"` : ""}>
@@ -129,13 +77,13 @@
 
   <text x="${padL}" y="${H - 10}" font-size="16" fill="${muted}">${unit || ""}</text>
 
-  ${areaPath ? `<path d="${areaPath}" fill="url(#${gid})"/>` : ""}
+  ${primaryPath ? `<path d="${primaryPath} L ${padL + innerW} ${padT + innerH} L ${padL} ${padT + innerH} Z" fill="url(#${gid})"/>` : ""}
   ${series
     .map((entry, index) => {
       if (!entry.points.length) return "";
       const color = colors[index] || colors[colors.length - 1];
       const path = buildPath(entry.points);
-      return path ? `<path d="${path}" fill="none" stroke="${color}" stroke-width="${index === 0 ? "2.4" : "2.1"}" stroke-linecap="round" stroke-linejoin="round"/>` : "";
+      return `<path d="${path}" fill="none" stroke="${color}" stroke-width="${index === 0 ? "2.4" : "2.1"}" stroke-linecap="round"/>`;
     })
     .join("")}
 
