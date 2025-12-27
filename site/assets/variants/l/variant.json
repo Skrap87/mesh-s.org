@@ -43,7 +43,7 @@
       "temperature": {
         "selector": "[data-chart='temperature']",
         "json": "assets/variants/l/winter/charts/ha-temperature.json",
-        "unit": "°Daten folgen"
+        "unit": "Daten folgen"
       },
       "batteryLevel": {
         "selector": "[data-chart='batteryLevel']",
@@ -58,7 +58,7 @@
       "humidityDual": {
         "selector": "[data-chart='humidityDual']",
         "json": "assets/variants/l/winter/charts/humidity-in-out.json",
-        "unit": "%"
+        "unit": "Daten folgen"
       }
     }
   }
