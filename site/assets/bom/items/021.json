@@ -1,6 +1,6 @@
 {
   "order": 210,
-  "variants": "all",
+  "variants": "s,m,xl",
   "kind": "required",
   "group": "antenne",
   "name": "N-Typ-Koaxialkabel U.FL UFL MHF1 auf N-Buchs",
