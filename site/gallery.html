@@ -2,8 +2,8 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Datenschutzerklärung für das MESH-S DIY-Projekt.">
-  <title>Datenschutzerklärung – MESH-S</title>
+  <meta name="description" content="Fotogalerie des MESH-S DIY-Projekts.">
+  <title>Galerie – MESH-S</title>
   <!-- Favicon -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -15,9 +15,9 @@
   <header>
     <div class="container nav">
       <div class="nav-logo">
-		  <img src="assets/favicon.svg" alt="" class="nav-logo-icon" width="64" height="64" decoding="async">
-		  <span>MESH-S</span>
-		</div>
+        <img src="assets/favicon.svg" alt="" class="nav-logo-icon" width="64" height="64" decoding="async">
+        <span>MESH-S</span>
+      </div>
       <nav class="nav-links">
         <a href="index.html#hero">Start</a>
         <a href="index.html#benefits">Vorteile</a>
@@ -45,82 +45,13 @@
   <main>
     <section>
       <div class="container">
-        <div class="eyebrow">Datenschutz</div>
-        <h1 class="section-title">Datenschutzerklärung</h1>
+        <div class="eyebrow">Galerie</div>
+        <h1 class="section-title">Фото моих узлов в реальной эксплуатации</h1>
         <p class="section-subtitle">
-          Die folgenden Informationen beschreiben, wie personenbezogene Daten auf dieser Website verarbeitet werden.
+          Добавляйте новые файлы в <strong>assets/gallery/</strong> и дополняйте список в gallery.js —
+          изображения появятся здесь автоматически.
         </p>
-        <div class="privacy-section">
-          <h2>Einleitung</h2>
-          <p>
-            Diese Website ist ein privates, nichtkommerzielles DIY-Projekt.
-          </p>
-          <p>
-            Es werden keine Tracking-, Analytics- oder Marketing-Tools eingesetzt.
-          </p>
-        </div>
-        <div class="privacy-section">
-          <h2>Verantwortlicher</h2>
-          <p>
-            Eduard Herzog, Deutschland.
-          </p>
-          <p>
-            Kontakt: contact@mesh-s.org.
-          </p>
-        </div>
-        <div class="privacy-section">
-          <h2>Zugriffsdaten / Server-Logfiles</h2>
-          <p>
-            Beim Aufruf der Website verarbeitet der Hosting-Provider automatisch Zugriffsdaten in Server-Logfiles.
-          </p>
-          <ul>
-            <li>IP-Adresse (gekürzt/anonymisiert)</li>
-            <li>Datum und Uhrzeit des Zugriffs</li>
-            <li>Browsertyp und Betriebssystem</li>
-            <li>Aufgerufene Seiten</li>
-          </ul>
-          <p>
-            Die Verarbeitung erfolgt zur Sicherstellung von Sicherheit und Stabilität des Betriebs.
-          </p>
-          <p>
-            Eine Zusammenführung mit anderen Datenquellen findet nicht statt.
-          </p>
-        </div>
-        <div class="privacy-section">
-          <h2>Cookies / Local Storage</h2>
-          <p>
-            Es werden keine Cookies für Tracking-, Analytics- oder Marketingzwecke gesetzt.
-          </p>
-          <p>
-            Für technische Einstellungen (z. B. den Cookie-Hinweis) wird ausschließlich localStorage im Browser genutzt.
-          </p>
-        </div>
-        <div class="privacy-section">
-          <h2>Weitergabe von Daten</h2>
-          <p>
-            Personenbezogene Daten werden nicht an Dritte weitergegeben.
-          </p>
-        </div>
-        <div class="privacy-section">
-          <h2>Rechte der Nutzer</h2>
-          <p>
-            Nutzer haben im Rahmen der gesetzlichen Vorgaben das Recht auf:
-          </p>
-          <ul>
-            <li>Auskunft</li>
-            <li>Berichtigung</li>
-            <li>Löschung</li>
-          </ul>
-        </div>
-        <div class="privacy-section">
-          <h2>Änderungen</h2>
-          <p>
-            Diese Datenschutzerklärung kann bei Bedarf angepasst werden.
-          </p>
-        </div>
-        <div style="margin-top: 24px;">
-          <a class="btn btn-outline" href="index.html">Zurück zur Startseite</a>
-        </div>
+        <div class="gallery-grid" aria-live="polite"></div>
       </div>
     </section>
   </main>
@@ -146,7 +77,23 @@
     <button id="cookie-accept" class="btn btn-outline" type="button">OK</button>
   </div>
 
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Bildvorschau">
+    <div class="lightbox-backdrop" data-close></div>
+
+    <div class="lightbox-panel" role="document">
+      <div class="lightbox-header">
+        <button class="lightbox-close" type="button" data-close aria-label="Schließen">×</button>
+      </div>
+      <div class="lightbox-body">
+        <img class="lightbox-img" id="lightboxImg" src="" alt="">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+      </div>
+    </div>
+  </div>
+
   <script src="variants.js?v=20251226-1"></script>
+  <script src="gallery.js?v=20251226-1" defer></script>
+  <script src="lightbox.js?v=20251226-1" defer></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
@@ -168,14 +115,14 @@
       });
     })();
   </script>
-<script>
-	  document.querySelectorAll('.nav-more-menu a').forEach(link => {
-		link.addEventListener('click', () => {
-		  const details = link.closest('.nav-more');
-		  if (details) details.removeAttribute('open');
-		});
-	  });
-	</script>
+  <script>
+      document.querySelectorAll('.nav-more-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        const details = link.closest('.nav-more');
+        if (details) details.removeAttribute('open');
+      });
+    });
+  </script>
   <script>
     (function () {
       if (window.__navMoreDismiss) return;
