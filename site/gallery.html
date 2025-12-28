@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="themes.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
   <header>
     <div class="container nav">
       <div class="nav-logo">
@@ -23,7 +24,7 @@
         <a href="index.html#benefits">Vorteile</a>
         <a href="index.html#autonomy">Telemetrie</a>
         <a href="gallery.html">Galerie</a>
-        <details class="nav-more">
+        <details class="nav-more" aria-expanded="false">
           <summary>Mehr</summary>
           <div class="nav-more-menu">
             <a href="#winter">Winter</a>
@@ -42,7 +43,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section>
       <div class="container">
         <div class="eyebrow">Galerie</div>
@@ -93,63 +94,8 @@
   <script src="variants.js?v=20251226-1"></script>
   <script src="gallery.js?v=20251226-1" defer></script>
   <script src="lightbox.js?v=20251226-1" defer></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-  <script>
-    (function () {
-      const KEY = 'cookiesAccepted';
-      const banner = document.getElementById('cookie-banner');
-      const btn = document.getElementById('cookie-accept');
-      if (!banner || !btn) return;
-
-      if (localStorage.getItem(KEY) === 'true') {
-        banner.remove();
-        return;
-      }
-
-      btn.addEventListener('click', function () {
-        localStorage.setItem(KEY, 'true');
-        banner.remove();
-      });
-    })();
-  </script>
-  <script>
-      document.querySelectorAll('.nav-more-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        const details = link.closest('.nav-more');
-        if (details) details.removeAttribute('open');
-      });
-    });
-  </script>
-  <script>
-    (function () {
-      if (window.__navMoreDismiss) return;
-      window.__navMoreDismiss = true;
-
-      const closeAll = () => {
-        document.querySelectorAll('details.nav-more[open]').forEach((details) => {
-          details.removeAttribute('open');
-        });
-      };
-
-      document.addEventListener('click', (event) => {
-        const openMenus = document.querySelectorAll('details.nav-more[open]');
-        if (!openMenus.length) return;
-        const target = event.target;
-        if (target && target.closest && target.closest('details.nav-more')) return;
-        openMenus.forEach((details) => {
-          details.removeAttribute('open');
-        });
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key !== 'Escape') return;
-        closeAll();
-      });
-    })();
-  </script>
-<footer class="site-footer">
+  <script src="site.js" defer></script>
+  <footer class="site-footer">
   <p>
     Inhalt lizenziert unter
     <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">

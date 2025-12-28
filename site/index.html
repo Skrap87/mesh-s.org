@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="themes.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
   <header>
     <div class="container nav">
       <div class="nav-logo">
@@ -23,7 +24,7 @@
         <a href="#benefits">Vorteile</a>
         <a href="#autonomy">Telemetrie</a>
         <a href="gallery.html">Galerie</a>
-        <details class="nav-more">
+        <details class="nav-more" aria-expanded="false">
           <summary>Mehr</summary>
           <div class="nav-more-menu">
             <a href="#winter">Winter</a>
@@ -42,7 +43,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section id="hero" class="hero">
       <div class="container hero-grid">
         <div>
@@ -67,8 +68,8 @@
         </div>
         <div class="hero-visual">
 			<picture data-variant-hero>
-				<source srcset="assets/variants/s/hero/hero.webp" type="image/webp" data-variant-hero-webp>
-          		<img src="assets/variants/s/hero/hero.png" data-variant-hero-img alt="MESH-S DIY-Solar-Mesh-Knoten" width="394" height="894" decoding="async" fetchpriority="high">
+				<source srcset="assets/variants/s/hero/hero.webp" type="image/webp" data-variant-hero-webp sizes="(max-width: 600px) 100vw, 50vw">
+			<img src="assets/variants/s/hero/hero.png" data-variant-hero-img alt="MESH-S DIY-Solar-Mesh-Knoten" width="394" height="894" decoding="async" fetchpriority="high" srcset="assets/variants/s/hero/hero-500.png 500w, assets/variants/s/hero/hero-1000.png 1000w" sizes="(max-width: 600px) 100vw, 50vw">
 			</picture>
         </div>
       </div>
@@ -424,10 +425,10 @@
       <div class="container">
         <div class="eyebrow">DIY</div>
         <h2 class="section-title">Stückliste für einen DIY-Knoten</h2>
-           <h1 class="hero-title">
-            <span class="hero-title__brand">MESH-S</span>
-            <span class="hero-title__variant" data-variant-title></span>
-          </h1>
+        <h2 class="hero-title">
+          <span class="hero-title__brand">MESH-S</span>
+          <span class="hero-title__variant" data-variant-title></span>
+        </h2>
 		    <div class="variant-switch" role="group" aria-label="Variantenauswahl">
         		<button class="variant-option" type="button" data-variant="s">S</button>
         		<button class="variant-option" type="button" data-variant="m">M</button>
@@ -518,73 +519,18 @@
   </div>
 
   <script src="variants.js?v=20251226-1"></script>
-  <script src="bom-loader.js?v=20251226-1"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-  <script>
-    (function () {
-      const KEY = 'cookiesAccepted';
-      const banner = document.getElementById('cookie-banner');
-      const btn = document.getElementById('cookie-accept');
-      if (!banner || !btn) return;
-
-      if (localStorage.getItem(KEY) === 'true') {
-        banner.remove();
-        return;
-      }
-
-      btn.addEventListener('click', function () {
-        localStorage.setItem(KEY, 'true');
-        banner.remove();
-      });
-    })();
-  </script>
-  <script>
-	  document.querySelectorAll('.nav-more-menu a').forEach(link => {
-		link.addEventListener('click', () => {
-		  const details = link.closest('.nav-more');
-		  if (details) details.removeAttribute('open');
-		});
-	  });
-	</script>
-  <script>
-    (function () {
-      if (window.__navMoreDismiss) return;
-      window.__navMoreDismiss = true;
-
-      const closeAll = () => {
-        document.querySelectorAll('details.nav-more[open]').forEach((details) => {
-          details.removeAttribute('open');
-        });
-      };
-
-      document.addEventListener('click', (event) => {
-        const openMenus = document.querySelectorAll('details.nav-more[open]');
-        if (!openMenus.length) return;
-        const target = event.target;
-        if (target && target.closest && target.closest('details.nav-more')) return;
-        openMenus.forEach((details) => {
-          details.removeAttribute('open');
-        });
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key !== 'Escape') return;
-        closeAll();
-      });
-    })();
-  </script>
-  <script src="lightbox.js?v=20251226-1"></script>
-<footer class="site-footer">
-  <p>
-    Inhalt lizenziert unter
-    <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">
-      CC BY-NC 4.0
-    </a>
-    — nur für nicht-kommerzielle Nutzung.
-  </p>
-</footer>
-<script src="charts.js?v=20251226-1" defer></script>
+  <script src="bom-loader.js?v=20251226-1" defer></script>
+  <script src="site.js" defer></script>
+  <script src="lightbox.js?v=20251226-1" defer></script>
+  <footer class="site-footer">
+    <p>
+      Inhalt lizenziert unter
+      <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">
+        CC BY-NC 4.0
+      </a>
+      — nur für nicht-kommerzielle Nutzung.
+    </p>
+  </footer>
+  <script src="charts.js?v=20251226-1" defer></script>
 </body>
 </html>

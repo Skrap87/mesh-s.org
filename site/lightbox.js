@@ -4,27 +4,12 @@
   const cap = document.getElementById("lightboxCaption");
   if (!box || !img || !cap) return;
 
-  let scrollLocked = false;
-  let scrollY = 0;
-
   const lockScroll = () => {
-    if (scrollLocked) return;
-    scrollY = window.scrollY;
-    document.body.style.overflow = "hidden";
-    document.body.style.position = "fixed";
-    document.body.style.width = "100%";
-    document.body.style.top = -scrollY + "px";
-    scrollLocked = true;
+    document.body.classList.add('scroll-locked');
   };
 
   const unlockScroll = () => {
-    if (!scrollLocked) return;
-    document.body.style.overflow = "";
-    document.body.style.position = "";
-    document.body.style.width = "";
-    document.body.style.top = "";
-    window.scrollTo(0, scrollY);
-    scrollLocked = false;
+    document.body.classList.remove('scroll-locked');
   };
 
   const close = () => {
