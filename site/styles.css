@@ -222,6 +222,13 @@ header {
   font-weight: 600;
 }
 
+.btn-accent:hover {
+  background: var(--btn-accent-hover-bg, var(--btn-hover-bg));
+  color: var(--btn-accent-hover-fg, var(--accent-fg));
+  border-color: var(--btn-accent-hover-border, var(--border-strong));
+  box-shadow: var(--btn-accent-hover-shadow, none);
+}
+
 .btn-outline {
   background: var(--btn-outline-bg);
   border: 1px solid var(--btn-outline-border);

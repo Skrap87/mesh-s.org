@@ -46,6 +46,10 @@ html[data-theme="dark"] {
   --btn-secondary-fg: #ffffff;
   --btn-secondary-hover-bg: rgba(157, 208, 106, 0.22);
   --btn-secondary-hover-border: rgba(157, 208, 106, 0.7);
+  --btn-accent-hover-bg: #b6e388;
+  --btn-accent-hover-fg: var(--accent-fg);
+  --btn-accent-hover-border: rgba(157, 208, 106, 0.55);
+  --btn-accent-hover-shadow: 0 10px 24px rgba(0, 0, 0, 0.35), 0 0 0 2px rgba(157, 208, 106, 0.2);
   --table-bg: rgba(255, 255, 255, 0.06);
   --table-row: transparent;
   --table-row-alt: rgba(255, 255, 255, 0.035);
@@ -132,6 +136,10 @@ html[data-theme="dark"] {
     --btn-secondary-fg: #111317;
     --btn-secondary-hover-bg: rgba(127, 184, 76, 0.18);
     --btn-secondary-hover-border: rgba(127, 184, 76, 0.55);
+    --btn-accent-hover-bg: var(--btn-hover-bg);
+    --btn-accent-hover-fg: var(--accent-fg);
+    --btn-accent-hover-border: var(--border-strong);
+    --btn-accent-hover-shadow: none;
     --table-bg: #f1f3f6;
     --table-row: #ffffff;
     --table-row-alt: #f7f8fa;
@@ -218,6 +226,10 @@ html[data-theme="light"] {
   --btn-secondary-fg: #111317;
   --btn-secondary-hover-bg: rgba(127, 184, 76, 0.18);
   --btn-secondary-hover-border: rgba(127, 184, 76, 0.55);
+  --btn-accent-hover-bg: var(--btn-hover-bg);
+  --btn-accent-hover-fg: var(--accent-fg);
+  --btn-accent-hover-border: var(--border-strong);
+  --btn-accent-hover-shadow: none;
   --table-bg: #f1f3f6;
   --table-row: #ffffff;
   --table-row-alt: #f7f8fa;
