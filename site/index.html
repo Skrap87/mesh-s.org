@@ -22,6 +22,7 @@
         <a href="#hero">Start</a>
         <a href="#benefits">Vorteile</a>
         <a href="#autonomy">Telemetrie</a>
+        <a href="gallery.html">Galerie</a>
         <details class="nav-more">
           <summary>Mehr</summary>
           <div class="nav-more-menu">
@@ -576,83 +577,7 @@
       });
     })();
   </script>
-<script>
-    (function () {
-      const box = document.getElementById('lightbox');
-      const img = document.getElementById('lightboxImg');
-      const cap = document.getElementById('lightboxCaption');
-      if (!box || !img || !cap) return;
-
-      let scrollLocked = false;
-      let scrollY = 0;
-
-      const lockScroll = () => {
-        if (scrollLocked) return;
-        scrollY = window.scrollY;
-        document.body.style.overflow = 'hidden';
-        document.body.style.position = 'fixed';
-        document.body.style.width = '100%';
-        document.body.style.top = -scrollY + 'px';
-        scrollLocked = true;
-      };
-
-      const unlockScroll = () => {
-        if (!scrollLocked) return;
-        document.body.style.overflow = '';
-        document.body.style.position = '';
-        document.body.style.width = '';
-        document.body.style.top = '';
-        window.scrollTo(0, scrollY);
-        scrollLocked = false;
-      };
-
-      const close = () => {
-        box.classList.remove('is-open');
-        box.setAttribute('aria-hidden', 'true');
-        unlockScroll();
-        img.src = '';
-        img.alt = '';
-        cap.textContent = '';
-      };
-
-      const open = (src, caption) => {
-        if (!src) return;
-        img.src = src;
-        img.alt = caption || '';
-        cap.textContent = caption || '';
-        box.classList.add('is-open');
-        box.setAttribute('aria-hidden', 'false');
-        lockScroll();
-      };
-
-      // Обработка кликов на кнопки с фото
-      document.addEventListener('click', (e) => {
-        const thumb = e.target.closest('.bom-thumb');
-        if (thumb) {
-          e.preventDefault();
-          e.stopPropagation();
-          const full = thumb.getAttribute('data-full');
-          const alt = thumb.querySelector('img')?.getAttribute('alt') || '';
-          open(full, alt);
-          return;
-        }
-
-        // Закрытие при клике на backdrop или кнопку закрытия
-        if (e.target.closest('[data-close]')) {
-          e.preventDefault();
-          e.stopPropagation();
-          close();
-        }
-      });
-
-      // Закрытие по Escape
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && box.classList.contains('is-open')) {
-          close();
-        }
-      });
-    })();
-  </script>
+  <script src="lightbox.js?v=20251226-1"></script>
 <footer class="site-footer">
   <p>
     Inhalt lizenziert unter
