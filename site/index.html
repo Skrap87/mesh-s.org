@@ -27,9 +27,10 @@
           <summary>Mehr</summary>
           <div class="nav-more-menu">
             <a href="#winter">Winter</a>
-            <a href="#custom-parts">Sonderteile</a>
-            <a href="#assembly">Aufbau in Bildern</a>
-            <a href="#moisture">Feuchtigkeit</a>
+			<a href="#moisture">Feuchtigkeit</a>
+			<a href="#assembly">Aufbau in Bildern</a>
+			<a href="#mounting">Befestigung</a>
+            <a href="#custom-parts">Sonderteile</a>            
             <a href="#mounting">Befestigung</a>
             <a href="#bom">Komponenten</a>
           </div>
@@ -165,7 +166,101 @@
             <div class="chart" data-chart="temperature" data-json="assets/variants/s/winter/charts/frost-morning.json" data-unit="°C" data-aria-label="Telemetrie-Diagramm" data-error-text="Diagrammdaten nicht verfügbar"></div>
           </figure>
         </div>
+      </div>
+    </section>
 
+	<section id="moisture">
+      <div class="container">
+        <div class="eyebrow">Schutz</div>
+        <h2 class="section-title">Feuchtigkeitsaspekte</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Abgedichtetes Layout-Konzept</h3>
+            <p class="card-sub">Keine externen Schnittstellen</p>
+            <p>
+              Das Gehäuse hat keine externen Service-Ports oder Anschlüsse. Zugriff auf die Elektronik ist nur durch Öffnen des Gehäuses möglich, wodurch potenzielle Eintrittsstellen für Feuchtigkeit reduziert werden.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Silikondichtung</h3>
+            <p class="card-sub">Umlaufende Abdichtung</p>
+            <p>
+              Eine durchgehende Silikondichtung kann die Gehäusehälften abdichten und die Exposition gegenüber Regen, Spritzwasser und Feuchtigkeit reduzieren.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Druckausgleichsventil</h3>
+            <p class="card-sub">Membranbasierter Druckausgleich</p>
+            <p>
+              Eine Druckausgleichsmembran ist dafür vorgesehen, innere Druckänderungen durch Temperaturschwankungen auszugleichen und dabei Feuchtigkeitseintritt zu begrenzen.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Silicagel-Fach</h3>
+            <p class="card-sub">Passive Feuchtigkeitskontrolle</p>
+            <p>
+              Ein internes Silicagel-Fach kann Restfeuchtigkeit binden und Kondensation in DIY-Outdoor-Experimenten begrenzen.
+            </p>
+          </div>
+        </div>
+
+        <div class="moisture-graphs">
+          <figure class="graph-card">
+            <div class="graph-meta">
+              <div class="graph-title">Innen- &amp; Außenfeuchte</div>
+              <div class="graph-note">HA-Verlaufs-Export</div>
+            </div>
+            <div class="chart" data-chart="humidityDual" data-json="assets/variants/s/winter/charts/humidity-in-out.json" data-unit="%" data-aria-label="Feuchtigkeitsdiagramm" data-error-text="Diagrammdaten nicht verfügbar"></div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+	<section id="assembly">
+      <div class="container">
+        <div class="eyebrow">Aufbau in Bildern</div>
+        <h2 class="section-title">Aufbau in 6 Ansichten</h2>
+        <div class="steps-grid">
+          <div class="step">
+            <img data-variant-asset="step01" src="assets/variants/s/assembly/step-01.png" alt="Ansicht 01 – Power-Core-Layout" width="800" height="803" loading="lazy" decoding="async" fetchpriority="low">
+            
+            <h4>Power-Core-Layout</h4>
+            <p>Platzierung von MPPT-Regler und Hauptplatine auf der Abstandsplatte; das Layout ist anpassbar.</p>
+          </div>
+          <div class="step">
+            <img data-variant-asset="step02" src="assets/variants/s/assembly/step-02.png" alt="Ansicht 02 – Position des Akkupacks" width="800" height="800" loading="lazy" decoding="async" fetchpriority="low">
+            
+            <h4>Position des Akkupacks</h4>
+            <p>Lage des 4×18650-Akkupacks mit typischer Kabelführung.</p>
+          </div>
+          <div class="step">
+            <img data-variant-asset="step03" src="assets/variants/s/assembly/step-03.png" alt="Ansicht 03 – HF-Pfad" width="800" height="800" loading="lazy" decoding="async" fetchpriority="low">
+            
+            <h4>HF-Pfad</h4>
+            <p>Illustrative Verlegung des HF-Pfads (U.FL → N-Type) vor dem Schließen des Gehäuses.</p>
+          </div>
+          <div class="step">
+            <img data-variant-asset="step04" src="assets/variants/s/assembly/step-04.png" alt="Ansicht 04 – Dichtkonzept" width="800" height="800" loading="lazy" decoding="async" fetchpriority="low">
+            
+            <h4>Dichtkonzept</h4>
+            <p>Platzierung der Dichtung und Gehäuseschluss für Witterungsaspekte.</p>
+          </div>
+          <div class="step">
+            <img data-variant-asset="step05" src="assets/variants/s/assembly/step-05.png" alt="Ansicht 05 – Systemcheck" width="800" height="800" loading="lazy" decoding="async" fetchpriority="low">
+            
+            <h4>Systemcheck (Beispiel)</h4>
+            <p>Checkliste für Stromprüfungen, Knotenstart und LoRa-Mesh-Konnektivität.</p>
+          </div>
+          <div class="step">
+            <img data-variant-asset="step06" src="assets/variants/s/assembly/step-06.png" alt="Ansicht 06 – Outdoor-Montagekontext" width="800" height="800" loading="lazy" decoding="async" fetchpriority="low">
+            
+            <h4>Outdoor-Montagekontext</h4>
+            <p>Typischer Einsatzkontext für DIY-Aufbauten; Montage, Verdrahtung und Inbetriebnahme erfolgen durch den Erbauer.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -239,104 +334,8 @@
         <div class="legend-title">Silicagel-Fach</div>
         <div class="legend-desc">Einlage zur Feuchtigkeitskontrolle</div>
       </div>	  
-  </div>   
-</section>
-
-
-    <section id="assembly">
-      <div class="container">
-        <div class="eyebrow">Aufbau in Bildern</div>
-        <h2 class="section-title">Aufbau in 6 Ansichten</h2>
-        <div class="steps-grid">
-          <div class="step">
-            <img data-variant-asset="step01" src="assets/variants/s/assembly/step-01.png" alt="Ansicht 01 – Power-Core-Layout" width="800" height="803" loading="lazy" decoding="async" fetchpriority="low">
-            
-            <h4>Power-Core-Layout</h4>
-            <p>Platzierung von MPPT-Regler und Hauptplatine auf der Abstandsplatte; das Layout ist anpassbar.</p>
-          </div>
-          <div class="step">
-            <img data-variant-asset="step02" src="assets/variants/s/assembly/step-02.png" alt="Ansicht 02 – Position des Akkupacks" width="800" height="800" loading="lazy" decoding="async" fetchpriority="low">
-            
-            <h4>Position des Akkupacks</h4>
-            <p>Lage des 4×18650-Akkupacks mit typischer Kabelführung.</p>
-          </div>
-          <div class="step">
-            <img data-variant-asset="step03" src="assets/variants/s/assembly/step-03.png" alt="Ansicht 03 – HF-Pfad" width="800" height="800" loading="lazy" decoding="async" fetchpriority="low">
-            
-            <h4>HF-Pfad</h4>
-            <p>Illustrative Verlegung des HF-Pfads (U.FL → N-Type) vor dem Schließen des Gehäuses.</p>
-          </div>
-          <div class="step">
-            <img data-variant-asset="step04" src="assets/variants/s/assembly/step-04.png" alt="Ansicht 04 – Dichtkonzept" width="800" height="800" loading="lazy" decoding="async" fetchpriority="low">
-            
-            <h4>Dichtkonzept</h4>
-            <p>Platzierung der Dichtung und Gehäuseschluss für Witterungsaspekte.</p>
-          </div>
-          <div class="step">
-            <img data-variant-asset="step05" src="assets/variants/s/assembly/step-05.png" alt="Ansicht 05 – Systemcheck" width="800" height="800" loading="lazy" decoding="async" fetchpriority="low">
-            
-            <h4>Systemcheck (Beispiel)</h4>
-            <p>Checkliste für Stromprüfungen, Knotenstart und LoRa-Mesh-Konnektivität.</p>
-          </div>
-          <div class="step">
-            <img data-variant-asset="step06" src="assets/variants/s/assembly/step-06.png" alt="Ansicht 06 – Outdoor-Montagekontext" width="800" height="800" loading="lazy" decoding="async" fetchpriority="low">
-            
-            <h4>Outdoor-Montagekontext</h4>
-            <p>Typischer Einsatzkontext für DIY-Aufbauten; Montage, Verdrahtung und Inbetriebnahme erfolgen durch den Erbauer.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="moisture">
-      <div class="container">
-        <div class="eyebrow">Schutz</div>
-        <h2 class="section-title">Feuchtigkeitsaspekte</h2>
-        <div class="card-grid">
-          <div class="card">
-            <h3>Abgedichtetes Layout-Konzept</h3>
-            <p class="card-sub">Keine externen Schnittstellen</p>
-            <p>
-              Das Gehäuse hat keine externen Service-Ports oder Anschlüsse. Zugriff auf die Elektronik ist nur durch Öffnen des Gehäuses möglich, wodurch potenzielle Eintrittsstellen für Feuchtigkeit reduziert werden.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Silikondichtung</h3>
-            <p class="card-sub">Umlaufende Abdichtung</p>
-            <p>
-              Eine durchgehende Silikondichtung kann die Gehäusehälften abdichten und die Exposition gegenüber Regen, Spritzwasser und Feuchtigkeit reduzieren.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Druckausgleichsventil</h3>
-            <p class="card-sub">Membranbasierter Druckausgleich</p>
-            <p>
-              Eine Druckausgleichsmembran ist dafür vorgesehen, innere Druckänderungen durch Temperaturschwankungen auszugleichen und dabei Feuchtigkeitseintritt zu begrenzen.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Silicagel-Fach</h3>
-            <p class="card-sub">Passive Feuchtigkeitskontrolle</p>
-            <p>
-              Ein internes Silicagel-Fach kann Restfeuchtigkeit binden und Kondensation in DIY-Outdoor-Experimenten begrenzen.
-            </p>
-          </div>
-        </div>
-
-        <div class="moisture-graphs">
-          <figure class="graph-card">
-            <div class="graph-meta">
-              <div class="graph-title">Innen- &amp; Außenfeuchte</div>
-              <div class="graph-note">HA-Verlaufs-Export</div>
-            </div>
-            <div class="chart" data-chart="humidityDual" data-json="assets/variants/s/winter/charts/humidity-in-out.json" data-unit="%" data-aria-label="Feuchtigkeitsdiagramm" data-error-text="Diagrammdaten nicht verfügbar"></div>
-          </figure>
-        </div>
-      </div>
-    </section>
+	</div>   
+	</section>
 
     <section id="mounting">
       <div class="container">
@@ -488,11 +487,11 @@
       <div>© <span id="year"></span> MESH-S. <span>Alle Rechte vorbehalten.</span></div>
       <div class="footer-disclaimer">Privates, nicht-kommerzielles DIY-Projekt. Nichts im Verkauf.</div>
       <div class="footer-links">
-        <a href="#hero">Nach oben</a>
+        <a href="#hero">Startseite</a>
         <a href="mailto:contact@mesh-s.org">contact@mesh-s.org</a>
-        <a href="https://github.com/Skrap87/mesh-s.org">GitHub</a>
         <a href="privacy.html">Datenschutz</a>
         <a href="impressum.html">Impressum</a>
+		<a href="https://github.com/Skrap87/mesh-s.org">GitHub</a>
       </div>
     </div>
   </footer>
