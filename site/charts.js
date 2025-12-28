@@ -92,15 +92,26 @@
 </svg>`;
   }
 
+  function renderError(el, text) {
+    el.innerHTML = `<div class="chart-error">${text || "Coming soon"}</div>`;
+  }
+
   async function renderAllCharts() {
     const charts = document.querySelectorAll(".chart[data-json]");
     for (const el of charts) {
       const url = el.getAttribute("data-json");
       const unit = el.getAttribute("data-unit") || "";
       const ariaLabel = el.getAttribute("data-aria-label") || "";
-      const errorText = el.getAttribute("data-error-text") || "";
+      const errorText = el.getAttribute("data-error-text") || "Coming soon";
+
+      if (!url) {
+        renderError(el, errorText);
+        continue;
+      }
+
       try {
         const res = await fetch(url, { cache: "no-store" });
+        if (!res.ok) throw new Error(`Failed to fetch: ${res.status}`);
         const data = await res.json();
         const series = Array.isArray(data.series) && data.series.length
           ? data.series.map((entry, index) => ({
@@ -113,14 +124,20 @@
             unit,
             points: Array.isArray(data.points) ? data.points : []
           }];
+
+        if (series.every(s => s.points.length === 0)) {
+          renderError(el, errorText);
+          continue;
+        }
+
         const allPoints = series.flatMap((entry) => entry.points).filter((value) => typeof value === "number");
         const min = (typeof data.min === "number") ? data.min : (allPoints.length ? Math.min(...allPoints) : 0);
-        const max = (typeof data.max === "number") ? data.max : (allPoints.length ? Math.max(...allPoints) : 0);
+        const max = (typeof data.max === "number") ? data.max : (allPoints.length ? Math.max(...allPoints) : 100);
         const svg = renderSVG({ series, min, max, unit, ariaLabel });
         const legend = renderLegend(series, [cssVar("--accent", "#9dd06a"), cssVar("--accent-soft", "rgba(157, 208, 106, 0.35)")]);
         el.innerHTML = svg + legend;
       } catch (e) {
-        el.textContent = errorText;
+        renderError(el, errorText);
       }
     }
   }

@@ -9,31 +9,26 @@
     return res.json();
   };
 
-  const createCell = (text, className) => {
+  const createCell = (text, className, label) => {
     const cell = document.createElement("td");
-    if (className) {
-      cell.className = className;
-    }
-    if (text !== null && text !== undefined) {
-      cell.textContent = text;
-    }
+    if (className) cell.className = className;
+    if (text !== null && text !== undefined) cell.textContent = text;
+    if (label) cell.setAttribute("data-label", label);
     return cell;
   };
 
-  const createPhotoCell = (item) => {
-    const cell = document.createElement("td");
-    cell.className = "bom-col-photo";
+  const createPhotoCell = (item, label) => {
+    const cell = createCell(null, "bom-col-photo", label);
     if (!item.photoThumb) {
       cell.textContent = "—";
+      cell.classList.add("bom-cell--is-empty");
       return cell;
     }
-
     const button = document.createElement("button");
     button.className = "bom-thumb";
     button.type = "button";
     button.setAttribute("data-full", item.photoFull || item.photoThumb);
     button.setAttribute("aria-label", "Bild öffnen");
-
     const img = document.createElement("img");
     img.className = "bom-photo";
     img.src = item.photoThumb;
@@ -42,20 +37,17 @@
     img.height = 64;
     img.loading = "lazy";
     img.decoding = "async";
-
     button.appendChild(img);
     cell.appendChild(button);
     return cell;
   };
 
-  const createLinkCell = (item) => {
-    const cell = document.createElement("td");
-    cell.className = "bom-col-link";
+  const createLinkCell = (item, label) => {
+    const cell = createCell(null, "bom-col-link", label);
     const link = document.createElement("a");
     link.className = "btn btn-outline";
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-
     if (item.shopUrl) {
       link.href = item.shopUrl;
       link.textContent = item.shopLabel || "Link";
@@ -63,16 +55,14 @@
       link.href = "#bom";
       link.textContent = "Link folgt";
     }
-
     cell.appendChild(link);
     return cell;
   };
 
-  const createComponentCell = (item) => {
-    const cell = document.createElement("td");
+  const createComponentCell = (item, label) => {
+    const cell = createCell(null, null, label);
     const wrapper = document.createElement("div");
     wrapper.className = "bom-component";
-
     const kind = (item.kind || "required").toLowerCase();
     const badge = document.createElement("span");
     if (kind === "optional") {
@@ -86,35 +76,47 @@
       badge.textContent = "Erforderlich";
     }
     wrapper.appendChild(badge);
-
     const name = document.createElement("span");
     name.className = "bom-component-name";
     name.textContent = item.name;
     wrapper.appendChild(name);
-
     cell.appendChild(wrapper);
     return cell;
   };
 
   const renderBomRows = (items) => {
-    const tbody = document.getElementById("bomTbody");
+    const table = document.querySelector(".bom-table");
+    if (!table) return;
+    const tbody = table.querySelector("tbody");
     if (!tbody) return;
     tbody.innerHTML = "";
 
+    const headers = Array.from(table.querySelectorAll("thead th")).map(th => th.textContent.trim());
+    const allowedKinds = new Set(['required', 'optional', 'alternative']);
+    const allowedVariants = new Set(['all', 's', 'm', 'l', 'xl']);
+
     items.forEach((item) => {
       const row = document.createElement("tr");
-      row.setAttribute("data-variants", (item.variants || "all").toLowerCase());
-      row.setAttribute("data-kind", (item.kind || "required").toLowerCase());
-      if (item.group) {
-        row.setAttribute("data-group", item.group);
+      let kind = (item.kind || 'required').toLowerCase();
+      if (!allowedKinds.has(kind)) kind = 'required';
+
+      let variants = (item.variants || 'all').toLowerCase().split(',').map(v => v.trim()).filter(v => allowedVariants.has(v));
+      if (variants.length === 0) variants.push('all');
+
+      row.setAttribute("data-variants", variants.join(','));
+      row.setAttribute("data-kind", kind);
+      if (item.group) row.setAttribute("data-group", item.group);
+
+      row.appendChild(createComponentCell(item, headers[0]));
+      row.appendChild(createCell(item.qty, null, headers[1]));
+      const notesCell = createCell(item.notes, null, headers[2]);
+      if (!item.notes || String(item.notes).trim() === "") {
+        notesCell.textContent = "—";
+        notesCell.classList.add("bom-cell--is-empty");
       }
-
-      row.appendChild(createComponentCell(item));
-      row.appendChild(createCell(item.qty));
-      row.appendChild(createCell(item.notes));
-      row.appendChild(createPhotoCell(item));
-      row.appendChild(createLinkCell(item));
-
+      row.appendChild(notesCell);
+      row.appendChild(createPhotoCell(item, headers[3]));
+      row.appendChild(createLinkCell(item, headers[4]));
       tbody.appendChild(row);
     });
   };
@@ -123,7 +125,6 @@
     try {
       const indexData = await fetchJson("assets/bom/index.json");
       const itemFiles = Array.isArray(indexData.items) ? indexData.items : [];
-
       const items = await Promise.all(
         itemFiles.map((name) => fetchJson(`assets/bom/items/${name}`))
       );
@@ -140,36 +141,39 @@
         if (!item.group) return acc;
         const order = item.order ?? 0;
         const current = acc.get(item.group);
-        if (current === undefined || order < current) {
-          acc.set(item.group, order);
-        }
+        if (current === undefined || order < current) acc.set(item.group, order);
         return acc;
       }, new Map());
 
       items.sort((a, b) => {
         const kindDiff = kindRank(a.kind) - kindRank(b.kind);
         if (kindDiff !== 0) return kindDiff;
-
         const aClusterOrder = a.group ? groupMinOrder.get(a.group) ?? (a.order ?? 0) : (a.order ?? 0);
         const bClusterOrder = b.group ? groupMinOrder.get(b.group) ?? (b.order ?? 0) : (b.order ?? 0);
         if (aClusterOrder !== bClusterOrder) return aClusterOrder - bClusterOrder;
-
         const orderDiff = (a.order ?? 0) - (b.order ?? 0);
         if (orderDiff !== 0) return orderDiff;
-
-        const nameA = a.name ?? "";
-        const nameB = b.name ?? "";
-        return nameA.localeCompare(nameB);
+        return (a.name ?? "").localeCompare(b.name ?? "");
       });
+
       renderBomRows(items);
 
-      const activeVariant =
-        typeof window.getCurrentVariant === "function" ? window.getCurrentVariant() : "s";
+      const activeVariant = typeof window.getCurrentVariant === "function" ? window.getCurrentVariant() : "s";
       if (typeof window.applyBomFilter === "function") {
         window.applyBomFilter(activeVariant);
       }
     } catch (error) {
       console.warn("[bom-loader] failed to load BOM", error);
+      const tbody = document.getElementById("bomTbody");
+      if (tbody) {
+        const row = document.createElement("tr");
+        const cell = document.createElement("td");
+        cell.colSpan = 5;
+        cell.textContent = "Fehler beim Laden der Stückliste.";
+        cell.style.textAlign = 'center';
+        row.appendChild(cell);
+        tbody.appendChild(row);
+      }
     }
   };
 
