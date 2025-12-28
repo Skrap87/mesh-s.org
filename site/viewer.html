@@ -83,6 +83,28 @@
       }
     }
   </script>
+  
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script>
+    (function () {
+      const KEY = 'cookiesAccepted';
+      const banner = document.getElementById('cookie-banner');
+      const btn = document.getElementById('cookie-accept');
+      if (!banner || !btn) return;
+
+      if (localStorage.getItem(KEY) === 'true') {
+        banner.remove();
+        return;
+      }
+
+      btn.addEventListener('click', function () {
+        localStorage.setItem(KEY, 'true');
+        banner.remove();
+      });
+    })();
+  </script>
 
   <script type="module">
     import * as THREE from 'three';
