@@ -2,19 +2,44 @@
   const galleryItems = [
     // Добавляйте новые фото в assets/gallery и дополняйте список ниже.
     {
-      src: "assets/gallery/knoten-01.webp",
-      thumb: "assets/gallery/knoten-01.webp",
+      src: "assets/gallery/knoten-01.jpg",
+      thumb: "assets/gallery/knoten-01.jpg",
       alt: "Solarknoten im Außeneinsatz",
     },
     {
-      src: "assets/gallery/knoten-02.webp",
-      thumb: "assets/gallery/knoten-02.webp",
-      alt: "Antenne am MESH-S-Knoten",
+      src: "assets/gallery/knoten-02.jpg",
+      thumb: "assets/gallery/knoten-02.jpg",
+      alt: "Solarknoten im Außeneinsatz",
     },
     {
-      src: "assets/gallery/knoten-03.webp",
-      thumb: "assets/gallery/knoten-03.webp",
+      src: "assets/gallery/knoten-03.jpg",
+      thumb: "assets/gallery/knoten-03.jpg",
       alt: "Gehäuse und Dichtung im Detail",
+    },
+	{
+      src: "assets/gallery/knoten-04.jpg",
+      thumb: "assets/gallery/knoten-04.jpg",
+      alt: "Gehäuse im Detail",
+    },
+	{
+      src: "assets/gallery/knoten-05.jpg",
+      thumb: "assets/gallery/knoten-05.jpg",
+      alt: "Vorbereitung",
+    },
+	{
+      src: "assets/gallery/knoten-06.jpg",
+      thumb: "assets/gallery/knoten-06.jpg",
+      alt: "MESH-S / M",
+    },
+	{
+      src: "assets/gallery/knoten-07.jpg",
+      thumb: "assets/gallery/knoten-07.jpg",
+      alt: "MESH-S / M",
+    },
+	{
+      src: "assets/gallery/knoten-08.jpg",
+      thumb: "assets/gallery/knoten-08.jpg",
+      alt: "MESH-S / M Prototype",
     },
   ];
 
