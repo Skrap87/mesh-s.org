@@ -21,6 +21,7 @@
     const cell = createCell(null, "bom-col-photo", label);
     if (!item.photoThumb) {
       cell.textContent = "—";
+      cell.classList.add("bom-cell--is-empty");
       return cell;
     }
     const button = document.createElement("button");
@@ -108,7 +109,12 @@
 
       row.appendChild(createComponentCell(item, headers[0]));
       row.appendChild(createCell(item.qty, null, headers[1]));
-      row.appendChild(createCell(item.notes, null, headers[2]));
+      const notesCell = createCell(item.notes, null, headers[2]);
+      if (!item.notes || String(item.notes).trim() === "") {
+        notesCell.textContent = "—";
+        notesCell.classList.add("bom-cell--is-empty");
+      }
+      row.appendChild(notesCell);
       row.appendChild(createPhotoCell(item, headers[3]));
       row.appendChild(createLinkCell(item, headers[4]));
       tbody.appendChild(row);
