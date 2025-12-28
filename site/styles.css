@@ -17,10 +17,6 @@ body {
   color: var(--fg);
 }
 
-body.scroll-locked {
-  overflow: hidden;
-}
-
 a {
   color: inherit;
   text-decoration: none;
