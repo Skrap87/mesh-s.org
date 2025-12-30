@@ -1,0 +1,14 @@
+{
+  "order": 55,
+  "variants": "m",
+  "kind": "optional",
+  "section": "customparts",
+  "group": "spacer_plate",
+  "name": "Spacer plate 2×26650 (INA219)",
+  "qty": "1",
+  "notes": "",
+  "photoThumb": "assets/variants/m/custom-parts/step/mesh-s_spacer_plate_2x26650_ina219_rak_m.png",
+  "photoFull": "assets/variants/m/custom-parts/step/mesh-s_spacer_plate_2x26650_ina219_rak_m.png",
+  "shopUrl": "assets/variants/m/custom-parts/step/mesh-s_spacer_plate_2x26650_ina219_rak_m_v1.step",
+  "shopLabel": "Herunterladen"
+}

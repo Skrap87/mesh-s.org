@@ -1,0 +1,14 @@
+{
+  "order": 52,
+  "variants": "m",
+  "kind": "required",
+  "section": "customparts",
+  "group": "lid",
+  "name": "Mounting lid (with LTW)",
+  "qty": "1",
+  "notes": "",
+  "photoThumb": "assets/variants/m/custom-parts/step/mesh-s_lid_mount_with_ltw_m.png",
+  "photoFull": "assets/variants/m/custom-parts/step/mesh-s_lid_mount_with_ltw_m.png",
+  "shopUrl": "assets/variants/m/custom-parts/step/mesh-s_lid_mount_with_ltw_m_v1.step",
+  "shopLabel": "Herunterladen"
+}
