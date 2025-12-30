@@ -1,0 +1,14 @@
+{
+  "order": 50,
+  "variants": "s",
+  "kind": "required",
+  "section": "customparts",
+  "group": "Silicagel-Fach",
+  "name": "Silicagel-Fach",
+  "qty": "1",
+  "notes": "",
+  "photoThumb": "assets/variants/s/custom-parts/step/mesh-s_silica_gel_compartment_v1.png",
+  "photoFull": "assets/variants/s/custom-parts/step/mesh-s_silica_gel_compartment_v1.png",
+  "shopUrl": "assets/variants/s/custom-parts/step/mesh-s_silica_gel_compartment_v1.step",
+  "shopLabel": "Heruntenladen"
+}

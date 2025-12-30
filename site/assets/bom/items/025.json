@@ -1,0 +1,14 @@
+{
+  "order": 40,
+  "variants": "s",
+  "kind": "required",
+  "section": "customparts",
+  "group": "spacer",
+  "name": "Abstandsplatte",
+  "qty": "1",
+  "notes": "",
+  "photoThumb": "assets/variants/s/custom-parts/step/mesh-s_spacer_plate_v1.png",
+  "photoFull": "assets/variants/s/custom-parts/step/mesh-s_spacer_plate_v1.png",
+  "shopUrl": "assets/variants/s/custom-parts/step/mesh-s_spacer_plate_v1.step",
+  "shopLabel": "Heruntenladen"
+}

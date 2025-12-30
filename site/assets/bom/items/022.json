@@ -4,11 +4,11 @@
   "kind": "required",
   "section": "customparts",
   "group": "inclosure",
-  "name": "Gehäuse",
+  "name": "ASA-Gehäuse",
   "qty": "1",
-  "notes": "ASA-Gehäuse",
-  "photoThumb": "assets/variants/s/custom-parts/enclosure.webp",
-  "photoFull": "assets/variants/s/custom-parts/enclosure.webp",
-  "shopUrl": "Heruntenladen",
+  "notes": "",
+  "photoThumb": "assets/variants/s/custom-parts/step/mesh-s_enclosure_main_v1.png",
+  "photoFull": "assets/variants/s/custom-parts/step/mesh-s_enclosure_main_v1.png",
+  "shopUrl": "assets/variants/s/custom-parts/step/mesh-s_enclosure_main_v1.step",
   "shopLabel": "Heruntenladen"
 }

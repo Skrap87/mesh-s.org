@@ -4,11 +4,11 @@
   "kind": "alternative",
   "section": "customparts",
   "group": "lid",
-  "name": "Montagedeckel",
+  "name": "Montagedeckel (ohne LTW)",
   "qty": "1",
-  "notes": "Mit Vent Amphenol M12",
-  "photoThumb": "assets/variants/s/custom-parts/lid.webp",
-  "photoFull": "assets/variants/s/custom-parts/lid.webp",
-  "shopUrl": "Heruntenladen",
+  "notes": "",
+  "photoThumb": "assets/variants/s/custom-parts/step/mesh-s_lid_mount_plain_v1.png",
+  "photoFull": "assets/variants/s/custom-parts/step/mesh-s_lid_mount_plain_v1.png",
+  "shopUrl": "assets/variants/s/custom-parts/step/mesh-s_lid_mount_plain_v1.step",
   "shopLabel": "Heruntenladen"
 }
