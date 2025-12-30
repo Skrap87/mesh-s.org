@@ -762,12 +762,10 @@ header {
 }
 
 /* Choice group option */
-.bom-choice-option td {
-  background-color: var(--table-row-alt);
-}
-
-.bom-table tbody tr.bom-choice-option:nth-child(even) td {
-  background-color: var(--table-row-alt);
+.bom-choice-row .bom-badge--choice {
+  display: inline-flex;
+  padding: 2px 6px;
+  font-size: 0.6rem;
 }
 
 .bom-choice-option .bom-component {
@@ -1597,10 +1595,6 @@ footer {
 
   .bom-choice-row .bom-component-name {
     font-weight: 600;
-  }
-
-  .bom-choice-option {
-    background: var(--surface);
   }
 
   .bom-choice-option td:first-child .bom-component {
