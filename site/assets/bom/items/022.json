@@ -1,7 +1,7 @@
 {
   "order": 10,
   "variants": "s",
-  "kind": "alternative",
+  "kind": "required",
   "section": "customparts",
   "group": "inclosure",
   "name": "Gehäuse",
