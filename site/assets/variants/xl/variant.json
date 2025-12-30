@@ -5,7 +5,7 @@
     "full": "MESH-S / XL"
   },
   "assets": {
-    "heroImage": "assets/variants/xl/hero/hero-xl.PNG",
+    "heroImage": "assets/variants/xl/hero/hero-xl.png",
     "heroImageWebp": "assets/variants/xl/hero/hero-xl.webp",
     "viewerModel": "assets/variants/xl/models/mesh-xl.glb",
     "customParts": [
