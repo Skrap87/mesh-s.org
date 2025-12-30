@@ -1,0 +1,9 @@
+{
+  "order": 3,
+  "variants": "s,m,l,xl",
+  "kind": "required",
+  "name": "Abstandsplatte",
+  "qty": "1",
+  "notes": "Elektronik-Montageschnittstelle",
+  "section": "customparts"
+}

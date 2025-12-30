@@ -1,0 +1,9 @@
+{
+  "order": 1,
+  "variants": "s,m,l,xl",
+  "kind": "required",
+  "name": "ASA-Gehäuse",
+  "qty": "1",
+  "notes": "UV-stabiles gedrucktes Gehäuse",
+  "section": "customparts"
+}

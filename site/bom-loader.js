@@ -106,6 +106,7 @@
       row.setAttribute("data-variants", variants.join(','));
       row.setAttribute("data-kind", kind);
       if (item.group) row.setAttribute("data-group", item.group);
+      if (item.section) row.setAttribute("data-section", item.section);
 
       row.appendChild(createComponentCell(item, headers[0]));
       row.appendChild(createCell(item.qty, null, headers[1]));
@@ -146,6 +147,11 @@
       }, new Map());
 
       items.sort((a, b) => {
+        const aIsCustom = a.section === "customparts";
+        const bIsCustom = b.section === "customparts";
+        if (aIsCustom && !bIsCustom) return -1;
+        if (!aIsCustom && bIsCustom) return 1;
+
         const kindDiff = kindRank(a.kind) - kindRank(b.kind);
         if (kindDiff !== 0) return kindDiff;
         const aClusterOrder = a.group ? groupMinOrder.get(a.group) ?? (a.order ?? 0) : (a.order ?? 0);

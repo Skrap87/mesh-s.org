@@ -668,6 +668,14 @@ header {
   box-shadow: inset 3px 0 0 var(--table-row-alternative-border);
 }
 
+.bom-table tbody tr[data-section="customparts"] td {
+  background: var(--accent-soft);
+}
+
+.bom-table tbody tr[data-section="customparts"] td:first-child {
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
 .bom-table tbody tr:last-child td {
   border-bottom: none;
 }
@@ -730,6 +738,12 @@ header {
   background: var(--badge-choice-bg);
   border-color: var(--badge-choice-border);
   color: var(--badge-choice-fg);
+}
+
+.bom-badge--custom {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .bom-table tbody tr .bom-badge--choice {

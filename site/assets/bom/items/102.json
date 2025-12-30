@@ -1,0 +1,9 @@
+{
+  "order": 2,
+  "variants": "s,m,l,xl",
+  "kind": "required",
+  "name": "Montagedeckel",
+  "qty": "1",
+  "notes": "Montage für runde und rechteckige Profile",
+  "section": "customparts"
+}

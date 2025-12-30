@@ -1,0 +1,9 @@
+{
+  "order": 4,
+  "variants": "s,m,l,xl",
+  "kind": "required",
+  "name": "Silicagel-Fach",
+  "qty": "1",
+  "notes": "Einlage zur Feuchtigkeitskontrolle",
+  "section": "customparts"
+}
