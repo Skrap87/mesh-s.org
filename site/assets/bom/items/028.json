@@ -4,7 +4,7 @@
   "kind": "required",
   "section": "customparts",
   "group": "enclosure",
-  "name": "ASA enclosure",
+  "name": "ASA-Gehäuse",
   "qty": "1",
   "notes": "",
   "photoThumb": "assets/variants/m/custom-parts/step/mesh-s_enclosure_m.png",
