@@ -626,6 +626,8 @@ header {
   min-width: 720px;
   border-collapse: collapse;
   font-size: 0.9rem;
+  --bom-choice-indent: 24px;
+  --bom-choice-line-offset: 24px;
 }
 
 .bom-table th,
@@ -746,6 +748,27 @@ header {
 
 .bom-table tbody tr.is-choice .bom-badge--choice {
   display: inline-flex;
+}
+
+@media (min-width: 769px) {
+  .bom-table tbody tr.is-choice-scope td {
+    padding-left: calc(16px + var(--bom-choice-indent));
+  }
+
+  .bom-table tbody tr.is-choice-scope td:first-child {
+    position: relative;
+  }
+
+  .bom-table tbody tr.is-choice-scope td:first-child::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--bom-choice-line-offset);
+    width: 2px;
+    border-radius: 999px;
+    background: var(--accent);
+  }
 }
 
 .bom-choice-row td {

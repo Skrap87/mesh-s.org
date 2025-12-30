@@ -139,6 +139,38 @@
       }
     };
 
+    const applyChoiceScopeStyles = (tbody, choiceLabel) => {
+      if (!tbody) return;
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+      rows.forEach((row) => row.classList.remove("is-choice-scope"));
+
+      let isChoiceScope = false;
+      rows.forEach((row) => {
+        if (row.classList.contains("is-hidden")) return;
+        const rowText = row.textContent?.trim();
+        const isChoiceHeader = row.classList.contains("bom-choice-row") || rowText === choiceLabel;
+        if (isChoiceHeader) {
+          isChoiceScope = true;
+          return;
+        }
+
+        const kind = (row.getAttribute("data-kind") || "").toLowerCase();
+        if (!kind) {
+          if (isChoiceScope) isChoiceScope = false;
+          return;
+        }
+
+        if (isChoiceScope && kind === "alternative") {
+          row.classList.add("is-choice-scope");
+          return;
+        }
+
+        if (isChoiceScope && kind !== "alternative") {
+          isChoiceScope = false;
+        }
+      });
+    };
+
     const applyBomFilter = (activeVariant) => {
       const table = document.querySelector(".bom-table");
       if (!table) return;
@@ -184,6 +216,8 @@
         const firstRow = groupRows[0];
         firstRow.parentNode.insertBefore(choiceRow, firstRow);
       });
+
+      applyChoiceScopeStyles(tbody, choiceLabel);
     };
     window.applyBomFilter = applyBomFilter;
 
