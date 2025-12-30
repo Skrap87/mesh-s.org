@@ -1,0 +1,14 @@
+{
+  "order": 10,
+  "variants": "s",
+  "kind": "alternative",
+  "section": "customparts",
+  "group": "inclosure",
+  "name": "Gehäuse",
+  "qty": "1",
+  "notes": "ASA-Gehäuse",
+  "photoThumb": "assets/variants/s/custom-parts/enclosure.webp",
+  "photoFull": "assets/variants/s/custom-parts/enclosure.webp",
+  "shopUrl": "Heruntenladen",
+  "shopLabel": "Heruntenladen"
+}

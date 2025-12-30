@@ -2,7 +2,6 @@
   "order": 200,
   "variants": "s,m,xl",
   "kind": "required",
-  "section": "customparts",
   "name": "ASA Filament",
   "qty": "—",
   "notes": "Für einen Node werden ungefähr 260 g ASA-Filament benötigt.",
