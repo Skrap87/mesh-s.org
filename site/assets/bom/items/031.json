@@ -1,7 +1,7 @@
 {
   "order": 53,
   "variants": "m",
-  "kind": "required",
+  "kind": "alternative",
   "section": "customparts",
   "group": "spacer_plate",
   "name": "Spacer plate",

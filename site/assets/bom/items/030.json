@@ -1,7 +1,7 @@
 {
   "order": 52,
   "variants": "m",
-  "kind": "required",
+  "kind": "alternative",
   "section": "customparts",
   "group": "lid",
   "name": "Mounting lid (with LTW)",

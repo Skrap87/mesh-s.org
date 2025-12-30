@@ -1,7 +1,7 @@
 {
   "order": 65,
   "variants": "xl",
-  "kind": "optional",
+  "kind": "alternative",
   "section": "customparts",
   "group": "spacer_plate",
   "name": "Spacer plate 2×26650 (INA219)",
