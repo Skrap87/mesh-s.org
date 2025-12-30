@@ -95,6 +95,8 @@
     const allowedKinds = new Set(['required', 'optional', 'alternative']);
     const allowedVariants = new Set(['all', 's', 'm', 'l', 'xl']);
 
+    let lastGroup = null;
+
     items.forEach((item) => {
       const row = document.createElement("tr");
       let kind = (item.kind || 'required').toLowerCase();
@@ -107,6 +109,17 @@
       row.setAttribute("data-kind", kind);
       if (item.group) row.setAttribute("data-group", item.group);
       if (item.section) row.setAttribute("data-section", String(item.section).toLowerCase());
+
+      if (kind === 'alternative') {
+        if (item.group && item.group !== lastGroup) {
+          row.classList.add('bom-choice-row');
+          lastGroup = item.group;
+        } else {
+          row.classList.add('bom-choice-option');
+        }
+      } else {
+        lastGroup = null;
+      }
 
       row.appendChild(createComponentCell(item, headers[0]));
       row.appendChild(createCell(item.qty, null, headers[1]));
