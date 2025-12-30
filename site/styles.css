@@ -1402,6 +1402,22 @@ footer {
   .bom-table tbody tr[data-section="customparts"]:hover td {
     background: var(--accent-soft);
   }
+
+  .bom-table tr.is-choice-scope td {
+    position: relative;
+    padding-left: 30px;
+  }
+
+  .bom-table tr.is-choice-scope td:first-child::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--accent);
+    opacity: 0.3;
+  }
 }
 
 @media (max-width: 1024px) {

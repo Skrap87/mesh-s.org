@@ -147,6 +147,7 @@
 
       const normalizedVariant = (activeVariant || "").toLowerCase();
       tbody.querySelectorAll(".bom-choice-row").forEach((row) => row.remove());
+      tbody.querySelectorAll("tr").forEach(row => row.classList.remove("is-choice-scope"));
       const rows = Array.from(tbody.querySelectorAll("tr[data-variants]"));
       rows.forEach((row) => {
         row.classList.remove("is-choice");
@@ -183,6 +184,23 @@
         choiceRow.appendChild(cell);
         const firstRow = groupRows[0];
         firstRow.parentNode.insertBefore(choiceRow, firstRow);
+      });
+
+      const choiceHeaders = tbody.querySelectorAll(".bom-choice-row");
+      choiceHeaders.forEach(header => {
+        let currentRow = header.nextElementSibling;
+        while (currentRow) {
+          if (currentRow.classList.contains("is-hidden")) {
+            currentRow = currentRow.nextElementSibling;
+            continue;
+          }
+          if (currentRow.dataset.kind === "alternative") {
+            currentRow.classList.add("is-choice-scope");
+          } else {
+            break;
+          }
+          currentRow = currentRow.nextElementSibling;
+        }
       });
     };
     window.applyBomFilter = applyBomFilter;
