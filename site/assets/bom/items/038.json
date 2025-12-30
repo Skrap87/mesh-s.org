@@ -1,0 +1,14 @@
+{
+  "order": 63,
+  "variants": "xl",
+  "kind": "required",
+  "section": "customparts",
+  "group": "spacer_plate",
+  "name": "Spacer plate",
+  "qty": "1",
+  "notes": "",
+  "photoThumb": "assets/variants/xl/custom-parts/step/mesh-s_spacer_plate_xl.png",
+  "photoFull": "assets/variants/xl/custom-parts/step/mesh-s_spacer_plate_xl.png",
+  "shopUrl": "assets/variants/xl/custom-parts/step/mesh-s_spacer_plate_xl_v1.step",
+  "shopLabel": "Herunterladen"
+}

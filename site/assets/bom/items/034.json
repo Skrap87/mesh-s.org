@@ -1,0 +1,14 @@
+{
+  "order": 56,
+  "variants": "m",
+  "kind": "required",
+  "section": "customparts",
+  "group": "silica",
+  "name": "Silica gel compartment",
+  "qty": "1",
+  "notes": "",
+  "photoThumb": "assets/variants/m/custom-parts/step/mesh-s_silica_gel_compartment_m.png",
+  "photoFull": "assets/variants/m/custom-parts/step/mesh-s_silica_gel_compartment_m.png",
+  "shopUrl": "assets/variants/m/custom-parts/step/mesh-s_silica_gel_compartment_m_v1.step",
+  "shopLabel": "Herunterladen"
+}

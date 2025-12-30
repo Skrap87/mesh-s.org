@@ -1,0 +1,14 @@
+{
+  "order": 60,
+  "variants": "xl",
+  "kind": "required",
+  "section": "customparts",
+  "group": "enclosure",
+  "name": "ASA enclosure",
+  "qty": "1",
+  "notes": "",
+  "photoThumb": "assets/variants/xl/custom-parts/step/mesh-s_enclosure_xl.png",
+  "photoFull": "assets/variants/xl/custom-parts/step/mesh-s_enclosure_xl.png",
+  "shopUrl": "assets/variants/xl/custom-parts/step/mesh-s_enclosure_xl_v1.step",
+  "shopLabel": "Herunterladen"
+}
