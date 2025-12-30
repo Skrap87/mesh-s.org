@@ -668,6 +668,14 @@ header {
   box-shadow: inset 3px 0 0 var(--table-row-alternative-border);
 }
 
+.bom-table tbody tr[data-section="customparts"] td {
+  background: var(--accent-soft);
+}
+
+.bom-table tbody tr[data-section="customparts"] td:first-child {
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
 .bom-table tbody tr:last-child td {
   border-bottom: none;
 }
@@ -1390,6 +1398,10 @@ footer {
   .bom-table tbody tr[data-kind="alternative"]:hover td {
     background: var(--table-row-alternative-hover);
   }
+
+  .bom-table tbody tr[data-section="customparts"]:hover td {
+    background: var(--accent-soft);
+  }
 }
 
 @media (max-width: 1024px) {
@@ -1509,6 +1521,15 @@ footer {
       inset 0 0 0 1px var(--table-card-inset);
     transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
     will-change: transform;
+  }
+
+  .bom-table tbody tr[data-section="customparts"] {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    box-shadow:
+      var(--table-card-shadow),
+      inset 0 0 0 1px var(--table-card-inset),
+      inset 3px 0 0 var(--accent);
   }
 
   .bom-table tbody tr:last-child {
