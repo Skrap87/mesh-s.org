@@ -1,0 +1,14 @@
+{
+  "order": 60,
+  "variants": "all",
+  "kind": "optional",
+  "section": "customparts",
+  "group": "mounting_adapter",
+  "name": "Universal mounting adapter",
+  "qty": "1",
+  "notes": "",
+  "photoThumb": "assets/variants/mounting_adapter/mesh-s_mounting_adapter_universal.png",
+  "photoFull": "assets/variants/mounting_adapter/mesh-s_mounting_adapter_universal.png",
+  "shopUrl": "assets/variants/mounting_adapter/mesh-s_mounting_adapter_universal.step",
+  "shopLabel": "Heruntenladen"
+}
