@@ -15,7 +15,7 @@
   };
 
   const focusInside = () => {
-    // Пытаемся сфокусировать кнопку закрытия, иначе сам диалог
+    // Versuche, den Schließen-Button zu fokussieren, andernfalls den Dialog selbst
     const closeBtn =
       box.querySelector(".lightbox-close") ||
       box.querySelector("[data-close]");
@@ -25,7 +25,7 @@
       return;
     }
 
-    // Фолбэк: делаем box фокусируемым и фокусируем
+    // Fallback: mache die Lightbox fokussierbar und fokussiere sie
     if (!box.hasAttribute("tabindex")) box.setAttribute("tabindex", "-1");
     box.focus?.();
   };
@@ -33,13 +33,13 @@
 	const close = () => {
 	  box.classList.remove("is-open");
 
-	  // вернуть фокус наружу СНАЧАЛА
+	  // Zuerst den Fokus zurückgeben
 	  if (lastFocus && typeof lastFocus.focus === "function") {
 		lastFocus.focus();
 	  }
 	  lastFocus = null;
 
-	  // теперь запрещаем фокус и a11y-доступ
+	  // Jetzt Fokus und a11y-Zugriff verbieten
 	  box.setAttribute("inert", "");
 
 	  unlockScroll();
@@ -57,13 +57,13 @@
 	  img.alt = caption || "";
 	  cap.textContent = caption || "";
 
-	  // разрешаем фокус и a11y-доступ
+	  // Fokus und a11y-Zugriff erlauben
 	  box.removeAttribute("inert");
 
 	  box.classList.add("is-open");
 	  lockScroll();
 
-	  // фокус внутрь
+	  // Fokus nach innen
 	  const closeBtn =
 		box.querySelector(".lightbox-close") ||
 		box.querySelector("[data-close]");
