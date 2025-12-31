@@ -681,11 +681,11 @@ header {
   box-shadow: inset 3px 0 0 var(--table-row-alternative-border);
 }
 
-.bom-table tbody tr[data-section="customparts"] td {
+.bom-table tbody tr[data-section="customparts"][data-kind="required"] td {
   background: var(--accent-soft);
 }
 
-.bom-table tbody tr[data-section="customparts"] td:first-child {
+.bom-table tbody tr[data-section="customparts"][data-kind="required"] td:first-child {
   box-shadow: inset 3px 0 0 var(--accent);
 }
 
@@ -1436,7 +1436,7 @@ footer {
     background: var(--table-row-alternative-hover);
   }
 
-  .bom-table tbody tr[data-section="customparts"]:hover td {
+  .bom-table tbody tr[data-section="customparts"][data-kind="required"]:hover td {
     background: var(--accent-soft);
   }
 }
@@ -1561,7 +1561,7 @@ footer {
     will-change: transform;
   }
 
-  .bom-table tbody tr[data-section="customparts"] {
+  .bom-table tbody tr[data-section="customparts"][data-kind="required"] {
     background: var(--accent-soft);
     border-color: var(--accent);
     box-shadow:
