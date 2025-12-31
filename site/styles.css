@@ -248,6 +248,19 @@ header {
   color: var(--muted);
 }
 
+.variant-switch-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.variant-switch-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 .variant-option {
   padding: 6px 10px;
   border-radius: 999px;
