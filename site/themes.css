@@ -57,9 +57,9 @@ html[data-theme="dark"] {
   --table-row-optional: rgba(80, 200, 120, 0.08);
   --table-row-optional-border: rgba(80, 200, 120, 0.55);
   --table-row-optional-hover: rgba(80, 200, 120, 0.12);
-  --table-row-alternative: rgba(255, 198, 92, 0.08);
-  --table-row-alternative-border: rgba(255, 198, 92, 0.5);
-  --table-row-alternative-hover: rgba(255, 198, 92, 0.11);
+  --table-row-alternative: rgba(186, 133, 255, 0.06);
+  --table-row-alternative-border: rgba(186, 133, 255, 0.45);
+  --table-row-alternative-hover: rgba(186, 133, 255, 0.1);
   --table-row-choice: rgba(186, 133, 255, 0.08);
   --table-row-choice-border: rgba(186, 133, 255, 0.45);
   --table-row-choice-hover: rgba(186, 133, 255, 0.12);
@@ -150,9 +150,9 @@ html[data-theme="dark"] {
     --table-row-optional: rgba(80, 200, 120, 0.08);
     --table-row-optional-border: rgba(80, 200, 120, 0.55);
     --table-row-optional-hover: rgba(80, 200, 120, 0.12);
-    --table-row-alternative: rgba(255, 198, 92, 0.2);
-    --table-row-alternative-border: rgba(255, 198, 92, 0.5);
-    --table-row-alternative-hover: rgba(255, 198, 92, 0.28);
+    --table-row-alternative: rgba(186, 133, 255, 0.06);
+    --table-row-alternative-border: rgba(186, 133, 255, 0.45);
+    --table-row-alternative-hover: rgba(186, 133, 255, 0.1);
     --table-row-choice: rgba(186, 133, 255, 0.08);
     --table-row-choice-border: rgba(186, 133, 255, 0.45);
     --table-row-choice-hover: rgba(186, 133, 255, 0.12);
@@ -243,9 +243,9 @@ html[data-theme="light"] {
   --table-row-optional: rgba(80, 200, 120, 0.08);
   --table-row-optional-border: rgba(80, 200, 120, 0.55);
   --table-row-optional-hover: rgba(80, 200, 120, 0.12);
-  --table-row-alternative: rgba(255, 198, 92, 0.18);
-  --table-row-alternative-border: rgba(255, 198, 92, 0.45);
-  --table-row-alternative-hover: rgba(255, 198, 92, 0.25);
+  --table-row-alternative: rgba(186, 133, 255, 0.06);
+  --table-row-alternative-border: rgba(186, 133, 255, 0.45);
+  --table-row-alternative-hover: rgba(186, 133, 255, 0.1);
   --table-row-choice: rgba(186, 133, 255, 0.08);
   --table-row-choice-border: rgba(186, 133, 255, 0.45);
   --table-row-choice-hover: rgba(186, 133, 255, 0.12);
