@@ -60,7 +60,9 @@ html[data-theme="dark"] {
   --table-row-alternative: rgba(255, 198, 92, 0.08);
   --table-row-alternative-border: rgba(255, 198, 92, 0.5);
   --table-row-alternative-hover: rgba(255, 198, 92, 0.11);
-  --table-row-choice: rgba(255, 255, 255, 0.04);
+  --table-row-choice: rgba(186, 133, 255, 0.08);
+  --table-row-choice-border: rgba(186, 133, 255, 0.45);
+  --table-row-choice-hover: rgba(186, 133, 255, 0.12);
   --table-row-customparts: rgba(255, 255, 255, 0.04);
   --table-card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
   --table-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
@@ -151,7 +153,9 @@ html[data-theme="dark"] {
     --table-row-alternative: rgba(255, 198, 92, 0.2);
     --table-row-alternative-border: rgba(255, 198, 92, 0.5);
     --table-row-alternative-hover: rgba(255, 198, 92, 0.28);
-    --table-row-choice: #f0f2f5;
+    --table-row-choice: rgba(186, 133, 255, 0.08);
+    --table-row-choice-border: rgba(186, 133, 255, 0.45);
+    --table-row-choice-hover: rgba(186, 133, 255, 0.12);
     --table-row-customparts: rgba(17, 19, 23, 0.05);
     --table-card-bg: linear-gradient(180deg, #ffffff, #f4f6f9);
     --table-card-shadow: 0 10px 22px rgba(17, 19, 23, 0.12);
@@ -242,7 +246,9 @@ html[data-theme="light"] {
   --table-row-alternative: rgba(255, 198, 92, 0.18);
   --table-row-alternative-border: rgba(255, 198, 92, 0.45);
   --table-row-alternative-hover: rgba(255, 198, 92, 0.25);
-  --table-row-choice: #f0f2f5;
+  --table-row-choice: rgba(186, 133, 255, 0.08);
+  --table-row-choice-border: rgba(186, 133, 255, 0.45);
+  --table-row-choice-hover: rgba(186, 133, 255, 0.12);
   --table-row-customparts: rgba(31, 35, 40, 0.06);
   --table-card-bg: linear-gradient(180deg, #fafbfc, #f4f6f9);
   --table-card-shadow: 0 8px 20px rgba(31, 35, 40, 0.1);
