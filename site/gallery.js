@@ -1,6 +1,6 @@
 (() => {
   const galleryItems = [
-    // Добавляйте новые фото в assets/gallery и дополняйте список ниже.
+    // Füge neue Fotos in assets/gallery hinzu und erweitere die folgende Liste.
     {
       src: "assets/gallery/knoten-01.jpg",
       thumb: "assets/gallery/knoten-01.jpg",

@@ -90,6 +90,17 @@ https://creativecommons.org/licenses/by-nc/4.0/
 
 ---
 
+## 🌐 Content & Language Policy
+
+This project follows a clear language policy:
+
+- **Website Content:** The public-facing website at [mesh-s.org](https://mesh-s.org) is maintained in **German (DE)**.
+- **Technical Documentation:** All technical documentation, including this `README.md` and `PROJECT_MAP.md`, is written in **English (EN)**.
+
+As part of a repository cleanup, all Russian language strings have been removed from comments and documentation. This is to ensure a consistent and clear language standard across the project. For a detailed log of the changes made, please see `RU_FINDINGS.md`.
+
+---
+
 ## 👤 Author
 
 **Eduard Herzog**  
