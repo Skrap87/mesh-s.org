@@ -6,7 +6,7 @@
   "group": "spacer_plate",
   "name": "Abstandsplatte 2×18650 (INA219)",
   "qty": "1",
-  "notes": "",
+  "notes": "Abstandshalter für 2×18650 Akkus zur Montage von MPPT, WisBlock The Basic RAK4631 und INA219 Stromsensor.",
   "photoThumb": "assets/variants/m/custom-parts/step/mesh-s_spacer_plate_2x18650_ina219_rak_m.png",
   "photoFull": "assets/variants/m/custom-parts/step/mesh-s_spacer_plate_2x18650_ina219_rak_m.png",
   "shopUrl": "assets/variants/m/custom-parts/step/mesh-s_spacer_plate_2x18650_ina219_rak_m_v1.step",

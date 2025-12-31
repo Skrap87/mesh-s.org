@@ -6,7 +6,7 @@
   "group": "spacer_plate",
   "name": "Abstandsplatte",
   "qty": "1",
-  "notes": "",
+  "notes": "Abstandshalter für 4×18650 Akkus zur Montage von MPPT und WisBlock The Basic RAK4631 oder XIAO nRF52840 & Wio-SX1262.",
   "photoThumb": "assets/variants/m/custom-parts/step/mesh-s_spacer_plate_m.png",
   "photoFull": "assets/variants/m/custom-parts/step/mesh-s_spacer_plate_m.png",
   "shopUrl": "assets/variants/m/custom-parts/step/mesh-s_spacer_plate_m_v1.step",
