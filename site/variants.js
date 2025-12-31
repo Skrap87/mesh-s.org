@@ -62,7 +62,8 @@
   };
 
   const initialVariant = initializeVariant();
-  window.getCurrentVariant = () => initialVariant;
+  let currentVariant = initialVariant;
+  window.getCurrentVariant = () => currentVariant;
 
   document.addEventListener("DOMContentLoaded", () => {
     const updateVariantButtons = (variantId) => {
@@ -248,11 +249,13 @@
       if (!variant) {
         updateVariantTitle(" / S");
         warn("variant fallback failed");
+        currentVariant = variantId;
         window.applyBomFilter(variantId);
         return;
       }
+      currentVariant = variant.id || variantId;
       applyVariant(variant);
-      window.applyBomFilter(variant.id || variantId);
+      window.applyBomFilter(currentVariant);
     };
 
     const initVariantSwitch = (currentVariant) => {
