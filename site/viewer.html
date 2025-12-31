@@ -78,16 +78,16 @@
         <a href="https://github.com/Skrap87/mesh-s.org">GitHub</a>
       </div>
     </div>
+    <div class="container footer-license">
+      <p>
+        Inhalt lizenziert unter
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">
+          CC BY-NC 4.0
+        </a>
+        — nur für nicht-kommerzielle Nutzung.
+      </p>
+    </div>
   </footer>
-  <footer class="site-footer">
-  <p>
-    Inhalt lizenziert unter
-    <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">
-      CC BY-NC 4.0
-    </a>
-    — nur für nicht-kommerzielle Nutzung.
-  </p>
-	</footer>
   <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie-Hinweis">
     <p>
       <span>Diese Website verwendet keine Tracking-, Analytics- oder Marketing-Cookies. Technische Einstellungen werden lokal im Browser gespeichert.</span>
@@ -97,7 +97,7 @@
   </div>
 
   <script src="variants.js?v=20251226-1"></script>
-
+  <script src="site.js" defer></script>
   <script type="importmap">
     {
       "imports": {
@@ -107,29 +107,6 @@
       }
     }
   </script>
-  
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-  <script>
-    (function () {
-      const KEY = 'cookiesAccepted';
-      const banner = document.getElementById('cookie-banner');
-      const btn = document.getElementById('cookie-accept');
-      if (!banner || !btn) return;
-
-      if (localStorage.getItem(KEY) === 'true') {
-        banner.remove();
-        return;
-      }
-
-      btn.addEventListener('click', function () {
-        localStorage.setItem(KEY, 'true');
-        banner.remove();
-      });
-    })();
-  </script>
-
   <script type="module">
     import * as THREE from 'three';
     import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -367,33 +344,6 @@
         window.location.href = url.pathname + url.search + url.hash;
       });
     });
-  </script>
-  <script>
-    (function () {
-      if (window.__navMoreDismiss) return;
-      window.__navMoreDismiss = true;
-
-      const closeAll = () => {
-        document.querySelectorAll('details.nav-more[open]').forEach((details) => {
-          details.removeAttribute('open');
-        });
-      };
-
-      document.addEventListener('click', (event) => {
-        const openMenus = document.querySelectorAll('details.nav-more[open]');
-        if (!openMenus.length) return;
-        const target = event.target;
-        if (target && target.closest && target.closest('details.nav-more')) return;
-        openMenus.forEach((details) => {
-          details.removeAttribute('open');
-        });
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key !== 'Escape') return;
-        closeAll();
-      });
-    })();
   </script>
 </body>
 </html>
