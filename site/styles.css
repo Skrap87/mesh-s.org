@@ -1710,3 +1710,46 @@ footer {
     border-bottom: none;
   }
 }
+
+/* ===== Bewertung 0–10 ===== */
+#rating .rating-scale{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:16px;
+}
+
+#rating .rating-btn{
+  min-width:44px;
+  height:44px;
+  padding:0 12px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--text);
+  font:inherit;
+  cursor:pointer;
+  transition:transform .08s ease, background .12s ease, border-color .12s ease;
+}
+
+#rating .rating-btn:hover{
+  transform:translateY(-1px);
+  background:var(--surface-2);
+}
+
+#rating .rating-btn:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+}
+
+#rating .rating-btn.is-selected{
+  border-color:var(--accent);
+  background:var(--accent-soft);
+}
+
+#rating .rating-meta{
+  margin-top:12px;
+  color:var(--muted);
+  font-size:0.9rem;
+}
+
