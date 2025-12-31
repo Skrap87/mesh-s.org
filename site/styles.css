@@ -1765,6 +1765,24 @@ footer {
     border-bottom: none;
   }
 
+  /* Mobile card view: td background is forced transparent, so paint the TR */
+  .bom-table tbody tr[data-kind="optional"] {
+    background: var(--table-row-optional);
+  }
+
+  .bom-table tbody tr[data-kind="alternative"] {
+    background: var(--table-row-alternative);
+  }
+
+  .bom-table tbody tr.bom-choice-row {
+    background: var(--table-row-choice);
+  }
+
+  /* If the choice label row belongs to customparts, keep the same choice background */
+  .bom-table tbody tr.bom-choice-row[data-section="customparts"] {
+    background: var(--table-row-choice);
+  }
+
 }
 
 @media (max-width: 520px) {

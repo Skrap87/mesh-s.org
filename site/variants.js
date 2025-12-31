@@ -183,6 +183,9 @@
         cell.textContent = choiceLabel;
         choiceRow.appendChild(cell);
         const firstRow = groupRows[0];
+        // carry section to the inserted "Wähle eine Option:" row (needed for styling)
+        const section = firstRow.getAttribute("data-section");
+        if (section) choiceRow.setAttribute("data-section", section);
         firstRow.parentNode.insertBefore(choiceRow, firstRow);
       });
     };
