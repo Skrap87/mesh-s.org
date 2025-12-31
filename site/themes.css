@@ -54,9 +54,9 @@ html[data-theme="dark"] {
   --table-row: transparent;
   --table-row-alt: rgba(172, 185, 200, 0.035);
   --table-divider: #21262d;
-  --table-row-optional: rgba(186, 133, 255, 0.12);
-  --table-row-optional-border: rgba(186, 133, 255, 0.5);
-  --table-row-optional-hover: rgba(186, 133, 255, 0.18);
+  --table-row-optional: rgba(86, 180, 255, 0.08);
+  --table-row-optional-border: rgba(86, 180, 255, 0.45);
+  --table-row-optional-hover: rgba(86, 180, 255, 0.12);
   --table-row-alternative: rgba(255, 198, 92, 0.08);
   --table-row-alternative-border: rgba(255, 198, 92, 0.5);
   --table-row-alternative-hover: rgba(255, 198, 92, 0.11);
@@ -144,9 +144,9 @@ html[data-theme="dark"] {
     --table-row: #ffffff;
     --table-row-alt: #f7f8fa;
     --table-divider: rgba(17, 19, 23, 0.08);
-    --table-row-optional: rgba(135, 102, 210, 0.14);
-    --table-row-optional-border: rgba(135, 102, 210, 0.45);
-    --table-row-optional-hover: rgba(135, 102, 210, 0.2);
+    --table-row-optional: rgba(86, 145, 208, 0.12);
+    --table-row-optional-border: rgba(86, 145, 208, 0.4);
+    --table-row-optional-hover: rgba(86, 145, 208, 0.18);
     --table-row-alternative: rgba(255, 198, 92, 0.2);
     --table-row-alternative-border: rgba(255, 198, 92, 0.5);
     --table-row-alternative-hover: rgba(255, 198, 92, 0.28);
@@ -234,9 +234,9 @@ html[data-theme="light"] {
   --table-row: #ffffff;
   --table-row-alt: #f8f9fb;
   --table-divider: rgba(31, 35, 40, 0.07);
-  --table-row-optional: rgba(135, 102, 210, 0.14);
-  --table-row-optional-border: rgba(135, 102, 210, 0.45);
-  --table-row-optional-hover: rgba(135, 102, 210, 0.2);
+  --table-row-optional: rgba(86, 145, 208, 0.1);
+  --table-row-optional-border: rgba(86, 145, 208, 0.35);
+  --table-row-optional-hover: rgba(86, 145, 208, 0.15);
   --table-row-alternative: rgba(255, 198, 92, 0.18);
   --table-row-alternative-border: rgba(255, 198, 92, 0.45);
   --table-row-alternative-hover: rgba(255, 198, 92, 0.25);

@@ -697,6 +697,14 @@ header {
   box-shadow: inset 3px 0 0 var(--table-row-optional-border);
 }
 
+.bom-table tbody tr[data-section="customparts"][data-kind="alternative"] td {
+  background: var(--table-row-alternative);
+}
+
+.bom-table tbody tr[data-section="customparts"][data-kind="alternative"] td:first-child {
+  box-shadow: inset 3px 0 0 var(--table-row-alternative-border);
+}
+
 .bom-table tbody tr:last-child td {
   border-bottom: none;
 }
@@ -1451,6 +1459,10 @@ footer {
   .bom-table tbody tr[data-section="customparts"][data-kind="optional"]:hover td {
     background: var(--table-row-optional-hover);
   }
+
+  .bom-table tbody tr[data-section="customparts"][data-kind="alternative"]:hover td {
+    background: var(--table-row-alternative-hover);
+  }
 }
 
 @media (max-width: 1024px) {
@@ -1580,6 +1592,24 @@ footer {
       var(--table-card-shadow),
       inset 0 0 0 1px var(--table-card-inset),
       inset 3px 0 0 var(--accent);
+  }
+
+  .bom-table tbody tr[data-section="customparts"][data-kind="optional"] {
+    background: var(--table-row-optional);
+    border-color: var(--table-row-optional-border);
+    box-shadow:
+      var(--table-card-shadow),
+      inset 0 0 0 1px var(--table-card-inset),
+      inset 3px 0 0 var(--table-row-optional-border);
+  }
+
+  .bom-table tbody tr[data-section="customparts"][data-kind="alternative"] {
+    background: var(--table-row-alternative);
+    border-color: var(--table-row-alternative-border);
+    box-shadow:
+      var(--table-card-shadow),
+      inset 0 0 0 1px var(--table-card-inset),
+      inset 3px 0 0 var(--table-row-alternative-border);
   }
 
   .bom-table tbody tr:last-child {
