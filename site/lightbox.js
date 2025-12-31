@@ -30,44 +30,45 @@
     box.focus?.();
   };
 
-  const close = () => {
-    // 1) Сначала закрываем визуально
-    box.classList.remove("is-open");
+	const close = () => {
+	  box.classList.remove("is-open");
 
-    // 2) ВАЖНО: вернуть фокус наружу ДО aria-hidden
-    if (lastFocus && typeof lastFocus.focus === "function") {
-      lastFocus.focus();
-    } else {
-      document.body.focus?.();
-    }
-    lastFocus = null;
+	  // вернуть фокус наружу СНАЧАЛА
+	  if (lastFocus && typeof lastFocus.focus === "function") {
+		lastFocus.focus();
+	  }
+	  lastFocus = null;
 
-    // 3) Теперь можно скрывать от assistive tech
-    box.setAttribute("aria-hidden", "true");
+	  // теперь запрещаем фокус и a11y-доступ
+	  box.setAttribute("inert", "");
 
-    unlockScroll();
-    img.src = "";
-    img.alt = "";
-    cap.textContent = "";
-  };
+	  unlockScroll();
+	  img.src = "";
+	  img.alt = "";
+	  cap.textContent = "";
+	};
 
-  const open = (src, caption) => {
-    if (!src) return;
+	const open = (src, caption) => {
+	  if (!src) return;
 
-    // сохранить фокус до открытия
-    lastFocus = document.activeElement;
+	  lastFocus = document.activeElement;
 
-    img.src = src;
-    img.alt = caption || "";
-    cap.textContent = caption || "";
+	  img.src = src;
+	  img.alt = caption || "";
+	  cap.textContent = caption || "";
 
-    box.classList.add("is-open");
-    box.setAttribute("aria-hidden", "false");
-    lockScroll();
+	  // разрешаем фокус и a11y-доступ
+	  box.removeAttribute("inert");
 
-    // перенести фокус внутрь lightbox (важно для a11y)
-    focusInside();
-  };
+	  box.classList.add("is-open");
+	  lockScroll();
+
+	  // фокус внутрь
+	  const closeBtn =
+		box.querySelector(".lightbox-close") ||
+		box.querySelector("[data-close]");
+	  closeBtn?.focus();
+	};
 
   document.addEventListener("click", (event) => {
     const thumb = event.target.closest(".bom-thumb, .gallery-item");
