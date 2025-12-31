@@ -1709,6 +1709,10 @@ footer {
     border-bottom: none;
   }
 
+  tr[data-kind="alternative"] { background: var(--table-row-alternative); }
+  tr[data-kind="optional"] { background: var(--table-row-optional); }
+  tr.bom-choice-row { background: var(--table-row-choice); }
+  tr.bom-choice-row[data-section="customparts"] { background: var(--table-row-choice); }
 }
 
 @media (max-width: 520px) {
