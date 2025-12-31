@@ -1,0 +1,12 @@
+{
+  "order": 66,
+  "variants": "all",
+  "kind": "optional",
+  "name": "Neodym Magnete",
+  "qty": "2",
+  "notes": "Gummiert, Ø 43mm mit M6 Außengewinde, 10 kg Haftkraft",
+  "photoThumb": "assets/bom/foto/rund_magnete_m6.png",
+  "photoFull": "assets/bom/foto/rund_magnete_m6.png",
+  "shopUrl": "https://www.amazon.de/dp/B0C6TDKLB7?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1",
+  "shopLabel": "Amazon"
+}
