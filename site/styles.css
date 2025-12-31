@@ -1709,6 +1709,22 @@ footer {
     border-bottom: none;
   }
 
+  .bom-table tbody tr[data-kind="alternative"] {
+    background: var(--table-row-alternative);
+  }
+
+  .bom-table tbody tr[data-kind="optional"] {
+    background: var(--table-row-optional);
+  }
+
+  .bom-table tbody tr.bom-choice-row {
+    background: var(--table-row-choice);
+  }
+
+  .bom-table tbody tr.bom-choice-row[data-section="customparts"] {
+    background: var(--table-row-choice);
+  }
+
 }
 
 @media (max-width: 520px) {

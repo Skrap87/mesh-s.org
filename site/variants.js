@@ -183,6 +183,10 @@
         cell.textContent = choiceLabel;
         choiceRow.appendChild(cell);
         const firstRow = groupRows[0];
+        const section = firstRow.getAttribute("data-section");
+        if (section) {
+          choiceRow.setAttribute("data-section", section);
+        }
         firstRow.parentNode.insertBefore(choiceRow, firstRow);
       });
     };
