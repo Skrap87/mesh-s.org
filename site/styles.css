@@ -705,6 +705,20 @@ header {
   box-shadow: inset 3px 0 0 var(--table-row-alternative-border);
 }
 
+/* WÄHLE EINE OPTION inside customparts */
+.bom-table tbody tr[data-section="customparts"].bom-choice-row td {
+  background: var(--table-row-choice);
+}
+
+/* FIX: all alternative rows always keep the same background */
+.bom-table tbody tr[data-kind="alternative"] td {
+  background: var(--table-row-alternative);
+}
+
+.bom-table tbody tr[data-kind="alternative"] td:first-child {
+  box-shadow: inset 3px 0 0 var(--table-row-alternative-border);
+}
+
 .bom-table tbody tr:last-child td {
   border-bottom: none;
 }
