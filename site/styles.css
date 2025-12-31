@@ -1375,6 +1375,27 @@ footer {
   color: var(--danger);
 }
 
+/* viewer-disclaimer */
+.viewer-disclaimer {
+  margin-top: 20px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  background: var(--surface);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.viewer-disclaimer strong {
+  color: var(--fg);
+}
+
+.viewer-disclaimer a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+
 /* 10. Media queries */
 @media (min-width: 900px) {
   .autonomy-graphs {
