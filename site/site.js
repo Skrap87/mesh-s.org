@@ -88,7 +88,7 @@
       valueEl.textContent = "Noch keine Bewertungen";
       return;
     }
-    valueEl.textContent = `Ø ${Number(avg).toFixed(1)} / 10 · ${count} Bewertungen`;
+    valueEl.textContent = `Ø ${Number(avg).toFixed(1)} / 5 · ${count} Bewertungen`;
   }
 
   function setSelected(value) {
