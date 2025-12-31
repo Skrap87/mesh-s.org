@@ -1546,6 +1546,7 @@ footer {
     display: block;
     width: 100%;
   }
+  
 
   .bom-table tbody tr {
     margin-bottom: 16px;
@@ -1660,10 +1661,27 @@ footer {
   .viewer-header {
     padding: 16px;
   }
+  
+	/* Mobile: photo cell must be full-width, otherwise it can't be centered */
+	.bom-table td.bom-col-photo {
+	  width: 100% !important;
+	  min-width: 0 !important;
+	  max-width: none !important;
+	}
+
 
   #viewerCanvasWrap {
     height: min(70vh, 560px);
   }
+  
+  /* Center photo and link button on mobile */
+	.bom-table td.bom-col-photo,
+	.bom-table td.bom-col-link {
+	  align-items: center;
+	  justify-content: center;
+	  text-align: center;
+	}
+
 }
 
 @media (max-width: 520px) {
@@ -1686,6 +1704,17 @@ footer {
 
 /* BOM Mobile Compact View */
 @media (max-width: 768px) {
+	/* Remove column label, keep content */
+  .bom-table td[data-label="Hinweise / Spezifikationen"]::before {
+    display: none;
+  }
+  
+  /* Remove column labels on mobile, keep content */
+	.bom-table td[data-label="Foto"]::before,
+	.bom-table td[data-label="Link"]::before {
+	  display: none;
+	}
+
   /* Hide empty cells on mobile */
   .bom-table td.bom-cell--is-empty {
     display: none;
@@ -1709,6 +1738,20 @@ footer {
   .bom-table td:last-child {
     border-bottom: none;
   }
+
+	/* FIX: background only on card (tr), not on cells (td) */
+  .bom-table tbody tr {
+    background: var(--table-card-bg) !important;
+  }
+
+  .bom-table tbody tr[data-section="customparts"] {
+    background: var(--accent-soft) !important;
+  }
+
+  .bom-table tbody tr td {
+    background: transparent !important;
+  }
+
 }
 
 /* ===== Bewertung 0–10 ===== */
