@@ -99,7 +99,7 @@
       const data = await r.json();
       // ожидаем: { avg: number, count: number }
       if (typeof data?.avg === "number" && typeof data?.count === "number") {
-        setMeta(`Ø ${data.avg.toFixed(1)} / 10 · ${data.count} Stimmen`);
+        setMeta(`Gesamtbewertung: Ø ${data.avg.toFixed(1)} / 10 (basierend auf ${data.count} Bewertungen)`);
       }
     } catch (_) {
       // если API ещё не готов — просто молчим
