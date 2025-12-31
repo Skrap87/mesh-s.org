@@ -65,24 +65,30 @@
   if (!root) return;
 
   const meta = document.getElementById("ratingMeta");
+  const scale = document.getElementById("ratingScale");
+  const valueEl = document.getElementById("ratingValue");
   const buttons = root.querySelectorAll(".rating-btn[data-rate]");
   if (!buttons.length) return;
 
   // ключ "уже голосовал" — локально, чтобы не спамили с одного браузера
   const page = (location.pathname.split("/").pop() || "index.html").toLowerCase();
-  const variant =
-    (typeof window.getCurrentVariant === "function" ? window.getCurrentVariant() : null) ||
-    new URLSearchParams(location.search).get("v") ||
-    localStorage.getItem("meshSVariant") ||
-    "s";
 
   const storageKey = `meshSRatingDone:${page}`;
 
-  // URL API (позже сделаем Cloudflare Worker именно под этот путь)
+  // PROD: относительный путь. Для локального теста можно временно заменить на полный URL.
   const API_BASE = "/api/rating";
 
   function setMeta(text) {
     if (meta) meta.textContent = text || "";
+  }
+
+  function setResult(avg, count) {
+    if (!valueEl) return;
+    if (!count) {
+      valueEl.textContent = "Noch keine Bewertungen";
+      return;
+    }
+    valueEl.textContent = `Ø ${Number(avg).toFixed(1)} / 10 · ${count} Bewertungen`;
   }
 
   function setSelected(value) {
@@ -91,26 +97,30 @@
     });
   }
 
+  function hideVoting() {
+    if (scale) scale.style.display = "none";
+  }
+
   async function loadSummary() {
     try {
       const url = `${API_BASE}?page=${encodeURIComponent(page)}`;
       const r = await fetch(url, { method: "GET", headers: { "Accept": "application/json" } });
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       const data = await r.json();
-      // ожидаем: { avg: number, count: number }
+
       if (typeof data?.avg === "number" && typeof data?.count === "number") {
-        setMeta(`Gesamtbewertung: Ø ${data.avg.toFixed(1)} / 10 (basierend auf ${data.count} Bewertungen)`);
+        setResult(data.avg, data.count);
+      } else {
+        setResult(0, 0);
       }
     } catch (_) {
-      // если API ещё не готов — просто молчим
+      // если API недоступен, просто не ломаем UI
+      setResult(0, 0);
     }
   }
 
   async function sendVote(value) {
-    const body = {
-	  page,
-	  value: Number(value),
-	};
+    const body = { page, value: Number(value) };
 
     const r = await fetch(API_BASE, {
       method: "POST",
@@ -119,18 +129,23 @@
     });
 
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
-    return r.json(); // ожидаем: { avg, count }
+    return r.json(); // { avg, count }
   }
 
-  // первичная загрузка средней оценки (когда API появится)
+  // Всегда показываем общий результат (даже если уже голосовал)
   loadSummary();
 
-  const already = localStorage.getItem(storageKey);
-  if (already) setMeta("Danke! Du hast bereits bewertet.");
+  // Если уже голосовал — скрываем кнопки сразу
+  if (localStorage.getItem(storageKey)) {
+    hideVoting();
+    setMeta("Danke! Du hast bereits bewertet.");
+    return;
+  }
 
   buttons.forEach((btn) => {
     btn.addEventListener("click", async () => {
       if (localStorage.getItem(storageKey)) {
+        hideVoting();
         setMeta("Danke! Du hast bereits bewertet.");
         return;
       }
@@ -144,14 +159,13 @@
         localStorage.setItem(storageKey, "1");
 
         if (typeof data?.avg === "number" && typeof data?.count === "number") {
-          setMeta(`Danke! Ø ${data.avg.toFixed(1)} / 10 · ${data.count} Stimmen`);
-        } else {
-          setMeta("Danke! Bewertung gespeichert.");
+          setResult(data.avg, data.count);
         }
+        hideVoting();
+        setMeta("Danke! Du hast bereits bewertet.");
       } catch (e) {
-        // если API ещё не создан — откатим выбор и покажем понятное сообщение
         setSelected(null);
-        setMeta("API ist noch nicht aktiv (Server fehlt). Nächster Schritt: Worker einrichten.");
+        setMeta("Fehler beim Senden. Bitte später erneut versuchen.");
       }
     });
   });

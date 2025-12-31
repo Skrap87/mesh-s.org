@@ -493,7 +493,7 @@
 		<h2 class="section-title">Bewerte diese Seite (0–10)</h2>
 		<p class="section-subtitle">0 = schlecht, 10 = perfekt. Anonym, ohne Konto.</p>
 
-		<div class="rating-scale" role="group" aria-label="Bewertung 0 bis 10">
+		<div class="rating-scale" id="ratingScale" role="group" aria-label="Bewertung 0 bis 10">
 		  <button class="rating-btn" type="button" data-rate="0">0</button>
 		  <button class="rating-btn" type="button" data-rate="1">1</button>
 		  <button class="rating-btn" type="button" data-rate="2">2</button>
@@ -507,7 +507,13 @@
 		  <button class="rating-btn" type="button" data-rate="10">10</button>
 		</div>
 
-		<p class="rating-meta" id="ratingMeta" aria-live="polite"></p>
+		<div class="rating-result" id="ratingResult" aria-live="polite">
+		  <div class="rating-result-label">Gesamtbewertung</div>
+		  <div class="rating-result-value" id="ratingValue">—</div>
+		</div>
+
+		<div class="rating-meta" id="ratingMeta" aria-live="polite"></div>
+
 	  </div>
 	</section>
 <!--	Bewertung 	-->
