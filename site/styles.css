@@ -1933,3 +1933,6 @@ footer {
     margin: 0 auto;       /* центрируем в колонке */
   }
 }
+.is-hidden {
+  display: none !important;
+}

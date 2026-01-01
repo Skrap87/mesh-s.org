@@ -270,6 +270,7 @@
           url.searchParams.set("v", next);
           window.history.pushState({}, "", url.pathname + url.search + url.hash);
           loadVariant(next);
+		  updateVariantOnlyElements(next);
         });
       });
     };
@@ -277,5 +278,15 @@
     initVariantSwitch(initialVariant);
     updateViewerLinks(initialVariant);
     loadVariant(initialVariant);
+	updateVariantOnlyElements(initialVariant);
+
   });
+  
+  // Show elements only for specific variant (S/M/L/XL)
+	function updateVariantOnlyElements(variantId) {
+	  document.querySelectorAll("[data-only-variant]").forEach((el) => {
+		const only = (el.dataset.onlyVariant || "").toLowerCase();
+		el.classList.toggle("is-hidden", only !== (variantId || "").toLowerCase());
+	  });
+	}
 })();
