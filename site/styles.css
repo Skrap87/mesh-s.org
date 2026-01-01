@@ -1864,3 +1864,72 @@ footer {
   color:var(--muted);
   font-size:0.9rem;
 }
+
+/* ===== Montage – Praxis Videos ===== */
+
+.mounting-videos {
+  margin-top: 48px;
+}
+
+.mounting-videos h3 {
+  margin-bottom: 24px;
+}
+
+.mounting-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+.mounting-video iframe {
+  width: 100%;
+  aspect-ratio: 9 / 16; /* Shorts-Format */
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  background: #000;
+}
+
+.video-caption {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.video-caption strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--fg);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .mounting-video-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ===== Montage Videos – Desktop groß ===== */
+
+@media (min-width: 1024px) {
+  .mounting-videos {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mounting-video-grid {
+    grid-template-columns: repeat(2, minmax(420px, 1fr)); /* минимальная ширина, чтобы не были крошечными */
+    gap: 36px;
+    align-items: start;
+  }
+
+  .mounting-video iframe {
+    width: 100%;
+    max-width: 520px;     /* ограничиваем, чтобы не выглядело странно */
+    aspect-ratio: 9 / 16; /* Shorts остаётся вертикальным */
+    margin: 0 auto;       /* центрируем в колонке */
+  }
+}
