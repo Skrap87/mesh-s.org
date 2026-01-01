@@ -178,6 +178,7 @@
         groupRows.forEach((row) => row.classList.add("is-choice"));
         const choiceRow = document.createElement("tr");
         choiceRow.className = "bom-choice-row";
+        choiceRow.setAttribute("data-kind", "choice");
         const cell = document.createElement("td");
         cell.colSpan = columnCount;
         cell.textContent = choiceLabel;

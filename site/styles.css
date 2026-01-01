@@ -673,6 +673,14 @@ header {
   box-shadow: inset 3px 0 0 var(--table-row-optional-border);
 }
 
+.bom-table tbody tr[data-kind="required"] td {
+  background: var(--table-row-required);
+}
+
+.bom-table tbody tr[data-kind="required"] td:first-child {
+  box-shadow: inset 3px 0 0 var(--table-row-required-border);
+}
+
 .bom-table tbody tr[data-kind="alternative"] td {
   background: var(--table-row-alternative);
 }
@@ -682,11 +690,32 @@ header {
 }
 
 .bom-table tbody tr[data-section="customparts"] td {
-  background: var(--accent-soft);
+  background: var(--table-row-customparts, var(--accent-soft));
 }
 
 .bom-table tbody tr[data-section="customparts"] td:first-child {
   box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.bom-table tbody tr[data-section="customparts"][data-kind="optional"] td {
+  background: var(--table-row-optional);
+}
+
+.bom-table tbody tr[data-section="customparts"][data-kind="optional"] td:first-child {
+  box-shadow: inset 3px 0 0 var(--table-row-optional-border);
+}
+
+.bom-table tbody tr[data-section="customparts"][data-kind="alternative"] td {
+  background: var(--table-row-alternative);
+}
+
+.bom-table tbody tr[data-section="customparts"][data-kind="alternative"] td:first-child {
+  box-shadow: inset 3px 0 0 var(--table-row-alternative-border);
+}
+
+/* Choice label row: Wähle eine Option: */
+.bom-table tbody tr[data-kind="choice"] td {
+  background: var(--table-row-choice);
 }
 
 .bom-table tbody tr:last-child td {
@@ -766,7 +795,11 @@ header {
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--badge-choice-fg);
+}
+
+.bom-choice-row[data-section="customparts"] td {
+  background: var(--table-row-choice);
 }
 
 .bom-thumb {
@@ -1432,12 +1465,24 @@ footer {
     background: var(--table-row-optional-hover);
   }
 
+  .bom-table tbody tr[data-kind="required"]:hover td {
+    background: var(--table-row-required-hover);
+  }
+
   .bom-table tbody tr[data-kind="alternative"]:hover td {
     background: var(--table-row-alternative-hover);
   }
 
   .bom-table tbody tr[data-section="customparts"]:hover td {
-    background: var(--accent-soft);
+    background: var(--table-row-customparts, var(--accent-soft));
+  }
+
+  .bom-table tbody tr[data-section="customparts"][data-kind="optional"]:hover td {
+    background: var(--table-row-optional-hover);
+  }
+
+  .bom-table tbody tr[data-section="customparts"][data-kind="alternative"]:hover td {
+    background: var(--table-row-alternative-hover);
   }
 }
 
@@ -1561,13 +1606,62 @@ footer {
     will-change: transform;
   }
 
+  .bom-table tbody tr[data-kind="required"] {
+    background: var(--table-row-required);
+    border-color: var(--table-row-required-border);
+    box-shadow:
+      var(--table-card-shadow),
+      inset 0 0 0 1px var(--table-card-inset),
+      inset 3px 0 0 var(--table-row-required-border);
+  }
+
+  .bom-table tbody tr[data-kind="optional"] {
+    background: var(--table-row-optional);
+    border-color: var(--table-row-optional-border);
+    box-shadow:
+      var(--table-card-shadow),
+      inset 0 0 0 1px var(--table-card-inset),
+      inset 3px 0 0 var(--table-row-optional-border);
+  }
+
+  .bom-table tbody tr[data-kind="alternative"] {
+    background: var(--table-row-alternative);
+    border-color: var(--table-row-alternative-border);
+    box-shadow:
+      var(--table-card-shadow),
+      inset 0 0 0 1px var(--table-card-inset),
+      inset 3px 0 0 var(--table-row-alternative-border);
+  }
+
+  .bom-choice-row {
+    background: var(--table-row-choice);
+  }
+
   .bom-table tbody tr[data-section="customparts"] {
-    background: var(--accent-soft);
+    background: var(--table-row-customparts, var(--accent-soft));
     border-color: var(--accent);
     box-shadow:
       var(--table-card-shadow),
       inset 0 0 0 1px var(--table-card-inset),
       inset 3px 0 0 var(--accent);
+  }
+
+  .bom-table tbody tr[data-section="customparts"][data-kind="optional"] {
+    background: var(--table-row-optional);
+    border-color: var(--table-row-optional-border);
+    box-shadow:
+      var(--table-card-shadow),
+      inset 0 0 0 1px var(--table-card-inset),
+      inset 3px 0 0 var(--table-row-optional-border);
+  }
+
+  .bom-table tbody tr[data-section="customparts"][data-kind="alternative"] {
+    background: var(--table-row-alternative);
+    border-color: var(--table-row-alternative-border);
+    box-shadow:
+      var(--table-card-shadow),
+      inset 0 0 0 1px var(--table-card-inset),
+      inset 3px 0 0 var(--table-row-alternative-border);
   }
 
   .bom-table tbody tr:last-child {
