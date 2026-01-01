@@ -713,6 +713,11 @@ header {
   box-shadow: inset 3px 0 0 var(--table-row-alternative-border);
 }
 
+/* Choice label row: Wähle eine Option: */
+.bom-table tbody tr[data-kind="choice"] td {
+  background: var(--table-row-choice);
+}
+
 .bom-table tbody tr:last-child td {
   border-bottom: none;
 }
