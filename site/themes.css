@@ -166,19 +166,19 @@ html[data-theme="dark"] {
     --table-card-focus-shadow: 0 18px 30px rgba(17, 19, 23, 0.2);
     --badge-required-bg: rgba(86, 180, 255, 0.18);
     --badge-required-border: rgba(86, 180, 255, 0.4);
-    --badge-required-fg: #cfe9ff;
+    --badge-required-fg: #0b3a63;
     --badge-optional-bg: rgba(80, 200, 120, 0.22);
     --badge-optional-border: rgba(80, 200, 120, 0.55);
-    --badge-optional-fg: #eafff2;
+    --badge-optional-fg: #0f4a2c;
     --badge-choice-bg: rgba(186, 133, 255, 0.22);
     --badge-choice-border: rgba(186, 133, 255, 0.55);
-    --badge-choice-fg: #f1e6ff;
+    --badge-choice-fg: #3a1b5c;
     --badge-alternative-bg: rgba(186, 133, 255, 0.18);
     --badge-alternative-border: rgba(186, 133, 255, 0.5);
-    --badge-alternative-fg: #f1e6ff;
-    --legend-required: #cfe9ff;
-    --legend-optional: #eafff2;
-    --legend-choice: #f1e6ff;
+    --badge-alternative-fg: #3a1b5c;
+    --legend-required: #0b3a63;
+    --legend-optional: #0f4a2c;
+    --legend-choice: #3a1b5c;
     --overlay: rgba(233, 236, 241, 0.82);
     --overlay-strong: rgba(20, 22, 26, 0.7);
     --viewer-stage-bg: radial-gradient(circle at top, rgba(247, 249, 252, 0.95), rgba(230, 233, 238, 0.95));
@@ -260,19 +260,19 @@ html[data-theme="light"] {
   --table-card-focus-shadow: 0 16px 28px rgba(31, 35, 40, 0.18);
   --badge-required-bg: rgba(86, 180, 255, 0.18);
   --badge-required-border: rgba(86, 180, 255, 0.4);
-  --badge-required-fg: #cfe9ff;
+  --badge-required-fg: #0b3a63;
   --badge-optional-bg: rgba(80, 200, 120, 0.22);
   --badge-optional-border: rgba(80, 200, 120, 0.55);
-  --badge-optional-fg: #eafff2;
+  --badge-optional-fg: #0f4a2c;
   --badge-choice-bg: rgba(186, 133, 255, 0.22);
   --badge-choice-border: rgba(186, 133, 255, 0.55);
-  --badge-choice-fg: #f1e6ff;
+  --badge-choice-fg: #3a1b5c;
   --badge-alternative-bg: rgba(186, 133, 255, 0.18);
   --badge-alternative-border: rgba(186, 133, 255, 0.5);
-  --badge-alternative-fg: #f1e6ff;
-  --legend-required: #cfe9ff;
-  --legend-optional: #eafff2;
-  --legend-choice: #f1e6ff;
+  --badge-alternative-fg: #3a1b5c;
+  --legend-required: #0b3a63;
+  --legend-optional: #0f4a2c;
+  --legend-choice: #3a1b5c;
   --overlay: rgba(233, 236, 241, 0.82);
   --overlay-strong: rgba(20, 22, 26, 0.7);
   --viewer-stage-bg: radial-gradient(circle at top, rgba(247, 249, 252, 0.95), rgba(230, 233, 238, 0.95));
@@ -324,16 +324,16 @@ html[data-theme="light"] {
     --btn-outline-hover-border: rgba(0, 0, 0, 0.35);
     --badge-required-bg: rgba(86, 180, 255, 0.18);
     --badge-required-border: rgba(86, 180, 255, 0.4);
-    --badge-required-fg: #cfe9ff;
+    --badge-required-fg: #0b3a63;
     --badge-optional-bg: rgba(80, 200, 120, 0.22);
     --badge-optional-border: rgba(80, 200, 120, 0.55);
-    --badge-optional-fg: #eafff2;
+    --badge-optional-fg: #0f4a2c;
     --badge-choice-bg: rgba(186, 133, 255, 0.22);
     --badge-choice-border: rgba(186, 133, 255, 0.55);
-    --badge-choice-fg: #f1e6ff;
+    --badge-choice-fg: #3a1b5c;
     --badge-alternative-bg: rgba(186, 133, 255, 0.18);
     --badge-alternative-border: rgba(186, 133, 255, 0.5);
-    --badge-alternative-fg: #f1e6ff;
+    --badge-alternative-fg: #3a1b5c;
   }
 
   html[data-theme="light"] {
@@ -342,9 +342,9 @@ html[data-theme="light"] {
     --border: rgba(17, 19, 23, 0.24);
     --border-soft: rgba(17, 19, 23, 0.28);
     --border-subtle: rgba(17, 19, 23, 0.2);
-    --legend-required: rgba(17, 19, 23, 0.95);
-    --legend-optional: #143b5f;
-    --legend-choice: #351658;
+    --legend-required: #0b3a63;
+    --legend-optional: #0f4a2c;
+    --legend-choice: #3a1b5c;
     --btn-outline-bg: #ffffff;
     --btn-outline-border: rgba(17, 19, 23, 0.52);
     --btn-outline-fg: #0b0d12;
@@ -352,16 +352,16 @@ html[data-theme="light"] {
     --btn-outline-hover-border: rgba(17, 19, 23, 0.62);
     --badge-required-bg: rgba(86, 180, 255, 0.18);
     --badge-required-border: rgba(86, 180, 255, 0.4);
-    --badge-required-fg: #cfe9ff;
+    --badge-required-fg: #0b3a63;
     --badge-optional-bg: rgba(80, 200, 120, 0.22);
     --badge-optional-border: rgba(80, 200, 120, 0.55);
-    --badge-optional-fg: #eafff2;
+    --badge-optional-fg: #0f4a2c;
     --badge-choice-bg: rgba(186, 133, 255, 0.22);
     --badge-choice-border: rgba(186, 133, 255, 0.55);
-    --badge-choice-fg: #f1e6ff;
+    --badge-choice-fg: #3a1b5c;
     --badge-alternative-bg: rgba(186, 133, 255, 0.18);
     --badge-alternative-border: rgba(186, 133, 255, 0.5);
-    --badge-alternative-fg: #f1e6ff;
+    --badge-alternative-fg: #3a1b5c;
   }
 
   html[data-theme="light"] .nav-more-menu a {
@@ -381,9 +381,9 @@ html[data-theme="light"] {
     --border: rgba(17, 19, 23, 0.24);
     --border-soft: rgba(17, 19, 23, 0.28);
     --border-subtle: rgba(17, 19, 23, 0.2);
-    --legend-required: rgba(17, 19, 23, 0.95);
-    --legend-optional: #143b5f;
-    --legend-choice: #351658;
+    --legend-required: #0b3a63;
+    --legend-optional: #0f4a2c;
+    --legend-choice: #3a1b5c;
     --btn-outline-bg: #ffffff;
     --btn-outline-border: rgba(17, 19, 23, 0.52);
     --btn-outline-fg: #0b0d12;
@@ -391,16 +391,16 @@ html[data-theme="light"] {
     --btn-outline-hover-border: rgba(17, 19, 23, 0.62);
     --badge-required-bg: rgba(86, 180, 255, 0.18);
     --badge-required-border: rgba(86, 180, 255, 0.4);
-    --badge-required-fg: #cfe9ff;
+    --badge-required-fg: #0b3a63;
     --badge-optional-bg: rgba(80, 200, 120, 0.22);
     --badge-optional-border: rgba(80, 200, 120, 0.55);
-    --badge-optional-fg: #eafff2;
+    --badge-optional-fg: #0f4a2c;
     --badge-choice-bg: rgba(186, 133, 255, 0.22);
     --badge-choice-border: rgba(186, 133, 255, 0.55);
-    --badge-choice-fg: #f1e6ff;
+    --badge-choice-fg: #3a1b5c;
     --badge-alternative-bg: rgba(186, 133, 255, 0.18);
     --badge-alternative-border: rgba(186, 133, 255, 0.5);
-    --badge-alternative-fg: #f1e6ff;
+    --badge-alternative-fg: #3a1b5c;
   }
 
   :root .nav-more-menu a {
