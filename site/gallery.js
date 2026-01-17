@@ -41,6 +41,11 @@
       thumb: "assets/gallery/knoten-08.jpg",
       alt: "MESH-S / M Prototype",
     },
+	{
+      src: "assets/gallery/knoten-09.jpg",
+      thumb: "assets/gallery/knoten-09.jpg",
+      alt: "MESH-S / Unter Schnee",
+    },
   ];
 
   const renderGallery = () => {
