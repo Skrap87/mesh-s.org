@@ -46,6 +46,21 @@
       thumb: "assets/gallery/knoten-09.jpg",
       alt: "MESH-S / Unter Schnee",
     },
+	{
+      src: "assets/gallery/knoten-10.jpg",
+      thumb: "assets/gallery/knoten-10.jpg",
+      alt: "MESH-S / Unter Schnee",
+    },
+	{
+      src: "assets/gallery/knoten-11.jpg",
+      thumb: "assets/gallery/knoten-11.jpg",
+      alt: "MESH-S / Unter Schnee",
+    },
+	{
+      src: "assets/gallery/knoten-12.jpg",
+      thumb: "assets/gallery/knoten-12.jpg",
+      alt: "MESH-S / Unter Schnee",
+    },
   ];
 
   const renderGallery = () => {
