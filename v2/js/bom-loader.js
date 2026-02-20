@@ -1,0 +1,191 @@
+(() => {
+  const isDevHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+  const fetchJson = async (url) => {
+    const res = await fetch(url, { cache: isDevHost ? "no-store" : "default" });
+    if (!res.ok) {
+      throw new Error(`Failed to load ${url}`);
+    }
+    return res.json();
+  };
+
+  const createCell = (text, className, label) => {
+    const cell = document.createElement("td");
+    if (className) cell.className = className;
+    if (text !== null && text !== undefined) cell.textContent = text;
+    if (label) cell.setAttribute("data-label", label);
+    return cell;
+  };
+
+  const createPhotoCell = (item, label) => {
+    const cell = createCell(null, "bom-col-photo", label);
+    if (!item.photoThumb) {
+      cell.textContent = "—";
+      cell.classList.add("bom-cell--is-empty");
+      return cell;
+    }
+    const button = document.createElement("button");
+    button.className = "bom-thumb";
+    button.type = "button";
+    button.setAttribute("data-full", item.photoFull || item.photoThumb);
+    button.setAttribute("aria-label", "Bild öffnen");
+    const img = document.createElement("img");
+    img.className = "bom-photo";
+    img.src = item.photoThumb;
+    img.alt = item.name;
+    img.width = 64;
+    img.height = 64;
+    img.loading = "lazy";
+    img.decoding = "async";
+    button.appendChild(img);
+    cell.appendChild(button);
+    return cell;
+  };
+
+  const createLinkCell = (item, label) => {
+    const cell = createCell(null, "bom-col-link", label);
+    const link = document.createElement("a");
+    link.className = "btn btn-outline";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    if (item.shopUrl) {
+      link.href = item.shopUrl;
+      link.textContent = item.shopLabel || "Link";
+    } else {
+      link.href = "#bom";
+      link.textContent = "Link folgt";
+    }
+    cell.appendChild(link);
+    return cell;
+  };
+
+  const createComponentCell = (item, label) => {
+    const cell = createCell(null, null, label);
+    const wrapper = document.createElement("div");
+    wrapper.className = "bom-component";
+    const kind = (item.kind || "required").toLowerCase();
+    const badge = document.createElement("span");
+    if (kind === "optional") {
+      badge.className = "bom-badge bom-badge--optional";
+      badge.textContent = "Optional";
+    } else if (kind === "alternative") {
+      badge.className = "bom-badge bom-badge--choice";
+      badge.textContent = "Wähle eine Option";
+    } else {
+      badge.className = "bom-badge bom-badge--required";
+      badge.textContent = "Erforderlich";
+    }
+    wrapper.appendChild(badge);
+    const name = document.createElement("span");
+    name.className = "bom-component-name";
+    name.textContent = item.name;
+    wrapper.appendChild(name);
+    cell.appendChild(wrapper);
+    return cell;
+  };
+
+  const renderBomRows = (items) => {
+    const table = document.querySelector(".bom-table");
+    if (!table) return;
+    const tbody = table.querySelector("tbody");
+    if (!tbody) return;
+    tbody.innerHTML = "";
+
+    const headers = Array.from(table.querySelectorAll("thead th")).map(th => th.textContent.trim());
+    const allowedKinds = new Set(['required', 'optional', 'alternative']);
+    const allowedVariants = new Set(['all', 's', 'm', 'l', 'xl']);
+
+    items.forEach((item) => {
+      const row = document.createElement("tr");
+      let kind = (item.kind || 'required').toLowerCase();
+      if (!allowedKinds.has(kind)) kind = 'required';
+
+      let variants = (item.variants || 'all').toLowerCase().split(',').map(v => v.trim()).filter(v => allowedVariants.has(v));
+      if (variants.length === 0) variants.push('all');
+
+      row.setAttribute("data-variants", variants.join(','));
+      row.setAttribute("data-kind", kind);
+      if (item.group) row.setAttribute("data-group", item.group);
+      if (item.section) row.setAttribute("data-section", String(item.section).toLowerCase());
+
+      row.appendChild(createComponentCell(item, headers[0]));
+      row.appendChild(createCell(item.qty, null, headers[1]));
+      const notesCell = createCell(item.notes, null, headers[2]);
+      if (!item.notes || String(item.notes).trim() === "") {
+        notesCell.textContent = "—";
+        notesCell.classList.add("bom-cell--is-empty");
+      }
+      row.appendChild(notesCell);
+      row.appendChild(createPhotoCell(item, headers[3]));
+      row.appendChild(createLinkCell(item, headers[4]));
+      tbody.appendChild(row);
+    });
+  };
+
+  const loadBom = async () => {
+    try {
+      const indexData = await fetchJson("assets/bom/index.json");
+      const itemFiles = Array.isArray(indexData.items) ? indexData.items : [];
+      const items = await Promise.all(
+        itemFiles.map((name) => fetchJson(`assets/bom/items/${name}`))
+      );
+
+      const kindRank = (kind) => {
+        const normalized = (kind || "").toLowerCase();
+        if (normalized === "required") return 0;
+        if (normalized === "alternative") return 1;
+        if (normalized === "optional") return 9;
+        return 5;
+      };
+
+      const sectionRank = (section) => {
+        const normalized = (section || "").toLowerCase();
+        return normalized === "customparts" ? 0 : 1;
+      };
+
+      const groupMinOrder = items.reduce((acc, item) => {
+        if (!item.group) return acc;
+        const order = item.order ?? 0;
+        const current = acc.get(item.group);
+        if (current === undefined || order < current) acc.set(item.group, order);
+        return acc;
+      }, new Map());
+
+      items.sort((a, b) => {
+        const sectionDiff = sectionRank(a.section) - sectionRank(b.section);
+        if (sectionDiff !== 0) return sectionDiff;
+        const kindDiff = kindRank(a.kind) - kindRank(b.kind);
+        if (kindDiff !== 0) return kindDiff;
+        const aClusterOrder = a.group ? groupMinOrder.get(a.group) ?? (a.order ?? 0) : (a.order ?? 0);
+        const bClusterOrder = b.group ? groupMinOrder.get(b.group) ?? (b.order ?? 0) : (b.order ?? 0);
+        if (aClusterOrder !== bClusterOrder) return aClusterOrder - bClusterOrder;
+        const orderDiff = (a.order ?? 0) - (b.order ?? 0);
+        if (orderDiff !== 0) return orderDiff;
+        return (a.name ?? "").localeCompare(b.name ?? "");
+      });
+
+      renderBomRows(items);
+
+      const activeVariant = typeof window.getCurrentVariant === "function" ? window.getCurrentVariant() : "s";
+      if (typeof window.applyBomFilter === "function") {
+        window.applyBomFilter(activeVariant);
+      }
+    } catch (error) {
+      console.warn("[bom-loader] failed to load BOM", error);
+      const tbody = document.getElementById("bomTbody");
+      if (tbody) {
+        const row = document.createElement("tr");
+        const cell = document.createElement("td");
+        cell.colSpan = 5;
+        cell.textContent = "Fehler beim Laden der Stückliste.";
+        cell.style.textAlign = 'center';
+        row.appendChild(cell);
+        tbody.appendChild(row);
+      }
+    }
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    loadBom();
+  });
+})();
