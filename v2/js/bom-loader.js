@@ -1,5 +1,6 @@
 (() => {
   const isDevHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+  const basePath = window.ASSET_BASE || "";
 
   const fetchJson = async (url) => {
     const res = await fetch(url, { cache: isDevHost ? "no-store" : "default" });
@@ -124,10 +125,10 @@
 
   const loadBom = async () => {
     try {
-      const indexData = await fetchJson("assets/bom/index.json");
+      const indexData = await fetchJson(`${basePath}assets/bom/index.json`);
       const itemFiles = Array.isArray(indexData.items) ? indexData.items : [];
       const items = await Promise.all(
-        itemFiles.map((name) => fetchJson(`assets/bom/items/${name}`))
+        itemFiles.map((name) => fetchJson(`${basePath}assets/bom/items/${name}`))
       );
 
       const kindRank = (kind) => {

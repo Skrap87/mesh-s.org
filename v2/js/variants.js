@@ -3,6 +3,7 @@
   const storageKey = "meshSVariant";
   const debug = false;
   const isDevHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+  const basePath = window.ASSET_BASE || "";
 
   const log = (...args) => {
     if (debug) console.log("[variants]", ...args);
@@ -229,7 +230,7 @@
 
     const fetchVariant = async (variantId) => {
       const cacheBuster = isDevHost ? `?t=${Date.now()}` : "";
-      const url = `assets/variants/${variantId}/variant.json${cacheBuster}`;
+      const url = `${basePath}assets/variants/${variantId}/variant.json${cacheBuster}`;
       try {
         const res = await fetch(url, { cache: isDevHost ? "no-store" : "default" });
         if (!res.ok) throw new Error(`Variant ${variantId} not found`);
