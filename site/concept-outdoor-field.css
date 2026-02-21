@@ -1,0 +1,126 @@
+/* Concept B: Outdoor Field */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap');
+
+:root {
+  --primary: #556B2F; /* Dark Olive */
+  --primary-accent: #A39171; /* Sand Gold */
+  --bg: #F4F1EA; /* Paper/Sand */
+  --bg-dark: #2D3426; /* Deep Forest */
+  --text: #343A30;
+  --text-light: #F4F1EA;
+  --border: rgba(45, 52, 38, 0.1);
+  --font-main: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+}
+
+header {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+header a { color: var(--text-light) !important; }
+
+.hero {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.hero-title__brand {
+  color: var(--primary-accent);
+  font-weight: 700;
+}
+
+.eyebrow {
+  color: var(--primary-accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.btn {
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.btn-accent {
+  background: var(--primary-accent);
+  color: var(--bg-dark);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary-accent);
+  color: var(--primary-accent);
+}
+
+.card {
+  background: white;
+  border-bottom: 4px solid var(--primary);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  color: var(--primary);
+}
+
+.graph-card, .winter-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.graph-title {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.bom-table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.bom-table th {
+  background: var(--primary);
+  color: white;
+  padding: 15px;
+}
+
+.bom-table td {
+  padding: 15px;
+  border-bottom: 1px solid var(--border);
+}
+
+.bom-badge {
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.bom-badge--required { background: var(--primary); color: white; }
+.bom-badge--optional { background: #A39171; color: white; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-grid { grid-template-columns: 100%; text-align: center; }
+}

@@ -1,0 +1,154 @@
+/* Concept A: Tech Minimal */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --primary: #00d2ff;
+  --bg: #0a0c10;
+  --bg-alt: #111827;
+  --text: #ffffff;
+  --muted: #6b7280;
+  --border: #1f2937;
+  --accent: #00d2ff;
+  --font-main: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+}
+
+header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(10, 12, 16, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.nav-logo span {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.hero {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--border);
+  background: radial-gradient(circle at 50% 50%, #111827 0%, #0a0c10 100%);
+}
+
+.hero-title {
+  font-family: var(--font-mono);
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.hero-title__brand {
+  color: var(--primary);
+}
+
+.hero-subtitle, .hero-tagline {
+  font-family: var(--font-mono);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.btn {
+  border-radius: 0;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.btn-accent {
+  background: var(--primary);
+  color: #000;
+  border: none;
+}
+
+.btn-outline {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  font-family: var(--font-mono);
+  color: var(--primary);
+}
+
+.autonomy-graphs, .winter-stack, .moisture-graphs {
+  display: grid;
+  gap: 20px;
+}
+
+.graph-card, .winter-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  padding: 20px;
+}
+
+.graph-title, .winter-title {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--primary);
+}
+
+.bom-table {
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.bom-table th {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.bom-table td {
+  border: 1px solid var(--border);
+  padding: 12px;
+}
+
+.bom-badge {
+  border-radius: 0;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.bom-badge--required { background: #1f2937; color: var(--primary); border: 1px solid var(--primary); }
+.bom-badge--optional { background: #1f2937; color: var(--muted); border: 1px solid var(--border); }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.5rem; }
+  .hero-grid { grid-template-columns: 100%; text-align: center; }
+  .hero-visual { order: -1; }
+}
