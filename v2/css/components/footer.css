@@ -1,0 +1,11 @@
+/* [RU] ===== START: Подвал сайта ===== */
+.footer{
+  border-top: 1px solid var(--line2);
+  padding: 22px 0;
+  background: rgba(0,0,0,.18);
+}
+.footer__inner{ display:flex; justify-content:space-between; align-items:center; gap: 12px; flex-wrap:wrap; }
+.footer__links{ display:flex; gap: 14px; }
+.footer__links a{ color: var(--muted); }
+.footer__links a:hover{ color: var(--fg); }
+/* [RU] ===== END: Подвал сайта ===== */

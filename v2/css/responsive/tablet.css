@@ -1,0 +1,36 @@
+/* [RU] ===== START: Адаптив для планшета и малых экранов (<=980px) ===== */
+@media (max-width: 980px){
+  .flipStage{ height: 320px; }
+  .flipPanel{
+    width: min(520px, 94%);
+    height: min(300px, 86%);
+  }
+
+  .topbar__inner{ flex-wrap:wrap; justify-content:center; }
+  .brand{ min-width: unset; }
+
+  .topCube__grid{ grid-template-columns: 1fr; }
+  .cubeStage{ height: 320px; }
+  .cube{ width: 240px; height: 240px; }
+  .cube__face--front{ transform: translateZ(120px); }
+  .cube__face--right{ transform: rotateY(90deg) translateZ(120px); }
+  .cube__face--back { transform: rotateY(180deg) translateZ(120px); }
+  .cube__face--left { transform: rotateY(-90deg) translateZ(120px); }
+
+  .hero__grid{ grid-template-columns: 1fr; }
+  .grid2{ grid-template-columns: 1fr; }
+  .facts{ grid-template-columns: 1fr; }
+
+  .dataSlide__grid{ grid-template-columns: 1fr; }
+
+  .variantShowcase{ grid-template-columns: 1fr; }
+  .modelButtons{ flex-direction:row; justify-content:center; }
+  .modelBtn{ width: 70px; height: 54px; }
+
+  .ctaRow{ justify-content:center; }
+
+  #idee .card{ padding: 16px; }
+  #idee .card::before{ left: 12px; right: 12px; }
+  #idee .facts{ grid-template-columns: 1fr; }
+}
+/* [RU] ===== END: Адаптив для планшета и малых экранов (<=980px) ===== */

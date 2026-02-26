@@ -1,0 +1,81 @@
+/* [RU] ===== START: Depth Zoom Carousel и подпись модели ===== */
+.flipStage{
+  height: 360px;
+  border-radius: 18px;
+  border: 1px solid var(--line2);
+  background: rgba(0,0,0,.18);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  perspective: 1000px;
+}
+
+.flipPanel{
+  width: min(520px, 92%);
+  height: min(320px, 86%);
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  background:
+    radial-gradient(260px 180px at 20% 20%, rgba(124,255,107,.12), transparent 60%),
+    radial-gradient(320px 220px at 80% 25%, rgba(88,166,255,.12), transparent 62%),
+    linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  box-shadow:
+    0 18px 50px rgba(0,0,0,.45),
+    0 2px 0 rgba(255,255,255,.06) inset;
+  opacity: 1;
+  transform: translateZ(0) scale(1);
+  transition:
+    transform 520ms cubic-bezier(.2,.9,.2,1),
+    opacity 420ms ease,
+    box-shadow 420ms ease,
+    border-color 420ms ease;
+  will-change: transform, opacity;
+  position: relative;
+}
+
+.flipPanel img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: none;
+}
+
+.flipPanel.is-zoom-out{
+  opacity: 0;
+  transform: translateZ(-120px);
+}
+
+.flipPanel.is-zoom-prep{
+  opacity: 0;
+  transform: translateZ(140px);
+}
+
+.flipPanel.is-zoom-in{
+  opacity: 1;
+  transform: translateZ(0);
+}
+
+.flipPanel:hover{
+  transform: translateZ(0);
+  border-color: rgba(124,255,107,.55);
+  box-shadow:
+    0 24px 60px rgba(0,0,0,.65),
+    0 2px 0 rgba(255,255,255,.08) inset;
+}
+
+.modelTitle{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.55);
+  border: 1px solid rgba(255,255,255,.15);
+  font-size: 13px;
+  letter-spacing: .04em;
+  backdrop-filter: blur(0px);
+  pointer-events: none;
+}
+/* [RU] ===== END: Depth Zoom Carousel и подпись модели ===== */

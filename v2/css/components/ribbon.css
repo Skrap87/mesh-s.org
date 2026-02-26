@@ -1,0 +1,46 @@
+/* [RU] ===== START: Секция Fotos Ribbon ===== */
+.ribbon{ padding: 16px; }
+.ribbon__mask{
+  overflow:hidden;
+  border-radius: 18px;
+  border: 1px solid var(--line2);
+  background: rgba(0,0,0,.16);
+}
+.ribbon__track{
+  display:flex;
+  gap: 12px;
+  padding: 14px;
+  width: max-content;
+  animation: ribbonMove 26s linear infinite;
+  will-change: transform;
+}
+.ribbon__mask:hover .ribbon__track{ animation-play-state: paused; }
+
+.ribbonItem{
+  width: 260px;
+  height: 160px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  background:
+    radial-gradient(220px 160px at 20% 20%, rgba(124,255,107,.16), transparent 60%),
+    radial-gradient(260px 190px at 80% 30%, rgba(88,166,255,.14), transparent 62%),
+    linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  box-shadow: var(--shadow2);
+  flex: 0 0 auto;
+}
+
+.ribbonItem--1{ filter: saturate(1.1); }
+.ribbonItem--2{ filter: hue-rotate(12deg); }
+.ribbonItem--3{ filter: hue-rotate(-12deg); }
+.ribbonItem--4{ filter: hue-rotate(22deg); }
+.ribbonItem--5{ filter: hue-rotate(-22deg); }
+.ribbonItem--6{ filter: hue-rotate(6deg); }
+
+.ctaRow{
+  margin-top: 14px;
+  display:flex;
+  gap: 10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+/* [RU] ===== END: Секция Fotos Ribbon ===== */

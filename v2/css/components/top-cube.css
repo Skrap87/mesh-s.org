@@ -1,0 +1,48 @@
+/* [RU] ===== START: Верхний блок с каруселью (TopCube) ===== */
+.topCube{
+  padding: 34px 0 10px;
+}
+.topCube__grid{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 18px;
+  align-items:center;
+}
+.topCube__title{
+  margin: 10px 0 10px;
+  font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+  line-height: 1.12;
+}
+.topCube__actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 16px; }
+.topCube__hint{ margin-top: 12px; }
+
+.cubeCard{ padding: var(--pad); }
+.cubeCard__head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+  margin-bottom: 12px;
+}
+.cubeCard__k{
+  font-weight: 800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-size:.75rem;
+  color: var(--muted);
+}
+.cubeCard__v{
+  margin-top: 6px;
+  font-weight: 900;
+  letter-spacing:.06em;
+}
+.cubeCard__badges{ display:flex; gap:8px; flex-wrap:wrap; }
+
+.cubeCard__foot{
+  margin-top: 12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 10px;
+}
+/* [RU] ===== END: Верхний блок с каруселью (TopCube) ===== */
