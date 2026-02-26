@@ -1,0 +1,6 @@
+/* [RU] ===== START: Доступность и prefers-reduced-motion ===== */
+@media (prefers-reduced-motion: reduce){
+  .ribbon__track{ animation: none; }
+  .dataAuto__track, .autoCards__track, .cube{ transition: none; }
+}
+/* [RU] ===== END: Доступность и prefers-reduced-motion ===== */

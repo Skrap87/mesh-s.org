@@ -1,0 +1,50 @@
+/* [RU] ===== START: Кнопки и интерактивные элементы ===== */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  color: var(--fg);
+  font-weight: 650;
+  letter-spacing:.02em;
+  transition: transform .14s ease, background .14s ease, border-color .14s ease;
+}
+.btn:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.07);
+  border-color: rgba(255,255,255,.18);
+}
+.btn--ghost{
+  border-color: var(--line2);
+  background: rgba(255,255,255,.02);
+  color: var(--fg);
+}
+.btn--accent{
+  border: none;
+  background: linear-gradient(135deg, rgba(124,255,107,.92), rgba(88,166,255,.72));
+  color: #07100a;
+  box-shadow: 0 14px 40px rgba(124,255,107,.16), 0 14px 40px rgba(88,166,255,.12);
+}
+.btn--accent:hover{
+  background: linear-gradient(135deg, rgba(124,255,107,1), rgba(88,166,255,.82));
+}
+.btn--wide{ width:100%; }
+
+.miniBtn{
+  width: 44px;
+  height: 40px;
+  border-radius: 14px;
+  border: 1px solid var(--line2);
+  background: rgba(255,255,255,.03);
+  color: var(--fg);
+  cursor: pointer;
+  transition: transform .14s ease, background .14s ease, border-color .14s ease;
+}
+.miniBtn:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.07);
+  border-color: rgba(255,255,255,.18);
+}
+/* [RU] ===== END: Кнопки и интерактивные элементы ===== */

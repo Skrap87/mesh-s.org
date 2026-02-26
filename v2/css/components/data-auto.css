@@ -1,0 +1,81 @@
+/* [RU] ===== START: Секция Daten Auto Deck ===== */
+.dataAuto{ padding: 16px; }
+.dataAuto__head{ display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom: 12px; }
+
+.dataAuto__viewport{
+  overflow:hidden;
+  border-radius: 18px;
+  border: 1px solid var(--line2);
+  background: rgba(0,0,0,.16);
+}
+
+.dataAuto__track{
+  display:grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  transform: translateX(var(--x, 0%));
+  transition: transform 520ms cubic-bezier(.2,.9,.2,1);
+  will-change: transform;
+}
+
+.dataSlide{ padding: 14px; }
+.dataSlide__grid{
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.dataTitleRow{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom: 10px;
+}
+.dataTitle{ font-weight: 900; letter-spacing:.04em; }
+
+.miniCards{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+.miniCard{
+  border:1px solid var(--line2);
+  background: rgba(255,255,255,.02);
+  border-radius: 16px;
+  padding: 12px;
+}
+.miniCard__k{ color: var(--muted); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+.miniCard__v{ margin-top: 6px; font-weight: 900; }
+
+.signalViz{
+  border-radius: 16px;
+  border:1px solid var(--line2);
+  background: rgba(255,255,255,.02);
+  padding: 14px;
+  display:grid;
+  gap: 10px;
+}
+.signalBar{
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  overflow:hidden;
+}
+.signalBar span{
+  display:block;
+  height:100%;
+  width: var(--p, 50%);
+  background: linear-gradient(90deg, rgba(124,255,107,.88), rgba(88,166,255,.70));
+}
+
+.dataAuto__dots{
+  display:flex;
+  gap: 8px;
+  justify-content:center;
+  margin-top: 12px;
+}
+/* [RU] ===== END: Секция Daten Auto Deck ===== */

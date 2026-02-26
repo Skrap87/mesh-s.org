@@ -1,0 +1,39 @@
+/* [RU] ===== START: Pills, badges и маркеры ===== */
+.pill{
+  display:inline-flex;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border:1px solid var(--line2);
+  background: rgba(255,255,255,.02);
+  color: var(--muted);
+  font-size: .92rem;
+}
+.badge{
+  padding: 6px 10px;
+  border-radius: 999px;
+  border:1px solid var(--line2);
+  background: rgba(255,255,255,.03);
+  font-size:.78rem;
+  color: var(--fg);
+}
+.badge--soft{
+  color: var(--muted);
+  background: rgba(255,255,255,.02);
+}
+
+.cubeDots{ display:flex; gap: 8px; justify-content:center; }
+.dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.22);
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.85;
+}
+.dot.is-active{
+  background: rgba(255,255,255,.90);
+  border-color: transparent;
+  opacity: 1;
+}
+/* [RU] ===== END: Pills, badges и маркеры ===== */

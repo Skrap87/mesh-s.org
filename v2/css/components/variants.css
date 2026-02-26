@@ -1,0 +1,104 @@
+/* [RU] ===== START: Секция Varianten и кнопки моделей ===== */
+.variantShowcase{
+  display:grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: start;
+}
+
+.autoCards{ padding: 16px; }
+.autoCards__head{ display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom: 12px; }
+
+.autoCards__viewport{
+  height: 240px;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid var(--line2);
+  background: rgba(0,0,0,.16);
+}
+
+.autoCards__track{
+  display:grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  height: 100%;
+  transform: translateX(var(--x, 0%));
+  transition: transform 520ms cubic-bezier(.2,.9,.2,1);
+  will-change: transform;
+}
+
+.autoCard{
+  height: 100%;
+  display:grid;
+  grid-template-columns: 120px 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 24px;
+}
+
+.autoCard__icon{
+  width: 100px;
+  height: 100px;
+  border-radius: 22px;
+  display:grid;
+  place-items:center;
+  font-size: 40px;
+  background:
+    radial-gradient(220px 160px at 20% 20%, rgba(124,255,107,.18), transparent 60%),
+    radial-gradient(260px 190px at 80% 30%, rgba(88,166,255,.16), transparent 62%),
+    linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: var(--shadow2);
+}
+
+.autoCard__content{ min-width: 0; }
+
+.autoCard__top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap: 10px;
+}
+
+.autoCard__name{
+  font-weight: 900;
+  letter-spacing:.08em;
+}
+
+.autoCards__dots{
+  display:flex;
+  gap: 8px;
+  justify-content:center;
+  margin-top: 12px;
+}
+
+.modelButtons{
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+.modelBtn{
+  width: 72px;
+  height: 56px;
+  display:grid;
+  place-items:center;
+  border-radius: 18px;
+  border: 1px solid var(--line2);
+  background: rgba(255,255,255,.03);
+  box-shadow: var(--shadow2);
+  font-weight: 900;
+  letter-spacing:.12em;
+  color: rgba(233,238,246,.88);
+  transition: transform .14s ease, background .14s ease, border-color .14s ease;
+}
+.modelBtn:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.07);
+  border-color: rgba(255,255,255,.18);
+}
+.modelBtn--active{
+  border: none;
+  background: linear-gradient(135deg, rgba(124,255,107,.92), rgba(88,166,255,.72));
+  color: #07100a;
+}
+/* [RU] ===== END: Секция Varianten и кнопки моделей ===== */

@@ -1,0 +1,100 @@
+/* [RU] ===== START: Секция Idee / Konzept (спец-оформление) ===== */
+#idee .sectionHead .lead{
+  max-width: 72ch;
+}
+
+#idee .grid2{
+  gap: 18px;
+  align-items: stretch;
+}
+
+#idee .card{
+  position: relative;
+  overflow: hidden;
+  padding: 18px;
+  background:
+    radial-gradient(900px 520px at 10% 0%, rgba(124,255,107,.06), transparent 55%),
+    radial-gradient(900px 520px at 90% 0%, rgba(88,166,255,.07), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+}
+
+#idee .card::before{
+  content:"";
+  position:absolute;
+  left: 14px;
+  right: 14px;
+  top: 12px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(124,255,107,.85), rgba(88,166,255,.65));
+  opacity: .65;
+}
+
+#idee .h3{
+  margin: 8px 0 10px;
+  font-size: 1.18rem;
+  letter-spacing: .02em;
+}
+
+#idee .muted{
+  line-height: 1.75;
+}
+
+#idee .mini{
+  margin-top: 12px;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+#idee .mini li{
+  position: relative;
+  padding-left: 30px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+#idee .mini li::before{
+  content:"✓";
+  position:absolute;
+  left: 0;
+  top: 1px;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: rgba(124,255,107,.95);
+  box-shadow: 0 10px 26px rgba(0,0,0,.35);
+  font-weight: 900;
+}
+
+#idee .facts{
+  margin-top: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+#idee .fact{
+  border-radius: 18px;
+  padding: 12px 12px;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.10));
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+#idee .fact__k{
+  font-size: .72rem;
+  letter-spacing: .18em;
+  opacity: .9;
+}
+
+#idee .fact__v{
+  margin-top: 6px;
+  font-size: 1.05rem;
+  letter-spacing: .03em;
+}
+/* [RU] ===== END: Секция Idee / Konzept (спец-оформление) ===== */

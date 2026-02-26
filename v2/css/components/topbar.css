@@ -1,0 +1,44 @@
+/* [RU] ===== START: Верхняя панель и навигация ===== */
+.topbar{
+  position:sticky; top:0; z-index:60;
+  background: rgba(10,14,18,.72);
+  backdrop-filter: blur(14px);
+  border-bottom:1px solid var(--line2);
+}
+.topbar__inner{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px;
+  padding: 14px 0;
+}
+.brand{ display:flex; align-items:center; gap:12px; min-width: 220px; }
+.brand__mark{
+  width:44px; height:44px;
+  display:grid; place-items:center;
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(124,255,107,.14), rgba(88,166,255,.10));
+  border:1px solid var(--line);
+  box-shadow: var(--shadow2);
+  font-weight: 900;
+}
+.brand__text{ display:flex; flex-direction:column; line-height:1.1; }
+.brand__name{ font-weight:800; letter-spacing:.22em; font-size:.95rem; }
+.brand__tag{ font-size:.78rem; color: var(--muted); letter-spacing:.06em; }
+
+.nav{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
+.nav__link{
+  padding: 9px 12px;
+  border-radius: 999px;
+  border:1px solid var(--line2);
+  background: rgba(255,255,255,.03);
+  color: var(--muted);
+  transition: transform .15s ease, border-color .15s ease, background .15s ease;
+}
+.nav__link:hover{
+  transform: translateY(-1px);
+  border-color: var(--line);
+  background: rgba(255,255,255,.06);
+  color: var(--fg);
+}
+
+.topbar__cta{ display:flex; gap:10px; align-items:center; }
+/* [RU] ===== END: Верхняя панель и навигация ===== */

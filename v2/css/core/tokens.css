@@ -1,0 +1,25 @@
+/* [RU] ===== START: Токены и переменные ===== */
+:root{
+  --bg: #0b0f14;
+  --bg2:#0e141c;
+  --fg: #e9eef6;
+  --muted: rgba(233,238,246,.68);
+  --line: rgba(255,255,255,.10);
+  --line2: rgba(255,255,255,.07);
+  --glass: rgba(255,255,255,.06);
+  --glass2: rgba(255,255,255,.03);
+
+  --accent: #7CFF6B;
+  --accent2: #58a6ff;
+
+  --shadow: 0 22px 80px rgba(0,0,0,.55);
+  --shadow2: 0 10px 30px rgba(0,0,0,.35);
+
+  --radius: 22px;
+  --radius2: 16px;
+  --max: 1180px;
+  --pad: clamp(18px, 3vw, 28px);
+
+  color-scheme: dark;
+}
+/* [RU] ===== END: Токены и переменные ===== */

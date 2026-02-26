@@ -1,0 +1,15 @@
+/* [RU] ===== START: Поверхности, карточки и базовые контейнеры ===== */
+.glass{
+  background: linear-gradient(180deg, var(--glass), var(--glass2));
+  border:1px solid var(--line2);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.card{
+  border-radius: var(--radius);
+  border:1px solid var(--line2);
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  box-shadow: var(--shadow2);
+}
+.cardPad{ padding: 16px; }
+/* [RU] ===== END: Поверхности, карточки и базовые контейнеры ===== */
