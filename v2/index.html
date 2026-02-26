@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <!-- [RU] ===== START: Meta / Head ===== -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MESH-S — DIY Solarknoten Gehäuse</title>
+  <meta name="description" content="MESH-S: 3D-gedruckte Gehäuse für Meshtastic / MeshCore Solarknoten. Konzept, Daten, Grafiken, Fotos und Varianten." />
+  <!-- [RU] ===== END: Meta / Head ===== -->
+
+  <!-- [RU] ===== START: Styles ===== -->
+  <link rel="stylesheet" href="./css/styles.css" />
+  <!-- [RU] ===== END: Styles ===== -->
+</head>
+
+<body>
+  <!-- [RU] ===== START: Skip Link ===== -->
+  <a class="skip" href="#main-content">Zum Inhalt springen</a>
+  <!-- [RU] ===== END: Skip Link ===== -->
+
+  <!-- [RU] ===== START: Topbar ===== -->
+  <header class="topbar" role="banner">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#" aria-label="MESH-S Startseite">
+        <span class="brand__mark" aria-hidden="true">M</span>
+        <span class="brand__text">
+          <span class="brand__name">MESH-S</span>
+          <span class="brand__tag">Gehäuse • Solar • Meshtastic</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="nav__link" href="#idee">Idee</a>
+        <a class="nav__link" href="#daten">Daten</a>
+        <a class="nav__link" href="#varianten">Varianten</a>
+        <a class="nav__link" href="#fotos">Fotos</a>
+      </nav>
+
+      <div class="topbar__cta">
+        <a class="btn btn--ghost" href="#varianten">Modelle</a>
+        <!-- [RU] Контакт будет отдельной страницей -->
+        <a class="btn btn--accent" href="./kontakt.html">Kontakt</a>
+      </div>
+    </div>
+  </header>
+  <!-- [RU] ===== END: Topbar ===== -->
+
+
+  <!-- [RU] ===== START: Main ===== -->
+  <main id="main-content" class="main" role="main">
+
+    <!-- [RU] ===== START: Top Photo Flip (Hero Carousel) ===== -->
+	<section class="topCube" aria-label="Foto Karussell">
+	  <div class="wrap topCube__grid">
+		<div class="topCube__left">
+		  <p class="kicker">MESH-S • SHOWCASE</p>
+		  <h2 class="topCube__title">Renders, die sofort wirken.</h2>
+		  <p class="lead">
+			Oben läuft eine 3D-Flip-Karussell. Du tauschst später nur die Bilder aus —
+			Logik bleibt gleich.
+		  </p>
+
+		  <div class="topCube__actions" role="group" aria-label="Aktionen">
+			<a class="btn btn--accent" href="#varianten">Varianten ansehen</a>
+			<a class="btn btn--ghost" href="#idee">Konzept</a>
+		  </div>
+
+		  <div class="topCube__hint muted small">
+			Tipp: Bilder ersetzt du in <span class="mono">main.js</span> (Array <span class="mono">heroImages</span>).
+		  </div>
+		</div>
+
+		<div class="topCube__right">
+		  <div class="glass cubeCard" aria-label="3D Flip Card">
+			<div class="cubeCard__head">
+			  <div>
+				<div class="cubeCard__v">MESH-S Varianten</div>
+			  </div>
+			  
+			</div>
+
+			<!-- [RU] ВАЖНО: тут ВСЕГДА видна только ОДНА картинка. -->
+			<div class="flipStage" aria-label="3D Flip">
+			  <div class="flipPanel" id="heroFlipPanel" aria-live="polite">
+				<img id="heroFlipImg" alt="MESH-S Render" />
+			  </div>
+			</div>
+
+			<div class="cubeCard__foot">
+			  <button class="miniBtn" type="button" id="cubePrev" aria-label="Zurück">←</button>
+
+			  <div class="cubeDots" aria-label="Model Punkte">
+				<button class="dot is-active" type="button" aria-label="Modell 1" data-cube="0"></button>
+				<button class="dot" type="button" aria-label="Modell 2" data-cube="1"></button>
+				<button class="dot" type="button" aria-label="Modell 3" data-cube="2"></button>
+				<button class="dot" type="button" aria-label="Modell 4" data-cube="3"></button>
+			  </div>
+
+			  <button class="miniBtn" type="button" id="cubeNext" aria-label="Weiter">→</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</section>
+	<!-- [RU] ===== END: Top Photo Flip (Hero Carousel) ===== -->
+
+    <!-- [RU] ===== START: Idee / Konzept ===== -->
+<section id="idee" class="section" aria-label="Idee und Konzept">
+  <div class="wrap">
+    <header class="sectionHead">
+      <h2 class="h2">Die Idee</h2>
+      <p class="lead">
+        MESH-S ist kein dekoratives 3D-Case – sondern ein durchdachtes,
+        modular aufgebautes Outdoor-System für Meshtastic- und MeshCore-Nodes.
+      </p>
+    </header>
+
+    <div class="grid2">
+
+      <!-- [RU] Левая карточка: философия проекта -->
+      <div class="card cardPad">
+        <h3 class="h3">Technisch gedacht. Praktisch gebaut.</h3>
+        <p class="muted">
+          Viele DIY-Nodes funktionieren – aber sind schwer wartbar,
+          unstrukturiert oder nicht auf Langzeitbetrieb ausgelegt.
+          MESH-S verfolgt einen anderen Ansatz:
+          klare Struktur, saubere Montage und definierte Komponentenplätze.
+        </p>
+
+        <ul class="mini">
+          <li>Modulares System</li>
+          <li>Klare Kabelführung ohne Improvisation</li>
+          <li>Definierte Montagepunkte</li>
+          <li>Dokumentierte Stücklisten</li>
+        </ul>
+      </div>
+
+      <!-- [RU] Правая карточка: Outdoor-логика -->
+      <div class="card cardPad">
+        <h3 class="h3">Entwickelt für echten Outdoor-Einsatz</h3>
+        <p class="muted">
+          Feuchtigkeit, Druckunterschiede und Temperaturschwankungen
+          sind keine Randbedingungen – sie sind Teil der Konstruktion.
+          Das Design reduziert potenzielle Eintrittsstellen und
+          berücksichtigt Wartung und Langzeitbetrieb.
+        </p>
+
+        <div class="facts" aria-label="Projekt-Fakten">
+          <div class="fact">
+            <div class="fact__k">Material</div>
+            <div class="fact__v">3D-Druck</div>
+          </div>
+          <div class="fact">
+            <div class="fact__k">Energie</div>
+            <div class="fact__v">Solar + Akku</div>
+          </div>
+          <div class="fact">
+            <div class="fact__k">Ziel</div>
+            <div class="fact__v">Autarker Betrieb</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- [RU] ===== END: Idee / Konzept ===== -->
+
+
+    <!-- [RU] ===== START: Daten / Grafiken (Auto like Varianten) ===== -->
+    <section id="daten" class="section section--alt" aria-label="Daten und Grafiken">
+      <div class="wrap">
+        <header class="sectionHead">
+          <h2 class="h2">Daten & Grafiken</h2>
+          <p class="lead">
+            Сейчас это авто-презентация как у Varianten. Позже сюда подключим LIVE-данные из Home Assistant.
+          </p>
+        </header>
+
+        <div class="dataAuto card" aria-label="Auto wechselnde Daten-Karten">
+          <div class="dataAuto__head">
+            <div class="h3">Telemetry Deck</div>
+            <div class="pill">AUTO</div>
+          </div>
+
+          <div class="dataAuto__viewport" aria-live="polite">
+            <div class="dataAuto__track" id="dataTrack" style="--x:0%;">
+              <!-- [RU] Slide 1 -->
+              <article class="dataSlide" aria-label="Battery 24h">
+                <div class="dataSlide__grid">
+                  <div class="dataSlide__left">
+                    <div class="dataTitleRow">
+                      <div class="dataTitle">Battery (24h)</div>
+                      <div class="badge badge--soft">DEMO</div>
+                    </div>
+                    <svg class="chartSvg" viewBox="0 0 640 220" role="img" aria-label="Battery Verlauf">
+                      <path d="M20 170 L90 160 L150 145 L220 150 L290 132 L360 118 L430 128 L500 108 L570 98 L620 88"
+                            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                      <path d="M20 170 L90 160 L150 145 L220 150 L290 132 L360 118 L430 128 L500 108 L570 98 L620 88 L620 210 L20 210 Z"
+                            fill="currentColor" opacity="0.08"/>
+                    </svg>
+                    <p class="muted small">Tagsüber steigt der Wert durch Solar, nachts fällt er.</p>
+                  </div>
+
+                  <div class="dataSlide__right">
+                    <div class="terminal">
+                      <div><span class="tKey">NOW</span> <span class="tVal">87%</span></div>
+                      <div><span class="tKey">MIN</span> <span class="tVal">62%</span></div>
+                      <div><span class="tKey">MAX</span> <span class="tVal">94%</span></div>
+                      <div><span class="tKey">STATUS</span> <span class="tVal">ok</span></div>
+                    </div>
+                    <p class="muted small">Позже: значения берём из HA и обновляем каждые N секунд.</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- [RU] Slide 2 -->
+              <article class="dataSlide" aria-label="Solar Input">
+                <div class="dataSlide__grid">
+                  <div class="dataSlide__left">
+                    <div class="dataTitleRow">
+                      <div class="dataTitle">Solar Input</div>
+                      <div class="badge badge--soft">W</div>
+                    </div>
+                    <div class="terminal">
+                      <div><span class="tKey">NOW</span> <span class="tVal">1.2W</span></div>
+                      <div><span class="tKey">PEAK</span> <span class="tVal">4.8W</span></div>
+                      <div><span class="tKey">AVG</span> <span class="tVal">0.9W</span></div>
+                      <div><span class="tKey">TEMP</span> <span class="tVal">22.4°C</span></div>
+                    </div>
+                    <p class="muted small">Monospace-Look, damit es technisch wirkt.</p>
+                  </div>
+
+                  <div class="dataSlide__right">
+                    <div class="miniCards">
+                      <div class="miniCard">
+                        <div class="miniCard__k">Panel</div>
+                        <div class="miniCard__v">6V</div>
+                      </div>
+                      <div class="miniCard">
+                        <div class="miniCard__k">MPPT</div>
+                        <div class="miniCard__v">ok</div>
+                      </div>
+                      <div class="miniCard">
+                        <div class="miniCard__k">Peak</div>
+                        <div class="miniCard__v">4.8W</div>
+                      </div>
+                    </div>
+                    <p class="muted small">Позже: реальные датчики / сенсоры HA.</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- [RU] Slide 3 -->
+              <article class="dataSlide" aria-label="Netz / Signal">
+                <div class="dataSlide__grid">
+                  <div class="dataSlide__left">
+                    <div class="dataTitleRow">
+                      <div class="dataTitle">Netz / Signal</div>
+                      <div class="badge badge--soft">LoRa</div>
+                    </div>
+                    <div class="terminal">
+                      <div><span class="tKey">RSSI</span> <span class="tVal">-108 dBm</span></div>
+                      <div><span class="tKey">SNR</span> <span class="tVal">7.5</span></div>
+                      <div><span class="tKey">HOPS</span> <span class="tVal">2</span></div>
+                      <div><span class="tKey">UP</span> <span class="tVal">ok</span></div>
+                    </div>
+                    <p class="muted small">Сюда можно будет подставить реальные данные.</p>
+                  </div>
+
+                  <div class="dataSlide__right">
+                    <div class="signalViz" aria-label="Signal Visual">
+                      <div class="signalBar" style="--p:78%"><span></span></div>
+                      <div class="signalBar" style="--p:62%"><span></span></div>
+                      <div class="signalBar" style="--p:44%"><span></span></div>
+                      <div class="signalBar" style="--p:30%"><span></span></div>
+                    </div>
+                    <p class="muted small">Визуальный блок — потом можно заменить на настоящий график.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="dataAuto__dots" aria-label="Punkte">
+            <button class="dot is-active" type="button" aria-label="Slide 1" data-data="0"></button>
+            <button class="dot" type="button" aria-label="Slide 2" data-data="1"></button>
+            <button class="dot" type="button" aria-label="Slide 3" data-data="2"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- [RU] ===== END: Daten / Grafiken (Auto like Varianten) ===== -->
+
+	<!-- [RU] ===== START: Varianten (Feuchtigkeitsaspekte Carousel) ===== -->
+	<section id="varianten" class="section section--alt" aria-label="Feuchtigkeitsaspekte">
+	  <div class="wrap">
+		<header class="sectionHead">
+		  <h2 class="h2">Feuchtigkeitsaspekte</h2>
+		  <p class="lead">
+			Automatische Karten-Ansicht: Abdichtung, Druckausgleich und Feuchtigkeitsmanagement.
+		  </p>
+		</header>
+
+		<div class="autoCards card" aria-label="Auto wechselnde Aspekte-Karten">
+		  <div class="autoCards__head">
+			<div class="h3">Aspekte</div>
+		  </div>
+
+		  <div class="autoCards__viewport" aria-live="polite">
+			<div class="autoCards__track" id="autoTrack" style="--x:0%;">
+			  <!-- [RU] Slides werden dynamisch via variants.js erzeugt -->
+			</div>
+		  </div>
+
+		  <div class="autoCards__dots" id="autoDots" aria-label="Punkte">
+			<!-- [RU] Dots werden dynamisch via variants.js erzeugt -->
+		  </div>
+		</div>
+	  </div>
+	</section>
+	<!-- [RU] ===== END: Varianten (Feuchtigkeitsaspekte Carousel) ===== -->
+
+    <!-- [RU] ===== START: Fotos (Dynamic Ribbon) ===== -->
+    <section id="fotos" class="section section--alt" aria-label="Fotos">
+      <div class="wrap">
+        <header class="sectionHead">
+          <h2 class="h2">Fotos</h2>
+          <p class="lead">Динамическая лента (скролл). Позже заменишь на реальные фото/рендеры.</p>
+        </header>
+
+        <div class="ribbon card" aria-label="Foto Band">
+          <div class="ribbon__mask">
+            <div class="ribbon__track" id="ribbonTrack" aria-live="off">
+              <!-- [RU] Набор 1 -->
+              <div class="ribbonItem ribbonItem--1" role="img" aria-label="Foto 1"></div>
+              <div class="ribbonItem ribbonItem--2" role="img" aria-label="Foto 2"></div>
+              <div class="ribbonItem ribbonItem--3" role="img" aria-label="Foto 3"></div>
+              <div class="ribbonItem ribbonItem--4" role="img" aria-label="Foto 4"></div>
+              <div class="ribbonItem ribbonItem--5" role="img" aria-label="Foto 5"></div>
+              <div class="ribbonItem ribbonItem--6" role="img" aria-label="Foto 6"></div>
+
+              <!-- [RU] Набор 2 (дубликат для бесконечности) -->
+              <div class="ribbonItem ribbonItem--1" role="img" aria-label="Foto 1 duplicate"></div>
+              <div class="ribbonItem ribbonItem--2" role="img" aria-label="Foto 2 duplicate"></div>
+              <div class="ribbonItem ribbonItem--3" role="img" aria-label="Foto 3 duplicate"></div>
+              <div class="ribbonItem ribbonItem--4" role="img" aria-label="Foto 4 duplicate"></div>
+              <div class="ribbonItem ribbonItem--5" role="img" aria-label="Foto 5 duplicate"></div>
+              <div class="ribbonItem ribbonItem--6" role="img" aria-label="Foto 6 duplicate"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ctaRow">
+          <!-- [RU] Контакт отдельной страницей -->
+          <a class="btn btn--accent" href="./kontakt.html">Kontakt</a>
+          <a class="btn btn--ghost" href="#varianten">Modelle</a>
+        </div>
+      </div>
+    </section>
+    <!-- [RU] ===== END: Fotos (Dynamic Ribbon) ===== -->
+
+  </main>
+  <!-- [RU] ===== END: Main ===== -->
+
+
+  <!-- [RU] ===== START: Footer ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="wrap footer__inner">
+      <div class="muted small">© <span id="year"></span> MESH-S • DIY Solarknoten</div>
+      <div class="footer__links" aria-label="Footer Links">
+        <a href="#idee">Idee</a>
+        <a href="#daten">Daten</a>
+        <a href="#varianten">Varianten</a>
+        <a href="./kontakt.html">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+  <!-- [RU] ===== END: Footer ===== -->
+
+  <!-- [RU] ===== START: Scripts ===== -->
+  <script type="module" src="./js/main.js"></script>
+  <!-- [RU] ===== END: Scripts ===== -->
+</body>
+</html>

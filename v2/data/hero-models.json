@@ -1,0 +1,20 @@
+[
+  {
+    "src": "/img/hero-s.png",
+    "name": "MESH-S / S",
+    "url": "/model-s.html",
+    "desc": "Keine externen Schnittstellen Das Gehäuse hat keine externen Service-Ports oder Anschlüsse. Zugriff auf die Elektronik ist nur durch Öffnen des Gehäuses möglich, wodurch potenzielle Eintrittsstellen für Feuchtigkeit reduziert werden."
+  },
+  {
+    "src": "/img/hero-m.png",
+    "name": "MESH-S / M",
+    "url": "/model-m.html",
+    "desc": "Mehr Platz für Elektronik und saubere Wartung. Универсальный вариант."
+  },
+  {
+    "src": "/img/hero-xl.png",
+    "name": "MESH-S / XL",
+    "url": "/model-xl.html",
+    "desc": "High-Capacity Outdoor Lösung. Максимум места для автономности."
+  }
+]

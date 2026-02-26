@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "💧",
+    "title": "Abgedichtetes Layout-Konzept",
+    "desc": "Keine externen Schnittstellen. Zugriff nur durch Öffnen des Gehäuses. Potenzielle Eintrittsstellen für Feuchtigkeit werden minimiert."
+  },
+  {
+    "icon": "🧪",
+    "title": "Silikondichtung",
+    "desc": "Umlaufende Abdichtung zwischen den Gehäusehälften. Reduziert Exposition gegenüber Regen und Spritzwasser."
+  },
+  {
+    "icon": "🌬️",
+    "title": "Druckausgleichsventil",
+    "desc": "Membranbasierter Druckausgleich. Gleicht Druckänderungen aus und begrenzt Feuchtigkeitseintritt bei Temperaturschwankungen."
+  },
+  {
+    "icon": "🧊",
+    "title": "Silicagel-Fach",
+    "desc": "Internes Fach zur passiven Feuchtigkeitskontrolle. Bindet Restfeuchtigkeit und kann Kondensation im Outdoor-Betrieb reduzieren."
+  }
+]
