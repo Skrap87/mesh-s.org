@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MESH-S — premium DIY mesh node</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <header class="topbar container glass">
+      <a class="brand" href="#">MESH-S</a>
+      <nav>
+        <a href="#variants">Варианты</a>
+        <a href="#telemetry">Телеметрия</a>
+        <a href="#docs">Сборка</a>
+      </nav>
+      <button class="btn btn-ghost">EN</button>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="hero-copy">
+          <p class="eyebrow">Solar • Outdoor • Meshtastic / MeshCore</p>
+          <h1>Надёжный автономный mesh-узел, который живёт в поле, а не на столе.</h1>
+          <p class="subtitle">
+            MESH-S — это модульная платформа узлов связи для реальных условий: солнце,
+            мороз, влажность и недели без обслуживания.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#variants">Выбрать вариант</a>
+            <a class="btn btn-secondary" href="#docs">Открыть документацию</a>
+          </div>
+          <ul class="badges">
+            <li>DIY-friendly</li>
+            <li>IP66-класс корпуса</li>
+            <li>От S до XL</li>
+            <li>Live telemetry</li>
+          </ul>
+        </div>
+        <figure class="hero-media glass">
+          <img src="../assets/variants/xl/hero/hero-xl.webp" alt="MESH-S узел в корпусе" />
+          <figcaption>Hero visual: MESH-S XL, корпус для наружного монтажа.</figcaption>
+        </figure>
+      </section>
+
+      <section class="container features" id="about">
+        <h2>Почему MESH-S работает в реальной жизни</h2>
+        <div class="grid-3">
+          <article class="card glass">
+            <h3>Энергобаланс под контролем</h3>
+            <p>Solar + Li-Ion + MPPT логика, чтобы узел переживал плохую погоду и короткий день.</p>
+          </article>
+          <article class="card glass">
+            <h3>Сервис без боли</h3>
+            <p>Продуманная внутренняя компоновка и модульные детали ускоряют сборку и обслуживание.</p>
+          </article>
+          <article class="card glass">
+            <h3>Полевая надёжность</h3>
+            <p>Ориентация на outdoor: герметизация, дыхательный клапан, учёт конденсата и влажности.</p>
+          </article>
+          <article class="card glass">
+            <h3>Платформа, а не один корпус</h3>
+            <p>Разные форм-факторы под сценарии: компактная точка, базовый ретранслятор, расширенный узел.</p>
+          </article>
+          <article class="card glass">
+            <h3>Наблюдаемость</h3>
+            <p>Телеметрия по заряду, напряжению, температуре и влажности показывает реальную картину.</p>
+          </article>
+          <article class="card glass">
+            <h3>Прозрачная документация</h3>
+            <p>Сборка, BOM, 3D и шаги монтажа собраны в единый маршрут от идеи до deployed node.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container telemetry" id="telemetry">
+        <div class="section-head">
+          <h2>Телеметрия: не рендер, а реальные циклы</h2>
+          <a href="#" class="text-link">Открыть полный дашборд →</a>
+        </div>
+        <div class="grid-2">
+          <article class="chart-card glass">
+            <h3>Заряд и напряжение</h3>
+            <p>Суточные циклы зарядки, провалы при пасмурной погоде и восстановление батареи.</p>
+            <img src="../assets/variants/s/autonomy/images/ha-charge.png" alt="График заряда и напряжения" />
+          </article>
+          <article class="chart-card glass">
+            <h3>Температура / влажность</h3>
+            <p>Поведение корпуса в морозные ночи и влажные периоды без солнца.</p>
+            <img src="../assets/gallery/knoten-09.jpg" alt="Зимняя эксплуатация узла MESH-S" />
+          </article>
+        </div>
+      </section>
+
+      <section class="container" id="variants">
+        <div class="section-head">
+          <h2>Линейка вариантов</h2>
+          <p>Выберите модель под задачу — детали внутри соответствующих страниц.</p>
+        </div>
+        <div class="variant-grid">
+          <article class="variant-card glass">
+            <span class="tag">S</span>
+            <h3>Compact Node</h3>
+            <p>Минимальный размер, быстрый монтаж, базовая автономность.</p>
+          </article>
+          <article class="variant-card glass featured">
+            <span class="tag">M</span>
+            <h3>Balanced</h3>
+            <p>Оптимум по размеру, энергоёмкости и устойчивости к погоде.</p>
+          </article>
+          <article class="variant-card glass">
+            <span class="tag">L</span>
+            <h3>Extended Runtime</h3>
+            <p>Больше ресурса батареи и пространства под расширения.</p>
+          </article>
+          <article class="variant-card glass">
+            <span class="tag">XL</span>
+            <h3>Field Backbone</h3>
+            <p>Максимальная автономность для удалённых узлов и трудных условий.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container visuals">
+        <h2>Визуалы проекта</h2>
+        <div class="gallery-grid">
+          <img src="../assets/gallery/knoten-01.jpg" alt="Вид узла MESH-S спереди" />
+          <img src="../assets/gallery/knoten-05.jpg" alt="Монтаж узла на мачте" />
+          <img src="../assets/gallery/aufbau/aufbau-mit-ina219.png" alt="Внутренняя компоновка с INA219" />
+          <img src="../assets/variants/s/custom-parts/enclosure.webp" alt="Рендер корпуса MESH-S" />
+        </div>
+      </section>
+
+      <section class="container docs-cta glass" id="docs">
+        <div>
+          <p class="eyebrow">Build Hub</p>
+          <h2>Собрать свой MESH-S: от компонентов до 3D-файлов</h2>
+          <p>
+            Вся практическая часть вынесена в отдельный раздел: BOM, сборка по шагам,
+            схемы, печатные детали и рекомендации по установке.
+          </p>
+        </div>
+        <div class="cta-stack">
+          <a href="#" class="btn btn-primary">Перейти к сборке</a>
+          <a href="#" class="btn btn-secondary">Компоненты и BOM</a>
+          <a href="#" class="btn btn-secondary">3D-модели и STEP</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <div>
+        <strong>MESH-S</strong>
+        <p>Open hardware mesh node platform for real outdoor deployments.</p>
+      </div>
+      <div>
+        <a href="#">Telegram</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../impressum.html">Impressum</a>
+      </div>
+      <div>
+        <p>© 2026 · DIY / Experimental use. Проверяйте местные требования по частотам и монтажу.</p>
+      </div>
+    </footer>
+  </body>
+</html>
